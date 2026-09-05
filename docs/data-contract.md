@@ -32,6 +32,8 @@ Version 1。実装上の型は `src/environment.ts`、`src/race.ts`、生成ス�
 
 区画配信ファイル `public/data/chunk-{id}.json.gz` はgzip解凍後に `{id,objects:[]}` となる。区画境界 `bounds` は `[minX,minY,minZ,maxX,maxY,maxZ]`。`sha256/bytes` は圧縮ファイル、`uncompressedSha256/uncompressedBytes` は解凍後のJSONに対応する。
 
+HTTPの `Content-Encoding: gzip` はfetchが展開するため、URL末尾だけで再展開しない。`src/data-loader.ts` は受信ストリーム先頭のgzip識別バイトを確認し、未展開の場合だけ `DecompressionStream` を通す。圧縮ファイルをそのまま返すサーバーと、HTTP符号化として返すサーバーの両方で同じ原典JSONを読み込む。HTTPエラーと壊れたgzipは成功扱いにせず、再試行画面へ伝える。実HTTPの回帰試験は `tests/data-loader.test.ts` にある。
+
 | 地物属性 | 形式・意味 |
 |---|---|
 | `id` | `plateau:`＋元 `gml:id`。実行時の `objectId` に対応 |

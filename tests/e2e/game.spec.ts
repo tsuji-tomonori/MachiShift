@@ -3,6 +3,8 @@ import { expect, test, type Page, type TestInfo } from '@playwright/test';
 interface Diagnostics {
   phase: string;
   sampledAtMilliseconds: number;
+  renderQuality: string;
+  renderResolution: number[];
   elapsed: number;
   courseMeters: number;
   inventory: string[];
@@ -47,7 +49,7 @@ async function openStage(page: Page, testInfo: TestInfo): Promise<void> {
   await attachJSON(testInfo, 'source-stage', {
     commit: process.env.GITHUB_SHA ?? 'working-tree',
     executedAt: new Date().toISOString(),
-    environment: 'Playwright Chromium / 1280x720 / SwiftShader',
+    environment: 'Playwright Chromium / 1280x720 UI / SwiftShader; title and retry use high graphics, driving selects low graphics (640x360 scene, no shadows)',
     scope: 'Automated functional play on bundled real CityGML-derived stage. Not independent survey, human evaluation or AT-12.',
     metadata: stage.metadata,
     chunks: stage.chunks.map((chunk: { id: string; sha256: string }) => ({ id: chunk.id, sha256: chunk.sha256 })),
@@ -62,6 +64,10 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
   page.on('pageerror', error => uncaught.push(error.message));
   await openStage(page, testInfo);
   await page.screenshot({ path: testInfo.outputPath('real-stage-title.png') });
+  // Use the same lightweight graphics setting available to a player. Geometry,
+  // collisions, six vehicles and fixed physics ticks remain unchanged.
+  await page.getByRole('button', { name: '描画を軽量にする', exact: true }).click();
+  await expect(page.getByRole('button', { name: '描画を高品質にする', exact: true })).toBeVisible();
 
   await page.getByRole('button', { name: '操作方法', exact: true }).click();
   await expect(page.getByRole('heading', { name: '走る・狙う・街を変える' })).toBeVisible();
@@ -72,6 +78,8 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
   await expect.poll(async () => (await readDiagnostics(page)).phase).toBe('free');
   const before = await readDiagnostics(page);
   expect(before.vehicles).toHaveLength(6);
+  expect(before.renderQuality).toBe('low');
+  expect(before.renderResolution).toEqual([640, 360]);
   expect(before.inventory).toHaveLength(0);
   expect(before.destroyed).toBe(0);
 

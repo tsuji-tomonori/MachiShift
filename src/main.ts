@@ -69,6 +69,16 @@ const clock = (t:number) => `${Math.floor(t/60).toString().padStart(2,'0')}:${(t
 const $ = <T extends HTMLElement = HTMLElement>(selector:string) => ui.querySelector<T>(selector);
 const bind = (id:string,fn:()=>void) => $<HTMLButtonElement>(id)?.addEventListener('click',fn);
 const safeStorage = { get(key:string) { try{return localStorage.getItem(key);}catch{return null;} }, set(key:string,value:string) {try{localStorage.setItem(key,value);}catch{/* Private mode: preference need not persist. */}} };
+let renderQuality:'high'|'low' = safeStorage.get('machishift-quality')==='low' ? 'low' : 'high';
+function applyRenderQuality(){
+  renderer.setPixelRatio(renderQuality==='low' ? .5 : 1);
+  renderer.shadowMap.enabled=renderQuality==='high';
+  renderer.shadowMap.needsUpdate=true;
+  const materials=new Set<THREE.Material>();
+  scene.traverse(object=>{if(object instanceof THREE.Mesh)for(const material of Array.isArray(object.material)?object.material:[object.material])materials.add(material);});
+  for(const material of materials)material.needsUpdate=true;
+}
+
 
 function footer() {
   return `<div class="footer"><span>岐阜駅北口 · PLATEAU 2024年度モデル · <button id="credits">出典・再現範囲</button></span><span>非公式ゲーム / 地理精度の受入検証中</span></div>`;
@@ -86,12 +96,13 @@ function showError(error:unknown) {
 }
 function showTitle() {
   phase='title'; input.clear();
-  ui.innerHTML=`<div class="menu"><div class="menu-inner"><p class="eyebrow">STREET RACING / GIFU 01</p><h1 class="logo">Machi<span>Shift</span></h1><div class="location">岐阜駅北口</div><p class="description">街を走る。色を残す。道をひらく。<br>爆弾とペイントで、次の一周を変えよう。</p><div class="mode-buttons"><button class="primary" id="start">レースを始める <span>→</span></button><button class="secondary" id="free">自由走行</button></div><div class="menu-meta"><span>6台 / 3周</span><span>${(race.routeLength/1000).toFixed(2)} km / 周</span><span>昼・晴れ</span></div><span class="status-tag">実データを使用 / 再現・受入検証中</span><div class="help-bar"><button class="ghost" id="tutorial">操作を練習する</button><button class="ghost" id="controls">操作方法</button><button class="ghost" id="sound">音 ${sound.enabled?'ON':'OFF'}</button></div></div></div>${footer()}`;
+  ui.innerHTML=`<div class="menu"><div class="menu-inner"><p class="eyebrow">STREET RACING / GIFU 01</p><h1 class="logo">Machi<span>Shift</span></h1><div class="location">岐阜駅北口</div><p class="description">街を走る。色を残す。道をひらく。<br>爆弾とペイントで、次の一周を変えよう。</p><div class="mode-buttons"><button class="primary" id="start">レースを始める <span>→</span></button><button class="secondary" id="free">自由走行</button></div><div class="menu-meta"><span>6台 / 3周</span><span>${(race.routeLength/1000).toFixed(2)} km / 周</span><span>昼・晴れ</span></div><span class="status-tag">実データを使用 / 再現・受入検証中</span><div class="help-bar"><button class="ghost" id="tutorial">操作を練習する</button><button class="ghost" id="controls">操作方法</button><button class="ghost" id="sound">音 ${sound.enabled?'ON':'OFF'}</button><button class="ghost" id="quality" title="軽量は3Dの描画解像度を半分にし、影を省きます。">${renderQuality==='high'?'描画を軽量にする':'描画を高品質にする'}</button></div></div></div>${footer()}`;
   bind('#start',()=>{ sound.unlock(); safeStorage.get('machishift-tutorial')==='done' ? beginRace() : beginTutorial(); });
   bind('#free',()=>{sound.unlock();reset('free');phase='free';renderHUD();toast('自由走行 · 近くの補給ポイントでアイテムを拾おう');});
   bind('#tutorial',()=>{sound.unlock();beginTutorial();});
   bind('#controls',()=>showControls('title'));
   bind('#sound',()=>{sound.enabled=!sound.enabled;showTitle();});
+  bind('#quality',()=>{renderQuality=renderQuality==='high'?'low':'high';safeStorage.set('machishift-quality',renderQuality);applyRenderQuality();showTitle();});
   bind('#credits',showCredits);
 }
 function reset(mode:'race'|'free') {
@@ -182,8 +193,13 @@ function updateHUD() {
   assign('#toast',performance.now()/1000<toastUntil?toastText:'');
   if($('#center'))$('#center')!.innerHTML=phase==='countdown'?`<div class="countdown">${Math.ceil(countdown)>0?Math.ceil(countdown):'GO'}</div>`:'';
   if($('#aim-ui'))$('#aim-ui')!.innerHTML=input.aiming&&item?'<div class="aim-text">軌道の先へ · 離して投げる</div>':'';
-  if($('#lesson')) {
-    $('#lesson')!.innerHTML=phase==='tutorial'?`<div class="tutorial"><div class="steps">${lessons.map((_,i)=>`<i class="${i<=tutorialStep?'done':''}"></i>`).join('')}</div><h2>${tutorialStep+1}. ${lessons[tutorialStep][0]}</h2><p>${lessons[tutorialStep][1]}</p><button class="ghost" id="skip-lesson">練習をスキップしてレースへ</button></div>`:'';
+  const lesson = $('#lesson');
+  const lessonKey = phase==='tutorial' ? String(tutorialStep) : '';
+  // Keep the interactive button stable between lesson changes, including focus
+  // and a pointer press spanning multiple HUD refreshes.
+  if(lesson && lesson.dataset.step!==lessonKey) {
+    lesson.dataset.step=lessonKey;
+    lesson.innerHTML=phase==='tutorial'?`<div class="tutorial"><div class="steps">${lessons.map((_,i)=>`<i class="${i<=tutorialStep?'done':''}"></i>`).join('')}</div><h2>${tutorialStep+1}. ${lessons[tutorialStep][0]}</h2><p>${lessons[tutorialStep][1]}</p><button class="ghost" id="skip-lesson">練習をスキップしてレースへ</button></div>`:'';
     bind('#skip-lesson',beginRace);
   }
   drawMap();
@@ -346,7 +362,7 @@ function predictAim(position:THREE.Vector3){
 }
 function diagnostics(){
   const values=measuredFrames.length?measuredFrames:frameTimes;const sorted=[...values].sort((a,b)=>a-b);const p=(q:number)=>sorted[Math.floor((sorted.length-1)*q)]??0;
-  return {phase,sampledAtMilliseconds:performance.now(),elapsed:Math.round(elapsed*100)/100,courseMeters:race.routeLength,vehicles:race.vehicles.map(v=>({id:v.id,lap:v.lap,rank:v.rank,checkpoint:v.checkpoint,finished:v.finished,position:v.body.translation(),speed:v.speed,heading:v.heading,driftCharge:v.driftCharge,boost:v.boost})),...environment.stats,inventory,thrownCount,paintHits,bombHits,recoveries,autoDrive,loadMilliseconds:initializedAt,frameMilliseconds:{count:values.length,p50:p(.5),p95:p(.95),p99:p(.99),over100:values.filter(t=>t>100).length},measurement,memory:memorySamples.at(-1)??null,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures};
+  return {phase,renderQuality,renderResolution:[canvas.width,canvas.height],sampledAtMilliseconds:performance.now(),elapsed:Math.round(elapsed*100)/100,courseMeters:race.routeLength,vehicles:race.vehicles.map(v=>({id:v.id,lap:v.lap,rank:v.rank,checkpoint:v.checkpoint,finished:v.finished,position:v.body.translation(),speed:v.speed,heading:v.heading,driftCharge:v.driftCharge,boost:v.boost})),...environment.stats,inventory,thrownCount,paintHits,bombHits,recoveries,autoDrive,loadMilliseconds:initializedAt,frameMilliseconds:{count:values.length,p50:p(.5),p95:p(.95),p99:p(.99),over100:values.filter(t=>t>100).length},measurement,memory:memorySamples.at(-1)??null,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures};
 }
 function startStress(){
   if(phase!=='race'||race.mode!=='race'||race.vehicles.some(v=>v.finished)) {toast('6台が走行中のレースで負荷試験を開始してください');return;}
@@ -454,7 +470,7 @@ async function boot(){
   showLoading(0,'WebGL2と物理エンジンを準備しています');
   renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
   renderer.setPixelRatio(1);renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.2;
-  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap;applyRenderQuality();
   scene.add(new THREE.HemisphereLight(0xdbedff,0x80785c,2.4));
   const sun=new THREE.DirectionalLight(0xfff1d4,3.1);sun.position.set(-100,180,-100);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-120;sun.shadow.camera.right=120;sun.shadow.camera.top=120;sun.shadow.camera.bottom=-120;sun.shadow.camera.far=600;sun.shadow.bias=-.0003;sun.shadow.normalBias=.15;scene.add(sun);scene.add(sun.target);
   await RAPIER.init();world=new RAPIER.World({x:0,y:-9.81,z:0});world.timestep=1/60;environment=new Environment(scene,world);

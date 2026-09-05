@@ -115,3 +115,9 @@ CIは変更しない実ステージをHTTP取得し、実キーボード操作�
 Workで利用できるブラウザーがWebGLを無効にしていたため、この作業では別のローカルブラウザー制御に切り替えていない。公式参照先は [Playwright設定](https://playwright.dev/docs/test-configuration)、[Webサーバー](https://playwright.dev/docs/test-webserver)、[GitHub checkout](https://github.com/actions/checkout)、[setup-node](https://github.com/actions/setup-node)、[upload-artifact](https://github.com/actions/upload-artifact)。
 
 台帳の `evidence[]` は `id,kind,path,executedAt,commit,environment,observations,scope,result,fullRequirement` を必須にする。画像だけで物理を、状態試験だけで画面品質を証明しない。部分試験は `fullRequirement:false`、未実行やスキップはPASS以外として残す。
+
+## ブラウザー再検証の途中経過
+
+[2回目CI](https://github.com/tsuji-tomonori/MachiShift/actions/runs/33950905209) は36件のテスト・型検査・ビルドに成功し、通信失敗からの再試行がPASSになった。街の3D表示、キー操作、ドリフト加速、ペイント命中、復帰、一時停止中の実姿勢と時刻停止も実行できた。練習スキップボタンのDOMをHUD更新ごとに作り直す不具合で主シナリオはFAIL。ボタンを保持する修正後の完走・再レースを再検証する。[部分証跡と実状態](evidence/ci-second-diagnosis-20260905.json) を参照。
+
+2回目のSwiftShader高品質描画では自由走行のp50が633.4msだった。対象GPUの性能値には用いない。タイトルから選べる軽量描画（3D解像度を縦横1/2、影なし）を追加し、CIの走行部分は同じ利用者向け設定を選ぶ。UIは1280×720、走行3Dは640×360。原典形状・地物・6台・周回・物理刻みを省略したり進行値を書き換えたりしない。AT-12の1920×1080実機条件は維持する。
