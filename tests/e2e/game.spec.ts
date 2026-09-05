@@ -2,6 +2,7 @@ import { expect, test, type Page, type TestInfo } from '@playwright/test';
 
 interface Diagnostics {
   phase: string;
+  tutorialStep: number;
   sampledAtMilliseconds: number;
   renderQuality: string;
   renderResolution: number[];
@@ -64,6 +65,12 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
   page.on('pageerror', error => uncaught.push(error.message));
   await openStage(page, testInfo);
   await page.screenshot({ path: testInfo.outputPath('real-stage-title.png') });
+  await page.getByRole('button', { name: '出典・再現範囲', exact: true }).click();
+  await expect(page.locator('#source-dates')).toContainText('2024年度');
+  await expect(page.locator('#source-dates')).toContainText('不明');
+  await expect(page.locator('#source-dates')).toContainText('未実施');
+  await attachJSON(testInfo, 'GEO-07-source-dates', { text: await page.locator('#source-dates').innerText() });
+  await page.getByRole('button', { name: '戻る', exact: true }).click();
   // Use the same lightweight graphics setting available to a player. Geometry,
   // collisions, six vehicles and fixed physics ticks remain unchanged.
   await page.getByRole('button', { name: '描画を軽量にする', exact: true }).click();
@@ -141,6 +148,41 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
   expect(stillPaused.elapsed).toBe(paused.elapsed);
   expect(stillPaused.vehicles).toEqual(paused.vehicles);
   await attachJSON(testInfo, 'paused-physical-state', { paused, stillPaused });
+  await page.getByRole('button', { name: 'タイトルへ', exact: true }).click();
+  await page.getByRole('button', { name: '操作を練習する', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '1. 走り出そう' })).toBeVisible();
+  await page.locator('#qa summary').click();
+  const lessons: Diagnostics[] = [await readDiagnostics(page)];
+  await page.keyboard.down('KeyW');
+  try {
+    await expect.poll(async () => (await readDiagnostics(page)).tutorialStep).toBe(1);
+    lessons.push(await readDiagnostics(page));
+    await page.keyboard.down('KeyA');
+    await expect.poll(async () => (await readDiagnostics(page)).tutorialStep).toBe(2);
+    lessons.push(await readDiagnostics(page));
+    await page.keyboard.down('Shift');
+    await expect.poll(async () => (await readDiagnostics(page)).vehicles[0].driftCharge).toBeGreaterThan(.3);
+    await page.keyboard.up('Shift'); await page.keyboard.up('KeyA');
+    await expect.poll(async () => (await readDiagnostics(page)).tutorialStep).toBe(3);
+    lessons.push(await readDiagnostics(page));
+  } finally { await page.keyboard.up('KeyW'); await page.keyboard.up('KeyA'); await page.keyboard.up('Shift'); }
+  await page.keyboard.down('Space');
+  await expect.poll(async () => (await readDiagnostics(page)).tutorialStep).toBe(4);
+  lessons.push(await readDiagnostics(page));
+  await page.keyboard.up('Space');
+  await expect.poll(async () => (await readDiagnostics(page)).tutorialStep).toBe(5);
+  lessons.push(await readDiagnostics(page));
+  await page.keyboard.press('KeyR');
+  await expect.poll(async () => (await readDiagnostics(page)).phase, { timeout: 30_000 }).toBe('race');
+  expect(lessons.map(lesson=>lesson.tutorialStep)).toEqual([0,1,2,3,4,5]);
+  await attachJSON(testInfo, 'GAME-09-six-lessons', {lessons, completed: await readDiagnostics(page)});
+  // A completed first experience is remembered; explicit replay still works.
+  await page.keyboard.press('Escape');
+  await page.getByRole('button', { name: 'タイトルへ', exact: true }).click();
+  await page.getByRole('button', { name: 'レースを始める', exact: false }).click();
+  await expect.poll(async () => (await readDiagnostics(page)).phase).toBe('race');
+  await expect(page.locator('#lesson')).toBeEmpty();
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'タイトルへ', exact: true }).click();
   await page.getByRole('button', { name: '操作を練習する', exact: true }).click();
   await expect(page.getByRole('heading', { name: '1. 走り出そう' })).toBeVisible();

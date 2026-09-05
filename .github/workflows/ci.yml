@@ -16,7 +16,7 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4.2.2
         with:
@@ -49,6 +49,8 @@ jobs:
         uses: actions/upload-artifact@v4.6.2
         with:
           name: machishift-verification-${{ github.sha }}
-          path: reports/
+          path: |
+            reports/
+            artifacts/
           if-no-files-found: warn
           retention-days: 14

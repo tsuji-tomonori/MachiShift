@@ -3,6 +3,7 @@ import RAPIER from '@dimforge/rapier3d-compat';
 import { Environment, type StaticMeshSpec } from './environment';
 import { Race, type RoutePoint } from './race';
 import { Input } from './input';
+import { TutorialProgress } from './tutorial';
 import { Sound } from './audio';
 import { getJSON } from './data-loader';
 import { getProjectileContact } from './projectile-contact';
@@ -35,7 +36,8 @@ let race: Race;
 let stage: Stage;
 let phase: Phase = 'loading', previousPhase: Phase = 'race';
 let elapsed = 0, countdown = 3.6, previousTick = 4, accumulator = 0, lastFrame = 0, uiClock = 0;
-let tutorialStep = 0, tutorialProgress = 0, tutorialThrow = false, tutorialRecovered = false;
+const tutorialState = new TutorialProgress();
+let tutorialStep = 0;
 let inventory: Item[] = [], selected = 0, thrownCount = 0, paintHits = 0, bombHits = 0, recoveries = 0;
 const aiInventory = new Map<number, Item[]>();
 const aiNextThrow = new Map<number, number>();
@@ -58,6 +60,7 @@ aimMarker.visible = false; aimMarker.renderOrder = 100;
 const aimTrajectory=new THREE.Line(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({color:0xceff48,transparent:true,opacity:.8}));
 aimTrajectory.visible=false;
 let aimClock=0;
+let aimObjectId:string|null=null;
 const raycaster = new THREE.Raycaster();
 const cameraTarget = new THREE.Vector3();
 const cameraDesired = new THREE.Vector3();
@@ -119,7 +122,7 @@ function reset(mode:'race'|'free') {
   lastLap=1;lastBoost=false;finishedCount=0;toastText=''; camera.position.copy(new THREE.Vector3(...race.route[0]).add(new THREE.Vector3(0,8,-12)));
 }
 function beginRace() { reset('race'); countdown=3.6;previousTick=4;phase='countdown';renderHUD(); }
-function beginTutorial() {reset('free');phase='tutorial';tutorialStep=0;tutorialProgress=0;tutorialThrow=false;tutorialRecovered=false;inventory=['paint','bomb'];renderHUD();}
+function beginTutorial() {reset('free');phase='tutorial';tutorialState.reset();tutorialStep=0;inventory=['paint','bomb'];renderHUD();}
 const lessons = [
   ['走り出そう','W / ↑、または RT を押して加速。カートを前へ走らせよう。'],
   ['曲がってみよう','A・D / ←・→、または左スティック。光る案内に沿って進もう。'],
@@ -161,6 +164,7 @@ function showCredits() {
   const returnTo=phase;
   if(['race','free','tutorial','countdown'].includes(phase)){previousPhase=phase;phase='paused';}
   ui.innerHTML=`<div class="modal"><div class="dialog"><p class="eyebrow">SOURCES & STAGE</p><h2>岐阜駅北口の再現範囲</h2><p>街の形状は、国土交通省 Project PLATEAUの岐阜市2024年度CityGMLを切り出し、メートル単位に変換して使用しています。</p><p>${escape(stage.metadata.attribution ?? '国土交通省 Project PLATEAU「3D都市モデル（岐阜市）」を加工して作成')}</p><p><a href="https://www.geospatial.jp/ckan/dataset/plateau-21201-gifu-shi-2024" target="_blank" rel="noreferrer">岐阜市データセット</a> · <a href="https://www.mlit.go.jp/plateau/site-policy/" target="_blank" rel="noreferrer">利用条件</a></p><p>公開年度と測量・撮影年は異なります。原典年月は素材台帳で管理し、不明なものは未確認としています。道路端・段差・建物低層部の現地照合は未実施です。現在の街との一致や測量精度を保証する状態には達していません。</p><p>光るルート案内、補給ポイント、黄色い破壊用柵はゲーム用の仮設物です。実在の設備とは区別して管理しています。現実の構造性能や爆発挙動を再現するものではありません。</p><p>カート・画面・効果音は本ゲーム用の独自制作。実在施設、自治体、データ提供者の公式ゲームではありません。</p><p class="fine">ライブラリ: Three.js (MIT)、Rapier (Apache-2.0)。詳細な出典・加工履歴・未確認事項はリポジトリ内の台帳をご覧ください。</p><button id="close-credits" class="primary">戻る</button></div></div>`;
+  $('#close-credits')!.insertAdjacentHTML('beforebegin', `<table id="source-dates"><caption>採用する街の基準時点</caption><tbody><tr><th>採用版</th><td>${escape(stage.metadata.edition)}</td></tr><tr><th>道路・広場・橋・地形・建物・設備の測量／撮影年月</th><td>${escape(stage.metadata.surveyDate ?? '不明（原典は属性ごとに時点が異なり、各地物との対応は未確認）')}</td></tr><tr><th>現地補修年月</th><td>未実施</td></tr><tr><th>表現する時点</th><td>採用した公開原典の時点。現在の街との一致は未確認</td></tr></tbody></table>`);
   bind('#close-credits',()=>{if(returnTo==='title')showTitle();else if(returnTo==='results')showResults();else{phase='paused';renderHUD();showPause();}});
 }
 function showResults() {
@@ -245,7 +249,7 @@ function addRaceObjects() {
   }
   let i=0;
   for(let distance=16;distance<race.routeLength;distance+=90) {
-    const at=race.sampleRoute(distance),item:Item=i++%2?'bomb':'paint';
+    const at=race.sampleRoute(distance===106?76:distance),item:Item=i++%2?'bomb':'paint';
     const group=new THREE.Group();const color=item==='paint'?0x55c9ff:0xffb85a;
     const body=new THREE.Mesh(item==='paint'?new THREE.CylinderGeometry(.57,.57,1.3,8):new THREE.IcosahedronGeometry(.95,0),new THREE.MeshStandardMaterial({color,emissive:color,emissiveIntensity:.2,metalness:.25,roughness:.3}));
     if(item==='paint'){
@@ -273,7 +277,8 @@ function launch() {
   if(!['race','free','tutorial'].includes(phase)||!inventory.length)return;
   const item=inventory.splice(selected,1)[0];selected=Math.min(selected,Math.max(0,inventory.length-1));
   launchFor(race.player,item,input.aimOffset);
-  tutorialThrow=true;thrownCount++;sound.cue(item==='paint'?'paint':'tick');
+  if(phase==='tutorial')tutorialState.record('throw');
+  thrownCount++;sound.cue(item==='paint'?'paint':'tick');
 }
 function launchFor(player:Race['player'],item:Item,offset=0) {
   const heading=player.heading+offset;
@@ -315,12 +320,16 @@ function detonate(point:THREE.Vector3) {
   const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1,2),new THREE.MeshBasicMaterial({color:0xffd177,transparent:true,opacity:.7,wireframe:true}));mesh.position.copy(point);scene.add(mesh);fx.push({mesh,age:0,duration:.65,scale:12});sound.cue('blast');
   if(result.destroyed.length)toast(`柵が壊れた · ${result.fragments}個の破片に変化`,2.5);
 }
-function recover(){if(!['race','free','tutorial'].includes(phase))return;if(race.recover()){recoveries++;tutorialRecovered=true;toast('直前の安全な位置へ復帰しました',2);}else toast('復帰先に車両があります。少し待ってお試しください。',2);}
+function recover(){if(!['race','free','tutorial'].includes(phase))return;if(race.recover()){recoveries++;if(phase==='tutorial')tutorialState.record('recover');toast('直前の安全な位置へ復帰しました',2);}else toast('復帰先に車両があります。少し待ってお試しください。',2);}
 function tutorial(dt:number,control:ReturnType<Input['sample']>){
+  if(phase!=='tutorial')return;
   const v=race.player;
-  const done=[Math.abs(v.speed)>4,Math.abs(control.steer)>.4&&Math.abs(v.speed)>2,v.boost>0,input.aiming,tutorialThrow,tutorialRecovered][tutorialStep];
-  if(done)tutorialProgress+=dt;
-  if(tutorialProgress>(tutorialStep<2?.3:.1)) {tutorialStep++;tutorialProgress=0;sound.cue('pickup');if(tutorialStep===lessons.length){safeStorage.set('machishift-tutorial','done');beginRace();toast('準備完了。3周のレースを始めよう！');}}
+  // Early experimentation must not leave the later aim/throw lesson without an item.
+  if((tutorialStep===3||tutorialStep===4)&&inventory.length===0){inventory=['paint'];selected=0;toast('練習用のペイントを補充しました',2);}
+  if(tutorialState.update(dt,{active:phase==='tutorial',speed:v.speed,steer:control.steer,boost:v.boost,aiming:input.aiming})) {
+    tutorialStep=tutorialState.step;sound.cue('pickup');
+    if(tutorialState.complete){safeStorage.set('machishift-tutorial','done');beginRace();toast('準備完了。3周のレースを始めよう！');}
+  }
 }
 function updateCamera(dt:number) {
   if(!race)return;
@@ -360,13 +369,14 @@ function predictAim(position:THREE.Vector3){
     if(hit){points.push(hit.point);break;}points.push(next);
   }
   aimTrajectory.geometry.dispose();aimTrajectory.geometry=new THREE.BufferGeometry().setFromPoints(points);
+  aimObjectId=hit?.object.userData.objectId??null;
   aimMarker.visible=true;const target=points.at(-1)!;
   const normal=hit?.face?hit.face.normal.clone().applyMatrix3(new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld)).normalize():up.clone();
   aimMarker.position.copy(target).addScaledVector(normal,.04);aimMarker.lookAt(target.clone().add(normal));
 }
 function diagnostics(){
   const values=measuredFrames.length?measuredFrames:frameTimes;const sorted=[...values].sort((a,b)=>a-b);const p=(q:number)=>sorted[Math.floor((sorted.length-1)*q)]??0;
-  return {phase,renderQuality,renderResolution:[canvas.width,canvas.height],sampledAtMilliseconds:performance.now(),elapsed:Math.round(elapsed*100)/100,courseMeters:race.routeLength,vehicles:race.vehicles.map(v=>({id:v.id,lap:v.lap,rank:v.rank,checkpoint:v.checkpoint,finished:v.finished,position:v.body.translation(),speed:v.speed,heading:v.heading,driftCharge:v.driftCharge,boost:v.boost})),...environment.stats,inventory,thrownCount,paintHits,bombHits,recoveries,autoDrive,loadMilliseconds:initializedAt,frameMilliseconds:{count:values.length,p50:p(.5),p95:p(.95),p99:p(.99),over100:values.filter(t=>t>100).length},measurement,memory:memorySamples.at(-1)??null,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures};
+  return {phase,tutorialStep,aimObjectId,selectedItem:inventory[selected]??null,aimOffset:input.aimOffset,routeDistance:race.path.nearest(new THREE.Vector3().copy(race.player.body.translation())).distance,shortcut:environment.getState().filter(piece=>piece.objectId==='game:shortcut-gate'),aimPoint:aimMarker.visible?aimMarker.position.toArray():null,renderQuality,renderResolution:[canvas.width,canvas.height],sampledAtMilliseconds:performance.now(),elapsed:Math.round(elapsed*100)/100,courseMeters:race.routeLength,vehicles:race.vehicles.map(v=>({id:v.id,lap:v.lap,rank:v.rank,checkpoint:v.checkpoint,finished:v.finished,position:v.body.translation(),speed:v.speed,heading:v.heading,driftCharge:v.driftCharge,boost:v.boost})),...environment.stats,inventory,thrownCount,paintHits,bombHits,recoveries,autoDrive,loadMilliseconds:initializedAt,frameMilliseconds:{count:values.length,p50:p(.5),p95:p(.95),p99:p(.99),over100:values.filter(t=>t>100).length},measurement,memory:memorySamples.at(-1)??null,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures};
 }
 function startStress(){
   if(phase!=='race'||race.mode!=='race'||race.vehicles.some(v=>v.finished)) {toast('6台が走行中のレースで負荷試験を開始してください');return;}
@@ -500,7 +510,7 @@ async function boot(){
   world.step();environment.update(0,0);race.afterStep(0);
   const focus=new THREE.Vector3(...race.route[0]);sun.position.add(focus);sun.target.position.copy(focus);
   camera.position.copy(focus).add(new THREE.Vector3(40,35,40));camera.lookAt(focus);
-  input.onPause=()=>phase==='paused'?resume():pause();input.onDeactivate=pause;input.onThrow=launch;input.onSwitch=()=>{if(inventory.length>1)selected=(selected+1)%inventory.length;};input.onRecover=recover;
+  input.onPause=()=>phase==='paused'?resume():pause();input.onDeactivate=pause;input.onThrow=launch;input.onSwitch=()=>{if(['race','free','tutorial'].includes(phase)&&inventory.length>1)selected=(selected+1)%inventory.length;};input.onRecover=recover;
   window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
   canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();showError(new Error('描画コンテキストが失われました。再試行すると新しいレースで再開します。'));});
   initializedAt=Math.round(performance.now());showTitle();requestAnimationFrame(frame);
