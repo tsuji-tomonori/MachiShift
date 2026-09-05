@@ -7,7 +7,7 @@ interface Piece {
   position: Vec3; bodyHandle: number | null; colliderHandle: number | null; paints: Mark[];
 }
 interface State {
-  phase: string; sampledAtMilliseconds: number; elapsed: number; routeDistance: number;
+  phase: string; sampledAtMilliseconds: number; elapsed: number; courseMeters: number; routeDistance: number;
   inventory: string[]; selectedItem: string | null; aimPoint: Vec3 | null; aimObjectId: string | null;
   thrownCount: number; paintHits: number; bombHits: number; paintEvents: number;
   destroyed: number; dynamicDebris: number; autoDrive: boolean; shortcut: Piece[];
@@ -52,7 +52,7 @@ async function aimAndThrow(page: Page, center: Vec3, item: string): Promise<void
   await expect.poll(async () => (await state(page)).thrownCount).toBe(before.thrownCount + 1);
 }
 
-test('AT-04/07/11 real stage: collect, paint fence, bomb, moving painted debris, drive through, return next lap, reset', async ({ page }, info) => {
+test('AT-04/07/11 real stage: collect, paint fence, bomb, moving painted debris, drive through, complete a circuit, reset', async ({ page }, info) => {
   test.setTimeout(15 * 60_000);
   const uncaught: string[] = [];
   page.on('pageerror', error => uncaught.push(error.message));
@@ -163,20 +163,36 @@ test('AT-04/07/11 real stage: collect, paint fence, bomb, moving painted debris,
     await info.attach('core-original-gate-crossing', { body: JSON.stringify(crossing, null, 2), contentType: 'application/json' });
     await record(page, info, 'core-driven-through-original-fence');
 
-    await expect.poll(async () => {
-      const current = await state(page);
-      return current.vehicles[0].lap >= 2 && current.routeDistance >= 115 && current.routeDistance < 200;
-    }, { timeout: 8 * 60_000, intervals: [250, 500] }).toBe(true);
+    // Free mode deliberately leaves the HUD lap counter at 1. Prove the
+    // physical return using ordered positions around the whole actual course;
+    // the complementary race E2E validates the racing lap/checkpoint counters.
+    const circuitDeadline = Date.now() + 8 * 60_000;
+    const circuit: State[] = [];
+    for (const reached of [
+      (s: State) => s.routeDistance >= s.courseMeters * 0.4 && s.routeDistance < s.courseMeters * 0.65,
+      (s: State) => s.routeDistance >= s.courseMeters * 0.8,
+      (s: State) => s.routeDistance < 80,
+      (s: State) => s.routeDistance >= 115 && s.routeDistance < 200,
+    ]) {
+      await expect.poll(async () => reached(await state(page)), {
+        timeout: Math.max(1, circuitDeadline - Date.now()), intervals: [250, 500],
+      }).toBe(true);
+      circuit.push(await state(page));
+    }
+    await info.attach('core-full-circuit-ordered-positions', {
+      body: JSON.stringify({ scope: 'Actual full course return in free mode; free-mode lap counter does not advance', observations: circuit }, null, 2),
+      contentType: 'application/json',
+    });
     await page.getByRole('button', { name: '自動走行を停止', exact: true }).click();
     await brake(page);
-    const returned = await record(page, info, 'core-returned-next-lap');
+    const returned = await record(page, info, 'core-returned-after-full-circuit');
     expect(returned.shortcut.every(p => p.broken && p.colliderHandle === null)).toBe(true);
     for (const original of paintedPieces) {
       const retained = returned.shortcut.find(p => p.id === original.id)!;
       expect(retained.paints.map(p => ({ id: p.eventId, local: p.localPoint, color: p.color })))
         .toEqual(original.paints.map(p => ({ id: p.eventId, local: p.localPoint, color: p.color })));
     }
-    await page.screenshot({ path: info.outputPath('core-next-lap-state.png') });
+    await page.screenshot({ path: info.outputPath('core-after-full-circuit-state.png') });
     await page.keyboard.press('Escape');
     await page.getByRole('button', { name: 'タイトルへ', exact: true }).click();
     await page.getByRole('button', { name: '自由走行', exact: true }).click();
