@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-09-05T05:10:20Z",
+  "testId": "BROWSER-BOOT-01",
+  "requirementIds": ["GAME-01", "AT-10", "AT-12"],
+  "environment": "Work cloud Chrome via control-browser, preview Vite 4173",
+  "action": "Opened application in supported cloud browser and inspected rendered DOM and console errors",
+  "observed": "WebGLRenderer fails before stage load. Visible error heading and retry button rendered.",
+  "graphicsLog": "Could not create a WebGL context, VENDOR = 0xffff, DEVICE = 0xffff, GL_VENDOR = Disabled, GL_RENDERER = Disabled, Sandboxed = yes, ErrorMessage = BindToCurrentSequence failed.",
+  "status": "BLOCKED",
+  "scope": "Error handling visible; 3D scene, interactive driving and target performance not verified by this browser.",
+  "nextAction": "Run browser regression suite on CI software renderer for functionality; use a WebGL2 PC and actual gamepad for target acceptance."
+}

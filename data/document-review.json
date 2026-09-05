@@ -1,0 +1,209 @@
+{
+  "reviewedAt": "2026-09-05T05:37:17.779751+00:00",
+  "reviewer": "geodata agent; text extraction and rendered-page visual inspection",
+  "documents": [
+    {
+      "name": "21201_indexmap_op.pdf",
+      "bytes": 5284600,
+      "sha256": "9e21c3d6e4a9e1a19fe581c67953252b965cbb21b0568325f1a7abf22a3e2604",
+      "crc32": 3054359524,
+      "integrityStatus": "PASS",
+      "archiveUrl": "https://assets.cms.plateau.reearth.io/assets/1a/f59166-6796-482d-b59d-cb9bfed3ddeb/21201_gifu-shi_city_2024_citygml_1_op.zip",
+      "retrievedAt": "2026-09-05T05:33:32.914216+00:00"
+    },
+    {
+      "name": "specification/21201_city_2024_specification_op.pdf",
+      "bytes": 22715186,
+      "sha256": "c128863417c536e5b2d730f7091d99e7b128d6092d1347413df0bb94ebfbbdb9",
+      "crc32": 2508476854,
+      "integrityStatus": "PASS",
+      "archiveUrl": "https://assets.cms.plateau.reearth.io/assets/1a/f59166-6796-482d-b59d-cb9bfed3ddeb/21201_gifu-shi_city_2024_citygml_1_op.zip",
+      "retrievedAt": "2026-09-05T05:33:33.015745+00:00"
+    }
+  ],
+  "index": {
+    "totalPages": 8,
+    "visualReviewedPdfPagesOneBased": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "textExtraction": "No useful text extracted; raster-like map pages inspected visually",
+    "findings": [
+      "Pages 7 and 8 show adopted station mesh 53360690; page 8 also shows 53360691.",
+      "The legend identifies building LOD1 and LOD2 areas; it does not prove LOD3 road coverage across the whole course.",
+      "PDF creation metadata 2024-03-01 is not a survey date."
+    ]
+  },
+  "specification": {
+    "totalPages": 752,
+    "visualReviewedPdfPagesOneBased": [
+      1,
+      11,
+      12,
+      173,
+      175,
+      701,
+      716,
+      717,
+      724,
+      734
+    ],
+    "textReviewedAdditionalPdfPagesOneBased": [
+      2,
+      8,
+      174
+    ],
+    "fullDocumentReview": false,
+    "findings": [
+      {
+        "pdfPage": 11,
+        "finding": "Data product 21201_city_2024 is dated 2025-02-20; this is not a survey date."
+      },
+      {
+        "pdfPage": 12,
+        "finding": "Feature/LOD matrix covers roads LOD0–3, plaza LOD3, furniture LOD3, terrain LOD1 and bridge LOD3."
+      },
+      {
+        "pdfPage": 175,
+        "finding": "Road LOD1 height is defined as zero; it is not measured ground height."
+      },
+      {
+        "pdfPages": [
+          701,
+          724
+        ],
+        "finding": "JGD2011 geographic coordinates and Tokyo Bay mean sea level heights use EPSG:6697; feature gml:id uses a UUID naming rule."
+      },
+      {
+        "pdfPages": [
+          716,
+          717
+        ],
+        "finding": "Map level 2500 external accuracy criteria use horizontal standard deviation 1.75 m and height standard deviation 0.66 m; these are not maximum errors or proof of the game precision targets."
+      }
+    ]
+  },
+  "images": [
+    {
+      "document": "index",
+      "pdfPageOneBased": 1,
+      "path": "docs/evidence/source-documents/index-1.png",
+      "sha256": "dccee6092ffcf25917c9a3cd12fa122eddabec5388385894f2ca768a8dc65cc1"
+    },
+    {
+      "document": "index",
+      "pdfPageOneBased": 2,
+      "path": "docs/evidence/source-documents/index-2.png",
+      "sha256": "3feeb63764de02fc19f193a504f1d29947dd3f4011758cb5a0d2fdcd12c0dac2"
+    },
+    {
+      "document": "index",
+      "pdfPageOneBased": 3,
+      "path": "docs/evidence/source-documents/index-3.png",
+      "sha256": "5d55d68073d1e002efb7f3b47de5952135035b6bc6c5eb5db6469f73c4260b8f"
+    },
+    {
+      "document": "index",
+      "pdfPageOneBased": 4,
+      "path": "docs/evidence/source-documents/index-4.png",
+      "sha256": "eb977a215db7a3d4af97bed76f82e0d93a6ef47c026abd5cfb32c62e7bea8cd9"
+    },
+    {
+      "document": "index",
+      "pdfPageOneBased": 5,
+      "path": "docs/evidence/source-documents/index-5.png",
+      "sha256": "e39bd1a7d2d3d143bfeb1794773d21b3dadc712c2051a369ae508b46b89b90e5"
+    },
+    {
+      "document": "index",
+      "pdfPageOneBased": 6,
+      "path": "docs/evidence/source-documents/index-6.png",
+      "sha256": "848789c7037755fd3307a11791e2b8cda5484b72965ac6e39c7846d57c0a7d19"
+    },
+    {
+      "document": "index",
+      "pdfPageOneBased": 7,
+      "path": "docs/evidence/source-documents/index-7.png",
+      "sha256": "1a4a5c3894350185121dbe46fb0fa692fc5aea467c3210e28384e22eacdf3bec"
+    },
+    {
+      "document": "index",
+      "pdfPageOneBased": 8,
+      "path": "docs/evidence/source-documents/index-8.png",
+      "sha256": "919ad5cf836bc9b623562d5ac280f0e62c843419369021c74d5a5fe625f967e0"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 1,
+      "path": "docs/evidence/source-documents/spec-1.png",
+      "sha256": "0c4f726df16852bf84ee24130aecfd719b5b6643ff1c054e3a93faa73aff711d"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 11,
+      "path": "docs/evidence/source-documents/spec-11.png",
+      "sha256": "50f5b07a82f85fe5842c935ca4585cb9b0a66e9ce00cf6b45b3d290958b3fb5f"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 12,
+      "path": "docs/evidence/source-documents/spec-12.png",
+      "sha256": "16cf48a5772ae09267a19ce49b791dc9cc8ec9c0fca6c4bf062e6dee6dfb8942"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 173,
+      "path": "docs/evidence/source-documents/spec-173.png",
+      "sha256": "8453e581a028e6c09fa92c197f3b7ae26445bacca95f4ee03d43dbbcc79410f9"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 175,
+      "path": "docs/evidence/source-documents/spec-175.png",
+      "sha256": "0de679e6d29a1df4e17a985c8dd21a30ae649fb2ca02c77792a0e3bf17ccad92"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 701,
+      "path": "docs/evidence/source-documents/spec-701.png",
+      "sha256": "31434c49ead19573eb6e648f2efcd8294750d76d450d756257d56aaf40b5ec95"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 716,
+      "path": "docs/evidence/source-documents/spec-716.png",
+      "sha256": "1e6dfa0b8eb1558f807cd27b2cf4849d5dda850525c8f0c30db7e4c0353f5760"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 717,
+      "path": "docs/evidence/source-documents/spec-717.png",
+      "sha256": "eb2883b1137ec7990192937778983bac0f0b338c3a272c5ca0ea6c41666c2e57"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 724,
+      "path": "docs/evidence/source-documents/spec-724.png",
+      "sha256": "843f64ee64ee2f296eafc005a1ce3c25c5e41e2217467b590350ba0ef4bdfdfc"
+    },
+    {
+      "document": "spec",
+      "pdfPageOneBased": 734,
+      "path": "docs/evidence/source-documents/spec-734.png",
+      "sha256": "ccdf97883b2c9cea52bae3b7972fd9be9fd7f160bc7f957f61288b4267825acf"
+    }
+  ],
+  "notEstablished": [
+    "Full compliance with all 752 specification pages",
+    "Independent road and building measurements",
+    "LOD3 coverage proved solely by the index map",
+    "Source photograph or texture appearance match"
+  ],
+  "reproduceRender": "pdftoppm -f PAGE -l PAGE -singlefile -r 85 -png SOURCE OUTPUT"
+}

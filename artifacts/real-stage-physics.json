@@ -1,0 +1,1772 @@
+{
+  "kind": "physical-state-evidence",
+  "reports": [
+    {
+      "scenario": "baseline",
+      "testedAt": "2026-09-05T06:03:34.710Z",
+      "stageSha256": "f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76",
+      "routeStatus": "game_racing_line_on_source_lod3_roads_not_survey_verified",
+      "routeMetres": 1388.2023040929002,
+      "coursePoints": 378,
+      "seconds": 220.6000000000677,
+      "executionSeconds": 28.730569585999998,
+      "objectCount": 4557,
+      "firstSideFenceDistance": 72,
+      "explosionFragments": 0,
+      "shortcutSection": {
+        "seconds": 7.433333333333696,
+        "metres": 127.36666504470249,
+        "recoveries": 1
+      },
+      "recoveryEvents": [
+        {
+          "vehicleId": 1,
+          "seconds": 6.049999999999984,
+          "lap": 1,
+          "checkpoint": 15,
+          "routeDistance": 73.54114321931144,
+          "legalRouteDistance": 44.852373688508365,
+          "position": {
+            "x": -257.5851745605469,
+            "y": 11.037906646728516,
+            "z": -53.751869201660156
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 6.26666666666665,
+          "lap": 1,
+          "checkpoint": 17,
+          "routeDistance": 73.73924648666726,
+          "legalRouteDistance": 52.410697575798736,
+          "position": {
+            "x": -253.7657470703125,
+            "y": 11.039179801940918,
+            "z": -54.11130142211914
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 2,
+          "seconds": 9.600000000000056,
+          "lap": 1,
+          "checkpoint": 33,
+          "routeDistance": 111.78727327743398,
+          "legalRouteDistance": 112.62954162404708,
+          "position": {
+            "x": -249.10989379882812,
+            "y": 11.12781810760498,
+            "z": -92.41688537597656
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 4,
+          "seconds": 10.683333333333444,
+          "lap": 1,
+          "checkpoint": 35,
+          "routeDistance": 155.98844372420757,
+          "legalRouteDistance": 119.9912049934506,
+          "position": {
+            "x": -250.27294921875,
+            "y": 11.229777336120605,
+            "z": -136.6727752685547
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 13.050000000000228,
+          "lap": 1,
+          "checkpoint": 36,
+          "routeDistance": 160.34994437596927,
+          "legalRouteDistance": 123.74183227431976,
+          "position": {
+            "x": -245.05873107910156,
+            "y": 11.240158081054688,
+            "z": -140.9344482421875
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 1,
+          "seconds": 13.083333333333563,
+          "lap": 1,
+          "checkpoint": 35,
+          "routeDistance": 156.2279723542428,
+          "legalRouteDistance": 119.9912049934506,
+          "position": {
+            "x": -250.2306365966797,
+            "y": 11.230525970458984,
+            "z": -136.9115753173828
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 3,
+          "seconds": 14.333333333333625,
+          "lap": 1,
+          "checkpoint": 33,
+          "routeDistance": 112.13599818475792,
+          "legalRouteDistance": 112.62954162404708,
+          "position": {
+            "x": -246.52081298828125,
+            "y": 11.12886905670166,
+            "z": -92.77565002441406
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 2,
+          "seconds": 28.066666666666354,
+          "lap": 1,
+          "checkpoint": 115,
+          "routeDistance": 427.11820309632964,
+          "legalRouteDistance": 428.29712811970995,
+          "position": {
+            "x": -243.03611755371094,
+            "y": 12.55976390838623,
+            "z": -407.7474060058594
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 3,
+          "seconds": 53.183333333331596,
+          "lap": 1,
+          "checkpoint": 230,
+          "routeDistance": 848.3991346388472,
+          "legalRouteDistance": 847.0756125037447,
+          "position": {
+            "x": 17.867528915405273,
+            "y": 12.161850929260254,
+            "z": -390.1636657714844
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 4,
+          "seconds": 76.1833333333303,
+          "lap": 2,
+          "checkpoint": 21,
+          "routeDistance": 68.70026220780758,
+          "legalRouteDistance": 67.89316607112671,
+          "position": {
+            "x": -250.87989807128906,
+            "y": 11.027795791625977,
+            "z": -49.18960952758789
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 2,
+          "seconds": 80.73333333333004,
+          "lap": 2,
+          "checkpoint": 21,
+          "routeDistance": 68.74830472889789,
+          "legalRouteDistance": 67.89316607112671,
+          "position": {
+            "x": -250.44432067871094,
+            "y": 11.028006553649902,
+            "z": -49.256072998046875
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 80.93333333333003,
+          "lap": 2,
+          "checkpoint": 34,
+          "routeDistance": 152.0441449466832,
+          "legalRouteDistance": 116.24057997886969,
+          "position": {
+            "x": -252.42408752441406,
+            "y": 11.220719337463379,
+            "z": -132.766845703125
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 4,
+          "seconds": 83.0333333333299,
+          "lap": 2,
+          "checkpoint": 34,
+          "routeDistance": 151.68416387003916,
+          "legalRouteDistance": 116.24057997886969,
+          "position": {
+            "x": -252.36143493652344,
+            "y": 11.219880104064941,
+            "z": -132.40567016601562
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 83.46666666666322,
+          "lap": 2,
+          "checkpoint": 34,
+          "routeDistance": 112.61751360370252,
+          "legalRouteDistance": 116.24057997886969,
+          "position": {
+            "x": -247.65528869628906,
+            "y": 11.130152702331543,
+            "z": -93.25276947021484
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 1,
+          "seconds": 83.7666666666632,
+          "lap": 2,
+          "checkpoint": 40,
+          "routeDistance": 163.86167407432634,
+          "legalRouteDistance": 138.74435739507533,
+          "position": {
+            "x": -248.3588104248047,
+            "y": 11.248016357421875,
+            "z": -144.51695251464844
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 3,
+          "seconds": 85.39999999999644,
+          "lap": 2,
+          "checkpoint": 21,
+          "routeDistance": 68.74612982324241,
+          "legalRouteDistance": 67.89316607112671,
+          "position": {
+            "x": -251.58714294433594,
+            "y": 11.028013229370117,
+            "z": -49.2056770324707
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 1,
+          "seconds": 104.78333333332867,
+          "lap": 2,
+          "checkpoint": 142,
+          "routeDistance": 557.272529786733,
+          "legalRouteDistance": 520.2639426467426,
+          "position": {
+            "x": -175.42388916015625,
+            "y": 12.944849967956543,
+            "z": -486.2518005371094
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 122.13333333332768,
+          "lap": 2,
+          "checkpoint": 230,
+          "routeDistance": 848.4101465986524,
+          "legalRouteDistance": 847.0756125037447,
+          "position": {
+            "x": 17.05891227722168,
+            "y": 12.16188907623291,
+            "z": -390.21240234375
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 5,
+          "seconds": 138.95000000000272,
+          "lap": 3,
+          "checkpoint": 21,
+          "routeDistance": 68.91293328618937,
+          "legalRouteDistance": 67.89316607112671,
+          "position": {
+            "x": -249.25340270996094,
+            "y": 11.029047966003418,
+            "z": -49.47109603881836
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 5,
+          "seconds": 145.71666666667477,
+          "lap": 3,
+          "checkpoint": 35,
+          "routeDistance": 156.0898148023424,
+          "legalRouteDistance": 119.9912049934506,
+          "position": {
+            "x": -249.7810821533203,
+            "y": 11.230591773986816,
+            "z": -136.76524353027344
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 1,
+          "seconds": 151.60000000001278,
+          "lap": 3,
+          "checkpoint": 19,
+          "routeDistance": 70.38016011415522,
+          "legalRouteDistance": 59.96914543233614,
+          "position": {
+            "x": -248.96661376953125,
+            "y": 11.03231143951416,
+            "z": -50.951725006103516
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 4,
+          "seconds": 152.18333333334658,
+          "lap": 3,
+          "checkpoint": 21,
+          "routeDistance": 68.73864733930323,
+          "legalRouteDistance": 67.89316607112671,
+          "position": {
+            "x": -251.25694274902344,
+            "y": 11.027892112731934,
+            "z": -49.212120056152344
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 154.13333333334813,
+          "lap": 3,
+          "checkpoint": 21,
+          "routeDistance": 68.74324417550898,
+          "legalRouteDistance": 67.89316607112671,
+          "position": {
+            "x": -250.71051025390625,
+            "y": 11.028019905090332,
+            "z": -49.239776611328125
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 3,
+          "seconds": 157.20000000001724,
+          "lap": 3,
+          "checkpoint": 36,
+          "routeDistance": 160.40499447028319,
+          "legalRouteDistance": 123.74183227431976,
+          "position": {
+            "x": -249.54730224609375,
+            "y": 11.240988731384277,
+            "z": -141.08425903320312
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 1,
+          "seconds": 158.78333333335183,
+          "lap": 3,
+          "checkpoint": 35,
+          "routeDistance": 155.82751776317787,
+          "legalRouteDistance": 119.9912049934506,
+          "position": {
+            "x": -250.10646057128906,
+            "y": 11.230178833007812,
+            "z": -136.50880432128906
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 4,
+          "seconds": 159.03333333335203,
+          "lap": 3,
+          "checkpoint": 35,
+          "routeDistance": 156.1905065224309,
+          "legalRouteDistance": 119.9912049934506,
+          "position": {
+            "x": -252.5958251953125,
+            "y": 11.230216979980469,
+            "z": -136.9169921875
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 160.90000000002019,
+          "lap": 3,
+          "checkpoint": 35,
+          "routeDistance": 156.26443142320716,
+          "legalRouteDistance": 119.9912049934506,
+          "position": {
+            "x": -250.49505615234375,
+            "y": 11.23052978515625,
+            "z": -136.9528350830078
+          },
+          "count": 1
+        }
+      ],
+      "scriptedInput": true,
+      "rendered": false,
+      "realHardwarePerformanceClaim": false,
+      "vehicles": [
+        {
+          "id": 0,
+          "finished": true,
+          "finishTime": 220.6000000000677,
+          "rank": 6,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4443.868388656954,
+          "metresAtFinish": 4443.868388656954,
+          "recoveries": 7,
+          "recoveriesAtFinish": 7,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -208.2695770263672,
+            "y": 10.966658592224121,
+            "z": -5.391528606414795
+          }
+        },
+        {
+          "id": 1,
+          "finished": true,
+          "finishTime": 218.46666666673266,
+          "rank": 4,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4486.3064553550375,
+          "metresAtFinish": 4449.945329059478,
+          "recoveries": 6,
+          "recoveriesAtFinish": 6,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -242.56387329101562,
+            "y": 10.989425659179688,
+            "z": -16.108678817749023
+          }
+        },
+        {
+          "id": 2,
+          "finished": true,
+          "finishTime": 208.08333333339107,
+          "rank": 2,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4533.328743295041,
+          "metresAtFinish": 4298.015442668727,
+          "recoveries": 3,
+          "recoveriesAtFinish": 3,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -245.5530242919922,
+            "y": 11.447538375854492,
+            "z": -211.2091827392578
+          }
+        },
+        {
+          "id": 3,
+          "finished": true,
+          "finishTime": 216.8500000000647,
+          "rank": 3,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4415.251907816444,
+          "metresAtFinish": 4346.7029702945765,
+          "recoveries": 4,
+          "recoveriesAtFinish": 4,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -252.99502563476562,
+            "y": 11.017191886901855,
+            "z": -44.667659759521484
+          }
+        },
+        {
+          "id": 4,
+          "finished": true,
+          "finishTime": 219.0166666667331,
+          "rank": 5,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4439.4601005017585,
+          "metresAtFinish": 4411.835909869505,
+          "recoveries": 5,
+          "recoveriesAtFinish": 5,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -234.50360107421875,
+            "y": 11.251337051391602,
+            "z": -12.199000358581543
+          }
+        },
+        {
+          "id": 5,
+          "finished": true,
+          "finishTime": 205.08333333338868,
+          "rank": 1,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4549.0853630617785,
+          "metresAtFinish": 4285.366648431692,
+          "recoveries": 2,
+          "recoveriesAtFinish": 2,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -243.3567352294922,
+            "y": 11.576714515686035,
+            "z": -234.9669189453125
+          }
+        }
+      ],
+      "timeline": [
+        {
+          "seconds": 0.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -203.8397216796875,
+                "y": 11.041872024536133,
+                "z": -5.694395542144775
+              }
+            },
+            {
+              "id": 1,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -204.2704315185547,
+                "y": 11.041872024536133,
+                "z": -3.028970718383789
+              }
+            },
+            {
+              "id": 2,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -198.90347290039062,
+                "y": 11.041872024536133,
+                "z": -4.895938873291016
+              }
+            },
+            {
+              "id": 3,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -199.3350067138672,
+                "y": 11.041872024536133,
+                "z": -2.230647325515747
+              }
+            },
+            {
+              "id": 4,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -193.972412109375,
+                "y": 11.040871620178223,
+                "z": -4.103279113769531
+              }
+            },
+            {
+              "id": 5,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -194.392822265625,
+                "y": 11.040871620178223,
+                "z": -1.4362107515335083
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 30.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 1,
+              "checkpoint": 127,
+              "recoveries": 2,
+              "position": {
+                "x": -239.72805786132812,
+                "y": 12.902772903442383,
+                "z": -455.3264465332031
+              }
+            },
+            {
+              "id": 1,
+              "lap": 1,
+              "checkpoint": 124,
+              "recoveries": 2,
+              "position": {
+                "x": -241.417236328125,
+                "y": 12.826582908630371,
+                "z": -444.8634338378906
+              }
+            },
+            {
+              "id": 2,
+              "lap": 1,
+              "checkpoint": 115,
+              "recoveries": 2,
+              "position": {
+                "x": -239.9955291748047,
+                "y": 12.526544570922852,
+                "z": -403.0506286621094
+              }
+            },
+            {
+              "id": 3,
+              "lap": 1,
+              "checkpoint": 110,
+              "recoveries": 1,
+              "position": {
+                "x": -239.8126678466797,
+                "y": 12.455269813537598,
+                "z": -393.1496887207031
+              }
+            },
+            {
+              "id": 4,
+              "lap": 1,
+              "checkpoint": 137,
+              "recoveries": 1,
+              "position": {
+                "x": -228.38626098632812,
+                "y": 13.056317329406738,
+                "z": -483.840576171875
+              }
+            },
+            {
+              "id": 5,
+              "lap": 1,
+              "checkpoint": 151,
+              "recoveries": 0,
+              "position": {
+                "x": -174.9972381591797,
+                "y": 12.939090728759766,
+                "z": -484.059326171875
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 60.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 1,
+              "checkpoint": 300,
+              "recoveries": 2,
+              "position": {
+                "x": -6.5997633934021,
+                "y": 11.514287948608398,
+                "z": -135.35647583007812
+              }
+            },
+            {
+              "id": 1,
+              "lap": 1,
+              "checkpoint": 296,
+              "recoveries": 2,
+              "position": {
+                "x": 0.5233759880065918,
+                "y": 11.563196182250977,
+                "z": -145.99795532226562
+              }
+            },
+            {
+              "id": 2,
+              "lap": 1,
+              "checkpoint": 284,
+              "recoveries": 2,
+              "position": {
+                "x": 8.705571174621582,
+                "y": 11.671329498291016,
+                "z": -184.15179443359375
+              }
+            },
+            {
+              "id": 3,
+              "lap": 1,
+              "checkpoint": 256,
+              "recoveries": 2,
+              "position": {
+                "x": 17.875486373901367,
+                "y": 11.84034252166748,
+                "z": -286.5553283691406
+              }
+            },
+            {
+              "id": 4,
+              "lap": 1,
+              "checkpoint": 314,
+              "recoveries": 1,
+              "position": {
+                "x": -36.54302215576172,
+                "y": 11.309385299682617,
+                "z": -89.22350311279297
+              }
+            },
+            {
+              "id": 5,
+              "lap": 1,
+              "checkpoint": 331,
+              "recoveries": 0,
+              "position": {
+                "x": -63.07066345214844,
+                "y": 11.21894359588623,
+                "z": -33.988616943359375
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 90.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 2,
+              "checkpoint": 57,
+              "recoveries": 4,
+              "position": {
+                "x": -244.86874389648438,
+                "y": 11.34805679321289,
+                "z": -187.4964141845703
+              }
+            },
+            {
+              "id": 1,
+              "lap": 2,
+              "checkpoint": 68,
+              "recoveries": 3,
+              "position": {
+                "x": -244.49928283691406,
+                "y": 11.536704063415527,
+                "z": -227.7560272216797
+              }
+            },
+            {
+              "id": 2,
+              "lap": 2,
+              "checkpoint": 59,
+              "recoveries": 3,
+              "position": {
+                "x": -246.4419403076172,
+                "y": 11.365188598632812,
+                "z": -193.1622772216797
+              }
+            },
+            {
+              "id": 3,
+              "lap": 2,
+              "checkpoint": 33,
+              "recoveries": 3,
+              "position": {
+                "x": -252.45277404785156,
+                "y": 11.132332801818848,
+                "z": -94.51737213134766
+              }
+            },
+            {
+              "id": 4,
+              "lap": 2,
+              "checkpoint": 55,
+              "recoveries": 3,
+              "position": {
+                "x": -249.12278747558594,
+                "y": 11.329997062683105,
+                "z": -180.16297912597656
+              }
+            },
+            {
+              "id": 5,
+              "lap": 2,
+              "checkpoint": 122,
+              "recoveries": 0,
+              "position": {
+                "x": -236.91563415527344,
+                "y": 12.792465209960938,
+                "z": -439.94140625
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 120.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 2,
+              "checkpoint": 228,
+              "recoveries": 4,
+              "position": {
+                "x": 18.54329490661621,
+                "y": 12.18801212310791,
+                "z": -396.1731872558594
+              }
+            },
+            {
+              "id": 1,
+              "lap": 2,
+              "checkpoint": 219,
+              "recoveries": 4,
+              "position": {
+                "x": 31.236940383911133,
+                "y": 12.33658218383789,
+                "z": -433.2537536621094
+              }
+            },
+            {
+              "id": 2,
+              "lap": 2,
+              "checkpoint": 230,
+              "recoveries": 3,
+              "position": {
+                "x": 19.41693115234375,
+                "y": 12.162317276000977,
+                "z": -389.8970642089844
+              }
+            },
+            {
+              "id": 3,
+              "lap": 2,
+              "checkpoint": 203,
+              "recoveries": 3,
+              "position": {
+                "x": 21.145986557006836,
+                "y": 12.50926399230957,
+                "z": -482.3189697265625
+              }
+            },
+            {
+              "id": 4,
+              "lap": 2,
+              "checkpoint": 216,
+              "recoveries": 3,
+              "position": {
+                "x": 34.08586120605469,
+                "y": 12.367916107177734,
+                "z": -441.3822021484375
+              }
+            },
+            {
+              "id": 5,
+              "lap": 2,
+              "checkpoint": 296,
+              "recoveries": 0,
+              "position": {
+                "x": -1.5092297792434692,
+                "y": 11.561047554016113,
+                "z": -146.523681640625
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 150.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 3,
+              "checkpoint": 10,
+              "recoveries": 5,
+              "position": {
+                "x": -236.12930297851562,
+                "y": 10.964821815490723,
+                "z": -10.747608184814453
+              }
+            },
+            {
+              "id": 1,
+              "lap": 3,
+              "checkpoint": 19,
+              "recoveries": 4,
+              "position": {
+                "x": -250.8269500732422,
+                "y": 12.907693862915039,
+                "z": -45.26863479614258
+              }
+            },
+            {
+              "id": 2,
+              "lap": 3,
+              "checkpoint": 33,
+              "recoveries": 3,
+              "position": {
+                "x": -243.221923828125,
+                "y": 11.135499000549316,
+                "z": -95.66382598876953
+              }
+            },
+            {
+              "id": 3,
+              "lap": 3,
+              "checkpoint": 7,
+              "recoveries": 3,
+              "position": {
+                "x": -229.12791442871094,
+                "y": 10.962139129638672,
+                "z": -9.495431900024414
+              }
+            },
+            {
+              "id": 4,
+              "lap": 3,
+              "checkpoint": 19,
+              "recoveries": 3,
+              "position": {
+                "x": -251.53521728515625,
+                "y": 11.089465141296387,
+                "z": -41.92481231689453
+              }
+            },
+            {
+              "id": 5,
+              "lap": 3,
+              "checkpoint": 51,
+              "recoveries": 2,
+              "position": {
+                "x": -245.56004333496094,
+                "y": 11.294858932495117,
+                "z": -164.58883666992188
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 180.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 3,
+              "checkpoint": 136,
+              "recoveries": 7,
+              "position": {
+                "x": -231.06756591796875,
+                "y": 13.045469284057617,
+                "z": -481.4291687011719
+              }
+            },
+            {
+              "id": 1,
+              "lap": 3,
+              "checkpoint": 148,
+              "recoveries": 6,
+              "position": {
+                "x": -188.135009765625,
+                "y": 12.998930931091309,
+                "z": -487.0581970214844
+              }
+            },
+            {
+              "id": 2,
+              "lap": 3,
+              "checkpoint": 205,
+              "recoveries": 3,
+              "position": {
+                "x": 27.07477378845215,
+                "y": 12.496142387390137,
+                "z": -476.8075866699219
+              }
+            },
+            {
+              "id": 3,
+              "lap": 3,
+              "checkpoint": 158,
+              "recoveries": 4,
+              "position": {
+                "x": -148.32354736328125,
+                "y": 12.869813919067383,
+                "z": -483.5000915527344
+              }
+            },
+            {
+              "id": 4,
+              "lap": 3,
+              "checkpoint": 144,
+              "recoveries": 5,
+              "position": {
+                "x": -201.38204956054688,
+                "y": 13.050044059753418,
+                "z": -486.5084533691406
+              }
+            },
+            {
+              "id": 5,
+              "lap": 3,
+              "checkpoint": 223,
+              "recoveries": 2,
+              "position": {
+                "x": 25.2445068359375,
+                "y": 12.273058891296387,
+                "z": -417.84649658203125
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 210.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 3,
+              "checkpoint": 313,
+              "recoveries": 7,
+              "position": {
+                "x": -35.226497650146484,
+                "y": 11.322092056274414,
+                "z": -92.3175048828125
+              }
+            },
+            {
+              "id": 1,
+              "lap": 3,
+              "checkpoint": 326,
+              "recoveries": 6,
+              "position": {
+                "x": -55.60967254638672,
+                "y": 11.235274314880371,
+                "z": -48.420738220214844
+              }
+            },
+            {
+              "id": 2,
+              "lap": 3,
+              "checkpoint": 1,
+              "recoveries": 3,
+              "position": {
+                "x": -238.75653076171875,
+                "y": 11.065415382385254,
+                "z": -13.529875755310059
+              }
+            },
+            {
+              "id": 3,
+              "lap": 3,
+              "checkpoint": 337,
+              "recoveries": 4,
+              "position": {
+                "x": -70.01184844970703,
+                "y": 11.19628620147705,
+                "z": -12.70239543914795
+              }
+            },
+            {
+              "id": 4,
+              "lap": 3,
+              "checkpoint": 323,
+              "recoveries": 5,
+              "position": {
+                "x": -49.538108825683594,
+                "y": 11.24706745147705,
+                "z": -58.78749084472656
+              }
+            },
+            {
+              "id": 5,
+              "lap": 3,
+              "checkpoint": 1,
+              "recoveries": 2,
+              "position": {
+                "x": -248.1317901611328,
+                "y": 11.03309440612793,
+                "z": -51.283607482910156
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "destroyed-fences",
+      "testedAt": "2026-09-05T06:04:01.813Z",
+      "stageSha256": "f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76",
+      "routeStatus": "game_racing_line_on_source_lod3_roads_not_survey_verified",
+      "routeMetres": 1388.2023040929002,
+      "coursePoints": 378,
+      "seconds": 202.45000000005325,
+      "executionSeconds": 26.872902728,
+      "objectCount": 4557,
+      "firstSideFenceDistance": 72,
+      "explosionFragments": 27,
+      "shortcutSection": {
+        "seconds": 3.833333333333524,
+        "metres": 85.81014286933512,
+        "recoveries": 0
+      },
+      "recoveryEvents": [
+        {
+          "vehicleId": 1,
+          "seconds": 6.183333333333317,
+          "lap": 1,
+          "checkpoint": 16,
+          "routeDistance": 81.30966631836826,
+          "legalRouteDistance": 48.63159649220756,
+          "position": {
+            "x": -253.5209197998047,
+            "y": 11.056488037109375,
+            "z": -61.69876480102539
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 6.716666666666648,
+          "lap": 1,
+          "checkpoint": 19,
+          "routeDistance": 91.88615329529674,
+          "legalRouteDistance": 59.96914543233614,
+          "position": {
+            "x": -251.44129943847656,
+            "y": 11.081789016723633,
+            "z": -72.50662994384766
+          },
+          "count": 1
+        },
+        {
+          "vehicleId": 0,
+          "seconds": 82.13333333332996,
+          "lap": 2,
+          "checkpoint": 65,
+          "routeDistance": 262.0707590171808,
+          "legalRouteDistance": 235.06190033557482,
+          "position": {
+            "x": -244.69618225097656,
+            "y": 11.617497444152832,
+            "z": -242.66897583007812
+          },
+          "count": 1
+        }
+      ],
+      "scriptedInput": true,
+      "rendered": false,
+      "realHardwarePerformanceClaim": false,
+      "vehicles": [
+        {
+          "id": 0,
+          "finished": true,
+          "finishTime": 202.45000000005325,
+          "rank": 6,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4285.130237775234,
+          "metresAtFinish": 4285.130237775234,
+          "recoveries": 2,
+          "recoveriesAtFinish": 2,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -208.37567138671875,
+            "y": 10.967582702636719,
+            "z": -3.1175384521484375
+          }
+        },
+        {
+          "id": 1,
+          "finished": true,
+          "finishTime": 198.2666666667166,
+          "rank": 5,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4310.044502084812,
+          "metresAtFinish": 4232.932100688159,
+          "recoveries": 1,
+          "recoveriesAtFinish": 1,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -248.92254638671875,
+            "y": 11.044190406799316,
+            "z": -55.78534698486328
+          }
+        },
+        {
+          "id": 2,
+          "finished": true,
+          "finishTime": 193.98333333337985,
+          "rank": 1,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4388.666344922432,
+          "metresAtFinish": 4211.175100006596,
+          "recoveries": 0,
+          "recoveriesAtFinish": 0,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -246.67050170898438,
+            "y": 11.276873588562012,
+            "z": -156.10894775390625
+          }
+        },
+        {
+          "id": 3,
+          "finished": true,
+          "finishTime": 197.8500000000496,
+          "rank": 4,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4318.053931907016,
+          "metresAtFinish": 4230.29156889688,
+          "recoveries": 0,
+          "recoveriesAtFinish": 0,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -250.21400451660156,
+            "y": 11.06231689453125,
+            "z": -64.19286346435547
+          }
+        },
+        {
+          "id": 4,
+          "finished": true,
+          "finishTime": 194.90000000004724,
+          "rank": 2,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4358.045644594327,
+          "metresAtFinish": 4201.314010777628,
+          "recoveries": 0,
+          "recoveriesAtFinish": 0,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -245.9834747314453,
+            "y": 11.222455978393555,
+            "z": -133.16128540039062
+          }
+        },
+        {
+          "id": 5,
+          "finished": true,
+          "finishTime": 195.33333333338092,
+          "rank": 3,
+          "lap": 3,
+          "checkpoint": 1,
+          "metres": 4346.255221128686,
+          "metresAtFinish": 4200.869940063641,
+          "recoveries": 0,
+          "recoveriesAtFinish": 0,
+          "rejectedTeleports": 0,
+          "gates": 1134,
+          "position": {
+            "x": -247.4738311767578,
+            "y": 11.199524879455566,
+            "z": -123.35440826416016
+          }
+        }
+      ],
+      "timeline": [
+        {
+          "seconds": 0.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -203.8397216796875,
+                "y": 11.041872024536133,
+                "z": -5.694395542144775
+              }
+            },
+            {
+              "id": 1,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -204.2704315185547,
+                "y": 11.041872024536133,
+                "z": -3.028970718383789
+              }
+            },
+            {
+              "id": 2,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -198.90347290039062,
+                "y": 11.041872024536133,
+                "z": -4.895938873291016
+              }
+            },
+            {
+              "id": 3,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -199.3350067138672,
+                "y": 11.041872024536133,
+                "z": -2.230647325515747
+              }
+            },
+            {
+              "id": 4,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -193.972412109375,
+                "y": 11.040871620178223,
+                "z": -4.103279113769531
+              }
+            },
+            {
+              "id": 5,
+              "lap": 1,
+              "checkpoint": 1,
+              "recoveries": 0,
+              "position": {
+                "x": -194.392822265625,
+                "y": 11.040871620178223,
+                "z": -1.4362107515335083
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 30.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 1,
+              "checkpoint": 146,
+              "recoveries": 1,
+              "position": {
+                "x": -194.38844299316406,
+                "y": 13.021961212158203,
+                "z": -486.6276550292969
+              }
+            },
+            {
+              "id": 1,
+              "lap": 1,
+              "checkpoint": 145,
+              "recoveries": 1,
+              "position": {
+                "x": -201.0894775390625,
+                "y": 13.046209335327148,
+                "z": -485.95001220703125
+              }
+            },
+            {
+              "id": 2,
+              "lap": 1,
+              "checkpoint": 165,
+              "recoveries": 0,
+              "position": {
+                "x": -123.78364562988281,
+                "y": 12.832940101623535,
+                "z": -480.53533935546875
+              }
+            },
+            {
+              "id": 3,
+              "lap": 1,
+              "checkpoint": 155,
+              "recoveries": 0,
+              "position": {
+                "x": -161.26263427734375,
+                "y": 12.890291213989258,
+                "z": -486.4166259765625
+              }
+            },
+            {
+              "id": 4,
+              "lap": 1,
+              "checkpoint": 160,
+              "recoveries": 0,
+              "position": {
+                "x": -141.3668670654297,
+                "y": 12.858963012695312,
+                "z": -483.2346496582031
+              }
+            },
+            {
+              "id": 5,
+              "lap": 1,
+              "checkpoint": 157,
+              "recoveries": 0,
+              "position": {
+                "x": -153.71559143066406,
+                "y": 12.878220558166504,
+                "z": -485.5499267578125
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 60.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 1,
+              "checkpoint": 325,
+              "recoveries": 1,
+              "position": {
+                "x": -54.125160217285156,
+                "y": 11.240020751953125,
+                "z": -52.596492767333984
+              }
+            },
+            {
+              "id": 1,
+              "lap": 1,
+              "checkpoint": 322,
+              "recoveries": 1,
+              "position": {
+                "x": -51.342323303222656,
+                "y": 11.249062538146973,
+                "z": -62.231109619140625
+              }
+            },
+            {
+              "id": 2,
+              "lap": 1,
+              "checkpoint": 343,
+              "recoveries": 0,
+              "position": {
+                "x": -86.42410278320312,
+                "y": 11.120560646057129,
+                "z": 2.414496421813965
+              }
+            },
+            {
+              "id": 3,
+              "lap": 1,
+              "checkpoint": 334,
+              "recoveries": 0,
+              "position": {
+                "x": -65.39729309082031,
+                "y": 11.207174301147461,
+                "z": -23.125452041625977
+              }
+            },
+            {
+              "id": 4,
+              "lap": 1,
+              "checkpoint": 340,
+              "recoveries": 0,
+              "position": {
+                "x": -79.27470397949219,
+                "y": 11.186552047729492,
+                "z": -6.093917369842529
+              }
+            },
+            {
+              "id": 5,
+              "lap": 1,
+              "checkpoint": 336,
+              "recoveries": 0,
+              "position": {
+                "x": -70.46784973144531,
+                "y": 11.198051452636719,
+                "z": -15.27090072631836
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 90.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 2,
+              "checkpoint": 102,
+              "recoveries": 2,
+              "position": {
+                "x": -242.80859375,
+                "y": 12.264521598815918,
+                "z": -361.9645080566406
+              }
+            },
+            {
+              "id": 1,
+              "lap": 2,
+              "checkpoint": 120,
+              "recoveries": 1,
+              "position": {
+                "x": -239.35250854492188,
+                "y": 12.732963562011719,
+                "z": -431.7176513671875
+              }
+            },
+            {
+              "id": 2,
+              "lap": 2,
+              "checkpoint": 138,
+              "recoveries": 0,
+              "position": {
+                "x": -224.6183624267578,
+                "y": 13.056987762451172,
+                "z": -484.1278991699219
+              }
+            },
+            {
+              "id": 3,
+              "lap": 2,
+              "checkpoint": 123,
+              "recoveries": 0,
+              "position": {
+                "x": -240.05636596679688,
+                "y": 12.798982620239258,
+                "z": -440.9611511230469
+              }
+            },
+            {
+              "id": 4,
+              "lap": 2,
+              "checkpoint": 135,
+              "recoveries": 0,
+              "position": {
+                "x": -230.11508178710938,
+                "y": 13.034449577331543,
+                "z": -479.04949951171875
+              }
+            },
+            {
+              "id": 5,
+              "lap": 2,
+              "checkpoint": 133,
+              "recoveries": 0,
+              "position": {
+                "x": -234.07447814941406,
+                "y": 13.019551277160645,
+                "z": -475.7039489746094
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 120.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 2,
+              "checkpoint": 273,
+              "recoveries": 2,
+              "position": {
+                "x": 9.97596263885498,
+                "y": 11.736279487609863,
+                "z": -223.79586791992188
+              }
+            },
+            {
+              "id": 1,
+              "lap": 2,
+              "checkpoint": 293,
+              "recoveries": 1,
+              "position": {
+                "x": 3.5741355419158936,
+                "y": 11.610979080200195,
+                "z": -158.63914489746094
+              }
+            },
+            {
+              "id": 2,
+              "lap": 2,
+              "checkpoint": 317,
+              "recoveries": 0,
+              "position": {
+                "x": -41.64735412597656,
+                "y": 11.276823043823242,
+                "z": -81.88301086425781
+              }
+            },
+            {
+              "id": 3,
+              "lap": 2,
+              "checkpoint": 295,
+              "recoveries": 0,
+              "position": {
+                "x": 1.8583842515945435,
+                "y": 11.576451301574707,
+                "z": -149.28756713867188
+              }
+            },
+            {
+              "id": 4,
+              "lap": 2,
+              "checkpoint": 313,
+              "recoveries": 0,
+              "position": {
+                "x": -35.424896240234375,
+                "y": 11.331087112426758,
+                "z": -95.11144256591797
+              }
+            },
+            {
+              "id": 5,
+              "lap": 2,
+              "checkpoint": 310,
+              "recoveries": 0,
+              "position": {
+                "x": -27.85192108154297,
+                "y": 11.369126319885254,
+                "z": -102.60956573486328
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 150.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 3,
+              "checkpoint": 71,
+              "recoveries": 2,
+              "position": {
+                "x": -243.12692260742188,
+                "y": 11.605671882629395,
+                "z": -240.424072265625
+              }
+            },
+            {
+              "id": 1,
+              "lap": 3,
+              "checkpoint": 92,
+              "recoveries": 1,
+              "position": {
+                "x": -242.356201171875,
+                "y": 12.056159973144531,
+                "z": -323.49261474609375
+              }
+            },
+            {
+              "id": 2,
+              "lap": 3,
+              "checkpoint": 119,
+              "recoveries": 0,
+              "position": {
+                "x": -237.45223999023438,
+                "y": 12.685924530029297,
+                "z": -425.1425476074219
+              }
+            },
+            {
+              "id": 3,
+              "lap": 3,
+              "checkpoint": 97,
+              "recoveries": 0,
+              "position": {
+                "x": -242.90782165527344,
+                "y": 12.148974418640137,
+                "z": -340.63427734375
+              }
+            },
+            {
+              "id": 4,
+              "lap": 3,
+              "checkpoint": 114,
+              "recoveries": 0,
+              "position": {
+                "x": -241.0579833984375,
+                "y": 12.55219554901123,
+                "z": -406.69964599609375
+              }
+            },
+            {
+              "id": 5,
+              "lap": 3,
+              "checkpoint": 112,
+              "recoveries": 0,
+              "position": {
+                "x": -242.5325164794922,
+                "y": 12.505829811096191,
+                "z": -400.2299499511719
+              }
+            }
+          ]
+        },
+        {
+          "seconds": 180.02,
+          "vehicles": [
+            {
+              "id": 0,
+              "lap": 3,
+              "checkpoint": 241,
+              "recoveries": 2,
+              "position": {
+                "x": 21.39090919494629,
+                "y": 11.996261596679688,
+                "z": -347.4716796875
+              }
+            },
+            {
+              "id": 1,
+              "lap": 3,
+              "checkpoint": 264,
+              "recoveries": 1,
+              "position": {
+                "x": 14.359258651733398,
+                "y": 11.7924165725708,
+                "z": -258.04779052734375
+              }
+            },
+            {
+              "id": 2,
+              "lap": 3,
+              "checkpoint": 292,
+              "recoveries": 0,
+              "position": {
+                "x": 4.7713541984558105,
+                "y": 11.619235038757324,
+                "z": -160.67079162597656
+              }
+            },
+            {
+              "id": 3,
+              "lap": 3,
+              "checkpoint": 267,
+              "recoveries": 0,
+              "position": {
+                "x": 14.134661674499512,
+                "y": 11.776897430419922,
+                "z": -248.59523010253906
+              }
+            },
+            {
+              "id": 4,
+              "lap": 3,
+              "checkpoint": 286,
+              "recoveries": 0,
+              "position": {
+                "x": 7.071794033050537,
+                "y": 11.667556762695312,
+                "z": -181.66966247558594
+              }
+            },
+            {
+              "id": 5,
+              "lap": 3,
+              "checkpoint": 282,
+              "recoveries": 0,
+              "position": {
+                "x": 8.826733589172363,
+                "y": 11.681411743164062,
+                "z": -190.3343505859375
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

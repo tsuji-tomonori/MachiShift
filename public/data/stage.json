@@ -1,0 +1,3305 @@
+{
+  "version": 1,
+  "metadata": {
+    "name": "岐阜駅北口・信長ゆめ広場",
+    "source": "PLATEAU 岐阜市 2024年度 CityGML v4",
+    "sourceUrl": "https://www.geospatial.jp/ckan/dataset/plateau-21201-gifu-shi-2024",
+    "status": "source_only",
+    "edition": "2024年度",
+    "origin": [
+      35.4107,
+      136.7595,
+      0.0
+    ],
+    "coordinateSystem": "EPSG:6697 source lat/lon/orthometric-height; horizontal EPSG:6675 (JGD2011 Japan Plane Rectangular CS VII); local +X east, +Y source height, -Z north",
+    "verticalDatum": "JGD2011 (vertical) height, retained from EPSG:6697; not ellipsoidal height",
+    "unit": "metre",
+    "aoiLocalXZ": [
+      -410,
+      -710,
+      230,
+      100
+    ],
+    "license": "CC BY 4.0 (PLATEAU policy compatible with PDL 1.0)",
+    "licenseUrl": "https://www.mlit.go.jp/plateau/site-policy/",
+    "attribution": "岐阜市 3D都市モデル（Project PLATEAU）を加工して作成。地物の切り出し・座標変換・三角形分割：MachiShift。自治体の公式ゲームではありません。",
+    "surveyDate": null,
+    "surveyDateNote": "Source resource CSV mixes years and sources by attribute; no single survey date asserted",
+    "textures": "not_included_pending_surface_rights_review",
+    "accuracy": "Independent survey not performed; no centimetre-accuracy claim",
+    "processing": "AOI polygon selection; highest available LOD per object; Earcut triangulation incl. holes; position rounded to 1 mm (storage precision, not accuracy)",
+    "counts": {
+      "roadLOD3": 57,
+      "roadLOD1": 292,
+      "plazaLOD3": 1,
+      "buildingLOD2": 1343,
+      "buildingLOD1": 4,
+      "bridgeLOD3": 2,
+      "furnitureLOD3": 3121,
+      "terrainChunksLOD1": 25
+    },
+    "terrain": {
+      "status": "source_only",
+      "sourceFile": "udx/dem/533606_dem_6697_op.gml",
+      "sourceTrianglesScanned": 1756078,
+      "sourceTrianglesInAOI": 32047,
+      "sourceTrianglesTouchingCutout": 6131,
+      "chunks": 25,
+      "modifications": "Subset AOI; cut actual LOD3 road/plaza footprint from TIN; interpolate cut edge on each original source triangle plane; no height smoothing"
+    }
+  },
+  "chunks": [
+    {
+      "id": "-1_-1",
+      "url": "data/chunk--1_-1.json.gz",
+      "bounds": [
+        -232.102,
+        0.0,
+        -207.114,
+        13.659,
+        63.577,
+        25.144
+      ],
+      "objectCount": 120,
+      "triangles": 8711,
+      "sha256": "4ae9007792ac3d96ca757496fae09ccb04cefea3ce59bfaf4069d343878cc259",
+      "bytes": 368786,
+      "encoding": "gzip",
+      "uncompressedBytes": 2223919,
+      "uncompressedSha256": "a3bc90a6d659771eeabd6ad1a74535efcafb42e16baf8a106751e12819db391f"
+    },
+    {
+      "id": "-1_-2",
+      "url": "data/chunk--1_-2.json.gz",
+      "bounds": [
+        -207.44,
+        0.0,
+        -470.505,
+        23.756,
+        60.14,
+        -178.345
+      ],
+      "objectCount": 212,
+      "triangles": 8743,
+      "sha256": "0dc8b5a547681bbc19d74fca51a5811db9a935095069b2b02a22841520e68863",
+      "bytes": 361406,
+      "encoding": "gzip",
+      "uncompressedBytes": 2187326,
+      "uncompressedSha256": "df32247e642301c9feaa92b62667bddfbcf21755190973a849d4393549c1537e"
+    },
+    {
+      "id": "-1_-3",
+      "url": "data/chunk--1_-3.json.gz",
+      "bounds": [
+        -222.02,
+        0.0,
+        -621.574,
+        16.71,
+        58.768,
+        -393.134
+      ],
+      "objectCount": 141,
+      "triangles": 3472,
+      "sha256": "13d4a4f92cf698fd10e21d78c36cde5ea2266d458bbc359fdcf998e3ab9ebb4c",
+      "bytes": 135452,
+      "encoding": "gzip",
+      "uncompressedBytes": 844411,
+      "uncompressedSha256": "0f3225c9968398558e747f9933a727c15da788a5c2452e01855d06e56cca20f5"
+    },
+    {
+      "id": "-1_-4",
+      "url": "data/chunk--1_-4.json.gz",
+      "bounds": [
+        -198.192,
+        0.0,
+        -667.574,
+        3.171,
+        57.365,
+        -578.494
+      ],
+      "objectCount": 27,
+      "triangles": 681,
+      "sha256": "ac8f25713f1e7c644c952f8091af7bfeb14f488f7f42b8e48a842fecfb96d224",
+      "bytes": 30129,
+      "encoding": "gzip",
+      "uncompressedBytes": 178978,
+      "uncompressedSha256": "bb49a2c14eb53ae7fe1f35554d38d4cd2cdb85caa00e187eda45cac00f49d5fe"
+    },
+    {
+      "id": "-1_0",
+      "url": "data/chunk--1_0.json.gz",
+      "bounds": [
+        -243.487,
+        0.0,
+        -16.504,
+        34.691,
+        105.537,
+        138.444
+      ],
+      "objectCount": 690,
+      "triangles": 65185,
+      "sha256": "50cef9e1c653c1e75701c5959f98192a6ab16da44364a8cfa41fc88866304685",
+      "bytes": 2929688,
+      "encoding": "gzip",
+      "uncompressedBytes": 18108183,
+      "uncompressedSha256": "8af3b9bb84f147c8ebf03d206d9b4ee68530d7e670707a6ec74842f5ef4c1fce"
+    },
+    {
+      "id": "-2_-1",
+      "url": "data/chunk--2_-1.json.gz",
+      "bounds": [
+        -405.21,
+        0.0,
+        -212.875,
+        -168.44,
+        60.979,
+        16.48
+      ],
+      "objectCount": 322,
+      "triangles": 10524,
+      "sha256": "cef2ce9e36ca467a16675d97920998cfcfc1605b94be0e8003de495be7c087f7",
+      "bytes": 426574,
+      "encoding": "gzip",
+      "uncompressedBytes": 2677402,
+      "uncompressedSha256": "96700b29fb02099ae9cb38de7fe7aec2c495872ea21bb65487cd35b87452d7ab"
+    },
+    {
+      "id": "-2_-2",
+      "url": "data/chunk--2_-2.json.gz",
+      "bounds": [
+        -417.45,
+        0.0,
+        -454.766,
+        -178.098,
+        58.351,
+        -194.824
+      ],
+      "objectCount": 149,
+      "triangles": 3566,
+      "sha256": "89755931e37302ef3c1fe1947e1ecb22923623e369311f52cd67869eb4f45c5d",
+      "bytes": 141411,
+      "encoding": "gzip",
+      "uncompressedBytes": 885687,
+      "uncompressedSha256": "9dce9d626c459bf3cb4210bb48fe40f43a3de0e049ceeeb0ceb54301edf7033a"
+    },
+    {
+      "id": "-2_-3",
+      "url": "data/chunk--2_-3.json.gz",
+      "bounds": [
+        -408.9,
+        0.0,
+        -604.004,
+        -178.29,
+        52.742,
+        -391.629
+      ],
+      "objectCount": 108,
+      "triangles": 2844,
+      "sha256": "f158faff42865fda4b56d44cac6124e3bc031e2ae0032466902085343e4a38a8",
+      "bytes": 117086,
+      "encoding": "gzip",
+      "uncompressedBytes": 725571,
+      "uncompressedSha256": "1ad666739457e51cccec59526a1e04fec0da67592bf079b97715697d771ecb6b"
+    },
+    {
+      "id": "-2_-4",
+      "url": "data/chunk--2_-4.json.gz",
+      "bounds": [
+        -402.0,
+        0.0,
+        -694.226,
+        -193.193,
+        60.327,
+        -598.674
+      ],
+      "objectCount": 50,
+      "triangles": 1123,
+      "sha256": "a2f6236affe5e5c2a2e17c6c2c14e6d4b614389dfc9050cd045332ce266be201",
+      "bytes": 42646,
+      "encoding": "gzip",
+      "uncompressedBytes": 261868,
+      "uncompressedSha256": "6580bc4a9f6a2d4b3f502e2bc07c14df01f299b21941e44d8808ac4492cdd512"
+    },
+    {
+      "id": "-2_0",
+      "url": "data/chunk--2_0.json.gz",
+      "bounds": [
+        -423.887,
+        0.0,
+        -38.492,
+        -38.969,
+        42.525,
+        126.074
+      ],
+      "objectCount": 2255,
+      "triangles": 167955,
+      "sha256": "1b68db52148fdb8dfbb8d20a908e9b969e64d3c7789ceddc37aeefe334b7a118",
+      "bytes": 7647463,
+      "encoding": "gzip",
+      "uncompressedBytes": 47850048,
+      "uncompressedSha256": "28c6678cc6f1634649e017449916edc97911bf397ed440b62c49ea80c3fad005"
+    },
+    {
+      "id": "-3_-1",
+      "url": "data/chunk--3_-1.json.gz",
+      "bounds": [
+        -532.22,
+        0.0,
+        -210.613,
+        -392.969,
+        40.623,
+        -1.927
+      ],
+      "objectCount": 24,
+      "triangles": 554,
+      "sha256": "1f748425d04d9c93d1ada667487752e97650e215940240ee63fcd857cc12f877",
+      "bytes": 22077,
+      "encoding": "gzip",
+      "uncompressedBytes": 135693,
+      "uncompressedSha256": "c02779b49d8e6bcaa938953b3a3a07bd0180fc61061d16234210411cd44b9cac"
+    },
+    {
+      "id": "-3_-2",
+      "url": "data/chunk--3_-2.json.gz",
+      "bounds": [
+        -470.631,
+        0.0,
+        -400.574,
+        -391.874,
+        23.536,
+        -209.283
+      ],
+      "objectCount": 17,
+      "triangles": 300,
+      "sha256": "8efad534d7a4f638d43c5a5c8029fff06e3b256cca8dddff8e411488038db69a",
+      "bytes": 12545,
+      "encoding": "gzip",
+      "uncompressedBytes": 73167,
+      "uncompressedSha256": "be33bf2f95ff64cc6a58141d3c2676565a6e9a781cbb97d0da587928bb6cafd8"
+    },
+    {
+      "id": "-3_-3",
+      "url": "data/chunk--3_-3.json.gz",
+      "bounds": [
+        -511.43,
+        0.0,
+        -498.905,
+        -395.84,
+        27.834,
+        -404.205
+      ],
+      "objectCount": 9,
+      "triangles": 117,
+      "sha256": "71c4f1dd7b7e2e2974add3797bfa5bcadc4ec7216f2fc410d28c61d046003bca",
+      "bytes": 5531,
+      "encoding": "gzip",
+      "uncompressedBytes": 31925,
+      "uncompressedSha256": "83697031f3c9a26c6fc27a304fcd2d6486e5e1f519d21ab39e672084de0c03c4"
+    },
+    {
+      "id": "-3_-4",
+      "url": "data/chunk--3_-4.json.gz",
+      "bounds": [
+        -461.6,
+        0.0,
+        -661.981,
+        -395.661,
+        22.466,
+        -603.535
+      ],
+      "objectCount": 4,
+      "triangles": 122,
+      "sha256": "870406a5c5099a9cc051f922bbe7d2d9d7b8375255cc8c5a3f57e13b1ba01652",
+      "bytes": 4512,
+      "encoding": "gzip",
+      "uncompressedBytes": 22465,
+      "uncompressedSha256": "b5875cb900bb48985c42c055b7982ade503c40d5f4d9fd58889b0f67abbe3114"
+    },
+    {
+      "id": "-3_0",
+      "url": "data/chunk--3_0.json.gz",
+      "bounds": [
+        -553.67,
+        0.0,
+        -18.334,
+        -394.97,
+        17.962,
+        85.966
+      ],
+      "objectCount": 100,
+      "triangles": 4313,
+      "sha256": "959684b3afa141206de2be7e99a20a990c1a9ae322d4fb8ad495f1c23f28c47f",
+      "bytes": 191018,
+      "encoding": "gzip",
+      "uncompressedBytes": 1226226,
+      "uncompressedSha256": "49e59da12bfccf8e9db50a15af2ec9e92b9a4c8fb4e1cbbed4d5d2ed38e5b730"
+    },
+    {
+      "id": "0_-1",
+      "url": "data/chunk-0_-1.json.gz",
+      "bounds": [
+        -41.598,
+        0.0,
+        -204.584,
+        226.56,
+        56.681,
+        56.195
+      ],
+      "objectCount": 83,
+      "triangles": 3994,
+      "sha256": "2637e303bffb1d13a99701691e8527744c248079332dfb2ad4f4aac7e923c95c",
+      "bytes": 169643,
+      "encoding": "gzip",
+      "uncompressedBytes": 1011352,
+      "uncompressedSha256": "ed7165cecf4cfe2fded114b35ac134b52c08c1b539d6e1a15539644e19c84a05"
+    },
+    {
+      "id": "0_-2",
+      "url": "data/chunk-0_-2.json.gz",
+      "bounds": [
+        -10.528,
+        0.0,
+        -470.447,
+        220.128,
+        51.356,
+        -179.917
+      ],
+      "objectCount": 106,
+      "triangles": 6010,
+      "sha256": "9f4897adb9f7aa534aeaca83351d291c71e490a82e523d26fbe914336cf0a6fc",
+      "bytes": 250095,
+      "encoding": "gzip",
+      "uncompressedBytes": 1501746,
+      "uncompressedSha256": "75ceb2b22d17092254a75e4dcc4d7226fe4d9bf86db80ba73c4ce630d2c3bf6a"
+    },
+    {
+      "id": "0_-3",
+      "url": "data/chunk-0_-3.json.gz",
+      "bounds": [
+        -20.6,
+        0.0,
+        -625.474,
+        207.07,
+        56.44,
+        -396.234
+      ],
+      "objectCount": 157,
+      "triangles": 5272,
+      "sha256": "409b43397c17541f801211490d1d388fe9d1073055785f75e30996ad959c2a0c",
+      "bytes": 198089,
+      "encoding": "gzip",
+      "uncompressedBytes": 1194265,
+      "uncompressedSha256": "0c27e87b6baa99377920ca7ec5bfe03fee69848b50fa68b09b0796d540dc6460"
+    },
+    {
+      "id": "0_-4",
+      "url": "data/chunk-0_-4.json.gz",
+      "bounds": [
+        3.79,
+        0.0,
+        -718.723,
+        200.3,
+        44.348,
+        -486.15
+      ],
+      "objectCount": 60,
+      "triangles": 5520,
+      "sha256": "44f64502da710017101bf4b59fe4c19ef7296918020640bdabdcc7ebbfdf8d0a",
+      "bytes": 242265,
+      "encoding": "gzip",
+      "uncompressedBytes": 1459738,
+      "uncompressedSha256": "ee5c858e4e102fbbd215643e00921dcdd19e0644c1dbaba98908c6de794040cd"
+    },
+    {
+      "id": "0_0",
+      "url": "data/chunk-0_0.json.gz",
+      "bounds": [
+        -24.85,
+        0.0,
+        -15.994,
+        231.03,
+        28.935,
+        126.236
+      ],
+      "objectCount": 59,
+      "triangles": 1188,
+      "sha256": "89b237b92305516d6f10898dddabe18ba0e3c718ec70eca3d4d980b7b58e8822",
+      "bytes": 44775,
+      "encoding": "gzip",
+      "uncompressedBytes": 266267,
+      "uncompressedSha256": "cd068a1b65086c93cd998c89dd077b068567b6aff2c66a99404bcaaf436af69f"
+    },
+    {
+      "id": "1_-1",
+      "url": "data/chunk-1_-1.json.gz",
+      "bounds": [
+        189.351,
+        0.0,
+        -201.774,
+        306.24,
+        56.165,
+        5.985
+      ],
+      "objectCount": 31,
+      "triangles": 569,
+      "sha256": "ea2d22f43bba505835ad23e5d2347ece5e7427580d169ec1d280aaec5df470e9",
+      "bytes": 24937,
+      "encoding": "gzip",
+      "uncompressedBytes": 147432,
+      "uncompressedSha256": "61754cb83c82a0a592ea976f86f8e14693c8df0907f133d789886f7b5269e8e5"
+    },
+    {
+      "id": "1_-2",
+      "url": "data/chunk-1_-2.json.gz",
+      "bounds": [
+        181.712,
+        0.0,
+        -397.234,
+        240.29,
+        39.124,
+        -186.279
+      ],
+      "objectCount": 15,
+      "triangles": 270,
+      "sha256": "7bfe9d3c23f3eccfcbd0150755c4f0e587986029c6d8a0b701e81eaff3bbc03b",
+      "bytes": 12735,
+      "encoding": "gzip",
+      "uncompressedBytes": 72724,
+      "uncompressedSha256": "9c440c7edabcb37ff0d109cd6cdb5c20d45a31e745fcf15b94c73664afc0d698"
+    },
+    {
+      "id": "1_-3",
+      "url": "data/chunk-1_-3.json.gz",
+      "bounds": [
+        186.86,
+        0.0,
+        -603.044,
+        246.81,
+        34.874,
+        -395.744
+      ],
+      "objectCount": 39,
+      "triangles": 741,
+      "sha256": "dc4d4e05fe27324e204aebfc4b28735750fba577d8287cdd731c7a89553aec25",
+      "bytes": 30055,
+      "encoding": "gzip",
+      "uncompressedBytes": 182983,
+      "uncompressedSha256": "1f02844a7df4e10e305a07dd9524a1b967f4598e5354114964444a327885e155"
+    },
+    {
+      "id": "1_-4",
+      "url": "data/chunk-1_-4.json.gz",
+      "bounds": [
+        197.137,
+        0.0,
+        -652.264,
+        248.24,
+        26.681,
+        -595.984
+      ],
+      "objectCount": 17,
+      "triangles": 289,
+      "sha256": "82a123edcef2e7e0082520c40be005bcda50a45e85ef2cd3e0cf5c57f5b2c8d7",
+      "bytes": 12964,
+      "encoding": "gzip",
+      "uncompressedBytes": 78781,
+      "uncompressedSha256": "954b0b1171274073a55544932690fa2302a0cd82a9290605e1ef147720238afb"
+    },
+    {
+      "id": "1_0",
+      "url": "data/chunk-1_0.json.gz",
+      "bounds": [
+        194.44,
+        0.0,
+        -3.064,
+        269.72,
+        40.459,
+        186.216
+      ],
+      "objectCount": 25,
+      "triangles": 500,
+      "sha256": "f79c456b588c09a4782807fd743c3565142b9f4e93685941a68503a2088e9027",
+      "bytes": 22831,
+      "encoding": "gzip",
+      "uncompressedBytes": 137300,
+      "uncompressedSha256": "02fc568622db8e760614e22e9ec4b8919cf80ac30a61b8f53d2e4d549d9d817b"
+    },
+    {
+      "id": "terrain--1_-1",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--1_-1.json.gz",
+      "bounds": [
+        -200.321,
+        10.22,
+        -203.426,
+        3.028,
+        14.33,
+        0.606
+      ],
+      "objectCount": 1,
+      "triangles": 2385,
+      "bytes": 60668,
+      "sha256": "095689e0a6d553de5c2b44584f351450f45cd5522e958235de6f2626f485f599",
+      "encoding": "gzip",
+      "uncompressedBytes": 728095,
+      "uncompressedSha256": "1bff9b68e10bef63a1c583bfc68ee436177c075064e68c388dbe6faf46e1c984"
+    },
+    {
+      "id": "terrain--1_-2",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--1_-2.json.gz",
+      "bounds": [
+        -203.355,
+        11.164,
+        -400.837,
+        1.294,
+        12.66,
+        -196.617
+      ],
+      "objectCount": 1,
+      "triangles": 2590,
+      "bytes": 66857,
+      "sha256": "9f13644b612a90de9351d45d8492b05ca7386f6580b47d1cceb91ceb54390662",
+      "encoding": "gzip",
+      "uncompressedBytes": 882779,
+      "uncompressedSha256": "254b9753ba0c1026a5467a0f00f5e4e4cda4015119fa7049504d35475e371243"
+    },
+    {
+      "id": "terrain--1_-3",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--1_-3.json.gz",
+      "bounds": [
+        -202.666,
+        11.75,
+        -604.077,
+        -0.063,
+        13.75,
+        -400.003
+      ],
+      "objectCount": 1,
+      "triangles": 2420,
+      "bytes": 63005,
+      "sha256": "ebf9959f354fd4576400575ea5fde77b6ae57df7bdcd4afaff6f71794031962a",
+      "encoding": "gzip",
+      "uncompressedBytes": 799552,
+      "uncompressedSha256": "2d6711bd3be7aaa3289a9118a586d4411f774e8a4efc2c51f3819dd409cdb8d6"
+    },
+    {
+      "id": "terrain--1_-4",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--1_-4.json.gz",
+      "bounds": [
+        -201.85,
+        12.64,
+        -662.781,
+        0.203,
+        13.88,
+        -597.227
+      ],
+      "objectCount": 1,
+      "triangles": 877,
+      "bytes": 25048,
+      "sha256": "e146cb39df9d0ab30eac22cd6edaeaed2b5657599a8c8ffad84522fb9d00cf35",
+      "encoding": "gzip",
+      "uncompressedBytes": 300168,
+      "uncompressedSha256": "d71e7e406f8938a97fad2f6e1a39de94122ee8cb3febfccfbd32014631f19813"
+    },
+    {
+      "id": "terrain--1_0",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--1_0.json.gz",
+      "bounds": [
+        -200.338,
+        10.11,
+        0.36,
+        2.495,
+        13.1,
+        105.381
+      ],
+      "objectCount": 1,
+      "triangles": 3103,
+      "bytes": 55220,
+      "sha256": "55401c5fae02a269a33744f3bf9663165c7d8a6c3dd4b7a4bc7b990833462eb9",
+      "encoding": "gzip",
+      "uncompressedBytes": 435870,
+      "uncompressedSha256": "222b60e895d82bd6685b8f9ac551767c4775db25e1883d4272e6f3b4476e23c0"
+    },
+    {
+      "id": "terrain--2_-1",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--2_-1.json.gz",
+      "bounds": [
+        -401.13,
+        10.35,
+        -204.095,
+        -198.54,
+        11.39,
+        0.614
+      ],
+      "objectCount": 1,
+      "triangles": 2356,
+      "bytes": 59404,
+      "sha256": "84d2b86169b2068e3ad4ade04c367fb32e0265735f4e3be07c564cc6ce037270",
+      "encoding": "gzip",
+      "uncompressedBytes": 729661,
+      "uncompressedSha256": "7c54fba2b70a1eec532a308cdf74c8559e6da364ff18ff861c114949dc2b80dd"
+    },
+    {
+      "id": "terrain--2_-2",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--2_-2.json.gz",
+      "bounds": [
+        -400.309,
+        10.63,
+        -401.654,
+        -197.672,
+        12.29,
+        -197.743
+      ],
+      "objectCount": 1,
+      "triangles": 2284,
+      "bytes": 60004,
+      "sha256": "84c8bd2a5f90e75e583db37f66b3af18e75c6692a448788b95a6f836c8ea85dc",
+      "encoding": "gzip",
+      "uncompressedBytes": 759294,
+      "uncompressedSha256": "c7176d850dd9b799277d83561797a57c0e202187e88ac20ed9f3869c7950302b"
+    },
+    {
+      "id": "terrain--2_-3",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--2_-3.json.gz",
+      "bounds": [
+        -399.463,
+        11.59,
+        -604.265,
+        -196.83,
+        13.67,
+        -399.804
+      ],
+      "objectCount": 1,
+      "triangles": 2172,
+      "bytes": 57341,
+      "sha256": "9c5d6446b9595fb9b075da180fedf26706d82385ede29022eeec40f2494c3bbe",
+      "encoding": "gzip",
+      "uncompressedBytes": 719183,
+      "uncompressedSha256": "ba0058adce91eb6d3050df804b46264fedf27e928867b2dd6d4c78056331bb45"
+    },
+    {
+      "id": "terrain--2_-4",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--2_-4.json.gz",
+      "bounds": [
+        -400.909,
+        11.5,
+        -663.619,
+        -196.651,
+        13.79,
+        -598.039
+      ],
+      "objectCount": 1,
+      "triangles": 903,
+      "bytes": 25543,
+      "sha256": "7dc2cfc4b1662999427340d1a9117b54648a8d6f018936763fb21a6b662edd7e",
+      "encoding": "gzip",
+      "uncompressedBytes": 304840,
+      "uncompressedSha256": "2d43d8a03e82a328348b37e6f62bf7e8615b32656a1a2d995ad1f925bbadbdae"
+    },
+    {
+      "id": "terrain--2_0",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--2_0.json.gz",
+      "bounds": [
+        -401.566,
+        10.27,
+        -1.044,
+        -199.381,
+        11.18,
+        104.337
+      ],
+      "objectCount": 1,
+      "triangles": 3181,
+      "bytes": 54347,
+      "sha256": "f99f54e2ae60fcb8cc928bc36f10c444c01699cfc7fb05fe79849c970d626873",
+      "encoding": "gzip",
+      "uncompressedBytes": 418278,
+      "uncompressedSha256": "81c73b614a02bc74a94d68600109f9098cd8c5fc3ef0acb5e43259c5b17c8f6c"
+    },
+    {
+      "id": "terrain--3_-1",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--3_-1.json.gz",
+      "bounds": [
+        -411.222,
+        10.29,
+        -198.309,
+        -400.309,
+        11.04,
+        -1.044
+      ],
+      "objectCount": 1,
+      "triangles": 128,
+      "bytes": 3933,
+      "sha256": "5e9689352c4bfb967b150a596d752ea2c50c76f1ac7468e95d7a97dab28d8be4",
+      "encoding": "gzip",
+      "uncompressedBytes": 43811,
+      "uncompressedSha256": "bbc8e013e4c1d1a4e6b6f45064f3a8c04eece6b3e4f07d4af8d7074120549aff"
+    },
+    {
+      "id": "terrain--3_-2",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--3_-2.json.gz",
+      "bounds": [
+        -415.061,
+        10.72,
+        -401.717,
+        -399.463,
+        11.88,
+        -198.267
+      ],
+      "objectCount": 1,
+      "triangles": 168,
+      "bytes": 5056,
+      "sha256": "5eca4647cb53776eccc2faf06c17d4a2859f57c3dc61c89e299a8784eaea1b7c",
+      "encoding": "gzip",
+      "uncompressedBytes": 57682,
+      "uncompressedSha256": "d3fc2cd16c925d4d093d187547d142b92d11a88afe285ca65dc6a9d99fbc07b1"
+    },
+    {
+      "id": "terrain--3_-3",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--3_-3.json.gz",
+      "bounds": [
+        -414.599,
+        11.58,
+        -598.94,
+        -398.642,
+        12.84,
+        -401.654
+      ],
+      "objectCount": 1,
+      "triangles": 192,
+      "bytes": 5655,
+      "sha256": "e18fc6bd350314e854fcfd9dfa36af2514ee33a56e88884190ceee8c5e5a60df",
+      "encoding": "gzip",
+      "uncompressedBytes": 65805,
+      "uncompressedSha256": "303e7b7e14b7e164d7687a5e59cc889c006a7343aa4b81c97574e5a9f5d516ad"
+    },
+    {
+      "id": "terrain--3_-4",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--3_-4.json.gz",
+      "bounds": [
+        -413.778,
+        11.5,
+        -663.661,
+        -398.385,
+        13.2,
+        -598.877
+      ],
+      "objectCount": 1,
+      "triangles": 67,
+      "bytes": 2277,
+      "sha256": "bb6cb90729402367b069b1a94d2430bb1cdd61540381aa1aff2d1aabc2cecf66",
+      "encoding": "gzip",
+      "uncompressedBytes": 23254,
+      "uncompressedSha256": "9e083dfee899ebfb8a98133884222306bfaa429477d34879c5f8e5ebca97e4ef"
+    },
+    {
+      "id": "terrain--3_0",
+      "kind": "terrain",
+      "url": "data/chunk-terrain--3_0.json.gz",
+      "bounds": [
+        -411.658,
+        10.27,
+        -1.086,
+        -399.192,
+        10.93,
+        103.73
+      ],
+      "objectCount": 1,
+      "triangles": 100,
+      "bytes": 2806,
+      "sha256": "28fdb8633e6fe2d11dd9508058ae4d5248f1762f2d2c80ae6bcfe1cb29a0b629",
+      "encoding": "gzip",
+      "uncompressedBytes": 25834,
+      "uncompressedSha256": "fa6fdcc09d4e7f65526a10c1acb21164711fbae2618598835c18d5bde0537888"
+    },
+    {
+      "id": "terrain-0_-1",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-0_-1.json.gz",
+      "bounds": [
+        -2.525,
+        10.1,
+        -202.656,
+        200.133,
+        16.0,
+        1.435
+      ],
+      "objectCount": 1,
+      "triangles": 2521,
+      "bytes": 65332,
+      "sha256": "10f56dcb87ce9fec926814db4a727897441c1a1b2aacdc89bbd4b2eb012eee02",
+      "encoding": "gzip",
+      "uncompressedBytes": 845346,
+      "uncompressedSha256": "f5af1b902fd4aedb5d835c9c9ecfe69cb60a9b7927e04465a325323d3c8f02ee"
+    },
+    {
+      "id": "terrain-0_-2",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-0_-2.json.gz",
+      "bounds": [
+        -1.637,
+        10.92,
+        -400.003,
+        200.941,
+        12.04,
+        -195.892
+      ],
+      "objectCount": 1,
+      "triangles": 2418,
+      "bytes": 62364,
+      "sha256": "a6c287aee13518be4eabea4c257c1488af97398aaa3190810a30ff0acec41a8d",
+      "encoding": "gzip",
+      "uncompressedBytes": 797034,
+      "uncompressedSha256": "5d8083b0a2719c0a1c7703311bc628d47874d16a6f0908979fb0d944d6de03ab"
+    },
+    {
+      "id": "terrain-0_-3",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-0_-3.json.gz",
+      "bounds": [
+        -0.876,
+        11.1,
+        -603.369,
+        201.749,
+        12.97,
+        -399.175
+      ],
+      "objectCount": 1,
+      "triangles": 2399,
+      "bytes": 62234,
+      "sha256": "f59f31d3df1b8084021a94c3ef91ac0949f6c97cf2ff8de148061feac3e5f9d9",
+      "encoding": "gzip",
+      "uncompressedBytes": 784878,
+      "uncompressedSha256": "564fab03e13b4947b9a837d3cb542f5e85cef144b1a84e6e0fd66e15705788bb"
+    },
+    {
+      "id": "terrain-0_-4",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-0_-4.json.gz",
+      "bounds": [
+        -0.063,
+        12.0,
+        -661.954,
+        202.001,
+        13.23,
+        -596.418
+      ],
+      "objectCount": 1,
+      "triangles": 810,
+      "bytes": 22509,
+      "sha256": "62129007a93cbe00d7023ad50c9d7da65232ba68071744e0e6b71358c3274f1c",
+      "encoding": "gzip",
+      "uncompressedBytes": 266963,
+      "uncompressedSha256": "7a12db5dbd51617e648fbcb3a3595ad73d9f2a241b800b23479db5c8c52fdd30"
+    },
+    {
+      "id": "terrain-0_0",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-0_0.json.gz",
+      "bounds": [
+        -2.957,
+        9.98,
+        0.606,
+        199.3,
+        16.85,
+        106.148
+      ],
+      "objectCount": 1,
+      "triangles": 1338,
+      "bytes": 35897,
+      "sha256": "0a87c1cf6ed9d44c803267fd26d5bdf026cc329937f77218977c596f3872b426",
+      "encoding": "gzip",
+      "uncompressedBytes": 445899,
+      "uncompressedSha256": "e116c7e8bb0436499d9896eed67068816a81463f35b4bb1044f7be9034193adb"
+    },
+    {
+      "id": "terrain-1_-1",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-1_-1.json.gz",
+      "bounds": [
+        199.3,
+        10.03,
+        -201.951,
+        235.023,
+        11.52,
+        1.579
+      ],
+      "objectCount": 1,
+      "triangles": 429,
+      "bytes": 12116,
+      "sha256": "7f5aacb7aa2f286c55aac7f59f62f276aad8afd240c70494771a39d9b41f97d5",
+      "encoding": "gzip",
+      "uncompressedBytes": 144906,
+      "uncompressedSha256": "dd25ba49cd10d4d0d1a799bc4fe61f00dc86a61d053c77047a6ec14c923fa4b2"
+    },
+    {
+      "id": "terrain-1_-2",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-1_-2.json.gz",
+      "bounds": [
+        200.133,
+        10.8,
+        -399.175,
+        231.213,
+        11.4,
+        -201.828
+      ],
+      "objectCount": 1,
+      "triangles": 384,
+      "bytes": 10760,
+      "sha256": "0a199b6d87c40a0d733fe210d2844240de55aa08c296d86accd9bed9e51d2c78",
+      "encoding": "gzip",
+      "uncompressedBytes": 130235,
+      "uncompressedSha256": "706685a6456e43ecfacf87bdd88d80f4def8aa49dcbd932fac74444e81d74625"
+    },
+    {
+      "id": "terrain-1_-3",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-1_-3.json.gz",
+      "bounds": [
+        196.678,
+        11.1,
+        -602.561,
+        232.02,
+        12.9,
+        -399.051
+      ],
+      "objectCount": 1,
+      "triangles": 392,
+      "bytes": 10965,
+      "sha256": "44c74f8c7b0740cfeb241d24166c777a072f9768e8221a2f0651289576f820ac",
+      "encoding": "gzip",
+      "uncompressedBytes": 132914,
+      "uncompressedSha256": "b5167d0a2df66f53fe133f8e98368076a59906c5eb0e66be29446b49da8c0377"
+    },
+    {
+      "id": "terrain-1_-4",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-1_-4.json.gz",
+      "bounds": [
+        196.729,
+        12.3,
+        -661.126,
+        232.285,
+        13.05,
+        -596.274
+      ],
+      "objectCount": 1,
+      "triangles": 143,
+      "bytes": 4367,
+      "sha256": "ce5eb5fa2339233f24bbe9a951705fa87a423aa5b2a1b9eecf55c611c5e5f0e7",
+      "encoding": "gzip",
+      "uncompressedBytes": 48682,
+      "uncompressedSha256": "a5d4a917c393ceedeee74cfaa0ac41dab945810f662ae78e7295906748cbd914"
+    },
+    {
+      "id": "terrain-1_0",
+      "kind": "terrain",
+      "url": "data/chunk-terrain-1_0.json.gz",
+      "bounds": [
+        198.896,
+        9.93,
+        1.435,
+        234.619,
+        10.75,
+        100.191
+      ],
+      "objectCount": 1,
+      "triangles": 224,
+      "bytes": 6428,
+      "sha256": "a76a263773f909d248d764361d24caa25f3b7716ee56509735247995b01bcada",
+      "encoding": "gzip",
+      "uncompressedBytes": 74660,
+      "uncompressedSha256": "c9fa7c03e8ca77d56c88bb6bdb4e7993fbd92bc1adc6b0c7ccd3fba704ba7dbd"
+    }
+  ],
+  "route": [
+    [
+      -208.0,
+      10.568,
+      -5.0
+    ],
+    [
+      -211.0,
+      10.568,
+      -5.5
+    ],
+    [
+      -214.0,
+      10.568,
+      -6.0
+    ],
+    [
+      -217.0,
+      10.568,
+      -6.5
+    ],
+    [
+      -220.0,
+      10.568,
+      -7.0
+    ],
+    [
+      -223.229,
+      10.566,
+      -8.021
+    ],
+    [
+      -226.458,
+      10.564,
+      -9.042
+    ],
+    [
+      -229.688,
+      10.56,
+      -10.062
+    ],
+    [
+      -232.146,
+      10.561,
+      -11.438
+    ],
+    [
+      -234.604,
+      10.564,
+      -12.812
+    ],
+    [
+      -237.062,
+      10.567,
+      -14.188
+    ],
+    [
+      -239.594,
+      10.573,
+      -16.781
+    ],
+    [
+      -242.125,
+      10.574,
+      -19.375
+    ],
+    [
+      -243.5,
+      10.574,
+      -22.5
+    ],
+    [
+      -244.875,
+      10.573,
+      -25.625
+    ],
+    [
+      -245.344,
+      10.581,
+      -29.375
+    ],
+    [
+      -245.812,
+      10.59,
+      -33.125
+    ],
+    [
+      -246.281,
+      10.598,
+      -36.875
+    ],
+    [
+      -246.75,
+      10.607,
+      -40.625
+    ],
+    [
+      -246.917,
+      10.616,
+      -44.583
+    ],
+    [
+      -247.083,
+      10.625,
+      -48.542
+    ],
+    [
+      -247.25,
+      10.634,
+      -52.5
+    ],
+    [
+      -247.417,
+      10.643,
+      -56.458
+    ],
+    [
+      -247.583,
+      10.653,
+      -60.417
+    ],
+    [
+      -247.75,
+      10.662,
+      -64.375
+    ],
+    [
+      -247.764,
+      10.67,
+      -67.986
+    ],
+    [
+      -247.778,
+      10.678,
+      -71.597
+    ],
+    [
+      -247.792,
+      10.687,
+      -75.208
+    ],
+    [
+      -247.806,
+      10.695,
+      -78.819
+    ],
+    [
+      -247.819,
+      10.703,
+      -82.431
+    ],
+    [
+      -247.833,
+      10.712,
+      -86.042
+    ],
+    [
+      -247.847,
+      10.72,
+      -89.653
+    ],
+    [
+      -247.861,
+      10.728,
+      -93.264
+    ],
+    [
+      -247.875,
+      10.737,
+      -96.875
+    ],
+    [
+      -247.807,
+      10.745,
+      -100.625
+    ],
+    [
+      -247.739,
+      10.754,
+      -104.375
+    ],
+    [
+      -247.67,
+      10.763,
+      -108.125
+    ],
+    [
+      -247.602,
+      10.771,
+      -111.875
+    ],
+    [
+      -247.534,
+      10.78,
+      -115.625
+    ],
+    [
+      -247.466,
+      10.789,
+      -119.375
+    ],
+    [
+      -247.398,
+      10.797,
+      -123.125
+    ],
+    [
+      -247.33,
+      10.806,
+      -126.875
+    ],
+    [
+      -247.261,
+      10.815,
+      -130.625
+    ],
+    [
+      -247.193,
+      10.823,
+      -134.375
+    ],
+    [
+      -247.125,
+      10.832,
+      -138.125
+    ],
+    [
+      -247.042,
+      10.841,
+      -142.057
+    ],
+    [
+      -246.958,
+      10.85,
+      -145.99
+    ],
+    [
+      -246.875,
+      10.859,
+      -149.922
+    ],
+    [
+      -246.792,
+      10.868,
+      -153.854
+    ],
+    [
+      -246.708,
+      10.877,
+      -157.786
+    ],
+    [
+      -246.625,
+      10.886,
+      -161.719
+    ],
+    [
+      -246.542,
+      10.895,
+      -165.651
+    ],
+    [
+      -246.458,
+      10.905,
+      -169.583
+    ],
+    [
+      -246.375,
+      10.914,
+      -173.516
+    ],
+    [
+      -246.292,
+      10.923,
+      -177.448
+    ],
+    [
+      -246.208,
+      10.932,
+      -181.38
+    ],
+    [
+      -246.125,
+      10.941,
+      -185.312
+    ],
+    [
+      -246.036,
+      10.95,
+      -189.107
+    ],
+    [
+      -245.946,
+      10.962,
+      -192.902
+    ],
+    [
+      -245.857,
+      10.976,
+      -196.696
+    ],
+    [
+      -245.768,
+      10.991,
+      -200.491
+    ],
+    [
+      -245.679,
+      11.009,
+      -204.286
+    ],
+    [
+      -245.589,
+      11.027,
+      -208.08
+    ],
+    [
+      -245.5,
+      11.046,
+      -211.875
+    ],
+    [
+      -245.411,
+      11.067,
+      -215.67
+    ],
+    [
+      -245.321,
+      11.088,
+      -219.464
+    ],
+    [
+      -245.232,
+      11.108,
+      -223.259
+    ],
+    [
+      -245.143,
+      11.129,
+      -227.054
+    ],
+    [
+      -245.054,
+      11.149,
+      -230.848
+    ],
+    [
+      -244.964,
+      11.17,
+      -234.643
+    ],
+    [
+      -244.875,
+      11.19,
+      -238.438
+    ],
+    [
+      -244.775,
+      11.212,
+      -242.375
+    ],
+    [
+      -244.675,
+      11.233,
+      -246.312
+    ],
+    [
+      -244.575,
+      11.254,
+      -250.25
+    ],
+    [
+      -244.475,
+      11.276,
+      -254.188
+    ],
+    [
+      -244.375,
+      11.297,
+      -258.125
+    ],
+    [
+      -244.275,
+      11.318,
+      -262.062
+    ],
+    [
+      -244.175,
+      11.34,
+      -266.0
+    ],
+    [
+      -244.075,
+      11.361,
+      -269.938
+    ],
+    [
+      -243.975,
+      11.382,
+      -273.875
+    ],
+    [
+      -243.875,
+      11.404,
+      -277.812
+    ],
+    [
+      -243.775,
+      11.425,
+      -281.75
+    ],
+    [
+      -243.675,
+      11.446,
+      -285.688
+    ],
+    [
+      -243.575,
+      11.468,
+      -289.625
+    ],
+    [
+      -243.475,
+      11.489,
+      -293.562
+    ],
+    [
+      -243.375,
+      11.51,
+      -297.5
+    ],
+    [
+      -243.272,
+      11.531,
+      -301.324
+    ],
+    [
+      -243.169,
+      11.552,
+      -305.147
+    ],
+    [
+      -243.066,
+      11.573,
+      -308.971
+    ],
+    [
+      -242.963,
+      11.594,
+      -312.794
+    ],
+    [
+      -242.86,
+      11.614,
+      -316.618
+    ],
+    [
+      -242.757,
+      11.635,
+      -320.441
+    ],
+    [
+      -242.654,
+      11.656,
+      -324.265
+    ],
+    [
+      -242.551,
+      11.677,
+      -328.088
+    ],
+    [
+      -242.449,
+      11.697,
+      -331.912
+    ],
+    [
+      -242.346,
+      11.718,
+      -335.735
+    ],
+    [
+      -242.243,
+      11.739,
+      -339.559
+    ],
+    [
+      -242.14,
+      11.76,
+      -343.382
+    ],
+    [
+      -242.037,
+      11.78,
+      -347.206
+    ],
+    [
+      -241.934,
+      11.801,
+      -351.029
+    ],
+    [
+      -241.831,
+      11.822,
+      -354.853
+    ],
+    [
+      -241.728,
+      11.843,
+      -358.676
+    ],
+    [
+      -241.625,
+      11.863,
+      -362.5
+    ],
+    [
+      -241.495,
+      11.884,
+      -366.361
+    ],
+    [
+      -241.365,
+      11.905,
+      -370.221
+    ],
+    [
+      -241.236,
+      11.926,
+      -374.082
+    ],
+    [
+      -241.106,
+      11.948,
+      -377.942
+    ],
+    [
+      -240.976,
+      11.97,
+      -381.803
+    ],
+    [
+      -240.846,
+      11.995,
+      -385.663
+    ],
+    [
+      -240.716,
+      12.023,
+      -389.524
+    ],
+    [
+      -240.587,
+      12.051,
+      -393.385
+    ],
+    [
+      -240.457,
+      12.079,
+      -397.245
+    ],
+    [
+      -240.327,
+      12.107,
+      -401.106
+    ],
+    [
+      -240.197,
+      12.134,
+      -404.966
+    ],
+    [
+      -240.067,
+      12.161,
+      -408.827
+    ],
+    [
+      -239.938,
+      12.189,
+      -412.688
+    ],
+    [
+      -239.757,
+      12.218,
+      -416.618
+    ],
+    [
+      -239.576,
+      12.246,
+      -420.549
+    ],
+    [
+      -239.396,
+      12.275,
+      -424.479
+    ],
+    [
+      -239.215,
+      12.303,
+      -428.41
+    ],
+    [
+      -239.035,
+      12.331,
+      -432.34
+    ],
+    [
+      -238.854,
+      12.359,
+      -436.271
+    ],
+    [
+      -238.674,
+      12.388,
+      -440.201
+    ],
+    [
+      -238.493,
+      12.416,
+      -444.132
+    ],
+    [
+      -238.312,
+      12.444,
+      -448.062
+    ],
+    [
+      -238.052,
+      12.469,
+      -451.49
+    ],
+    [
+      -237.792,
+      12.494,
+      -454.917
+    ],
+    [
+      -237.531,
+      12.518,
+      -458.344
+    ],
+    [
+      -237.271,
+      12.543,
+      -461.771
+    ],
+    [
+      -237.01,
+      12.568,
+      -465.198
+    ],
+    [
+      -236.75,
+      12.583,
+      -468.625
+    ],
+    [
+      -236.0,
+      12.596,
+      -471.5
+    ],
+    [
+      -235.25,
+      12.609,
+      -474.375
+    ],
+    [
+      -233.844,
+      12.619,
+      -476.5
+    ],
+    [
+      -232.438,
+      12.629,
+      -478.625
+    ],
+    [
+      -230.375,
+      12.635,
+      -480.0
+    ],
+    [
+      -228.312,
+      12.641,
+      -481.375
+    ],
+    [
+      -225.594,
+      12.644,
+      -482.0
+    ],
+    [
+      -222.875,
+      12.647,
+      -482.625
+    ],
+    [
+      -219.5,
+      12.647,
+      -482.5
+    ],
+    [
+      -216.125,
+      12.652,
+      -482.375
+    ],
+    [
+      -212.387,
+      12.657,
+      -482.387
+    ],
+    [
+      -208.65,
+      12.655,
+      -482.4
+    ],
+    [
+      -204.912,
+      12.643,
+      -482.413
+    ],
+    [
+      -201.175,
+      12.632,
+      -482.425
+    ],
+    [
+      -197.438,
+      12.617,
+      -482.438
+    ],
+    [
+      -193.609,
+      12.603,
+      -482.484
+    ],
+    [
+      -189.781,
+      12.588,
+      -482.531
+    ],
+    [
+      -185.953,
+      12.573,
+      -482.578
+    ],
+    [
+      -182.125,
+      12.558,
+      -482.625
+    ],
+    [
+      -178.297,
+      12.543,
+      -482.672
+    ],
+    [
+      -174.469,
+      12.53,
+      -482.719
+    ],
+    [
+      -170.641,
+      12.517,
+      -482.766
+    ],
+    [
+      -166.812,
+      12.505,
+      -482.812
+    ],
+    [
+      -162.943,
+      12.49,
+      -482.875
+    ],
+    [
+      -159.074,
+      12.485,
+      -482.938
+    ],
+    [
+      -155.205,
+      12.479,
+      -483.0
+    ],
+    [
+      -151.335,
+      12.473,
+      -483.062
+    ],
+    [
+      -147.466,
+      12.467,
+      -483.125
+    ],
+    [
+      -143.597,
+      12.462,
+      -483.188
+    ],
+    [
+      -139.727,
+      12.456,
+      -483.25
+    ],
+    [
+      -135.858,
+      12.45,
+      -483.312
+    ],
+    [
+      -131.989,
+      12.444,
+      -483.375
+    ],
+    [
+      -128.119,
+      12.439,
+      -483.438
+    ],
+    [
+      -124.25,
+      12.433,
+      -483.5
+    ],
+    [
+      -120.357,
+      12.427,
+      -483.571
+    ],
+    [
+      -116.464,
+      12.421,
+      -483.643
+    ],
+    [
+      -112.571,
+      12.415,
+      -483.714
+    ],
+    [
+      -108.679,
+      12.409,
+      -483.786
+    ],
+    [
+      -104.786,
+      12.404,
+      -483.857
+    ],
+    [
+      -100.893,
+      12.398,
+      -483.929
+    ],
+    [
+      -97.0,
+      12.392,
+      -484.0
+    ],
+    [
+      -93.107,
+      12.386,
+      -484.071
+    ],
+    [
+      -89.214,
+      12.38,
+      -484.143
+    ],
+    [
+      -85.321,
+      12.374,
+      -484.214
+    ],
+    [
+      -81.429,
+      12.368,
+      -484.286
+    ],
+    [
+      -77.536,
+      12.362,
+      -484.357
+    ],
+    [
+      -73.643,
+      12.357,
+      -484.429
+    ],
+    [
+      -69.75,
+      12.351,
+      -484.5
+    ],
+    [
+      -65.92,
+      12.345,
+      -484.494
+    ],
+    [
+      -62.091,
+      12.339,
+      -484.489
+    ],
+    [
+      -58.261,
+      12.333,
+      -484.483
+    ],
+    [
+      -54.432,
+      12.328,
+      -484.477
+    ],
+    [
+      -50.602,
+      12.322,
+      -484.472
+    ],
+    [
+      -46.773,
+      12.316,
+      -484.466
+    ],
+    [
+      -42.943,
+      12.311,
+      -484.46
+    ],
+    [
+      -39.114,
+      12.305,
+      -484.455
+    ],
+    [
+      -35.284,
+      12.299,
+      -484.449
+    ],
+    [
+      -31.455,
+      12.289,
+      -484.443
+    ],
+    [
+      -27.625,
+      12.278,
+      -484.438
+    ],
+    [
+      -23.906,
+      12.268,
+      -484.297
+    ],
+    [
+      -20.188,
+      12.257,
+      -484.156
+    ],
+    [
+      -16.469,
+      12.247,
+      -484.016
+    ],
+    [
+      -12.75,
+      12.236,
+      -483.875
+    ],
+    [
+      -9.031,
+      12.226,
+      -483.734
+    ],
+    [
+      -5.312,
+      12.215,
+      -483.594
+    ],
+    [
+      -1.594,
+      12.204,
+      -483.453
+    ],
+    [
+      2.125,
+      12.186,
+      -483.312
+    ],
+    [
+      5.6,
+      12.167,
+      -482.875
+    ],
+    [
+      9.075,
+      12.149,
+      -482.438
+    ],
+    [
+      12.55,
+      12.132,
+      -482.0
+    ],
+    [
+      16.025,
+      12.115,
+      -481.562
+    ],
+    [
+      19.5,
+      12.105,
+      -481.125
+    ],
+    [
+      22.0,
+      12.101,
+      -479.5
+    ],
+    [
+      24.5,
+      12.098,
+      -477.875
+    ],
+    [
+      26.25,
+      12.093,
+      -475.75
+    ],
+    [
+      28.0,
+      12.088,
+      -473.625
+    ],
+    [
+      29.0,
+      12.08,
+      -471.0
+    ],
+    [
+      30.0,
+      12.07,
+      -468.375
+    ],
+    [
+      30.25,
+      12.058,
+      -465.25
+    ],
+    [
+      30.5,
+      12.046,
+      -462.125
+    ],
+    [
+      30.0,
+      12.031,
+      -458.5
+    ],
+    [
+      29.5,
+      12.017,
+      -454.875
+    ],
+    [
+      29.188,
+      12.003,
+      -451.344
+    ],
+    [
+      28.875,
+      11.989,
+      -447.812
+    ],
+    [
+      28.562,
+      11.975,
+      -444.281
+    ],
+    [
+      28.25,
+      11.961,
+      -440.75
+    ],
+    [
+      27.938,
+      11.947,
+      -437.219
+    ],
+    [
+      27.625,
+      11.933,
+      -433.688
+    ],
+    [
+      27.319,
+      11.917,
+      -429.785
+    ],
+    [
+      27.014,
+      11.902,
+      -425.882
+    ],
+    [
+      26.708,
+      11.887,
+      -421.979
+    ],
+    [
+      26.403,
+      11.871,
+      -418.076
+    ],
+    [
+      26.097,
+      11.856,
+      -414.174
+    ],
+    [
+      25.792,
+      11.84,
+      -410.271
+    ],
+    [
+      25.486,
+      11.824,
+      -406.368
+    ],
+    [
+      25.181,
+      11.809,
+      -402.465
+    ],
+    [
+      24.875,
+      11.794,
+      -398.562
+    ],
+    [
+      24.596,
+      11.779,
+      -394.788
+    ],
+    [
+      24.317,
+      11.764,
+      -391.014
+    ],
+    [
+      24.038,
+      11.749,
+      -387.24
+    ],
+    [
+      23.76,
+      11.734,
+      -383.466
+    ],
+    [
+      23.481,
+      11.72,
+      -379.692
+    ],
+    [
+      23.202,
+      11.705,
+      -375.918
+    ],
+    [
+      22.923,
+      11.69,
+      -372.144
+    ],
+    [
+      22.644,
+      11.675,
+      -368.37
+    ],
+    [
+      22.365,
+      11.66,
+      -364.596
+    ],
+    [
+      22.087,
+      11.645,
+      -360.822
+    ],
+    [
+      21.808,
+      11.63,
+      -357.048
+    ],
+    [
+      21.529,
+      11.615,
+      -353.274
+    ],
+    [
+      21.25,
+      11.6,
+      -349.5
+    ],
+    [
+      20.969,
+      11.584,
+      -345.562
+    ],
+    [
+      20.688,
+      11.569,
+      -341.625
+    ],
+    [
+      20.406,
+      11.553,
+      -337.688
+    ],
+    [
+      20.125,
+      11.538,
+      -333.75
+    ],
+    [
+      19.844,
+      11.522,
+      -329.812
+    ],
+    [
+      19.562,
+      11.507,
+      -325.875
+    ],
+    [
+      19.281,
+      11.497,
+      -321.938
+    ],
+    [
+      19.0,
+      11.491,
+      -318.0
+    ],
+    [
+      18.719,
+      11.484,
+      -314.062
+    ],
+    [
+      18.438,
+      11.478,
+      -310.125
+    ],
+    [
+      18.156,
+      11.471,
+      -306.188
+    ],
+    [
+      17.875,
+      11.464,
+      -302.25
+    ],
+    [
+      17.594,
+      11.458,
+      -298.312
+    ],
+    [
+      17.312,
+      11.452,
+      -294.375
+    ],
+    [
+      17.031,
+      11.445,
+      -290.438
+    ],
+    [
+      16.75,
+      11.439,
+      -286.5
+    ],
+    [
+      16.486,
+      11.433,
+      -282.784
+    ],
+    [
+      16.221,
+      11.427,
+      -279.067
+    ],
+    [
+      15.957,
+      11.42,
+      -275.351
+    ],
+    [
+      15.692,
+      11.414,
+      -271.635
+    ],
+    [
+      15.428,
+      11.408,
+      -267.918
+    ],
+    [
+      15.163,
+      11.402,
+      -264.202
+    ],
+    [
+      14.899,
+      11.396,
+      -260.486
+    ],
+    [
+      14.635,
+      11.39,
+      -256.769
+    ],
+    [
+      14.37,
+      11.384,
+      -253.053
+    ],
+    [
+      14.106,
+      11.378,
+      -249.337
+    ],
+    [
+      13.841,
+      11.371,
+      -245.62
+    ],
+    [
+      13.577,
+      11.365,
+      -241.904
+    ],
+    [
+      13.312,
+      11.359,
+      -238.188
+    ],
+    [
+      13.049,
+      11.353,
+      -234.451
+    ],
+    [
+      12.785,
+      11.347,
+      -230.715
+    ],
+    [
+      12.521,
+      11.341,
+      -226.979
+    ],
+    [
+      12.257,
+      11.334,
+      -223.243
+    ],
+    [
+      11.993,
+      11.328,
+      -219.507
+    ],
+    [
+      11.729,
+      11.322,
+      -215.771
+    ],
+    [
+      11.465,
+      11.316,
+      -212.035
+    ],
+    [
+      11.201,
+      11.31,
+      -208.299
+    ],
+    [
+      10.938,
+      11.304,
+      -204.562
+    ],
+    [
+      10.675,
+      11.297,
+      -200.775
+    ],
+    [
+      10.412,
+      11.291,
+      -196.988
+    ],
+    [
+      10.15,
+      11.285,
+      -193.2
+    ],
+    [
+      9.887,
+      11.278,
+      -189.412
+    ],
+    [
+      9.625,
+      11.272,
+      -185.625
+    ],
+    [
+      9.5,
+      11.269,
+      -183.5
+    ],
+    [
+      9.375,
+      11.266,
+      -181.375
+    ],
+    [
+      8.656,
+      11.261,
+      -178.531
+    ],
+    [
+      7.938,
+      11.256,
+      -175.688
+    ],
+    [
+      6.625,
+      11.251,
+      -172.125
+    ],
+    [
+      5.312,
+      11.24,
+      -168.562
+    ],
+    [
+      4.042,
+      11.23,
+      -165.708
+    ],
+    [
+      2.771,
+      11.219,
+      -162.854
+    ],
+    [
+      1.5,
+      11.208,
+      -160.0
+    ],
+    [
+      -0.167,
+      11.194,
+      -156.667
+    ],
+    [
+      -1.833,
+      11.18,
+      -153.333
+    ],
+    [
+      -3.5,
+      11.166,
+      -150.0
+    ],
+    [
+      -5.025,
+      11.153,
+      -146.925
+    ],
+    [
+      -6.55,
+      11.14,
+      -143.85
+    ],
+    [
+      -8.075,
+      11.127,
+      -140.775
+    ],
+    [
+      -9.6,
+      11.114,
+      -137.7
+    ],
+    [
+      -11.125,
+      11.101,
+      -134.625
+    ],
+    [
+      -12.833,
+      11.087,
+      -131.167
+    ],
+    [
+      -14.542,
+      11.072,
+      -127.708
+    ],
+    [
+      -16.25,
+      11.058,
+      -124.25
+    ],
+    [
+      -17.958,
+      11.043,
+      -120.792
+    ],
+    [
+      -19.667,
+      11.029,
+      -117.333
+    ],
+    [
+      -21.375,
+      11.014,
+      -113.875
+    ],
+    [
+      -22.984,
+      11.001,
+      -110.609
+    ],
+    [
+      -24.594,
+      10.987,
+      -107.344
+    ],
+    [
+      -26.203,
+      10.973,
+      -104.078
+    ],
+    [
+      -27.812,
+      10.959,
+      -100.812
+    ],
+    [
+      -29.422,
+      10.946,
+      -97.547
+    ],
+    [
+      -31.031,
+      10.932,
+      -94.281
+    ],
+    [
+      -32.641,
+      10.918,
+      -91.016
+    ],
+    [
+      -34.25,
+      10.905,
+      -87.75
+    ],
+    [
+      -35.972,
+      10.891,
+      -84.25
+    ],
+    [
+      -37.694,
+      10.876,
+      -80.75
+    ],
+    [
+      -39.417,
+      10.868,
+      -77.25
+    ],
+    [
+      -41.139,
+      10.864,
+      -73.75
+    ],
+    [
+      -42.861,
+      10.86,
+      -70.25
+    ],
+    [
+      -44.583,
+      10.856,
+      -66.75
+    ],
+    [
+      -46.306,
+      10.852,
+      -63.25
+    ],
+    [
+      -48.028,
+      10.848,
+      -59.75
+    ],
+    [
+      -49.75,
+      10.844,
+      -56.25
+    ],
+    [
+      -51.414,
+      10.841,
+      -53.148
+    ],
+    [
+      -53.078,
+      10.837,
+      -50.047
+    ],
+    [
+      -54.742,
+      10.833,
+      -46.945
+    ],
+    [
+      -56.406,
+      10.829,
+      -43.844
+    ],
+    [
+      -58.07,
+      10.826,
+      -40.742
+    ],
+    [
+      -59.734,
+      10.822,
+      -37.641
+    ],
+    [
+      -61.398,
+      10.819,
+      -34.539
+    ],
+    [
+      -63.062,
+      10.816,
+      -31.438
+    ],
+    [
+      -64.917,
+      10.812,
+      -28.417
+    ],
+    [
+      -66.771,
+      10.808,
+      -25.396
+    ],
+    [
+      -68.625,
+      10.805,
+      -22.375
+    ],
+    [
+      -70.479,
+      10.801,
+      -19.354
+    ],
+    [
+      -72.333,
+      10.798,
+      -16.333
+    ],
+    [
+      -74.188,
+      10.794,
+      -13.312
+    ],
+    [
+      -76.422,
+      10.79,
+      -10.453
+    ],
+    [
+      -78.656,
+      10.787,
+      -7.594
+    ],
+    [
+      -80.891,
+      10.784,
+      -4.734
+    ],
+    [
+      -83.125,
+      10.768,
+      -1.875
+    ],
+    [
+      -85.375,
+      10.74,
+      -0.292
+    ],
+    [
+      -87.625,
+      10.73,
+      1.292
+    ],
+    [
+      -89.875,
+      10.727,
+      2.875
+    ],
+    [
+      -93.344,
+      10.726,
+      4.562
+    ],
+    [
+      -96.812,
+      10.708,
+      6.25
+    ],
+    [
+      -100.375,
+      10.697,
+      7.25
+    ],
+    [
+      -103.938,
+      10.684,
+      8.25
+    ],
+    [
+      -107.594,
+      10.661,
+      8.562
+    ],
+    [
+      -111.25,
+      10.633,
+      8.875
+    ],
+    [
+      -115.0,
+      10.618,
+      8.5
+    ],
+    [
+      -118.75,
+      10.611,
+      8.125
+    ],
+    [
+      -121.875,
+      10.605,
+      7.75
+    ],
+    [
+      -125.0,
+      10.599,
+      7.375
+    ],
+    [
+      -128.125,
+      10.594,
+      7.0
+    ],
+    [
+      -131.875,
+      10.587,
+      6.5
+    ],
+    [
+      -135.625,
+      10.58,
+      6.0
+    ],
+    [
+      -139.375,
+      10.576,
+      5.5
+    ],
+    [
+      -142.656,
+      10.573,
+      5.031
+    ],
+    [
+      -145.938,
+      10.569,
+      4.562
+    ],
+    [
+      -149.219,
+      10.566,
+      4.094
+    ],
+    [
+      -152.5,
+      10.566,
+      3.625
+    ],
+    [
+      -156.25,
+      10.566,
+      3.062
+    ],
+    [
+      -160.0,
+      10.566,
+      2.5
+    ],
+    [
+      -163.75,
+      10.566,
+      1.938
+    ],
+    [
+      -167.5,
+      10.566,
+      1.375
+    ],
+    [
+      -171.062,
+      10.567,
+      0.828
+    ],
+    [
+      -174.625,
+      10.567,
+      0.281
+    ],
+    [
+      -178.188,
+      10.567,
+      -0.266
+    ],
+    [
+      -181.75,
+      10.567,
+      -0.812
+    ],
+    [
+      -185.125,
+      10.567,
+      -1.344
+    ],
+    [
+      -188.5,
+      10.567,
+      -1.875
+    ],
+    [
+      -191.875,
+      10.567,
+      -2.406
+    ],
+    [
+      -195.25,
+      10.567,
+      -2.938
+    ],
+    [
+      -198.438,
+      10.568,
+      -3.453
+    ],
+    [
+      -201.625,
+      10.568,
+      -3.969
+    ],
+    [
+      -204.812,
+      10.568,
+      -4.484
+    ]
+  ],
+  "routeStatus": "game_racing_line_on_source_lod3_roads_not_survey_verified",
+  "routeLengthMetres": 1388.202,
+  "routeMinimumSourceBoundaryClearanceMetres": 9.36,
+  "routeWidthMetres": 18.72,
+  "routeEvidenceUrl": "data/route-evidence.json",
+  "routeClearanceMetres": [
+    16.463,
+    16.541,
+    16.619,
+    16.696,
+    16.774,
+    17.335,
+    17.897,
+    17.518,
+    16.715,
+    16.365,
+    16.495,
+    16.33,
+    16.7,
+    15.878,
+    15.6,
+    15.067,
+    15.417,
+    15.978,
+    16.539,
+    16.803,
+    17.068,
+    17.332,
+    17.596,
+    17.86,
+    18.124,
+    18.227,
+    18.247,
+    18.149,
+    18.052,
+    17.955,
+    17.857,
+    17.76,
+    17.662,
+    17.565,
+    17.546,
+    17.528,
+    17.509,
+    17.491,
+    17.472,
+    17.453,
+    17.435,
+    17.416,
+    17.398,
+    17.38,
+    17.363,
+    17.357,
+    17.351,
+    17.344,
+    17.337,
+    17.329,
+    17.321,
+    17.313,
+    17.305,
+    17.297,
+    17.289,
+    17.282,
+    17.274,
+    17.275,
+    17.489,
+    18.465,
+    20.122,
+    18.409,
+    17.059,
+    16.491,
+    16.473,
+    16.465,
+    16.456,
+    16.448,
+    16.44,
+    16.432,
+    16.423,
+    16.422,
+    16.421,
+    16.42,
+    16.418,
+    16.417,
+    16.416,
+    16.415,
+    16.413,
+    16.412,
+    16.411,
+    16.41,
+    16.408,
+    16.407,
+    16.407,
+    16.41,
+    16.417,
+    16.422,
+    16.426,
+    16.431,
+    16.436,
+    16.441,
+    16.446,
+    16.451,
+    16.456,
+    16.46,
+    16.465,
+    16.47,
+    16.475,
+    16.48,
+    16.485,
+    16.489,
+    16.494,
+    16.525,
+    16.556,
+    16.586,
+    16.616,
+    16.646,
+    16.679,
+    16.709,
+    16.739,
+    16.77,
+    16.8,
+    16.831,
+    16.861,
+    16.892,
+    16.971,
+    17.051,
+    17.131,
+    17.211,
+    17.292,
+    17.373,
+    17.282,
+    17.185,
+    17.088,
+    16.901,
+    16.766,
+    17.198,
+    18.277,
+    19.899,
+    21.942,
+    23.398,
+    24.855,
+    25.318,
+    25.781,
+    24.401,
+    21.981,
+    19.648,
+    17.314,
+    15.067,
+    12.821,
+    10.593,
+    9.38,
+    9.36,
+    9.498,
+    9.636,
+    9.743,
+    9.851,
+    9.958,
+    10.065,
+    10.172,
+    10.279,
+    10.387,
+    10.494,
+    10.587,
+    10.68,
+    10.774,
+    10.867,
+    10.96,
+    11.053,
+    11.147,
+    11.24,
+    11.333,
+    11.426,
+    11.519,
+    11.605,
+    11.69,
+    11.136,
+    10.867,
+    10.982,
+    11.098,
+    11.213,
+    11.328,
+    11.444,
+    11.559,
+    11.674,
+    11.79,
+    11.905,
+    12.02,
+    12.21,
+    12.092,
+    11.916,
+    11.74,
+    11.565,
+    11.389,
+    11.214,
+    11.038,
+    10.863,
+    11.07,
+    11.341,
+    11.437,
+    11.533,
+    11.629,
+    11.726,
+    11.822,
+    11.918,
+    12.014,
+    12.11,
+    11.894,
+    11.679,
+    11.463,
+    11.284,
+    11.88,
+    11.86,
+    12.555,
+    12.569,
+    12.584,
+    11.708,
+    11.246,
+    10.662,
+    10.933,
+    10.704,
+    10.475,
+    10.426,
+    10.377,
+    10.328,
+    10.279,
+    10.23,
+    10.181,
+    10.168,
+    10.154,
+    10.14,
+    10.125,
+    10.111,
+    10.097,
+    10.083,
+    10.068,
+    10.048,
+    10.049,
+    10.052,
+    10.055,
+    10.058,
+    10.061,
+    10.064,
+    10.067,
+    10.07,
+    10.073,
+    10.076,
+    10.079,
+    10.082,
+    10.085,
+    10.097,
+    10.11,
+    10.123,
+    10.136,
+    10.148,
+    10.161,
+    10.174,
+    10.187,
+    10.199,
+    10.212,
+    10.225,
+    10.238,
+    10.252,
+    10.265,
+    10.278,
+    10.291,
+    10.304,
+    10.317,
+    10.33,
+    10.343,
+    10.356,
+    10.369,
+    10.382,
+    10.395,
+    10.408,
+    10.421,
+    10.434,
+    10.447,
+    10.46,
+    10.475,
+    10.49,
+    10.505,
+    10.52,
+    10.535,
+    10.55,
+    10.564,
+    10.579,
+    10.594,
+    10.614,
+    10.634,
+    10.654,
+    10.673,
+    10.701,
+    11.024,
+    11.73,
+    12.74,
+    14.282,
+    16.124,
+    17.821,
+    15.739,
+    14.048,
+    12.903,
+    12.293,
+    12.316,
+    12.343,
+    12.378,
+    12.414,
+    12.45,
+    12.485,
+    12.521,
+    12.567,
+    12.613,
+    12.659,
+    12.705,
+    12.751,
+    12.798,
+    12.845,
+    12.891,
+    13.308,
+    13.356,
+    13.033,
+    13.08,
+    13.127,
+    13.174,
+    13.226,
+    13.279,
+    13.334,
+    13.387,
+    13.44,
+    13.493,
+    13.546,
+    13.599,
+    13.652,
+    13.576,
+    13.5,
+    13.424,
+    13.346,
+    13.265,
+    13.187,
+    13.112,
+    13.037,
+    12.755,
+    12.474,
+    12.193,
+    11.912,
+    11.69,
+    11.808,
+    11.52,
+    11.688,
+    12.294,
+    12.901,
+    12.684,
+    12.853,
+    13.184,
+    13.948,
+    15.471,
+    16.715,
+    18.205,
+    17.064,
+    16.163,
+    16.015,
+    15.867,
+    15.805,
+    15.743,
+    15.681,
+    15.656,
+    15.632,
+    15.606,
+    15.615,
+    15.623,
+    15.632,
+    15.64,
+    15.679,
+    15.716,
+    15.752,
+    15.787,
+    15.832,
+    15.878,
+    15.924,
+    15.97,
+    16.026,
+    16.083,
+    16.139,
+    16.195,
+    16.262,
+    16.329,
+    16.396
+  ]
+}

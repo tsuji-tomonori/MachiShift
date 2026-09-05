@@ -1,0 +1,54 @@
+name: Verify playable build
+
+on:
+  pull_request:
+  push:
+    branches: ['feat/**', main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Preserve canonical requirements and evidence boundaries
+        run: node scripts/check-requirements.mjs --report reports/requirements.json
+      - run: npm run typecheck
+      - name: Physical state and race rule tests
+        run: npm test -- --reporter=default --reporter=junit --outputFile=reports/junit.xml
+      - name: Build distribution
+        run: npm run build
+      - name: Upload runnable static build
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: machishift-build-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Install Chromium for functional regression
+        run: npx playwright install --with-deps chromium
+      - name: Real-stage browser flow with software rendering
+        run: npx playwright test
+      - name: Upload verification reports
+        if: always()
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: machishift-verification-${{ github.sha }}
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 14

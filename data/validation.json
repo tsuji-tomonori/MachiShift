@@ -1,0 +1,172 @@
+{
+  "startedAt": "2026-09-05T05:41:13.480629+00:00",
+  "finishedAt": "2026-09-05T05:41:25.588551+00:00",
+  "baseCommit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872",
+  "scope": "Working-tree files identified by SHA256; base commit is not asserted to contain every change",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts/geodata",
+    "-p",
+    "test_*.py"
+  ],
+  "testStatus": "PASS",
+  "exitCode": 0,
+  "wallTimeSeconds": 7.221,
+  "stdout": "",
+  "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 6.299s\n\nOK\n",
+  "environment": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "packages": {
+      "lxml": "6.1.1",
+      "numpy": "2.3.5",
+      "pyproj": "3.7.2",
+      "shapely": "2.1.2",
+      "mapbox-earcut": "2.0.0"
+    }
+  },
+  "fileHashes": {
+    "scripts/geodata/convert.py": "b22cf95c39cd595c4b5751b222b70f06a50bcac352c11c406d272bcd3fe143aa",
+    "scripts/geodata/test_pipeline.py": "23278672bb2da0977218729623ebde73024ee56b7dc54008029ef597ed86dd23",
+    "scripts/geodata/route.py": "380b66afc7cc4a5d18861ed70bba16eb5228ee3f00da61e2246e9c61706f0cea",
+    "scripts/geodata/inventory.py": "7b00f19b8911fc328f69f5fd88eb33fa1717dc18ca676047af7ddca52f4f0de2",
+    "scripts/geodata/audit.py": "4991bd1e87b897c6d99bc1cbb894a5bca005c4404a49b698f1028499c3638c6e",
+    "scripts/geodata/pack.py": "0f689177ca3b70e050f7f0cd9fa9991bc1d84d3eb27f0337f5ae46b89b895595",
+    "scripts/geodata/download.py": "f90fbc6a4aba3e740cb0856ba16c8bb463e988d1fb87244769e129b5311dd77a",
+    "scripts/geodata/terrain.py": "baf3a9bce395dac76062b92750b6281a10dbd4aacd740c66aeda0838e91c8666",
+    "public/data/stage.json": "f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76",
+    "public/data/destructibles.json": "f951bbf945e84ef3fee5b525d02fabf8a2aec610cb9570ffe44296ac7daaac06"
+  },
+  "rawSourceIntegrity": [
+    {
+      "name": "metadata/udx_21201_2024_resource.csv",
+      "status": "PASS",
+      "actualBytes": 75891,
+      "actualSha256": "247d793141bc0d5ff9c566b7705a77874e74d1271313f212340b29e6f052c859",
+      "actualCrc32": 2657951748
+    },
+    {
+      "name": "metadata/udx_21201_city_2024.xml",
+      "status": "PASS",
+      "actualBytes": 38181,
+      "actualSha256": "f0bdbf8c2dbe9ee27a95636ef835069849dbd01418a24fe4a6e10e3a371aa604",
+      "actualCrc32": 511113627
+    },
+    {
+      "name": "metadata/udx_21201_city_2024_fld.xml",
+      "status": "PASS",
+      "actualBytes": 36205,
+      "actualSha256": "6620c71ca614e7499c30b4e8e0d9afc20ca0bf7125b0db5a216eaaab1bea0360",
+      "actualCrc32": 1330863363
+    },
+    {
+      "name": "metadata/udx_21201_city_2024_lsld.xml",
+      "status": "PASS",
+      "actualBytes": 34929,
+      "actualSha256": "41158d9b0e91837c935c71147f0b54c50229ff41e95206cdbe8294f9861a54d4",
+      "actualCrc32": 3482591524
+    },
+    {
+      "name": "udx/squr/53360690_squr_6697.gml",
+      "status": "PASS",
+      "actualBytes": 9220272,
+      "actualSha256": "26656bcb1d90934af861a9f3610eb4eba3d59adc31cd925041a0bd87ffa65fc9",
+      "actualCrc32": 1281027751
+    },
+    {
+      "name": "udx/brid/53360690_brid_6697.gml",
+      "status": "PASS",
+      "actualBytes": 27038049,
+      "actualSha256": "b943031ca9088f16d5f772de372532d28e11c4e600ae337dc9a37f12291768bd",
+      "actualCrc32": 3588134506
+    },
+    {
+      "name": "udx/bldg/53360690_bldg_6697_op.gml",
+      "status": "PASS",
+      "actualBytes": 93656405,
+      "actualSha256": "754e61f101ea84ccbaf063f01b7addf50fbc7a795dde46bac116f625483c9bf5",
+      "actualCrc32": 3896768995
+    },
+    {
+      "name": "udx/bldg/53360691_bldg_6697_op.gml",
+      "status": "PASS",
+      "actualBytes": 59751788,
+      "actualSha256": "10ad7da6ad4f2f0176cc3d31e565fb628166785aa4ddc0bb21f4d1a003484bb3",
+      "actualCrc32": 2728923517
+    },
+    {
+      "name": "udx/tran/53360690_tran_6697_op.gml",
+      "status": "PASS",
+      "actualBytes": 9212106,
+      "actualSha256": "55511bdf46b86734857c51316c58a36fd6c28d624daa121158806cbf5fbb1e79",
+      "actualCrc32": 3624299725
+    },
+    {
+      "name": "udx/tran/53360691_tran_6697_op.gml",
+      "status": "PASS",
+      "actualBytes": 2922899,
+      "actualSha256": "f0341fe11b97256569c667cf4f583c36d3897beef6d2aac9ef328fc88d34ba74",
+      "actualCrc32": 347811491
+    },
+    {
+      "name": "udx/frn/53360690_frn_6697_op.gml",
+      "status": "PASS",
+      "actualBytes": 165810111,
+      "actualSha256": "06d15741deb8d6efdfac85ae13824f45fd3fac3f5ad6a900b4015d524dd4ee02",
+      "actualCrc32": 1967855737
+    },
+    {
+      "name": "README.md",
+      "status": "PASS",
+      "actualBytes": 4412,
+      "actualSha256": "64046efa70afab56047e8dbf0ed6564cf0b0cca4a338956d7c5a43f5ef1fd80f",
+      "actualCrc32": 503431756
+    },
+    {
+      "name": "udx/dem/533606_dem_6697_op.gml",
+      "status": "PASS",
+      "actualBytes": 628816146,
+      "actualSha256": "c0a67d4822a693ea0e16d04ad79725758f0eb2a1a6dd6185d4330b9145abe06f",
+      "actualCrc32": 3583536082
+    },
+    {
+      "name": "codelists/CityFurniture_class.xml",
+      "status": "PASS",
+      "actualBytes": 1358,
+      "actualSha256": "e09f6f69349be0138a7deef86ab522c808f6d3323678b7a4a6d9fc86952d3d54",
+      "actualCrc32": 2823062771
+    },
+    {
+      "name": "codelists/CityFurniture_function.xml",
+      "status": "PASS",
+      "actualBytes": 18676,
+      "actualSha256": "60af79e57a80f524b7e3c467dea10a7e7680c0ac1996948d987062fd8c7c30d2",
+      "actualCrc32": 750154147
+    },
+    {
+      "name": "specification/21201_city_2024_specification_op.pdf",
+      "status": "PASS",
+      "actualBytes": 22715186,
+      "actualSha256": "c128863417c536e5b2d730f7091d99e7b128d6092d1347413df0bb94ebfbbdb9",
+      "actualCrc32": 2508476854
+    },
+    {
+      "name": "21201_indexmap_op.pdf",
+      "status": "PASS",
+      "actualBytes": 5284600,
+      "actualSha256": "9e21c3d6e4a9e1a19fe581c67953252b965cbb21b0568325f1a7abf22a3e2604",
+      "actualCrc32": 3054359524
+    }
+  ],
+  "notEstablished": [
+    "independent road precision",
+    "independent building precision",
+    "source photograph/texture match",
+    "hardware GPU performance",
+    "human usability"
+  ]
+}

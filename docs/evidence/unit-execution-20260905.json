@@ -1,0 +1,31 @@
+{
+  "id": "UNIT-20260905",
+  "recordedAt": "2026-09-05T05:06:50.528642+00:00",
+  "commit": "9611b52dd38f3104ae0801fe6ea8652723815c29",
+  "scope": "Synthetic fixtures using actual Three.js geometry and Rapier bodies; not real-stage, target GPU or human acceptance.",
+  "command": "npm test -- --reporter=default --reporter=json --outputFile=reports/unit-results.json",
+  "result": "PASS",
+  "totalTests": 17,
+  "passedTests": 17,
+  "environment": {
+    "os": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "node": "v24.19.0",
+    "architecture": "x86_64",
+    "browser": "none (Vitest Node environment)",
+    "gpu": "not used for the physical state/unit tests"
+  },
+  "testedFilesSha256": {
+    "src/environment.ts": "3883e209a8151162e1556c95c4b93ddee558e099883e2e85bf11b2a30d41c25f",
+    "src/race.ts": "8e9127ff750a4199f5f74c71d50cb2eb07de4b65dfa9683377fdceed324a6491",
+    "tests/environment.test.ts": "ac76c1bbead3180a7f07f51d9b9b508e31a2c421a11c4ef117ea71cc994f6b70",
+    "tests/race.test.ts": "033861d08343021797ae4938383c0343221de28f6dd9a4ec2a747252c7586a2b",
+    "package.json": "38f31b339b96e25710f4c6f3c3c6d4b625335dbe0c96faaab3021f58ffd417b7",
+    "package-lock.json": "6977470359a1ac0b5194a2c7f2285458d3dbbcef422d137ca81206650e9f7632"
+  },
+  "report": "docs/evidence/unit-results-20260905.json",
+  "knownLimits": [
+    "The raw JSON captures executed tests, not a surveyed Gifu-stage result.",
+    "Source hashes recorded immediately after test execution; an integrated browser build must be retested and recorded separately.",
+    "Rapier initialization emits a deprecation warning in its generated compatibility bundle; tests completed successfully."
+  ]
+}

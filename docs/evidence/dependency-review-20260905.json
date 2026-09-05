@@ -1,0 +1,72 @@
+{
+  "reviewedAt": "2026-09-05T05:54:31.584175+00:00",
+  "run": "docs/evidence/final-execution-20260905.json",
+  "installedPackages": [
+    {
+      "name": "three",
+      "version": "0.180.0",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mrdoob/three.js"
+      }
+    },
+    {
+      "name": "@dimforge/rapier3d-compat",
+      "version": "0.19.3",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dimforge/rapier.js"
+      }
+    },
+    {
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/TypeScript.git"
+      }
+    },
+    {
+      "name": "vite",
+      "version": "7.1.7",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite.git",
+        "directory": "packages/vite"
+      }
+    },
+    {
+      "name": "vitest",
+      "version": "3.2.4",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitest-dev/vitest.git",
+        "directory": "packages/vitest"
+      }
+    },
+    {
+      "name": "@playwright/test",
+      "version": "1.55.1",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright.git"
+      }
+    }
+  ],
+  "officialApiReferences": [
+    "https://threejs.org/docs/",
+    "https://threejs.org/docs/pages/DecalGeometry.html",
+    "https://rapier.rs/docs/user_guides/javascript/rigid_bodies/",
+    "https://rapier.rs/docs/user_guides/javascript/scene_queries/",
+    "https://playwright.dev/docs/test-configuration",
+    "https://playwright.dev/docs/test-webserver"
+  ],
+  "lockfileSha256": "53cc6d8a94f3921c597c2ca494004c59272632b6738033098cdcb35c0f8bbde3",
+  "scope": "Installed fixed dependency identities and declared source-code license metadata; does not certify separate geographic data or modelled artworks."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "EXECUTION-ENVIRONMENT-20260905",
+  "recordedAt": "2026-09-05T05:42:07.052739+00:00",
+  "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872",
+  "os": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "node": "v24.19.0",
+  "python": "3.12.13",
+  "workspaceFreeBytes": 7583465472,
+  "hostMeminfo": {
+    "MemTotal": 23109906432,
+    "MemAvailable": 20062519296
+  },
+  "cgroupMemoryMax": "21474836480",
+  "browser": {
+    "type": "Work cloud Chrome",
+    "gpu": "GL_VENDOR/GL_RENDERER Disabled",
+    "evidence": "docs/evidence/browser-environment-20260905.json"
+  },
+  "tools": {
+    "geodata": "HTTP Range actual source retrieval succeeded",
+    "git": "local commits available; remote push username credential missing",
+    "github": "plugin API exposed, initial-main action rejected by automatic approval review",
+    "browser": "only supported Work control-browser used; no alternate local browser-control fallback"
+  },
+  "measurementScope": "Execution environment inventory only. Host memory figures are not app memory or target PC performance measurements."
+}

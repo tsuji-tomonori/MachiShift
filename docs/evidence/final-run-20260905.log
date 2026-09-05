@@ -1,0 +1,109 @@
+
+2026-09-05T06:02:49.000490+00:00 $ npm ci --no-fund --no-audit
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+added 70 packages in 4s
+
+2026-09-05T06:02:53.624586+00:00 $ npm run typecheck
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> machishift@0.1.0 typecheck
+> tsc --noEmit
+
+
+2026-09-05T06:02:58.172772+00:00 $ npm test -- --reporter=default --reporter=json --outputFile=docs/evidence/final-unit-results-20260905.json
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> machishift@0.1.0 test
+> vitest run --reporter=default --reporter=json --outputFile=docs/evidence/final-unit-results-20260905.json
+
+
+ RUN  v3.2.4 /workspace/scratch/356b13d53f40/MachiShift
+
+ ✓ tests/input.test.ts (1 test) 6ms
+stderr | tests/real-stage.test.ts
+using deprecated parameters for the initialization function; pass a single object instead
+
+stderr | tests/environment.test.ts
+using deprecated parameters for the initialization function; pass a single object instead
+
+stderr | tests/race.test.ts
+using deprecated parameters for the initialization function; pass a single object instead
+
+stdout | tests/race.test.ts > actual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09) > a real centerline barrier causes a physical detour; destruction opens a measurably shorter AI line
+SYNTHETIC_SHORTCUT_PHYSICS [{"opened":false,"metres":75.5369655894244,"seconds":4.716666666666655,"recoveries":0,"maxLateral":7.430426597595215},{"opened":true,"metres":74.37243343732843,"seconds":4.216666666666657,"recoveries":0,"maxLateral":1.9115550518035889}]
+
+stdout | tests/race.test.ts > actual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09) > six colliding karts can physically pass an intact centerline gate as a group
+SYNTHETIC_GROUP_GATE [{"id":0,"recoveries":1,"gates":1},{"id":1,"recoveries":1,"gates":0},{"id":2,"recoveries":1,"gates":0},{"id":3,"recoveries":1,"gates":0},{"id":4,"recoveries":1,"gates":0},{"id":5,"recoveries":1,"gates":0}]
+
+stdout | tests/environment.test.ts > Environment: actual Three surfaces and Rapier bodies > DEST-02/PAINT-05/AT-08 actual PLATEAU bench: original source triangles remain, a painted source polygon moves and truly unloads/reloads
+SOURCE_BENCH_PHYSICS {"sourceObject":"plateau:frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f","surfaceId":"frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f:poly-e1d1ed44-6c96-45bb-8154-e855498245ee","retainedSourceIndices":468,"movedMetres":1.855773449806554,"simulationSeconds":0.25,"colliderCountBeforeUnload":3,"colliderCountAfterReload":3,"paintWorldPoint":[-191.91137069541904,12.666297978543728,38.090494015218766],"restoredPaintWorldPoint":[-191.9113706954191,12.666297978543705,38.09049401521879],"collisionApproximation":"initial_exact_triangles; detached_convex_hull_with_0.04m_outward_gameplay_skin","rendered":false,"scripted":true}
+
+stdout | tests/environment.test.ts > Environment: actual Three surfaces and Rapier bodies > DEST-03 actual chosen PLATEAU WallSurface: original source facade and paint detach while the unselected building structure stays fixed
+SOURCE_FACADE_PHYSICS {"sourceObject":"plateau:bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce","surfaceId":"bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce:poly-118b0ca6-80e5-43c5-889f-35bef87fdb6a","sourceSemantic":"WallSurface","originalIndices":84,"detachableIndices":6,"retainedIndices":78,"movedMetres":0.7246456457277571,"simulationSeconds":0.5,"retainedColliderStillValid":true,"collisionApproximation":"initial_exact_triangles; detached_convex_hull_with_0.04m_outward_gameplay_skin","rendered":false,"scripted":true}
+
+ ✓ tests/environment.test.ts (15 tests) 1077ms
+   ✓ Environment: actual Three surfaces and Rapier bodies > DEST-02/PAINT-05/AT-08 actual PLATEAU bench: original source triangles remain, a painted source polygon moves and truly unloads/reloads  528ms
+stdout | tests/race.test.ts > actual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09) > all six physical vehicles complete three laps on a synthetic oval without progress edits
+SYNTHETIC_OVAL_PHYSICS {"routeMetres":471.98504191898246,"seconds":72.91666666666382,"vehicles":[{"id":0,"finished":true,"finishTime":71.24999999999724,"metres":1470.867916992881,"recoveries":0,"gates":72},{"id":1,"finished":true,"finishTime":70.51666666666395,"metres":1501.452004162425,"recoveries":0,"gates":72},{"id":2,"finished":true,"finishTime":72.91666666666382,"metres":1474.9775758057247,"recoveries":0,"gates":72},{"id":3,"finished":true,"finishTime":70.64999999999728,"metres":1477.0402879945643,"recoveries":0,"gates":72},{"id":4,"finished":true,"finishTime":70.9333333333306,"metres":1428.9464272138273,"recoveries":0,"gates":72},{"id":5,"finished":true,"finishTime":70.7833333333306,"metres":1454.675878718341,"recoveries":0,"gates":72}]}
+
+ ✓ tests/race.test.ts (12 tests) 2711ms
+   ✓ actual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09) > six colliding karts can physically pass an intact centerline gate as a group  352ms
+   ✓ actual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09) > all six physical vehicles complete three laps on a synthetic oval without progress edits  1728ms
+stdout | tests/real-stage.test.ts > AT-09 integration: all six physical vehicles complete the actual PLATEAU course before and after destruction
+REAL_STAGE_PHYSICS {"scenario":"baseline","testedAt":"2026-09-05T06:03:34.710Z","stageSha256":"f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76","routeStatus":"game_racing_line_on_source_lod3_roads_not_survey_verified","routeMetres":1388.2023040929002,"coursePoints":378,"seconds":220.6000000000677,"executionSeconds":28.730569585999998,"objectCount":4557,"firstSideFenceDistance":72,"explosionFragments":0,"shortcutSection":{"seconds":7.433333333333696,"metres":127.36666504470249,"recoveries":1},"recoveryEvents":[{"vehicleId":1,"seconds":6.049999999999984,"lap":1,"checkpoint":15,"routeDistance":73.54114321931144,"legalRouteDistance":44.852373688508365,"position":{"x":-257.5851745605469,"y":11.037906646728516,"z":-53.751869201660156},"count":1},{"vehicleId":0,"seconds":6.26666666666665,"lap":1,"checkpoint":17,"routeDistance":73.73924648666726,"legalRouteDistance":52.410697575798736,"position":{"x":-253.7657470703125,"y":11.039179801940918,"z":-54.11130142211914},"count":1},{"vehicleId":2,"seconds":9.600000000000056,"lap":1,"checkpoint":33,"routeDistance":111.78727327743398,"legalRouteDistance":112.62954162404708,"position":{"x":-249.10989379882812,"y":11.12781810760498,"z":-92.41688537597656},"count":1},{"vehicleId":4,"seconds":10.683333333333444,"lap":1,"checkpoint":35,"routeDistance":155.98844372420757,"legalRouteDistance":119.9912049934506,"position":{"x":-250.27294921875,"y":11.229777336120605,"z":-136.6727752685547},"count":1},{"vehicleId":0,"seconds":13.050000000000228,"lap":1,"checkpoint":36,"routeDistance":160.34994437596927,"legalRouteDistance":123.74183227431976,"position":{"x":-245.05873107910156,"y":11.240158081054688,"z":-140.9344482421875},"count":1},{"vehicleId":1,"seconds":13.083333333333563,"lap":1,"checkpoint":35,"routeDistance":156.2279723542428,"legalRouteDistance":119.9912049934506,"position":{"x":-250.2306365966797,"y":11.230525970458984,"z":-136.9115753173828},"count":1},{"vehicleId":3,"seconds":14.333333333333625,"lap":1,"checkpoint":33,"routeDistance":112.13599818475792,"legalRouteDistance":112.62954162404708,"position":{"x":-246.52081298828125,"y":11.12886905670166,"z":-92.77565002441406},"count":1},{"vehicleId":2,"seconds":28.066666666666354,"lap":1,"checkpoint":115,"routeDistance":427.11820309632964,"legalRouteDistance":428.29712811970995,"position":{"x":-243.03611755371094,"y":12.55976390838623,"z":-407.7474060058594},"count":1},{"vehicleId":3,"seconds":53.183333333331596,"lap":1,"checkpoint":230,"routeDistance":848.3991346388472,"legalRouteDistance":847.0756125037447,"position":{"x":17.867528915405273,"y":12.161850929260254,"z":-390.1636657714844},"count":1},{"vehicleId":4,"seconds":76.1833333333303,"lap":2,"checkpoint":21,"routeDistance":68.70026220780758,"legalRouteDistance":67.89316607112671,"position":{"x":-250.87989807128906,"y":11.027795791625977,"z":-49.18960952758789},"count":1},{"vehicleId":2,"seconds":80.73333333333004,"lap":2,"checkpoint":21,"routeDistance":68.74830472889789,"legalRouteDistance":67.89316607112671,"position":{"x":-250.44432067871094,"y":11.028006553649902,"z":-49.256072998046875},"count":1},{"vehicleId":0,"seconds":80.93333333333003,"lap":2,"checkpoint":34,"routeDistance":152.0441449466832,"legalRouteDistance":116.24057997886969,"position":{"x":-252.42408752441406,"y":11.220719337463379,"z":-132.766845703125},"count":1},{"vehicleId":4,"seconds":83.0333333333299,"lap":2,"checkpoint":34,"routeDistance":151.68416387003916,"legalRouteDistance":116.24057997886969,"position":{"x":-252.36143493652344,"y":11.219880104064941,"z":-132.40567016601562},"count":1},{"vehicleId":0,"seconds":83.46666666666322,"lap":2,"checkpoint":34,"routeDistance":112.61751360370252,"legalRouteDistance":116.24057997886969,"position":{"x":-247.65528869628906,"y":11.130152702331543,"z":-93.25276947021484},"count":1},{"vehicleId":1,"seconds":83.7666666666632,"lap":2,"checkpoint":40,"routeDistance":163.86167407432634,"legalRouteDistance":138.74435739507533,"position":{"x":-248.3588104248047,"y":11.248016357421875,"z":-144.51695251464844},"count":1},{"vehicleId":3,"seconds":85.39999999999644,"lap":2,"checkpoint":21,"routeDistance":68.74612982324241,"legalRouteDistance":67.89316607112671,"position":{"x":-251.58714294433594,"y":11.028013229370117,"z":-49.2056770324707},"count":1},{"vehicleId":1,"seconds":104.78333333332867,"lap":2,"checkpoint":142,"routeDistance":557.272529786733,"legalRouteDistance":520.2639426467426,"position":{"x":-175.42388916015625,"y":12.944849967956543,"z":-486.2518005371094},"count":1},{"vehicleId":0,"seconds":122.13333333332768,"lap":2,"checkpoint":230,"routeDistance":848.4101465986524,"legalRouteDistance":847.0756125037447,"position":{"x":17.05891227722168,"y":12.16188907623291,"z":-390.21240234375},"count":1},{"vehicleId":5,"seconds":138.95000000000272,"lap":3,"checkpoint":21,"routeDistance":68.91293328618937,"legalRouteDistance":67.89316607112671,"position":{"x":-249.25340270996094,"y":11.029047966003418,"z":-49.47109603881836},"count":1},{"vehicleId":5,"seconds":145.71666666667477,"lap":3,"checkpoint":35,"routeDistance":156.0898148023424,"legalRouteDistance":119.9912049934506,"position":{"x":-249.7810821533203,"y":11.230591773986816,"z":-136.76524353027344},"count":1},{"vehicleId":1,"seconds":151.60000000001278,"lap":3,"checkpoint":19,"routeDistance":70.38016011415522,"legalRouteDistance":59.96914543233614,"position":{"x":-248.96661376953125,"y":11.03231143951416,"z":-50.951725006103516},"count":1},{"vehicleId":4,"seconds":152.18333333334658,"lap":3,"checkpoint":21,"routeDistance":68.73864733930323,"legalRouteDistance":67.89316607112671,"position":{"x":-251.25694274902344,"y":11.027892112731934,"z":-49.212120056152344},"count":1},{"vehicleId":0,"seconds":154.13333333334813,"lap":3,"checkpoint":21,"routeDistance":68.74324417550898,"legalRouteDistance":67.89316607112671,"position":{"x":-250.71051025390625,"y":11.028019905090332,"z":-49.239776611328125},"count":1},{"vehicleId":3,"seconds":157.20000000001724,"lap":3,"checkpoint":36,"routeDistance":160.40499447028319,"legalRouteDistance":123.74183227431976,"position":{"x":-249.54730224609375,"y":11.240988731384277,"z":-141.08425903320312},"count":1},{"vehicleId":1,"seconds":158.78333333335183,"lap":3,"checkpoint":35,"routeDistance":155.82751776317787,"legalRouteDistance":119.9912049934506,"position":{"x":-250.10646057128906,"y":11.230178833007812,"z":-136.50880432128906},"count":1},{"vehicleId":4,"seconds":159.03333333335203,"lap":3,"checkpoint":35,"routeDistance":156.1905065224309,"legalRouteDistance":119.9912049934506,"position":{"x":-252.5958251953125,"y":11.230216979980469,"z":-136.9169921875},"count":1},{"vehicleId":0,"seconds":160.90000000002019,"lap":3,"checkpoint":35,"routeDistance":156.26443142320716,"legalRouteDistance":119.9912049934506,"position":{"x":-250.49505615234375,"y":11.23052978515625,"z":-136.9528350830078},"count":1}],"scriptedInput":true,"rendered":false,"realHardwarePerformanceClaim":false,"vehicles":[{"id":0,"finished":true,"finishTime":220.6000000000677,"rank":6,"lap":3,"checkpoint":1,"metres":4443.868388656954,"metresAtFinish":4443.868388656954,"recoveries":7,"recoveriesAtFinish":7,"rejectedTeleports":0,"gates":1134,"position":{"x":-208.2695770263672,"y":10.966658592224121,"z":-5.391528606414795}},{"id":1,"finished":true,"finishTime":218.46666666673266,"rank":4,"lap":3,"checkpoint":1,"metres":4486.3064553550375,"metresAtFinish":4449.945329059478,"recoveries":6,"recoveriesAtFinish":6,"rejectedTeleports":0,"gates":1134,"position":{"x":-242.56387329101562,"y":10.989425659179688,"z":-16.108678817749023}},{"id":2,"finished":true,"finishTime":208.08333333339107,"rank":2,"lap":3,"checkpoint":1,"metres":4533.328743295041,"metresAtFinish":4298.015442668727,"recoveries":3,"recoveriesAtFinish":3,"rejectedTeleports":0,"gates":1134,"position":{"x":-245.5530242919922,"y":11.447538375854492,"z":-211.2091827392578}},{"id":3,"finished":true,"finishTime":216.8500000000647,"rank":3,"lap":3,"checkpoint":1,"metres":4415.251907816444,"metresAtFinish":4346.7029702945765,"recoveries":4,"recoveriesAtFinish":4,"rejectedTeleports":0,"gates":1134,"position":{"x":-252.99502563476562,"y":11.017191886901855,"z":-44.667659759521484}},{"id":4,"finished":true,"finishTime":219.0166666667331,"rank":5,"lap":3,"checkpoint":1,"metres":4439.4601005017585,"metresAtFinish":4411.835909869505,"recoveries":5,"recoveriesAtFinish":5,"rejectedTeleports":0,"gates":1134,"position":{"x":-234.50360107421875,"y":11.251337051391602,"z":-12.199000358581543}},{"id":5,"finished":true,"finishTime":205.08333333338868,"rank":1,"lap":3,"checkpoint":1,"metres":4549.0853630617785,"metresAtFinish":4285.366648431692,"recoveries":2,"recoveriesAtFinish":2,"rejectedTeleports":0,"gates":1134,"position":{"x":-243.3567352294922,"y":11.576714515686035,"z":-234.9669189453125}}]}
+
+stdout | tests/real-stage.test.ts > AT-09 integration: all six physical vehicles complete the actual PLATEAU course before and after destruction
+REAL_STAGE_PHYSICS {"scenario":"destroyed-fences","testedAt":"2026-09-05T06:04:01.813Z","stageSha256":"f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76","routeStatus":"game_racing_line_on_source_lod3_roads_not_survey_verified","routeMetres":1388.2023040929002,"coursePoints":378,"seconds":202.45000000005325,"executionSeconds":26.872902728,"objectCount":4557,"firstSideFenceDistance":72,"explosionFragments":27,"shortcutSection":{"seconds":3.833333333333524,"metres":85.81014286933512,"recoveries":0},"recoveryEvents":[{"vehicleId":1,"seconds":6.183333333333317,"lap":1,"checkpoint":16,"routeDistance":81.30966631836826,"legalRouteDistance":48.63159649220756,"position":{"x":-253.5209197998047,"y":11.056488037109375,"z":-61.69876480102539},"count":1},{"vehicleId":0,"seconds":6.716666666666648,"lap":1,"checkpoint":19,"routeDistance":91.88615329529674,"legalRouteDistance":59.96914543233614,"position":{"x":-251.44129943847656,"y":11.081789016723633,"z":-72.50662994384766},"count":1},{"vehicleId":0,"seconds":82.13333333332996,"lap":2,"checkpoint":65,"routeDistance":262.0707590171808,"legalRouteDistance":235.06190033557482,"position":{"x":-244.69618225097656,"y":11.617497444152832,"z":-242.66897583007812},"count":1}],"scriptedInput":true,"rendered":false,"realHardwarePerformanceClaim":false,"vehicles":[{"id":0,"finished":true,"finishTime":202.45000000005325,"rank":6,"lap":3,"checkpoint":1,"metres":4285.130237775234,"metresAtFinish":4285.130237775234,"recoveries":2,"recoveriesAtFinish":2,"rejectedTeleports":0,"gates":1134,"position":{"x":-208.37567138671875,"y":10.967582702636719,"z":-3.1175384521484375}},{"id":1,"finished":true,"finishTime":198.2666666667166,"rank":5,"lap":3,"checkpoint":1,"metres":4310.044502084812,"metresAtFinish":4232.932100688159,"recoveries":1,"recoveriesAtFinish":1,"rejectedTeleports":0,"gates":1134,"position":{"x":-248.92254638671875,"y":11.044190406799316,"z":-55.78534698486328}},{"id":2,"finished":true,"finishTime":193.98333333337985,"rank":1,"lap":3,"checkpoint":1,"metres":4388.666344922432,"metresAtFinish":4211.175100006596,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-246.67050170898438,"y":11.276873588562012,"z":-156.10894775390625}},{"id":3,"finished":true,"finishTime":197.8500000000496,"rank":4,"lap":3,"checkpoint":1,"metres":4318.053931907016,"metresAtFinish":4230.29156889688,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-250.21400451660156,"y":11.06231689453125,"z":-64.19286346435547}},{"id":4,"finished":true,"finishTime":194.90000000004724,"rank":2,"lap":3,"checkpoint":1,"metres":4358.045644594327,"metresAtFinish":4201.314010777628,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-245.9834747314453,"y":11.222455978393555,"z":-133.16128540039062}},{"id":5,"finished":true,"finishTime":195.33333333338092,"rank":3,"lap":3,"checkpoint":1,"metres":4346.255221128686,"metresAtFinish":4200.869940063641,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-247.4738311767578,"y":11.199524879455566,"z":-123.35440826416016}}]}
+
+stdout | tests/real-stage.test.ts > DEST-07 integration: opening the actual source-road center gate shortens the physical driven segment
+REAL_SHORTCUT_PHYSICS {"stageSha256":"f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76","scriptedInput":true,"rendered":false,"sectionRouteMetres":[70,155],"trials":[{"opened":false,"metres":88.58606736312099,"seconds":4.28333333333341,"recoveries":0},{"opened":true,"metres":85.31476787608555,"seconds":3.7166666666667147,"recoveries":0}]}
+
+stdout | tests/real-stage.test.ts > actual source first 200 metres remain traversable for all six cars with intact barriers
+REAL_FIRST_200M [{"id":0,"checkpoint":62,"recoveries":2,"at":{"x":-244.30169677734375,"y":11.41606616973877,"z":-205.0565948486328},"input":{"throttle":1,"brake":0,"steer":0.20097351553648063,"drift":false,"recover":false}},{"id":1,"checkpoint":71,"recoveries":1,"at":{"x":-246.62339782714844,"y":11.608287811279297,"z":-240.86712646484375},"input":{"throttle":1,"brake":0,"steer":-0.16187278420070528,"drift":false,"recover":false}},{"id":2,"checkpoint":56,"recoveries":2,"at":{"x":-243.06748962402344,"y":11.333398818969727,"z":-181.4050750732422},"input":{"throttle":1,"brake":0,"steer":0.2291406786892113,"drift":false,"recover":false}},{"id":3,"checkpoint":95,"recoveries":0,"at":{"x":-244.0400390625,"y":12.104150772094727,"z":-332.40484619140625},"input":{"throttle":1,"brake":0,"steer":-0.19600391281818838,"drift":false,"recover":false}},{"id":4,"checkpoint":62,"recoveries":1,"at":{"x":-245.76048278808594,"y":11.416950225830078,"z":-205.2582244873047},"input":{"throttle":1,"brake":0,"steer":0.032962034374236907,"drift":false,"recover":false}},{"id":5,"checkpoint":92,"recoveries":0,"at":{"x":-245.04830932617188,"y":12.05835247039795,"z":-323.9404296875},"input":{"throttle":1,"brake":0,"steer":-0.5779522084808011,"drift":false,"recover":false}}]
+FIRST_BEND_CONTACTS []
+
+ ✓ tests/real-stage.test.ts (3 tests) 70271ms
+   ✓ AT-09 integration: all six physical vehicles complete the actual PLATEAU course before and after destruction  60669ms
+   ✓ DEST-07 integration: opening the actual source-road center gate shortens the physical driven segment  4585ms
+   ✓ actual source first 200 metres remain traversable for all six cars with intact barriers  4919ms
+
+ Test Files  4 passed (4)
+      Tests  31 passed (31)
+   Start at  15:02:59
+   Duration  72.10s (transform 854ms, setup 0ms, collect 1.91s, tests 74.06s, environment 2ms, prepare 912ms)
+
+JSON report written to /workspace/scratch/356b13d53f40/MachiShift/docs/evidence/final-unit-results-20260905.json
+
+2026-09-05T06:04:12.121410+00:00 $ npm run build
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> machishift@0.1.0 build
+> tsc --noEmit && vite build && node scripts/copy-runtime-assets.mjs
+
+vite v7.1.7 building for production...
+transforming...
+✓ 12 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                      0.79 kB │ gzip:   0.47 kB
+dist/assets/index-CuZ_3Fit.css      10.89 kB │ gzip:   3.19 kB
+dist/assets/index-UczCNDWs.js       74.28 kB │ gzip:  27.89 kB │ map:   225.72 kB
+dist/assets/three-Bc5Z_Hu6.js      487.04 kB │ gzip: 122.77 kB │ map: 2,695.78 kB
+dist/assets/physics-CKC5f6tm.js  2,235.50 kB │ gzip: 829.91 kB │ map: 2,392.25 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 4.36s
+Copied 54 verified-path runtime assets; conversion intermediates excluded.
+
+2026-09-05T06:04:22.417058+00:00 $ npx playwright test --list
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+Listing tests:
+  [chromium-software-functionality] › game.spec.ts:42:1 › real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap race, results and reset
+  [chromium-software-functionality] › game.spec.ts:210:1 › real chunk network failure displays retry and reload recovers
+Total: 2 tests in 1 file
+
+2026-09-05T06:04:25.194305+00:00 $ git diff --check

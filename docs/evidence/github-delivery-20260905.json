@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-05",
+  "repository": "https://github.com/tsuji-tomonori/MachiShift",
+  "localBranch": "feat/gifu-playable-build",
+  "remoteDelivery": "BLOCKED",
+  "attempts": [
+    {
+      "action": "git push -u origin main",
+      "content": "Initial authoritative source documents and repository instructions",
+      "result": "AUTOMATIC_APPROVAL_REVIEW_REJECTED",
+      "reasonSummary": "The empty repository default branch would be initialized by a remote mutation. Explicit authorization for direct main initialization was not established, and the requested workflow uses a branch and pull request.",
+      "remoteMutationCompleted": false
+    },
+    {
+      "action": "git push -u origin feat/gifu-playable-build",
+      "result": "AUTHENTICATION_UNAVAILABLE",
+      "stderr": "fatal: could not read Username for 'https://github.com': No such device or address",
+      "remoteMutationCompleted": false
+    }
+  ],
+  "pullRequestCreated": false,
+  "remoteCIExecuted": false,
+  "productionPublished": false,
+  "reviewableDelivery": "The full local Git history, static build and actual verification records are packaged for review. No approval denial is bypassed through another API.",
+  "requestedNextAuthorization": "Initialize main with the preserved authoritative source documents, then submit the implementation on feat/gifu-playable-build through a pull request using the connected GitHub tools. No automatic merge or production publication."
+}

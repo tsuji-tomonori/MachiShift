@@ -1,0 +1,38 @@
+{
+  "id": "SOURCE-PRESERVATION-20260905",
+  "executedAt": "2026-09-05T05:10:17.127489+00:00",
+  "result": "PASS",
+  "checks": [
+    {
+      "path": "source_materials/README.md",
+      "original": "01-real_kart_planning_v0_1.zip!real_kart_planning_v0_1/README.md",
+      "sha256": "dda0d87e0d5f69aa283ccd9ee9d98098092d7e51edfcfb1d97408932ccd8a1e1",
+      "equalToSuppliedBytes": true
+    },
+    {
+      "path": "source_materials/asset_manifest_template.csv",
+      "original": "01-real_kart_planning_v0_1.zip!real_kart_planning_v0_1/asset_manifest_template.csv",
+      "sha256": "a1927b7e90ee9bb3075592827968e579bb31d8e4dff11172ca1053296d399652",
+      "equalToSuppliedBytes": true
+    },
+    {
+      "path": "source_materials/implementation_prompt.md",
+      "original": "../upload/MachiShift_implementation_prompt(1).md",
+      "sha256": "71bbe5f2cdbc6143c99e162ecd30db3da5086a0059adba5e2c4de5980eab2cc9",
+      "equalToSuppliedBytes": true
+    },
+    {
+      "path": "source_materials/requirements.md",
+      "original": "01-real_kart_planning_v0_1.zip!real_kart_planning_v0_1/requirements.md",
+      "sha256": "084037fb7196788e08eb0d378346efcfe99bb50e90feca7a0bc35ebcf5bcc8ae",
+      "equalToSuppliedBytes": true
+    },
+    {
+      "path": "source_materials/sources.json",
+      "original": "01-real_kart_planning_v0_1.zip!real_kart_planning_v0_1/sources.json",
+      "sha256": "41d34e861f98f845ad9eaaaf97e2b2fecec79c51ab1306d88eced2bfcbb1ff1d",
+      "equalToSuppliedBytes": true
+    }
+  ],
+  "scope": "Byte-for-byte preservation against supplied ZIP and implementation prompt attachments."
+}

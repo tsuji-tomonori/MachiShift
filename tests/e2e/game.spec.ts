@@ -1,0 +1,176 @@
+import { expect, test, type Page, type TestInfo } from '@playwright/test';
+
+interface Diagnostics {
+  phase: string;
+  elapsed: number;
+  courseMeters: number;
+  inventory: string[];
+  thrownCount: number;
+  paintHits: number;
+  bombHits: number;
+  paintEvents: number;
+  destroyed: number;
+  dynamicDebris: number;
+  gripZones: number;
+  recoveries: number;
+  autoDrive: boolean;
+  vehicles: Array<{ id: number; lap: number; rank: number; checkpoint: number; finished: boolean; speed: number; position: { x: number; y: number; z: number } }>;
+}
+
+async function readDiagnostics(page: Page): Promise<Diagnostics> {
+  // Read the visible QA panel, which derives from actual physics/render state.
+  // Never write position, checkpoints, lap counts or hidden game variables.
+  const raw = await page.locator('#diagnostics').textContent();
+  if (!raw) throw new Error('The actual-state diagnostics panel is empty');
+  return JSON.parse(raw) as Diagnostics;
+}
+
+async function attachJSON(testInfo: TestInfo, name: string, value: unknown): Promise<void> {
+  await testInfo.attach(name, { body: JSON.stringify(value, null, 2), contentType: 'application/json' });
+}
+
+async function openStage(page: Page, testInfo: TestInfo): Promise<void> {
+  const stageResponse = await page.request.get('/data/stage.json');
+  expect(stageResponse.ok()).toBe(true);
+  const stage = await stageResponse.json();
+  expect(stage.metadata.source).toMatch(/PLATEAU|岐阜|CityGML/i);
+  expect(stage.chunks.length).toBeGreaterThan(0);
+  expect(stage.route.length).toBeGreaterThan(3);
+  await attachJSON(testInfo, 'source-stage', {
+    commit: process.env.GITHUB_SHA ?? 'working-tree',
+    executedAt: new Date().toISOString(),
+    environment: 'Playwright Chromium / 1280x720 / SwiftShader',
+    scope: 'Automated functional play on bundled real CityGML-derived stage. Not independent survey, human evaluation or AT-12.',
+    metadata: stage.metadata,
+    chunks: stage.chunks.map((chunk: { id: string; sha256: string }) => ({ id: chunk.id, sha256: chunk.sha256 })),
+  });
+  await page.goto('/?qa=1');
+  await expect(page.getByRole('button', { name: 'レースを始める', exact: false })).toBeVisible({ timeout: 150_000 });
+}
+
+test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap race, results and reset', async ({ page }, testInfo) => {
+  test.setTimeout(14 * 60_000);
+  const uncaught: string[] = [];
+  page.on('pageerror', error => uncaught.push(error.message));
+  await openStage(page, testInfo);
+  await page.screenshot({ path: testInfo.outputPath('real-stage-title.png') });
+
+  await page.getByRole('button', { name: '操作方法', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '走る・狙う・街を変える' })).toBeVisible();
+  await expect(page.getByRole('table')).toContainText('ゲームパッド');
+  await page.getByRole('button', { name: '戻る', exact: true }).click();
+  await page.getByRole('button', { name: '自由走行', exact: true }).click();
+  await page.locator('#qa summary').click();
+  await expect.poll(async () => (await readDiagnostics(page)).phase).toBe('free');
+  const before = await readDiagnostics(page);
+  expect(before.vehicles).toHaveLength(6);
+  expect(before.inventory).toHaveLength(0);
+  expect(before.destroyed).toBe(0);
+
+  // Genuine keyboard input crosses a pickup. We do not grant inventory in JS.
+  await page.keyboard.down('KeyW');
+  try {
+    await expect.poll(async () => Math.abs((await readDiagnostics(page)).vehicles[0].speed), { timeout: 40_000 }).toBeGreaterThan(6);
+    await expect.poll(async () => (await readDiagnostics(page)).inventory.length, { timeout: 40_000 }).toBeGreaterThan(0);
+    await page.keyboard.down('Shift');
+    await page.keyboard.down('KeyA');
+    await page.waitForTimeout(1200); // Recorded held-input duration; not a simulated physics time jump.
+    await page.keyboard.up('KeyA');
+    await page.keyboard.up('Shift');
+  } finally {
+    await page.keyboard.up('KeyW');
+    await page.keyboard.up('KeyA');
+    await page.keyboard.up('Shift');
+  }
+  const driven = await readDiagnostics(page);
+  expect(Math.hypot(driven.vehicles[0].position.x - before.vehicles[0].position.x, driven.vehicles[0].position.z - before.vehicles[0].position.z)).toBeGreaterThan(10);
+  await page.mouse.move(640, 360);
+  await page.keyboard.down('Space');
+  await expect(page.locator('.aim-text')).toContainText('離して投げる');
+  await page.keyboard.up('Space');
+  await expect.poll(async () => (await readDiagnostics(page)).thrownCount).toBe(1);
+  await expect.poll(async () => {
+    const state = await readDiagnostics(page);
+    return state.paintHits + state.bombHits;
+  }, { timeout: 40_000 }).toBeGreaterThan(0);
+  await attachJSON(testInfo, 'keyboard-drive-and-throw', await readDiagnostics(page));
+
+  await page.keyboard.down('KeyS');
+  try {
+    await expect.poll(async () => Math.abs((await readDiagnostics(page)).vehicles[0].speed), { timeout: 20_000 }).toBeLessThan(1);
+  } finally { await page.keyboard.up('KeyS'); }
+  const beforeRecovery = await readDiagnostics(page);
+  await page.keyboard.press('KeyR');
+  await expect.poll(async () => (await readDiagnostics(page)).recoveries, { timeout: 10_000 }).toBeGreaterThan(beforeRecovery.recoveries);
+  const recovered = await readDiagnostics(page);
+  expect(recovered.vehicles[0].checkpoint).toBe(beforeRecovery.vehicles[0].checkpoint);
+  expect(recovered.vehicles[0].lap).toBe(beforeRecovery.vehicles[0].lap);
+  await attachJSON(testInfo, 'manual-recovery', { before: beforeRecovery, after: recovered });
+
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
+  const pausedTime = (await readDiagnostics(page)).elapsed;
+  await page.waitForTimeout(400);
+  expect((await readDiagnostics(page)).elapsed).toBe(pausedTime);
+  await page.getByRole('button', { name: 'タイトルへ', exact: true }).click();
+  await page.getByRole('button', { name: '操作を練習する', exact: true }).click();
+  await expect(page.getByRole('heading', { name: '1. 走り出そう' })).toBeVisible();
+  await page.getByRole('button', { name: '練習をスキップしてレースへ', exact: true }).click();
+  await page.locator('#qa summary').click();
+  await expect.poll(async () => (await readDiagnostics(page)).phase, { timeout: 30_000 }).toBe('race');
+  const reset = await readDiagnostics(page);
+  expect(reset.vehicles.every(vehicle => vehicle.lap === 1 && !vehicle.finished)).toBe(true);
+  expect(reset.paintEvents).toBe(0);
+  expect(reset.destroyed).toBe(0);
+  expect(reset.dynamicDebris).toBe(0);
+  expect(reset.gripZones).toBe(0);
+  expect(reset.thrownCount).toBe(0);
+
+  // The visible panel enables the ordinary AI controller for the player.
+  // All six vehicles still use dynamic bodies, real roads and ordered gates.
+  await page.getByRole('button', { name: '自動走行を開始', exact: true }).click();
+  await expect.poll(async () => (await readDiagnostics(page)).autoDrive).toBe(true);
+  await attachJSON(testInfo, 'race-start', await readDiagnostics(page));
+  await expect(page.getByRole('heading', { name: '街に、足跡を残した。' })).toBeVisible({ timeout: 10 * 60_000 });
+  await expect(page.locator('.result-row')).toHaveCount(6);
+  await expect(page.locator('.dialog')).toContainText('3周の記録');
+  await expect(page.locator('.result-row').filter({ hasText: '走行中' })).toHaveCount(0, { timeout: 120_000 });
+  await attachJSON(testInfo, 'race-result-text', { text: await page.locator('.dialog').innerText(), uncaught });
+  await page.screenshot({ path: testInfo.outputPath('three-lap-results.png') });
+
+  await page.getByRole('button', { name: 'もう一度走る', exact: false }).click();
+  await page.locator('#qa summary').click();
+  await expect.poll(async () => (await readDiagnostics(page)).phase, { timeout: 30_000 }).toBe('race');
+  const again = await readDiagnostics(page);
+  expect(again.vehicles.every(vehicle => vehicle.lap === 1 && !vehicle.finished)).toBe(true);
+  expect(again.paintEvents).toBe(0);
+  expect(again.destroyed).toBe(0);
+  expect(again.dynamicDebris).toBe(0);
+  expect(again.thrownCount).toBe(0);
+  expect(again.autoDrive).toBe(false);
+  await attachJSON(testInfo, 'rerace-reset', again);
+  await page.screenshot({ path: testInfo.outputPath('rerace-reset.png') });
+  expect(uncaught).toEqual([]);
+});
+
+test('real chunk network failure displays retry and reload recovers', async ({ page }, testInfo) => {
+  let failedOnce = false;
+  await page.route('**/data/*.json.gz', async route => {
+    if (!failedOnce) { failedOnce = true; await route.abort('failed'); }
+    else await route.continue();
+  });
+  await page.goto('/?qa=1');
+  await expect(page.getByRole('heading', { name: '街を読み込めませんでした' })).toBeVisible({ timeout: 60_000 });
+  expect(failedOnce).toBe(true);
+  await page.screenshot({ path: testInfo.outputPath('chunk-failure.png') });
+  await page.getByRole('button', { name: '再試行', exact: false }).click();
+  await expect(page.getByRole('button', { name: 'レースを始める', exact: false })).toBeVisible({ timeout: 120_000 });
+  await page.screenshot({ path: testInfo.outputPath('chunk-retry-success.png') });
+  await attachJSON(testInfo, 'network-recovery', {
+    executedAt: new Date().toISOString(),
+    commit: process.env.GITHUB_SHA ?? 'working-tree',
+    result: 'PASS',
+    method: 'Abort exactly one original compressed chunk request, then serve the unchanged real stage on retry.',
+    scope: 'Network error/retry UI only, not geographic accuracy or performance acceptance.',
+  });
+});

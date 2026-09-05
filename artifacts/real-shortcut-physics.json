@@ -1,0 +1,23 @@
+{
+  "stageSha256": "f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76",
+  "scriptedInput": true,
+  "rendered": false,
+  "sectionRouteMetres": [
+    70,
+    155
+  ],
+  "trials": [
+    {
+      "opened": false,
+      "metres": 88.58606736312099,
+      "seconds": 4.28333333333341,
+      "recoveries": 0
+    },
+    {
+      "opened": true,
+      "metres": 85.31476787608555,
+      "seconds": 3.7166666666667147,
+      "recoveries": 0
+    }
+  ]
+}

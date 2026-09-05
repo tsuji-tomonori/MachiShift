@@ -1,0 +1,35 @@
+{
+  "id": "ENVIRONMENT-20260905",
+  "executedAt": "2026-09-05T05:16:38.799022+00:00",
+  "finishedAt": "2026-09-05T05:16:43.708285+00:00",
+  "command": [
+    "npx",
+    "vitest",
+    "run",
+    "tests/environment.test.ts",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=docs/evidence/environment-results-20260905.json"
+  ],
+  "result": "PASS",
+  "totalTests": 13,
+  "passedTests": 13,
+  "commit": "9611b52dd38f3104ae0801fe6ea8652723815c29",
+  "environment": "Linux-6.18.35-x86_64-with-glibc2.39 / Node v24.19.0",
+  "sourceHashesBefore": {
+    "src/environment.ts": "69f3ca2063041a86b970e7d443b6bcb6aabb4c57752cb1d4d905e241d31ace8c",
+    "tests/environment.test.ts": "3c0c1e88dbb7aef58237dbe05943638911a6662172d325e39137281c6ce892a4",
+    "package.json": "97f2b2ec7fdec19306c2ea957d37d85b45bc025488c7906039ed4e476769e500",
+    "package-lock.json": "53cc6d8a94f3921c597c2ca494004c59272632b6738033098cdcb35c0f8bbde3"
+  },
+  "sourceHashesAfter": {
+    "src/environment.ts": "69f3ca2063041a86b970e7d443b6bcb6aabb4c57752cb1d4d905e241d31ace8c",
+    "tests/environment.test.ts": "3c0c1e88dbb7aef58237dbe05943638911a6662172d325e39137281c6ce892a4",
+    "package.json": "97f2b2ec7fdec19306c2ea957d37d85b45bc025488c7906039ed4e476769e500",
+    "package-lock.json": "53cc6d8a94f3921c597c2ca494004c59272632b6738033098cdcb35c0f8bbde3"
+  },
+  "sourceStableDuringExecution": true,
+  "report": "docs/evidence/environment-results-20260905.json",
+  "log": "docs/evidence/environment-run-20260905.log",
+  "scope": "Actual Three/Rapier physical state fixtures, including source-polygon fracture and actual resource unload/rebuild. Synthetic source geometry; real-stage category verification and browser presentation remain separate."
+}
