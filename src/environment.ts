@@ -230,6 +230,51 @@ export class Environment {
     const unit = direction.clone().normalize();
     const centerHit = this.cast(origin, unit, maxDistance, targets);
     if (!centerHit?.face) return null;
+    return this.paintHit(centerHit, origin, unit, color, maxDistance, targets);
+  }
+
+  /** Resolve a physical contact only against its current loaded collider's piece.
+   * The short projection allowance covers the documented 0.04m detached gameplay
+   * skin. It never searches another object for a replacement primary surface.
+   */
+  paintCollider(colliderHandle: number, point: THREE.Vector3, outwardNormal: THREE.Vector3, color: number): PaintResult | null {
+    if (![...point.toArray(), ...outwardNormal.toArray()].every(Number.isFinite) || outwardNormal.lengthSq() < 1e-10) return null;
+    if (this.world.getCollider(colliderHandle)?.handle !== colliderHandle) return null;
+    const piece = [...this.pieces.values()].find(candidate => candidate.loaded !== false && candidate.collider?.handle === colliderHandle);
+    if (!piece) return null;
+    this.scene.updateMatrixWorld(true);
+    const mesh = piece.mesh, positions = mesh.geometry.getAttribute('position'), indices = mesh.geometry.index;
+    const normal = outwardNormal.clone().normalize();
+    const triangle = new THREE.Triangle(), closest = new THREE.Vector3(), faceNormal = new THREE.Vector3();
+    let hit: THREE.Intersection | null = null;
+    let bestDistance = 0.065 ** 2, bestAlignment = -1;
+    const count = indices?.count ?? positions.count;
+    for (let i = 0; i < count; i += 3) {
+      const a = indices ? indices.getX(i) : i, b = indices ? indices.getX(i + 1) : i + 1, c = indices ? indices.getX(i + 2) : i + 2;
+      triangle.a.fromBufferAttribute(positions, a).applyMatrix4(mesh.matrixWorld);
+      triangle.b.fromBufferAttribute(positions, b).applyMatrix4(mesh.matrixWorld);
+      triangle.c.fromBufferAttribute(positions, c).applyMatrix4(mesh.matrixWorld);
+      triangle.getNormal(faceNormal);
+      const alignment = Math.abs(faceNormal.dot(normal));
+      if (alignment < 0.25) continue;
+      triangle.closestPointToPoint(point, closest);
+      const distance = closest.distanceToSquared(point);
+      if (distance > bestDistance + 1e-12 || (Math.abs(distance - bestDistance) <= 1e-12 && alignment <= bestAlignment)) continue;
+      bestDistance = distance; bestAlignment = alignment;
+      // Three's face normal is local; addDecal retains this exact face/surface ID.
+      triangle.a.fromBufferAttribute(positions, a); triangle.b.fromBufferAttribute(positions, b); triangle.c.fromBufferAttribute(positions, c);
+      hit = { distance: 0.01, point: closest.clone(), object: mesh, faceIndex: i / 3,
+        face: { a, b, c, normal: triangle.getNormal(new THREE.Vector3()), materialIndex: 0 } };
+    }
+    if (!hit?.face) return null;
+    const faceOutward = this.hitNormal(hit, normal.clone().negate());
+    // Start droplets immediately outside the actual rendered face, so a thin
+    // back wall or nearby deck cannot become the origin's replacement surface.
+    return this.paintHit(hit, hit.point.clone().addScaledVector(faceOutward, 0.01), faceOutward.negate(), color, 2, this.meshes);
+  }
+
+  private paintHit(centerHit: THREE.Intersection, origin: THREE.Vector3, unit: THREE.Vector3,
+    color: number, maxDistance: number, targets: THREE.Mesh[]): PaintResult | null {
     const primary = this.pieces.get(centerHit.object.userData.pieceId as string);
     if (!primary) return null;
     const normal = this.hitNormal(centerHit, unit);

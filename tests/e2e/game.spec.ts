@@ -106,17 +106,6 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
   }
   const driven = await readDiagnostics(page);
   expect(Math.hypot(driven.vehicles[0].position.x - before.vehicles[0].position.x, driven.vehicles[0].position.z - before.vehicles[0].position.z)).toBeGreaterThan(10);
-  await page.mouse.move(640, 360);
-  await page.keyboard.down('Space');
-  await expect(page.locator('.aim-text')).toContainText('離して投げる');
-  await page.keyboard.up('Space');
-  await expect.poll(async () => (await readDiagnostics(page)).thrownCount).toBe(1);
-  await expect.poll(async () => {
-    const state = await readDiagnostics(page);
-    return state.paintHits + state.bombHits;
-  }, { timeout: 40_000 }).toBeGreaterThan(0);
-  await attachJSON(testInfo, 'keyboard-drive-and-throw', await readDiagnostics(page));
-
   await page.keyboard.down('KeyS');
   try {
     await expect.poll(async () => Math.abs((await readDiagnostics(page)).vehicles[0].speed), { timeout: 20_000 }).toBeLessThan(1);
@@ -128,6 +117,19 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
   expect(recovered.vehicles[0].checkpoint).toBe(beforeRecovery.vehicles[0].checkpoint);
   expect(recovered.vehicles[0].lap).toBe(beforeRecovery.vehicles[0].lap);
   await attachJSON(testInfo, 'manual-recovery', { before: beforeRecovery, after: recovered });
+
+  // Aim from the ordinary recovery position after stopping. A moving post-drift
+  // throw can legitimately miss; the hit assertion needs a repeatable road aim.
+  await page.mouse.move(640, 360);
+  await page.keyboard.down('Space');
+  await expect(page.locator('.aim-text')).toContainText('離して投げる');
+  await page.keyboard.up('Space');
+  await expect.poll(async () => (await readDiagnostics(page)).thrownCount).toBe(1);
+  await expect.poll(async () => {
+    const state = await readDiagnostics(page);
+    return state.paintHits + state.bombHits;
+  }, { timeout: 40_000 }).toBeGreaterThan(0);
+  await attachJSON(testInfo, 'keyboard-drive-and-throw', await readDiagnostics(page));
 
   await page.keyboard.press('Escape');
   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
@@ -161,6 +163,8 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
   await expect(page.getByRole('heading', { name: '街に、足跡を残した。' })).toBeVisible({ timeout: 10 * 60_000 });
   await expect(page.locator('.result-row')).toHaveCount(6);
   await expect(page.locator('.dialog')).toContainText('3周の記録');
+  // AI hits must not be credited to the player, who only auto-drives this race.
+  await expect(page.locator('.dialog')).toContainText('自分のペイント命中 0 / 投擲 0');
   await expect(page.locator('.result-row').filter({ hasText: '走行中' })).toHaveCount(0, { timeout: 120_000 });
   await attachJSON(testInfo, 'race-result-text', { text: await page.locator('.dialog').innerText(), uncaught });
   await page.screenshot({ path: testInfo.outputPath('three-lap-results.png') });

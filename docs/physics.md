@@ -101,3 +101,7 @@ Checked during implementation against the installed pinned packages and official
 - [Rapier scene queries](https://rapier.rs/docs/user_guides/templates/scene_queries)
 
 The hosted Rapier guide identifies its JavaScript documentation as 0.17; the implementation also checks the installed 0.19.3 declarations and executes integration tests against 0.19.3 rather than assuming guide-version equivalence.
+
+## 投擲物の実接触
+
+球形投擲物はRapierの接触点・法線・相手コライダーを参照して命中する。中心線が外れても球の端が当たる接触を拾い、近いだけの推測接触は除く。塗装は現在読み込まれている相手の元表面だけを主対象とし、0.04mの既存衝突用厚みを許容する近傍投影を使う。古いコライダーハンドルや別階を代替主対象にしない。中心線と寿命は実接触がないときの補助判定として残す。回帰条件は `tests/projectile-contact.test.ts`。結果の命中数はプレイヤーの投擲物だけ、街の破壊箇所は全車共通で表示する。

@@ -499,10 +499,22 @@
           "scope": "Blocked execution conditions. This records no newly retried action and no successful interactive play.",
           "result": "BLOCKED",
           "fullRequirement": false
+        },
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-GAME-05",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
+          "fullRequirement": false
         }
       ],
       "status": "BLOCKED",
-      "unmetReason": "フォーカス喪失の誤再開は修正・回帰試験済み。実ゲームパッド未接続、3D画面での実入力試験はGPU制約とCI未実行で残る。",
+      "unmetReason": "キーボード走行・旋回・ドリフト加速・ペイント投擲・復帰はCIで実行済み。実ゲームパッドの全割当と切替の検証が残る。",
       "nextAction": "WebGL2対応PC/実パッドで全操作・接続切替・復帰・一時停止を確認する。"
     },
     {
@@ -615,10 +627,22 @@
           "scope": "Blocked execution conditions. This records no newly retried action and no successful interactive play.",
           "result": "BLOCKED",
           "fullRequirement": false
+        },
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-GAME-07",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
+          "fullRequirement": false
         }
       ],
       "status": "BLOCKED",
-      "unmetReason": "爆破/塗装の物理と実投擲コードを実装。拾う→構える→投げる→命中→環境変化のUI操作は未実行。",
+      "unmetReason": "実ブラウザーでペイントを拾い、構え、投げ、命中し塗装する流れを確認。プレイヤーの爆弾取得から破壊・開通までの中核一連シナリオと全接触条件を再検証する。",
       "nextAction": "作成済みE2Eと中核操作を実際の3Dブラウザーで実行し記録する。"
     },
     {
@@ -666,11 +690,35 @@
           "scope": "Blocked execution conditions. This records no newly retried action and no successful interactive play.",
           "result": "BLOCKED",
           "fullRequirement": false
+        },
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-GAME-08",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
+          "fullRequirement": false
+        },
+        {
+          "id": "CI-BROWSER-PASS-20260905-GAME-08",
+          "kind": "executed_browser_and_ci",
+          "path": "docs/evidence/ci-browser-pass-summary-20260905.json",
+          "executedAt": "2026-09-05T07:12:08.713Z",
+          "commit": "2cdf60c8cd982f14a407796addfd736ade1252f8",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 UI,640x360 low-graphics driving",
+          "observations": "36 tests/typecheck/build and2E2Es passed. All6cars finished3laps; actual2destroyed objects andpaint state cleared via rerace, new6car lap1 andempty state. Actual HUD andthird-person camera inspected in exported rerace screenshot.",
+          "scope": "Executed visible following camera, speed, rank, lap, minimap, item andnavigation HUD. Not geographic accuracy or target GPU.",
+          "result": "PASS",
+          "fullRequirement": true
         }
       ],
-      "status": "BLOCKED",
-      "unmetReason": "実車状態に接続するHUD/追従カメラ/地図/次方向を実装したが3Dプレイ表示を確認できない。",
-      "nextAction": "WebGL2ブラウザーで走行とHUDの整合、壁・地面へのカメラ侵入を観察する。"
+      "status": "PASS",
+      "unmetReason": "",
+      "nextAction": "関連する実装を変更した場合は同じ実行条件を再検証する。"
     },
     {
       "id": "GAME-09",
@@ -704,10 +752,22 @@
           "scope": "Blocked execution conditions. This records no newly retried action and no successful interactive play.",
           "result": "BLOCKED",
           "fullRequirement": false
+        },
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-GAME-09",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
+          "fullRequirement": false
         }
       ],
       "status": "BLOCKED",
-      "unmetReason": "6段階の実操作導入と再実行/スキップを実装したが、Work ChromeのWebGL無効により通し操作できない。",
+      "unmetReason": "練習の再実行とスキップを実ブラウザーで確認。初回の6段階をすべて通常操作で完了し、次回の自動スキップまで通す証跡は未完了。",
       "nextAction": "CIまたは対応PCで初回導入の全操作・再実行・スキップを記録する。"
     },
     {
@@ -797,7 +857,20 @@
         "AT-13"
       ],
       "relatedRequirementIds": [],
-      "evidence": [],
+      "evidence": [
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-GAME-11",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
+          "fullRequirement": false
+        }
+      ],
       "status": "BLOCKED",
       "unmetReason": "実在ポリゴンと独自カート/昼晴天を実装。テクスチャ未同梱、低層部写真照合と3Dの読み取りやすさは未検証。",
       "nextAction": "許諾と近景資料を揃え、固定視点比較と実プレイで外観を確認する。"
@@ -846,6 +919,18 @@
           "observations": "Actual blocked actions are summarized from root tool outcomes; no remote branch,PR orCI run exists. Browser error/retry was visible but WebGL was disabled.",
           "scope": "Blocked execution conditions. This records no newly retried action and no successful interactive play.",
           "result": "BLOCKED",
+          "fullRequirement": false
+        },
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-GAME-12",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
           "fullRequirement": false
         }
       ],
@@ -2384,7 +2469,7 @@
         }
       ],
       "status": "BLOCKED",
-      "unmetReason": "実物理の柵通過、原典ベンチ/外壁の塗装付き分離を検証。実データ内で取得/構え/投擲から一連の画面操作は未実施。",
+      "unmetReason": "ブラウザーのペイント取得・構え・投擲・命中とAIによる街の破壊は確認。プレイヤーによる青投擲から同じ対象の爆破・通過までを続けた操作は未検証。",
       "nextAction": "WebGL2ブラウザーで青ペイント→爆破→塗装破片→通過→1周→再レースを実行する。"
     },
     {
@@ -2844,11 +2929,35 @@
           "scope": "柵移設前の実行と、その時点の未達理由の履歴。現在の未達理由は行のunmetReasonと後続証跡を参照。",
           "result": "PASS",
           "fullRequirement": false
+        },
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-AT-11",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
+          "fullRequirement": false
+        },
+        {
+          "id": "CI-BROWSER-PASS-20260905-AT-11",
+          "kind": "executed_browser_and_ci",
+          "path": "docs/evidence/ci-browser-pass-summary-20260905.json",
+          "executedAt": "2026-09-05T07:12:08.713Z",
+          "commit": "2cdf60c8cd982f14a407796addfd736ade1252f8",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 UI,640x360 low-graphics driving",
+          "observations": "36 tests/typecheck/build and2E2Es passed. All6cars finished3laps; actual2destroyed objects andpaint state cleared via rerace, new6car lap1 andempty state. Actual HUD andthird-person camera inspected in exported rerace screenshot.",
+          "scope": "Combined original physical reset tests and actual UI rerace after a race with two destroyed objects and paint effects. State/counters/colliders reset; no old paint,debris,grip or destruction remain.",
+          "result": "PASS",
+          "fullRequirement": true
         }
       ],
-      "status": "IN_PROGRESS",
-      "unmetReason": "Environmentの4反復reset、古い衝突ハンドル、Race進行の部分試験は成功。mainの再レース遷移を通した全街状態と投擲・在庫・順位UIの一括リセットはE2E未実行。",
-      "nextAction": "WebGL2環境で再レース操作を反復し、前レースの当たり判定・塗装とホスト所有状態が混ざらないことを確認する。"
+      "status": "PASS",
+      "unmetReason": "",
+      "nextAction": "関連する実装を変更した場合は同じ実行条件を再検証する。"
     },
     {
       "id": "AT-12",
@@ -3977,11 +4086,35 @@
           "scope": "Blocked execution conditions. This records no newly retried action and no successful interactive play.",
           "result": "BLOCKED",
           "fullRequirement": false
+        },
+        {
+          "id": "CI-SECOND-PARTIAL-20260905-MGMT-08",
+          "kind": "executed_browser_partial",
+          "path": "docs/evidence/ci-second-diagnosis-20260905.json",
+          "executedAt": "2026-09-05T06:54:09.693Z",
+          "commit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 high graphics",
+          "observations": "36 unit/HTTP tests, typecheck and build passed. Actual 3D title, keyboard drift/boost, paint pickup/throw/hit, recovery, fresh paused physical state and network retry executed. Tutorial skip failed on repeated DOM replacement. Race/results/rerace not reached.",
+          "scope": "Partial execution only; see attachments for actual state. No target-GPU performance, real gamepad, human evaluation or complete tutorial claim.",
+          "result": "PASS",
+          "fullRequirement": false
+        },
+        {
+          "id": "CI-BROWSER-PASS-20260905-MGMT-08",
+          "kind": "executed_browser_and_ci",
+          "path": "docs/evidence/ci-browser-pass-summary-20260905.json",
+          "executedAt": "2026-09-05T07:12:08.713Z",
+          "commit": "2cdf60c8cd982f14a407796addfd736ade1252f8",
+          "environment": "GitHub ubuntu runner / Chromium SwiftShader / 1280x720 UI,640x360 low-graphics driving",
+          "observations": "36 tests/typecheck/build and2E2Es passed. All6cars finished3laps; actual2destroyed objects andpaint state cleared via rerace, new6car lap1 andempty state. Actual HUD andthird-person camera inspected in exported rerace screenshot.",
+          "scope": "Remote CI integration for canonical requirements,typecheck,physical/HTTP tests,build andbrowserE2E; large original source acquisition remains a separate command.",
+          "result": "PASS",
+          "fullRequirement": true
         }
       ],
-      "status": "BLOCKED",
-      "unmetReason": "初回CIの型検査・31物理試験・ビルドは成功。E2E 2件が圧縮データ二重展開による読込失敗となり、修正して再検証中。",
-      "nextAction": "CIの実行結果とArtifactsを確認し、失敗があれば修正する。"
+      "status": "PASS",
+      "unmetReason": "",
+      "nextAction": "関連する実装を変更した場合は同じ実行条件を再検証する。"
     },
     {
       "id": "MGMT-09",

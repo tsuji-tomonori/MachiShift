@@ -5,6 +5,7 @@ import { Race, type RoutePoint } from './race';
 import { Input } from './input';
 import { Sound } from './audio';
 import { getJSON } from './data-loader';
+import { getProjectileContact } from './projectile-contact';
 import './style.css';
 
 interface Stage {
@@ -16,7 +17,7 @@ interface Stage {
 type Phase = 'loading'|'title'|'tutorial'|'countdown'|'race'|'free'|'paused'|'results'|'error';
 type Item = 'paint'|'bomb';
 type Pickup = {mesh:THREE.Group;at:THREE.Vector3;item:Item;availableAt:number};
-type Projectile = {mesh:THREE.Mesh;body:RAPIER.RigidBody;previous:THREE.Vector3;item:Item;age:number;color:number};
+type Projectile = {mesh:THREE.Mesh;body:RAPIER.RigidBody;collider:RAPIER.Collider;ownerId:number;previous:THREE.Vector3;item:Item;age:number;color:number};
 const app = document.querySelector<HTMLDivElement>('#app')!;
 app.innerHTML = '<canvas id="world" aria-label="MachiShiftの3D走行画面"></canvas><div id="ui"></div>';
 const ui = document.querySelector<HTMLDivElement>('#ui')!;
@@ -165,7 +166,7 @@ function showCredits() {
 function showResults() {
   if(phase!=='results')sound.cue('finish');phase='results';finishedCount=race.vehicles.filter(v=>v.finished).length;
   const order=[...race.vehicles].sort((a,b)=>a.rank-b.rank);
-  ui.innerHTML=`<div class="modal"><div class="dialog"><p class="eyebrow">RACE COMPLETE / GIFU</p><h1>街に、足跡を残した。</h1><div class="result-rank">${race.player.rank}<span style="font-size:1.5rem"> / 6</span></div><p>3周の記録 <strong>${clock(race.player.finishTime??race.elapsed)}</strong></p>${order.map(v=>`<div class="result-row ${v.id===0?'player':''}"><span>${v.rank}</span><span>${escape(v.name)}</span><span>${v.finished?clock(v.finishTime??0):'走行中'}</span></div>`).join('')}<p class="fine">ペイント命中 ${paintHits} / 投擲 ${thrownCount} / 破壊した対象 ${environment.stats.destroyed}</p><button id="again" class="primary">もう一度走る <span>↻</span></button><button id="result-free" class="secondary">自由走行へ</button><button id="result-title" class="ghost">タイトルへ</button></div></div>${footer()}`;
+  ui.innerHTML=`<div class="modal"><div class="dialog"><p class="eyebrow">RACE COMPLETE / GIFU</p><h1>街に、足跡を残した。</h1><div class="result-rank">${race.player.rank}<span style="font-size:1.5rem"> / 6</span></div><p>3周の記録 <strong>${clock(race.player.finishTime??race.elapsed)}</strong></p>${order.map(v=>`<div class="result-row ${v.id===0?'player':''}"><span>${v.rank}</span><span>${escape(v.name)}</span><span>${v.finished?clock(v.finishTime??0):'走行中'}</span></div>`).join('')}<p class="fine">自分のペイント命中 ${paintHits} / 投擲 ${thrownCount} / 街の破壊箇所 ${environment.stats.destroyed}</p><button id="again" class="primary">もう一度走る <span>↻</span></button><button id="result-free" class="secondary">自由走行へ</button><button id="result-title" class="ghost">タイトルへ</button></div></div>${footer()}`;
   bind('#again',beginRace);bind('#result-free',()=>{reset('free');phase='free';renderHUD();});bind('#result-title',showTitle);bind('#credits',showCredits);
 }
 function updateHUD() {
@@ -279,34 +280,37 @@ function launchFor(player:Race['player'],item:Item,offset=0) {
   const direction=new THREE.Vector3(Math.sin(heading),.1,Math.cos(heading));
   const position=new THREE.Vector3().copy(player.body.translation()).add(new THREE.Vector3(0,.65,0)).addScaledVector(direction,2.2);
   const body=world.createRigidBody(RAPIER.RigidBodyDesc.dynamic().setTranslation(position.x,position.y,position.z).setCcdEnabled(true));
-  world.createCollider(RAPIER.ColliderDesc.ball(.23).setDensity(.15).setRestitution(.3),body);
+  const collider=world.createCollider(RAPIER.ColliderDesc.ball(.23).setDensity(.15).setRestitution(.3),body);
   const speed=25+Math.max(0,player.speed)*.65;body.setLinvel({x:direction.x*speed,y:3.8,z:direction.z*speed},true);
   const mesh=new THREE.Mesh(item==='bomb'?new THREE.IcosahedronGeometry(.32,1):new THREE.SphereGeometry(.27,12,8),new THREE.MeshStandardMaterial({color:item==='paint'?0x168aff:0xffa442,emissive:item==='paint'?0x064eaa:0x5e2600,emissiveIntensity:.6,roughness:.3}));
-  scene.add(mesh);mesh.position.copy(position);projectiles.push({mesh,body,previous:position,item,age:0,color:0x168aff});
+  scene.add(mesh);mesh.position.copy(position);projectiles.push({mesh,body,collider,ownerId:player.id,previous:position,item,age:0,color:0x168aff});
 }
 function clearProjectiles(){for(const p of projectiles){scene.remove(p.mesh);p.mesh.geometry.dispose();(p.mesh.material as THREE.Material).dispose();world.removeRigidBody(p.body);}projectiles=[];}
 function updateProjectiles(dt:number) {
   for(let i=projectiles.length-1;i>=0;i--) {
     const p=projectiles[i];p.age+=dt;const now=new THREE.Vector3().copy(p.body.translation());const delta=now.clone().sub(p.previous);const distance=delta.length();
+    const contact=getProjectileContact(world,p.collider);
     raycaster.set(p.previous,delta.clone().normalize());raycaster.far=distance+.35;
     const hit=distance>0?raycaster.intersectObjects(environment.paintTargets,false)[0]:null;
     const stopped=new THREE.Vector3().copy(p.body.linvel()).length()<2&&p.age>.2;
-    const impact=Boolean(hit)||stopped||p.age>(p.item==='bomb'?1.6:3);
+    const impact=Boolean(contact)||Boolean(hit)||stopped||p.age>(p.item==='bomb'?1.6:3);
     if(impact) {
       if(p.item==='paint'){
-        const result=environment.paintRay(p.previous,delta.lengthSq()>.001?delta:new THREE.Vector3(0,-1,0),p.color,hit?distance+.8:3);
-        if(result){paintHits++;toast('ペイント命中 · 色は次の周回にも残る',2);}
+        const result=contact
+          ? environment.paintCollider(contact.targetColliderHandle,contact.point,contact.normal,p.color)
+          : environment.paintRay(p.previous,delta.lengthSq()>.001?delta:new THREE.Vector3(0,-1,0),p.color,hit?distance+.8:3);
+        if(result && p.ownerId===0){paintHits++;toast('ペイント命中 · 色は次の周回にも残る',2);}
       }else{
         const normal=hit?.face?hit.face.normal.clone().applyMatrix3(new THREE.Matrix3().getNormalMatrix(hit.object.matrixWorld)).normalize():up;
-        const point=hit?hit.point.clone().addScaledVector(normal,.15):now;
-        detonate(point);
+        const point=contact?contact.point.clone().addScaledVector(contact.normal,.15):hit?hit.point.clone().addScaledVector(normal,.15):now;
+        detonate(point);if(p.ownerId===0)bombHits++;
       }
       scene.remove(p.mesh);p.mesh.geometry.dispose();(p.mesh.material as THREE.Material).dispose();world.removeRigidBody(p.body);projectiles.splice(i,1);
     }else{p.mesh.position.copy(now);p.mesh.rotation.x+=dt*5;p.previous.copy(now);}
   }
 }
 function detonate(point:THREE.Vector3) {
-  const result=environment.explode(point,12);bombHits++;
+  const result=environment.explode(point,12);
   for(const v of race.vehicles){if(race.mode==='free'&&v.id!==0)continue;const pos=new THREE.Vector3().copy(v.body.translation());const delta=pos.clone().sub(point),distance=delta.length();if(distance<12&&environment.hasLineOfSight(point,pos)){delta.y=.25;delta.normalize();v.body.applyImpulse(delta.multiplyScalar((1-distance/12)*v.body.mass()*9),true);}}
   const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1,2),new THREE.MeshBasicMaterial({color:0xffd177,transparent:true,opacity:.7,wireframe:true}));mesh.position.copy(point);scene.add(mesh);fx.push({mesh,age:0,duration:.65,scale:12});sound.cue('blast');
   if(result.destroyed.length)toast(`柵が壊れた · ${result.fragments}個の破片に変化`,2.5);
