@@ -45,7 +45,7 @@ GitHub反映前の配布ビルドは50個のgzip区画を含む63ファイル、
 
 薄い原典ベンチに両側の衝突用厚みを付けると分離部品が拘束される問題を実データ試験で検出したため、爆風側の4cm厚みへ修正した。建物パネルも残る構造へ押し込まれる問題を検出し、外向きの実インパルスで分離するアーケード調整を記録した。実際の材質強度・壁厚・構造安全性を表す挙動ではない。
 
-区画の描画ジオメトリ・マテリアルとRapier衝突資源を実際に解放し、新資源へ再構築する試験を行った。実ベンチの塗装位置は復元前後1µm未満の差。寿命切れ破片は表示と塗装を残して非衝突で復元する。120片生成時の動的100片上限、4反復の状態リセット、古い衝突ハンドルの再使用も検査した。詳細は [物理契約](physics.md)、[データ契約](data-contract.md) を参照する。旧13件・14件の途中記録は歴史として残し、最終31件の証跡を現在の検証に使う。
+区画の描画ジオメトリ・マテリアルとRapier衝突資源を実際に解放し、新資源へ再構築する試験を行った。実ベンチの塗装位置は復元前後1µm未満の差。寿命切れ破片は表示と塗装を残して非衝突で復元する。120片生成時の動的100片上限、4反復の状態リセット、古い衝突ハンドルの再使用も検査した。詳細は [物理契約](physics.md)、[データ契約](data-contract.md) を参照する。旧13件・14件の途中記録とGitHub反映前の31件の記録は履歴として残す。後続のHTTP・接触回帰とブラウザー検証は末尾のCI記録およびPRのChecksを参照する。
 
 ## AT-01〜13の判定
 
@@ -110,7 +110,7 @@ GitHub反映前の配布ビルドは50個のgzip区画を含む63ファイル、
 
 全必須行の合格を要求する `node scripts/check-requirements.mjs --require-acceptance --report docs/evidence/acceptance-gate-20260905.json` は、この状態では終了コード1になる。これが正しい未完了ゲートであり、通常の構造検査や31試験の成功で全受入を合格へ変換しない。
 
-CIは変更しない実ステージをHTTP取得し、実キーボード操作、補給取得と投擲、一時停止、体験スキップ、見える自動走行パネルによる実物理3周、全車結果、再レース、区画通信失敗→再試行を試験する。位置・周回・物理状態を直接編集しない。JSON/HTML、失敗時の画像・動画・trace、終了画面をArtifactsへ保存する設定である。SwiftShader・1280×720での機能検証を対象GPU1080p性能や人の理解の証明にしない。[初回CI](https://github.com/tsuji-tomonori/MachiShift/actions/runs/33950385672) が実行中であり、初回は型検査・31物理試験・ビルドに成功し、E2Eは圧縮データの二重展開で2件失敗した。[診断記録](evidence/ci-first-diagnosis-20260905.json) にHTTP応答と原因を保存し、読込修正と5件のHTTP回帰試験を追加して再検証している。
+CIは変更しない実ステージをHTTP取得し、実キーボード操作、補給取得と投擲、一時停止、体験スキップ、見える自動走行パネルによる実物理3周、全車結果、再レース、区画通信失敗→再試行を試験する。位置・周回・物理状態を直接編集しない。JSON/HTML、失敗時の画像・動画・trace、終了画面をArtifactsへ保存する設定である。SwiftShader・1280×720での機能検証を対象GPU1080p性能や人の理解の証明にしない。[初回CI](https://github.com/tsuji-tomonori/MachiShift/actions/runs/33950385672) は型検査・31物理試験・ビルドに成功し、E2Eは圧縮データの二重展開で2件失敗した。[診断記録](evidence/ci-first-diagnosis-20260905.json) にHTTP応答と原因を保存し、読込修正と5件のHTTP回帰試験を追加した。修正後の成功結果は末尾に記載する。
 
 Workで利用できるブラウザーがWebGLを無効にしていたため、この作業では別のローカルブラウザー制御に切り替えていない。公式参照先は [Playwright設定](https://playwright.dev/docs/test-configuration)、[Webサーバー](https://playwright.dev/docs/test-webserver)、[GitHub checkout](https://github.com/actions/checkout)、[setup-node](https://github.com/actions/setup-node)、[upload-artifact](https://github.com/actions/upload-artifact)。
 
