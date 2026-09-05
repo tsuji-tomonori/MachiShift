@@ -3980,8 +3980,8 @@
         }
       ],
       "status": "BLOCKED",
-      "unmetReason": "型/物理/地理/ビルド/ブラウザーE2E/ArtifactsのCIを構成したが、リモート作業ブランチを作れずCIは未実行。",
-      "nextAction": "承認済みの初期mainを基点にブランチ/PRを作りCI結果を確認する。"
+      "unmetReason": "初回CIの型検査・31物理試験・ビルドは成功。E2E 2件が圧縮データ二重展開による読込失敗となり、修正して再検証中。",
+      "nextAction": "CIの実行結果とArtifactsを確認し、失敗があれば修正する。"
     },
     {
       "id": "MGMT-09",
@@ -4013,11 +4013,23 @@
           "scope": "Blocked execution conditions. This records no newly retried action and no successful interactive play.",
           "result": "BLOCKED",
           "fullRequirement": false
+        },
+        {
+          "id": "GITHUB-DELIVERY-20260905",
+          "kind": "executed_repository_delivery",
+          "path": "docs/evidence/github-delivery-20260905.json",
+          "executedAt": "2026-09-05T06:41:17.713525+00:00",
+          "commit": "c3a7a53c791be37a9b537bc6bdbc86357833a300",
+          "environment": "GitHub App API and public git fetch",
+          "observations": "Authorized source-only main and feature branch created, all 170 files tree-verified, draft PR #1 opened. No merge, deployment, paid infrastructure, protection change or credentials in artifacts.",
+          "scope": "Repository delivery and permissions boundary for MGMT-09. CI and overall game acceptance are separate.",
+          "result": "PASS",
+          "fullRequirement": true
         }
       ],
-      "status": "BLOCKED",
-      "unmetReason": "初期main作成は自動承認レビューが拒否。featureブランチのGit送信もUsername認証情報不足で失敗。リモートブランチ/PRは未作成。",
-      "nextAction": "原資料を使う初期main作成への明示承認を得て、利用可能なGitHub APIでブランチとPRを作成する。"
+      "status": "PASS",
+      "unmetReason": "",
+      "nextAction": "PRの修正とCI結果を反映し、明示指示なしのマージ・本番公開は行わない。"
     },
     {
       "id": "MGMT-10",

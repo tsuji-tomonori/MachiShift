@@ -4,6 +4,7 @@ import { Environment, type StaticMeshSpec } from './environment';
 import { Race, type RoutePoint } from './race';
 import { Input } from './input';
 import { Sound } from './audio';
+import { getJSON } from './data-loader';
 import './style.css';
 
 interface Stage {
@@ -187,6 +188,9 @@ function updateHUD() {
   }
   drawMap();
   updateHazardLabels(pos);
+  updateDiagnostics();
+}
+function updateDiagnostics(){
   if(qaVisible && $('#diagnostics'))$('#diagnostics')!.textContent=JSON.stringify(diagnostics(),null,2);
 }
 function updateHazardLabels(playerPosition:THREE.Vector3){
@@ -342,7 +346,7 @@ function predictAim(position:THREE.Vector3){
 }
 function diagnostics(){
   const values=measuredFrames.length?measuredFrames:frameTimes;const sorted=[...values].sort((a,b)=>a-b);const p=(q:number)=>sorted[Math.floor((sorted.length-1)*q)]??0;
-  return {phase,elapsed:Math.round(elapsed*100)/100,courseMeters:race.routeLength,vehicles:race.vehicles.map(v=>({id:v.id,lap:v.lap,rank:v.rank,checkpoint:v.checkpoint,finished:v.finished,position:v.body.translation(),speed:v.speed})),...environment.stats,inventory,thrownCount,paintHits,bombHits,recoveries,autoDrive,loadMilliseconds:initializedAt,frameMilliseconds:{count:values.length,p50:p(.5),p95:p(.95),p99:p(.99),over100:values.filter(t=>t>100).length},measurement,memory:memorySamples.at(-1)??null,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures};
+  return {phase,sampledAtMilliseconds:performance.now(),elapsed:Math.round(elapsed*100)/100,courseMeters:race.routeLength,vehicles:race.vehicles.map(v=>({id:v.id,lap:v.lap,rank:v.rank,checkpoint:v.checkpoint,finished:v.finished,position:v.body.translation(),speed:v.speed,heading:v.heading,driftCharge:v.driftCharge,boost:v.boost})),...environment.stats,inventory,thrownCount,paintHits,bombHits,recoveries,autoDrive,loadMilliseconds:initializedAt,frameMilliseconds:{count:values.length,p50:p(.5),p95:p(.95),p99:p(.99),over100:values.filter(t=>t>100).length},measurement,memory:memorySamples.at(-1)??null,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,textures:renderer.info.memory.textures};
 }
 function startStress(){
   if(phase!=='race'||race.mode!=='race'||race.vehicles.some(v=>v.finished)) {toast('6台が走行中のレースで負荷試験を開始してください');return;}
@@ -422,7 +426,7 @@ function frame(now:number) {
   cullClock+=dt;
   if(cullClock>.5){cullClock=0;updateStreaming();}
   renderer.render(scene,camera);sampleMemory(now);uiClock+=dt;
-  if(uiClock>.1){uiClock=0;if(['race','free','tutorial','countdown'].includes(phase))updateHUD();}
+  if(uiClock>.1){uiClock=0;if(['race','free','tutorial','countdown'].includes(phase))updateHUD();else updateDiagnostics();}
   requestAnimationFrame(frame);
 }
 function updateStreaming(){
@@ -445,11 +449,6 @@ function updateStreaming(){
     mesh.visible=kind!=='furniture'||distance<110+sphere.radius;
     mesh.castShadow=kind!=='road'&&kind!=='terrain'&&distance<90+sphere.radius;
   }
-}
-async function getJSON<T>(url:string):Promise<T>{
-  const response=await fetch(url);if(!response.ok)throw new Error(`${url}: HTTP ${response.status}`);
-  if(url.endsWith('.gz')&&response.body){const unpacked=response.body.pipeThrough(new DecompressionStream('gzip'));return new Response(unpacked).json() as Promise<T>;}
-  return response.json() as Promise<T>;
 }
 async function boot(){
   showLoading(0,'WebGL2と物理エンジンを準備しています');

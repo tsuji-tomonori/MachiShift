@@ -1,0 +1,722 @@
+﻿2026-09-05T06:38:54.6813111Z Current runner version: '2.337.0'
+2026-09-05T06:38:54.6838464Z ##[group]Runner Image Provisioner
+2026-09-05T06:38:54.6839377Z Hosted Compute Agent
+2026-09-05T06:38:54.6840002Z Version: 20260828.587
+2026-09-05T06:38:54.6840651Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-05T06:38:54.6841729Z Build Date: 2026-08-28T16:44:25Z
+2026-09-05T06:38:54.6842450Z Worker ID: {22e11aa9-65b7-4841-a18f-a94c7d83e0bc}
+2026-09-05T06:38:54.6843263Z Azure Region: eastus
+2026-09-05T06:38:54.6843868Z ##[endgroup]
+2026-09-05T06:38:54.6846198Z ##[group]Operating System
+2026-09-05T06:38:54.6846938Z Ubuntu
+2026-09-05T06:38:54.6847472Z 24.04.4
+2026-09-05T06:38:54.6847976Z LTS
+2026-09-05T06:38:54.6848563Z ##[endgroup]
+2026-09-05T06:38:54.6849155Z ##[group]Runner Image
+2026-09-05T06:38:54.6849819Z Image: ubuntu-24.04
+2026-09-05T06:38:54.6850452Z Version: 20260831.293.1
+2026-09-05T06:38:54.6852021Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260831.293/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-05T06:38:54.6853628Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260831.293
+2026-09-05T06:38:54.6854712Z ##[endgroup]
+2026-09-05T06:38:54.6855803Z ##[group]GITHUB_TOKEN Permissions
+2026-09-05T06:38:54.6857988Z Contents: read
+2026-09-05T06:38:54.6858635Z Metadata: read
+2026-09-05T06:38:54.6859283Z ##[endgroup]
+2026-09-05T06:38:54.6861708Z Secret source: Actions
+2026-09-05T06:38:54.6863416Z Prepare workflow directory
+2026-09-05T06:38:54.7182633Z Prepare all required actions
+2026-09-05T06:38:54.7229291Z Getting action download info
+2026-09-05T06:38:54.9589217Z Download action repository 'actions/checkout@v4.2.2' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2026-09-05T06:38:55.0657012Z Download action repository 'actions/setup-node@v4.4.0' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-09-05T06:38:55.1565407Z Download action repository 'actions/upload-artifact@v4.6.2' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-09-05T06:38:55.3807572Z Complete job name: verify
+2026-09-05T06:38:55.4680726Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-05T06:38:55.4689775Z ##[group]Run actions/checkout@v4.2.2
+2026-09-05T06:38:55.4690585Z with:
+2026-09-05T06:38:55.4691061Z   persist-credentials: false
+2026-09-05T06:38:55.4691838Z   repository: tsuji-tomonori/MachiShift
+2026-09-05T06:38:55.4695727Z   token: ***
+2026-09-05T06:38:55.4696179Z   ssh-strict: true
+2026-09-05T06:38:55.4696628Z   ssh-user: git
+2026-09-05T06:38:55.4697073Z   clean: true
+2026-09-05T06:38:55.4697542Z   sparse-checkout-cone-mode: true
+2026-09-05T06:38:55.4698081Z   fetch-depth: 1
+2026-09-05T06:38:55.4698534Z   fetch-tags: false
+2026-09-05T06:38:55.4698997Z   show-progress: true
+2026-09-05T06:38:55.4699474Z   lfs: false
+2026-09-05T06:38:55.4699958Z   submodules: false
+2026-09-05T06:38:55.4700429Z   set-safe-directory: true
+2026-09-05T06:38:55.4701377Z ##[endgroup]
+2026-09-05T06:38:55.5681509Z Syncing repository: tsuji-tomonori/MachiShift
+2026-09-05T06:38:55.5684320Z ##[group]Getting Git version info
+2026-09-05T06:38:55.5685500Z Working directory is '/home/runner/work/MachiShift/MachiShift'
+2026-09-05T06:38:55.5687299Z [command]/usr/bin/git version
+2026-09-05T06:38:55.5763823Z git version 2.55.0
+2026-09-05T06:38:55.5787965Z ##[endgroup]
+2026-09-05T06:38:55.5803363Z Temporarily overriding HOME='/home/runner/work/_temp/00b179e9-7c33-4096-b5d3-b66bc440e503' before making global git config changes
+2026-09-05T06:38:55.5805430Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-05T06:38:55.5809085Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MachiShift/MachiShift
+2026-09-05T06:38:55.5865653Z Deleting the contents of '/home/runner/work/MachiShift/MachiShift'
+2026-09-05T06:38:55.5871357Z ##[group]Initializing the repository
+2026-09-05T06:38:55.5876357Z [command]/usr/bin/git init /home/runner/work/MachiShift/MachiShift
+2026-09-05T06:38:55.6013203Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-05T06:38:55.6014994Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-05T06:38:55.6016510Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-05T06:38:55.6017705Z hint: call:
+2026-09-05T06:38:55.6018610Z hint:
+2026-09-05T06:38:55.6019411Z hint: 	git config --global init.defaultBranch <name>
+2026-09-05T06:38:55.6020390Z hint:
+2026-09-05T06:38:55.6021529Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-05T06:38:55.6023081Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-05T06:38:55.6024451Z hint:
+2026-09-05T06:38:55.6025219Z hint: 	git branch -m <name>
+2026-09-05T06:38:55.6026010Z hint:
+2026-09-05T06:38:55.6027042Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-05T06:38:55.6028736Z Initialized empty Git repository in /home/runner/work/MachiShift/MachiShift/.git/
+2026-09-05T06:38:55.6036576Z [command]/usr/bin/git remote add origin https://github.com/tsuji-tomonori/MachiShift
+2026-09-05T06:38:55.6090077Z ##[endgroup]
+2026-09-05T06:38:55.6091714Z ##[group]Disabling automatic garbage collection
+2026-09-05T06:38:55.6095439Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-05T06:38:55.6130974Z ##[endgroup]
+2026-09-05T06:38:55.6132338Z ##[group]Setting up auth
+2026-09-05T06:38:55.6137856Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-05T06:38:55.6170170Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-05T06:38:55.6589861Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-05T06:38:55.6625968Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-05T06:38:55.6888398Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-05T06:38:55.7006841Z ##[endgroup]
+2026-09-05T06:38:55.7007701Z ##[group]Fetching the repository
+2026-09-05T06:38:55.7009316Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +98204c635eb180af1181da975d65eba0ce6ec8be:refs/remotes/pull/1/merge
+2026-09-05T06:38:57.4748024Z From https://github.com/tsuji-tomonori/MachiShift
+2026-09-05T06:38:57.4749536Z  * [new ref]         98204c635eb180af1181da975d65eba0ce6ec8be -> pull/1/merge
+2026-09-05T06:38:57.4753325Z ##[endgroup]
+2026-09-05T06:38:57.4754091Z ##[group]Determining the checkout info
+2026-09-05T06:38:57.4756273Z ##[endgroup]
+2026-09-05T06:38:57.4762463Z [command]/usr/bin/git sparse-checkout disable
+2026-09-05T06:38:57.4817703Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-05T06:38:57.4851733Z ##[group]Checking out the ref
+2026-09-05T06:38:57.4856840Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
+2026-09-05T06:38:57.5944060Z Note: switching to 'refs/remotes/pull/1/merge'.
+2026-09-05T06:38:57.5945471Z 
+2026-09-05T06:38:57.5946418Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-09-05T06:38:57.5948427Z changes and commit them, and you can discard any commits you make in this
+2026-09-05T06:38:57.5950607Z state without impacting any branches by switching back to a branch.
+2026-09-05T06:38:57.5952174Z 
+2026-09-05T06:38:57.5953386Z If you want to create a new branch to retain commits you create, you may
+2026-09-05T06:38:57.5955317Z do so (now or later) by using -c with the switch command. Example:
+2026-09-05T06:38:57.5957361Z 
+2026-09-05T06:38:57.5958019Z   git switch -c <new-branch-name>
+2026-09-05T06:38:57.5959879Z 
+2026-09-05T06:38:57.5960380Z Or undo this operation with:
+2026-09-05T06:38:57.5960968Z 
+2026-09-05T06:38:57.5961932Z   git switch -
+2026-09-05T06:38:57.5962933Z 
+2026-09-05T06:38:57.5963937Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-09-05T06:38:57.5964907Z 
+2026-09-05T06:38:57.5965529Z HEAD is now at 98204c6 Merge c3a7a53c791be37a9b537bc6bdbc86357833a300 into 0f1eafc245cd03c85a1a439b8f406bd24abdf6cd
+2026-09-05T06:38:57.5968160Z ##[endgroup]
+2026-09-05T06:38:57.6035293Z [command]/usr/bin/git log -1 --format=%H
+2026-09-05T06:38:57.6065061Z 98204c635eb180af1181da975d65eba0ce6ec8be
+2026-09-05T06:38:57.6075861Z ##[group]Removing auth
+2026-09-05T06:38:57.6080364Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-05T06:38:57.6114531Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-05T06:38:57.6331933Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-05T06:38:57.6362616Z http.https://github.com/.extraheader
+2026-09-05T06:38:57.6370523Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-05T06:38:57.6410970Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-05T06:38:57.6638171Z ##[endgroup]
+2026-09-05T06:38:57.6913642Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-05T06:38:57.6915824Z ##[group]Run actions/setup-node@v4.4.0
+2026-09-05T06:38:57.6916379Z with:
+2026-09-05T06:38:57.6916835Z   node-version: 22
+2026-09-05T06:38:57.6917305Z   cache: npm
+2026-09-05T06:38:57.6917754Z   always-auth: false
+2026-09-05T06:38:57.6918233Z   check-latest: false
+2026-09-05T06:38:57.6921881Z   token: ***
+2026-09-05T06:38:57.6922397Z ##[endgroup]
+2026-09-05T06:38:57.8333792Z Found in cache @ /opt/hostedtoolcache/node/22.23.2/x64
+2026-09-05T06:38:57.8338833Z (node:2214) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-05T06:38:57.8341937Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-05T06:38:57.8344014Z ##[group]Environment details
+2026-09-05T06:38:58.2579447Z node: v22.23.2
+2026-09-05T06:38:58.2580214Z npm: 10.9.8
+2026-09-05T06:38:58.2580642Z yarn: 1.22.22
+2026-09-05T06:38:58.2582593Z ##[endgroup]
+2026-09-05T06:38:58.2607802Z [command]/opt/hostedtoolcache/node/22.23.2/x64/bin/npm config get cache
+2026-09-05T06:38:58.3776906Z /home/runner/.npm
+2026-09-05T06:38:58.4435359Z npm cache is not found
+2026-09-05T06:38:58.4593193Z ##[group]Run npm ci
+2026-09-05T06:38:58.4593574Z [36;1mnpm ci[0m
+2026-09-05T06:38:58.4646254Z shell: /usr/bin/bash -e {0}
+2026-09-05T06:38:58.4646593Z ##[endgroup]
+2026-09-05T06:39:01.7510996Z 
+2026-09-05T06:39:01.7520270Z added 70 packages, and audited 71 packages in 3s
+2026-09-05T06:39:01.7521798Z 
+2026-09-05T06:39:01.7522591Z 16 packages are looking for funding
+2026-09-05T06:39:01.7523604Z   run `npm fund` for details
+2026-09-05T06:39:01.7662635Z 
+2026-09-05T06:39:01.7663333Z 2 vulnerabilities (1 high, 1 critical)
+2026-09-05T06:39:01.7664002Z 
+2026-09-05T06:39:01.7664494Z To address all issues, run:
+2026-09-05T06:39:01.7665208Z   npm audit fix --force
+2026-09-05T06:39:01.7665660Z 
+2026-09-05T06:39:01.7666082Z Run `npm audit` for details.
+2026-09-05T06:39:01.8161703Z ##[group]Run node scripts/check-requirements.mjs --report reports/requirements.json
+2026-09-05T06:39:01.8162649Z [36;1mnode scripts/check-requirements.mjs --report reports/requirements.json[0m
+2026-09-05T06:39:01.8199748Z shell: /usr/bin/bash -e {0}
+2026-09-05T06:39:01.8200024Z ##[endgroup]
+2026-09-05T06:39:01.8652337Z {
+2026-09-05T06:39:01.8668701Z   "checkedAt": "2026-09-05T06:39:01.862Z",
+2026-09-05T06:39:01.8669443Z   "integrityPassed": true,
+2026-09-05T06:39:01.8670284Z   "requestedGatePassed": true,
+2026-09-05T06:39:01.8671432Z   "acceptanceComplete": false,
+2026-09-05T06:39:01.8672030Z   "originalRequirementCount": 53,
+2026-09-05T06:39:01.8672610Z   "totalRequirementCount": 101,
+2026-09-05T06:39:01.8673061Z   "counts": {
+2026-09-05T06:39:01.8673448Z     "NOT_STARTED": 0,
+2026-09-05T06:39:01.8673830Z     "IN_PROGRESS": 6,
+2026-09-05T06:39:01.8674228Z     "PASS": 47,
+2026-09-05T06:39:01.8674580Z     "FAIL": 0,
+2026-09-05T06:39:01.8674923Z     "BLOCKED": 43,
+2026-09-05T06:39:01.8675354Z     "NEEDS_DECISION": 5
+2026-09-05T06:39:01.8675727Z   },
+2026-09-05T06:39:01.8676063Z   "nonPassingIds": [
+2026-09-05T06:39:01.8676447Z     "GEO-03",
+2026-09-05T06:39:01.8676773Z     "GEO-04",
+2026-09-05T06:39:01.8677102Z     "GEO-05",
+2026-09-05T06:39:01.8677463Z     "GEO-07",
+2026-09-05T06:39:01.8677789Z     "GAME-02",
+2026-09-05T06:39:01.8678125Z     "GAME-05",
+2026-09-05T06:39:01.8678459Z     "GAME-06",
+2026-09-05T06:39:01.8678786Z     "GAME-07",
+2026-09-05T06:39:01.8679113Z     "GAME-08",
+2026-09-05T06:39:01.8679448Z     "GAME-09",
+2026-09-05T06:39:01.8679776Z     "GAME-10",
+2026-09-05T06:39:01.8680106Z     "GAME-11",
+2026-09-05T06:39:01.8680439Z     "GAME-12",
+2026-09-05T06:39:01.8680775Z     "PAINT-04",
+2026-09-05T06:39:01.8681325Z     "PAINT-08",
+2026-09-05T06:39:01.8681691Z     "PAINT-09",
+2026-09-05T06:39:01.8682026Z     "AT-01",
+2026-09-05T06:39:01.8682349Z     "AT-02",
+2026-09-05T06:39:01.8682668Z     "AT-03",
+2026-09-05T06:39:01.8682986Z     "AT-04",
+2026-09-05T06:39:01.8683308Z     "AT-06",
+2026-09-05T06:39:01.8683628Z     "AT-07",
+2026-09-05T06:39:01.8684043Z     "AT-10",
+2026-09-05T06:39:01.8684372Z     "AT-11",
+2026-09-05T06:39:01.8684689Z     "AT-12",
+2026-09-05T06:39:01.8685005Z     "AT-13",
+2026-09-05T06:39:01.8685326Z     "DATA-01",
+2026-09-05T06:39:01.8685656Z     "DATA-03",
+2026-09-05T06:39:01.8685993Z     "DATA-05",
+2026-09-05T06:39:01.8686329Z     "RIGHTS-01",
+2026-09-05T06:39:01.8686680Z     "RIGHTS-04",
+2026-09-05T06:39:01.8687058Z     "RIGHTS-05",
+2026-09-05T06:39:01.8687419Z     "PERF-01",
+2026-09-05T06:39:01.8687756Z     "PERF-02",
+2026-09-05T06:39:01.8688123Z     "PERF-04",
+2026-09-05T06:39:01.8688458Z     "PERF-06",
+2026-09-05T06:39:01.8688791Z     "PERF-07",
+2026-09-05T06:39:01.8689153Z     "MGMT-06",
+2026-09-05T06:39:01.8689501Z     "MGMT-07",
+2026-09-05T06:39:01.8689937Z     "MGMT-08",
+2026-09-05T06:39:01.8690269Z     "MGMT-09",
+2026-09-05T06:39:01.8690599Z     "DESIGN-02",
+2026-09-05T06:39:01.8690942Z     "DESIGN-03",
+2026-09-05T06:39:01.8691496Z     "DESIGN-04",
+2026-09-05T06:39:01.8691849Z     "DESIGN-05",
+2026-09-05T06:39:01.8692685Z     "GATE-A",
+2026-09-05T06:39:01.8693036Z     "GATE-B",
+2026-09-05T06:39:01.8693365Z     "GATE-C",
+2026-09-05T06:39:01.8693710Z     "GATE-D",
+2026-09-05T06:39:01.8694039Z     "DEC-01",
+2026-09-05T06:39:01.8694363Z     "DEC-02",
+2026-09-05T06:39:01.8694684Z     "DEC-03",
+2026-09-05T06:39:01.8695005Z     "DEC-04",
+2026-09-05T06:39:01.8695388Z     "DEC-05"
+2026-09-05T06:39:01.8695717Z   ],
+2026-09-05T06:39:01.8696032Z   "errors": []
+2026-09-05T06:39:01.8696364Z }
+2026-09-05T06:39:01.8736276Z ##[group]Run npm run typecheck
+2026-09-05T06:39:01.8736758Z [36;1mnpm run typecheck[0m
+2026-09-05T06:39:01.8784902Z shell: /usr/bin/bash -e {0}
+2026-09-05T06:39:01.8785316Z ##[endgroup]
+2026-09-05T06:39:01.9865466Z 
+2026-09-05T06:39:01.9866114Z > machishift@0.1.0 typecheck
+2026-09-05T06:39:01.9866978Z > tsc --noEmit
+2026-09-05T06:39:01.9867528Z 
+2026-09-05T06:39:04.9280571Z ##[group]Run npm test -- --reporter=default --reporter=junit --outputFile=reports/junit.xml
+2026-09-05T06:39:04.9283167Z [36;1mnpm test -- --reporter=default --reporter=junit --outputFile=reports/junit.xml[0m
+2026-09-05T06:39:04.9330796Z shell: /usr/bin/bash -e {0}
+2026-09-05T06:39:04.9331382Z ##[endgroup]
+2026-09-05T06:39:05.0356634Z 
+2026-09-05T06:39:05.0357197Z > machishift@0.1.0 test
+2026-09-05T06:39:05.0358094Z > vitest run --reporter=default --reporter=junit --outputFile=reports/junit.xml
+2026-09-05T06:39:05.0358839Z 
+2026-09-05T06:39:05.3692242Z 
+2026-09-05T06:39:05.3703843Z [1m[46m RUN [49m[22m [36mv3.2.4 [39m[90m/home/runner/work/MachiShift/MachiShift[39m
+2026-09-05T06:39:05.3704966Z 
+2026-09-05T06:39:06.2182818Z [90mstderr[2m | tests/race.test.ts
+2026-09-05T06:39:06.2221711Z [22m[39musing deprecated parameters for the initialization function; pass a single object instead
+2026-09-05T06:39:06.2261425Z 
+2026-09-05T06:39:06.2370566Z [90mstderr[2m | tests/environment.test.ts
+2026-09-05T06:39:06.2384410Z [22m[39musing deprecated parameters for the initialization function; pass a single object instead
+2026-09-05T06:39:06.2541731Z 
+2026-09-05T06:39:06.2579271Z [90mstderr[2m | tests/real-stage.test.ts
+2026-09-05T06:39:06.2588216Z [22m[39musing deprecated parameters for the initialization function; pass a single object instead
+2026-09-05T06:39:06.2627240Z 
+2026-09-05T06:39:06.8954117Z [90mstdout[2m | tests/race.test.ts[2m > [22m[2mactual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09)[2m > [22m[2ma real centerline barrier causes a physical detour; destruction opens a measurably shorter AI line
+2026-09-05T06:39:06.8975177Z [22m[39mSYNTHETIC_SHORTCUT_PHYSICS [{"opened":false,"metres":75.5369655894244,"seconds":4.716666666666655,"recoveries":0,"maxLateral":7.430426597595215},{"opened":true,"metres":74.37243343732843,"seconds":4.216666666666657,"recoveries":0,"maxLateral":1.9115550518035889}]
+2026-09-05T06:39:06.8977265Z 
+2026-09-05T06:39:07.0774803Z [90mstdout[2m | tests/environment.test.ts[2m > [22m[2mEnvironment: actual Three surfaces and Rapier bodies[2m > [22m[2mDEST-02/PAINT-05/AT-08 actual PLATEAU bench: original source triangles remain, a painted source polygon moves and truly unloads/reloads
+2026-09-05T06:39:07.0838152Z [22m[39mSOURCE_BENCH_PHYSICS {"sourceObject":"plateau:frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f","surfaceId":"frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f:poly-e1d1ed44-6c96-45bb-8154-e855498245ee","retainedSourceIndices":468,"movedMetres":1.855773449806554,"simulationSeconds":0.25,"colliderCountBeforeUnload":3,"colliderCountAfterReload":3,"paintWorldPoint":[-191.91137069541904,12.666297978543728,38.090494015218766],"restoredPaintWorldPoint":[-191.9113706954191,12.666297978543705,38.09049401521879],"collisionApproximation":"initial_exact_triangles; detached_convex_hull_with_0.04m_outward_gameplay_skin","rendered":false,"scripted":true}
+2026-09-05T06:39:07.0901773Z 
+2026-09-05T06:39:07.1283831Z [90mstdout[2m | tests/environment.test.ts[2m > [22m[2mEnvironment: actual Three surfaces and Rapier bodies[2m > [22m[2mDEST-03 actual chosen PLATEAU WallSurface: original source facade and paint detach while the unselected building structure stays fixed
+2026-09-05T06:39:07.1317172Z [22m[39mSOURCE_FACADE_PHYSICS {"sourceObject":"plateau:bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce","surfaceId":"bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce:poly-118b0ca6-80e5-43c5-889f-35bef87fdb6a","sourceSemantic":"WallSurface","originalIndices":84,"detachableIndices":6,"retainedIndices":78,"movedMetres":0.7246456457277571,"simulationSeconds":0.5,"retainedColliderStillValid":true,"collisionApproximation":"initial_exact_triangles; detached_convex_hull_with_0.04m_outward_gameplay_skin","rendered":false,"scripted":true}
+2026-09-05T06:39:07.1320893Z 
+2026-09-05T06:39:07.1322054Z  [32m✓[39m tests/environment.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 945[2mms[22m[39m
+2026-09-05T06:39:07.3485513Z [90mstdout[2m | tests/race.test.ts[2m > [22m[2mactual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09)[2m > [22m[2msix colliding karts can physically pass an intact centerline gate as a group
+2026-09-05T06:39:07.3489812Z [22m[39mSYNTHETIC_GROUP_GATE [{"id":0,"recoveries":1,"gates":1},{"id":1,"recoveries":1,"gates":0},{"id":2,"recoveries":1,"gates":0},{"id":3,"recoveries":1,"gates":0},{"id":4,"recoveries":1,"gates":0},{"id":5,"recoveries":1,"gates":0}]
+2026-09-05T06:39:07.3491983Z 
+2026-09-05T06:39:07.4644784Z  [32m✓[39m tests/input.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 5[2mms[22m[39m
+2026-09-05T06:39:08.5644305Z [90mstdout[2m | tests/race.test.ts[2m > [22m[2mactual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09)[2m > [22m[2mall six physical vehicles complete three laps on a synthetic oval without progress edits
+2026-09-05T06:39:08.5672902Z [22m[39mSYNTHETIC_OVAL_PHYSICS {"routeMetres":471.98504191898246,"seconds":72.91666666666382,"vehicles":[{"id":0,"finished":true,"finishTime":71.24999999999724,"metres":1470.867916992881,"recoveries":0,"gates":72},{"id":1,"finished":true,"finishTime":70.51666666666395,"metres":1501.452004162425,"recoveries":0,"gates":72},{"id":2,"finished":true,"finishTime":72.91666666666382,"metres":1474.9775758057247,"recoveries":0,"gates":72},{"id":3,"finished":true,"finishTime":70.64999999999728,"metres":1477.0402879945643,"recoveries":0,"gates":72},{"id":4,"finished":true,"finishTime":70.9333333333306,"metres":1428.9464272138273,"recoveries":0,"gates":72},{"id":5,"finished":true,"finishTime":70.7833333333306,"metres":1454.675878718341,"recoveries":0,"gates":72}]}
+2026-09-05T06:39:08.5681491Z 
+2026-09-05T06:39:08.5712524Z  [32m✓[39m tests/race.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 2390[2mms[22m[39m
+2026-09-05T06:39:08.5715101Z    [33m[2m✓[22m[39m actual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09)[2m > [22msix colliding karts can physically pass an intact centerline gate as a group [33m 457[2mms[22m[39m
+2026-09-05T06:39:08.5718319Z    [33m[2m✓[22m[39m actual Rapier vehicle integration (GAME-04, GAME-06, GAME-10, AT-06, AT-09)[2m > [22mall six physical vehicles complete three laps on a synthetic oval without progress edits [33m 1213[2mms[22m[39m
+2026-09-05T06:39:28.3639979Z [90mstdout[2m | tests/real-stage.test.ts[2m > [22m[2mAT-09 integration: all six physical vehicles complete the actual PLATEAU course before and after destruction
+2026-09-05T06:39:28.3719973Z [22m[39mREAL_STAGE_PHYSICS {"scenario":"baseline","testedAt":"2026-09-05T06:39:28.206Z","stageSha256":"f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76","routeStatus":"game_racing_line_on_source_lod3_roads_not_survey_verified","routeMetres":1388.2023040929002,"coursePoints":378,"seconds":220.6000000000677,"executionSeconds":19.44901022,"objectCount":4557,"firstSideFenceDistance":72,"explosionFragments":0,"shortcutSection":{"seconds":7.433333333333696,"metres":127.36666504470249,"recoveries":1},"recoveryEvents":[{"vehicleId":1,"seconds":6.049999999999984,"lap":1,"checkpoint":15,"routeDistance":73.54114321931144,"legalRouteDistance":44.852373688508365,"position":{"x":-257.5851745605469,"y":11.037906646728516,"z":-53.751869201660156},"count":1},{"vehicleId":0,"seconds":6.26666666666665,"lap":1,"checkpoint":17,"routeDistance":73.73924648666726,"legalRouteDistance":52.410697575798736,"position":{"x":-253.7657470703125,"y":11.039179801940918,"z":-54.11130142211914},"count":1},{"vehicleId":2,"seconds":9.600000000000056,"lap":1,"checkpoint":33,"routeDistance":111.78727327743398,"legalRouteDistance":112.62954162404708,"position":{"x":-249.10989379882812,"y":11.12781810760498,"z":-92.41688537597656},"count":1},{"vehicleId":4,"seconds":10.683333333333444,"lap":1,"checkpoint":35,"routeDistance":155.98844372420757,"legalRouteDistance":119.9912049934506,"position":{"x":-250.27294921875,"y":11.229777336120605,"z":-136.6727752685547},"count":1},{"vehicleId":0,"seconds":13.050000000000228,"lap":1,"checkpoint":36,"routeDistance":160.34994437596927,"legalRouteDistance":123.74183227431976,"position":{"x":-245.05873107910156,"y":11.240158081054688,"z":-140.9344482421875},"count":1},{"vehicleId":1,"seconds":13.083333333333563,"lap":1,"checkpoint":35,"routeDistance":156.2279723542428,"legalRouteDistance":119.9912049934506,"position":{"x":-250.2306365966797,"y":11.230525970458984,"z":-136.9115753173828},"count":1},{"vehicleId":3,"seconds":14.333333333333625,"lap":1,"checkpoint":33,"routeDistance":112.13599818475792,"legalRouteDistance":112.62954162404708,"position":{"x":-246.52081298828125,"y":11.12886905670166,"z":-92.77565002441406},"count":1},{"vehicleId":2,"seconds":28.066666666666354,"lap":1,"checkpoint":115,"routeDistance":427.11820309632964,"legalRouteDistance":428.29712811970995,"position":{"x":-243.03611755371094,"y":12.55976390838623,"z":-407.7474060058594},"count":1},{"vehicleId":3,"seconds":53.183333333331596,"lap":1,"checkpoint":230,"routeDistance":848.3991346388472,"legalRouteDistance":847.0756125037447,"position":{"x":17.867528915405273,"y":12.161850929260254,"z":-390.1636657714844},"count":1},{"vehicleId":4,"seconds":76.1833333333303,"lap":2,"checkpoint":21,"routeDistance":68.70026220780758,"legalRouteDistance":67.89316607112671,"position":{"x":-250.87989807128906,"y":11.027795791625977,"z":-49.18960952758789},"count":1},{"vehicleId":2,"seconds":80.73333333333004,"lap":2,"checkpoint":21,"routeDistance":68.74830472889789,"legalRouteDistance":67.89316607112671,"position":{"x":-250.44432067871094,"y":11.028006553649902,"z":-49.256072998046875},"count":1},{"vehicleId":0,"seconds":80.93333333333003,"lap":2,"checkpoint":34,"routeDistance":152.0441449466832,"legalRouteDistance":116.24057997886969,"position":{"x":-252.42408752441406,"y":11.220719337463379,"z":-132.766845703125},"count":1},{"vehicleId":4,"seconds":83.0333333333299,"lap":2,"checkpoint":34,"routeDistance":151.68416387003916,"legalRouteDistance":116.24057997886969,"position":{"x":-252.36143493652344,"y":11.219880104064941,"z":-132.40567016601562},"count":1},{"vehicleId":0,"seconds":83.46666666666322,"lap":2,"checkpoint":34,"routeDistance":112.61751360370252,"legalRouteDistance":116.24057997886969,"position":{"x":-247.65528869628906,"y":11.130152702331543,"z":-93.25276947021484},"count":1},{"vehicleId":1,"seconds":83.7666666666632,"lap":2,"checkpoint":40,"routeDistance":163.86167407432634,"legalRouteDistance":138.74435739507533,"position":{"x":-248.3588104248047,"y":11.248016357421875,"z":-144.51695251464844},"count":1},{"vehicleId":3,"seconds":85.39999999999644,"lap":2,"checkpoint":21,"routeDistance":68.74612982324241,"legalRouteDistance":67.89316607112671,"position":{"x":-251.58714294433594,"y":11.028013229370117,"z":-49.2056770324707},"count":1},{"vehicleId":1,"seconds":104.78333333332867,"lap":2,"checkpoint":142,"routeDistance":557.272529786733,"legalRouteDistance":520.2639426467426,"position":{"x":-175.42388916015625,"y":12.944849967956543,"z":-486.2518005371094},"count":1},{"vehicleId":0,"seconds":122.13333333332768,"lap":2,"checkpoint":230,"routeDistance":848.4101465986524,"legalRouteDistance":847.0756125037447,"position":{"x":17.05891227722168,"y":12.16188907623291,"z":-390.21240234375},"count":1},{"vehicleId":5,"seconds":138.95000000000272,"lap":3,"checkpoint":21,"routeDistance":68.91293328618937,"legalRouteDistance":67.89316607112671,"position":{"x":-249.25340270996094,"y":11.029047966003418,"z":-49.47109603881836},"count":1},{"vehicleId":5,"seconds":145.71666666667477,"lap":3,"checkpoint":35,"routeDistance":156.0898148023424,"legalRouteDistance":119.9912049934506,"position":{"x":-249.7810821533203,"y":11.230591773986816,"z":-136.76524353027344},"count":1},{"vehicleId":1,"seconds":151.60000000001278,"lap":3,"checkpoint":19,"routeDistance":70.38016011415522,"legalRouteDistance":59.96914543233614,"position":{"x":-248.96661376953125,"y":11.03231143951416,"z":-50.951725006103516},"count":1},{"vehicleId":4,"seconds":152.18333333334658,"lap":3,"checkpoint":21,"routeDistance":68.73864733930323,"legalRouteDistance":67.89316607112671,"position":{"x":-251.25694274902344,"y":11.027892112731934,"z":-49.212120056152344},"count":1},{"vehicleId":0,"seconds":154.13333333334813,"lap":3,"checkpoint":21,"routeDistance":68.74324417550898,"legalRouteDistance":67.89316607112671,"position":{"x":-250.71051025390625,"y":11.028019905090332,"z":-49.239776611328125},"count":1},{"vehicleId":3,"seconds":157.20000000001724,"lap":3,"checkpoint":36,"routeDistance":160.40499447028319,"legalRouteDistance":123.74183227431976,"position":{"x":-249.54730224609375,"y":11.240988731384277,"z":-141.08425903320312},"count":1},{"vehicleId":1,"seconds":158.78333333335183,"lap":3,"checkpoint":35,"routeDistance":155.82751776317787,"legalRouteDistance":119.9912049934506,"position":{"x":-250.10646057128906,"y":11.230178833007812,"z":-136.50880432128906},"count":1},{"vehicleId":4,"seconds":159.03333333335203,"lap":3,"checkpoint":35,"routeDistance":156.1905065224309,"legalRouteDistance":119.9912049934506,"position":{"x":-252.5958251953125,"y":11.230216979980469,"z":-136.9169921875},"count":1},{"vehicleId":0,"seconds":160.90000000002019,"lap":3,"checkpoint":35,"routeDistance":156.26443142320716,"legalRouteDistance":119.9912049934506,"position":{"x":-250.49505615234375,"y":11.23052978515625,"z":-136.9528350830078},"count":1}],"scriptedInput":true,"rendered":false,"realHardwarePerformanceClaim":false,"vehicles":[{"id":0,"finished":true,"finishTime":220.6000000000677,"rank":6,"lap":3,"checkpoint":1,"metres":4443.868388656954,"metresAtFinish":4443.868388656954,"recoveries":7,"recoveriesAtFinish":7,"rejectedTeleports":0,"gates":1134,"position":{"x":-208.2695770263672,"y":10.966658592224121,"z":-5.391528606414795}},{"id":1,"finished":true,"finishTime":218.46666666673266,"rank":4,"lap":3,"checkpoint":1,"metres":4486.3064553550375,"metresAtFinish":4449.945329059478,"recoveries":6,"recoveriesAtFinish":6,"rejectedTeleports":0,"gates":1134,"position":{"x":-242.56387329101562,"y":10.989425659179688,"z":-16.108678817749023}},{"id":2,"finished":true,"finishTime":208.08333333339107,"rank":2,"lap":3,"checkpoint":1,"metres":4533.328743295041,"metresAtFinish":4298.015442668727,"recoveries":3,"recoveriesAtFinish":3,"rejectedTeleports":0,"gates":1134,"position":{"x":-245.5530242919922,"y":11.447538375854492,"z":-211.2091827392578}},{"id":3,"finished":true,"finishTime":216.8500000000647,"rank":3,"lap":3,"checkpoint":1,"metres":4415.251907816444,"metresAtFinish":4346.7029702945765,"recoveries":4,"recoveriesAtFinish":4,"rejectedTeleports":0,"gates":1134,"position":{"x":-252.99502563476562,"y":11.017191886901855,"z":-44.667659759521484}},{"id":4,"finished":true,"finishTime":219.0166666667331,"rank":5,"lap":3,"checkpoint":1,"metres":4439.4601005017585,"metresAtFinish":4411.835909869505,"recoveries":5,"recoveriesAtFinish":5,"rejectedTeleports":0,"gates":1134,"position":{"x":-234.50360107421875,"y":11.251337051391602,"z":-12.199000358581543}},{"id":5,"finished":true,"finishTime":205.08333333338868,"rank":1,"lap":3,"checkpoint":1,"metres":4549.0853630617785,"metresAtFinish":4285.366648431692,"recoveries":2,"recoveriesAtFinish":2,"rejectedTeleports":0,"gates":1134,"position":{"x":-243.3567352294922,"y":11.576714515686035,"z":-234.9669189453125}}]}
+2026-09-05T06:39:28.3769164Z 
+2026-09-05T06:39:46.0068624Z [90mstdout[2m | tests/real-stage.test.ts[2m > [22m[2mAT-09 integration: all six physical vehicles complete the actual PLATEAU course before and after destruction
+2026-09-05T06:39:46.0095543Z [22m[39mREAL_STAGE_PHYSICS {"scenario":"destroyed-fences","testedAt":"2026-09-05T06:39:45.998Z","stageSha256":"f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76","routeStatus":"game_racing_line_on_source_lod3_roads_not_survey_verified","routeMetres":1388.2023040929002,"coursePoints":378,"seconds":202.45000000005325,"executionSeconds":17.641092015,"objectCount":4557,"firstSideFenceDistance":72,"explosionFragments":27,"shortcutSection":{"seconds":3.833333333333524,"metres":85.81014286933512,"recoveries":0},"recoveryEvents":[{"vehicleId":1,"seconds":6.183333333333317,"lap":1,"checkpoint":16,"routeDistance":81.30966631836826,"legalRouteDistance":48.63159649220756,"position":{"x":-253.5209197998047,"y":11.056488037109375,"z":-61.69876480102539},"count":1},{"vehicleId":0,"seconds":6.716666666666648,"lap":1,"checkpoint":19,"routeDistance":91.88615329529674,"legalRouteDistance":59.96914543233614,"position":{"x":-251.44129943847656,"y":11.081789016723633,"z":-72.50662994384766},"count":1},{"vehicleId":0,"seconds":82.13333333332996,"lap":2,"checkpoint":65,"routeDistance":262.0707590171808,"legalRouteDistance":235.06190033557482,"position":{"x":-244.69618225097656,"y":11.617497444152832,"z":-242.66897583007812},"count":1}],"scriptedInput":true,"rendered":false,"realHardwarePerformanceClaim":false,"vehicles":[{"id":0,"finished":true,"finishTime":202.45000000005325,"rank":6,"lap":3,"checkpoint":1,"metres":4285.130237775234,"metresAtFinish":4285.130237775234,"recoveries":2,"recoveriesAtFinish":2,"rejectedTeleports":0,"gates":1134,"position":{"x":-208.37567138671875,"y":10.967582702636719,"z":-3.1175384521484375}},{"id":1,"finished":true,"finishTime":198.2666666667166,"rank":5,"lap":3,"checkpoint":1,"metres":4310.044502084812,"metresAtFinish":4232.932100688159,"recoveries":1,"recoveriesAtFinish":1,"rejectedTeleports":0,"gates":1134,"position":{"x":-248.92254638671875,"y":11.044190406799316,"z":-55.78534698486328}},{"id":2,"finished":true,"finishTime":193.98333333337985,"rank":1,"lap":3,"checkpoint":1,"metres":4388.666344922432,"metresAtFinish":4211.175100006596,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-246.67050170898438,"y":11.276873588562012,"z":-156.10894775390625}},{"id":3,"finished":true,"finishTime":197.8500000000496,"rank":4,"lap":3,"checkpoint":1,"metres":4318.053931907016,"metresAtFinish":4230.29156889688,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-250.21400451660156,"y":11.06231689453125,"z":-64.19286346435547}},{"id":4,"finished":true,"finishTime":194.90000000004724,"rank":2,"lap":3,"checkpoint":1,"metres":4358.045644594327,"metresAtFinish":4201.314010777628,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-245.9834747314453,"y":11.222455978393555,"z":-133.16128540039062}},{"id":5,"finished":true,"finishTime":195.33333333338092,"rank":3,"lap":3,"checkpoint":1,"metres":4346.255221128686,"metresAtFinish":4200.869940063641,"recoveries":0,"recoveriesAtFinish":0,"rejectedTeleports":0,"gates":1134,"position":{"x":-247.4738311767578,"y":11.199524879455566,"z":-123.35440826416016}}]}
+2026-09-05T06:39:46.0111404Z 
+2026-09-05T06:39:48.3857537Z [90mstdout[2m | tests/real-stage.test.ts[2m > [22m[2mDEST-07 integration: opening the actual source-road center gate shortens the physical driven segment
+2026-09-05T06:39:48.3862356Z [22m[39mREAL_SHORTCUT_PHYSICS {"stageSha256":"f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76","scriptedInput":true,"rendered":false,"sectionRouteMetres":[70,155],"trials":[{"opened":false,"metres":88.58606736312099,"seconds":4.28333333333341,"recoveries":0},{"opened":true,"metres":85.31476787608555,"seconds":3.7166666666667147,"recoveries":0}]}
+2026-09-05T06:39:48.3864827Z 
+2026-09-05T06:39:51.1542918Z [90mstdout[2m | tests/real-stage.test.ts[2m > [22m[2mactual source first 200 metres remain traversable for all six cars with intact barriers
+2026-09-05T06:39:51.1554001Z [22m[39mREAL_FIRST_200M [{"id":0,"checkpoint":62,"recoveries":2,"at":{"x":-244.30169677734375,"y":11.41606616973877,"z":-205.0565948486328},"input":{"throttle":1,"brake":0,"steer":0.20097351553648063,"drift":false,"recover":false}},{"id":1,"checkpoint":71,"recoveries":1,"at":{"x":-246.62339782714844,"y":11.608287811279297,"z":-240.86712646484375},"input":{"throttle":1,"brake":0,"steer":-0.16187278420070528,"drift":false,"recover":false}},{"id":2,"checkpoint":56,"recoveries":2,"at":{"x":-243.06748962402344,"y":11.333398818969727,"z":-181.4050750732422},"input":{"throttle":1,"brake":0,"steer":0.2291406786892113,"drift":false,"recover":false}},{"id":3,"checkpoint":95,"recoveries":0,"at":{"x":-244.0400390625,"y":12.104150772094727,"z":-332.40484619140625},"input":{"throttle":1,"brake":0,"steer":-0.19600391281818838,"drift":false,"recover":false}},{"id":4,"checkpoint":62,"recoveries":1,"at":{"x":-245.76048278808594,"y":11.416950225830078,"z":-205.2582244873047},"input":{"throttle":1,"brake":0,"steer":0.032962034374236907,"drift":false,"recover":false}},{"id":5,"checkpoint":92,"recoveries":0,"at":{"x":-245.04830932617188,"y":12.05835247039795,"z":-323.9404296875},"input":{"throttle":1,"brake":0,"steer":-0.5779522084808011,"drift":false,"recover":false}}]
+2026-09-05T06:39:51.1559733Z FIRST_BEND_CONTACTS []
+2026-09-05T06:39:51.1559897Z 
+2026-09-05T06:39:51.1560435Z  [32m✓[39m tests/real-stage.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 44968[2mms[22m[39m
+2026-09-05T06:39:51.1561797Z    [33m[2m✓[22m[39m AT-09 integration: all six physical vehicles complete the actual PLATEAU course before and after destruction [33m 39747[2mms[22m[39m
+2026-09-05T06:39:51.1563036Z    [33m[2m✓[22m[39m DEST-07 integration: opening the actual source-road center gate shortens the physical driven segment [33m 2378[2mms[22m[39m
+2026-09-05T06:39:51.1564116Z    [33m[2m✓[22m[39m actual source first 200 metres remain traversable for all six cars with intact barriers [33m 2768[2mms[22m[39m
+2026-09-05T06:39:51.2119077Z 
+2026-09-05T06:39:51.2123911Z [2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+2026-09-05T06:39:51.2125245Z [2m      Tests [22m [1m[32m31 passed[39m[22m[90m (31)[39m
+2026-09-05T06:39:51.2126231Z [2m   Start at [22m 06:39:05
+2026-09-05T06:39:51.2128049Z [2m   Duration [22m 45.84s[2m (transform 441ms, setup 0ms, collect 1.28s, tests 48.31s, environment 3ms, prepare 521ms)[22m
+2026-09-05T06:39:51.2128910Z 
+2026-09-05T06:39:51.2388271Z JUNIT report written to /home/runner/work/MachiShift/MachiShift/reports/junit.xml
+2026-09-05T06:39:51.3316601Z ##[group]Run npm run build
+2026-09-05T06:39:51.3316904Z [36;1mnpm run build[0m
+2026-09-05T06:39:51.3354078Z shell: /usr/bin/bash -e {0}
+2026-09-05T06:39:51.3354342Z ##[endgroup]
+2026-09-05T06:39:51.4316134Z 
+2026-09-05T06:39:51.4316430Z > machishift@0.1.0 build
+2026-09-05T06:39:51.4317061Z > tsc --noEmit && vite build && node scripts/copy-runtime-assets.mjs
+2026-09-05T06:39:51.4317416Z 
+2026-09-05T06:39:54.0213196Z [36mvite v7.1.7 [32mbuilding for production...[36m[39m
+2026-09-05T06:39:54.0971111Z transforming...
+2026-09-05T06:39:55.4545470Z [32m✓[39m 12 modules transformed.
+2026-09-05T06:39:55.6252249Z rendering chunks...
+2026-09-05T06:39:55.9201312Z computing gzip size...
+2026-09-05T06:39:56.0061742Z [2mdist/[22m[32mindex.html                  [39m[1m[2m    0.79 kB[22m[1m[22m[2m │ gzip:   0.47 kB[22m
+2026-09-05T06:39:56.0063151Z [2mdist/[22m[2massets/[22m[35mindex-CuZ_3Fit.css   [39m[1m[2m   10.89 kB[22m[1m[22m[2m │ gzip:   3.19 kB[22m
+2026-09-05T06:39:56.0065095Z [2mdist/[22m[2massets/[22m[36mindex-UczCNDWs.js    [39m[1m[2m   74.28 kB[22m[1m[22m[2m │ gzip:  27.89 kB[22m[2m │ map:   225.72 kB[22m
+2026-09-05T06:39:56.0066170Z [33m
+2026-09-05T06:39:56.0066809Z (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-09-05T06:39:56.0067641Z - Using dynamic import() to code-split the application
+2026-09-05T06:39:56.0069020Z - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-09-05T06:39:56.0070811Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+2026-09-05T06:39:56.0082798Z [2mdist/[22m[2massets/[22m[36mthree-Bc5Z_Hu6.js    [39m[1m[2m  487.04 kB[22m[1m[22m[2m │ gzip: 122.77 kB[22m[2m │ map: 2,695.78 kB[22m
+2026-09-05T06:39:56.0084425Z [2mdist/[22m[2massets/[22m[36mphysics-CKC5f6tm.js  [39m[1m[33m2,235.50 kB[39m[22m[2m │ gzip: 829.91 kB[22m[2m │ map: 2,392.25 kB[22m
+2026-09-05T06:39:56.0085135Z [32m✓ built in 1.95s[39m
+2026-09-05T06:39:56.0812625Z Copied 54 verified-path runtime assets; conversion intermediates excluded.
+2026-09-05T06:39:56.1000715Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-05T06:39:56.1002531Z ##[group]Run actions/upload-artifact@v4.6.2
+2026-09-05T06:39:56.1002821Z with:
+2026-09-05T06:39:56.1003119Z   name: machishift-build-98204c635eb180af1181da975d65eba0ce6ec8be
+2026-09-05T06:39:56.1003479Z   path: dist/
+2026-09-05T06:39:56.1003687Z   if-no-files-found: error
+2026-09-05T06:39:56.1003919Z   retention-days: 14
+2026-09-05T06:39:56.1004135Z   compression-level: 6
+2026-09-05T06:39:56.1004350Z   overwrite: false
+2026-09-05T06:39:56.1004566Z   include-hidden-files: false
+2026-09-05T06:39:56.1004804Z ##[endgroup]
+2026-09-05T06:39:56.2629862Z (node:2615) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-05T06:39:56.2630702Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-05T06:39:56.2786214Z With the provided path, there will be 63 files uploaded
+2026-09-05T06:39:56.2791371Z Artifact name is valid!
+2026-09-05T06:39:56.2792125Z Root directory input is valid!
+2026-09-05T06:39:56.4793912Z Beginning upload of artifact content to blob storage
+2026-09-05T06:39:56.9557036Z (node:2615) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-05T06:39:57.2372007Z Uploaded bytes 8388608
+2026-09-05T06:39:57.4686524Z Uploaded bytes 15596224
+2026-09-05T06:39:57.4867925Z Finished uploading artifact content to blob storage!
+2026-09-05T06:39:57.4868954Z SHA256 digest of uploaded artifact zip is bd550c7ca55846f215850747f2448b6d82672ea9eb3f202a54e8a4f15706ec29
+2026-09-05T06:39:57.4870678Z Finalizing artifact upload
+2026-09-05T06:39:57.6908232Z Artifact machishift-build-98204c635eb180af1181da975d65eba0ce6ec8be.zip successfully finalized. Artifact ID 9964632177
+2026-09-05T06:39:57.6909890Z Artifact machishift-build-98204c635eb180af1181da975d65eba0ce6ec8be has been successfully uploaded! Final size is 15596224 bytes. Artifact ID is 9964632177
+2026-09-05T06:39:57.6917317Z Artifact download URL: https://github.com/tsuji-tomonori/MachiShift/actions/runs/33950385672/artifacts/9964632177
+2026-09-05T06:39:57.7052193Z ##[group]Run npx playwright install --with-deps chromium
+2026-09-05T06:39:57.7052669Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-09-05T06:39:57.7087894Z shell: /usr/bin/bash -e {0}
+2026-09-05T06:39:57.7088155Z ##[endgroup]
+2026-09-05T06:39:58.4581850Z Installing dependencies...
+2026-09-05T06:39:58.4674090Z Switching to root user to install dependencies...
+2026-09-05T06:39:58.5493057Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-09-05T06:39:58.5830073Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-09-05T06:39:58.5882635Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-09-05T06:39:58.5932397Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-09-05T06:39:58.5942222Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-09-05T06:39:58.6007030Z Get:6 https://dl.google.com/linux/chrome-stable/deb stable InRelease [2548 B]
+2026-09-05T06:39:58.6261736Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-09-05T06:39:58.7114548Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1260 kB]
+2026-09-05T06:39:58.7313131Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [292 kB]
+2026-09-05T06:39:58.7322003Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [180 kB]
+2026-09-05T06:39:58.7335225Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1690 kB]
+2026-09-05T06:39:58.7443914Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [339 kB]
+2026-09-05T06:39:58.7461016Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+2026-09-05T06:39:58.7500042Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1536 kB]
+2026-09-05T06:39:58.7573336Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [352 kB]
+2026-09-05T06:39:58.7601785Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2026-09-05T06:39:58.7684313Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5740 B]
+2026-09-05T06:39:58.8175135Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+2026-09-05T06:39:58.8222556Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1002 kB]
+2026-09-05T06:39:58.8267077Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [212 kB]
+2026-09-05T06:39:58.8304131Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+2026-09-05T06:39:58.8329351Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1206 kB]
+2026-09-05T06:39:58.8412353Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [241 kB]
+2026-09-05T06:39:58.8450680Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+2026-09-05T06:39:58.8460215Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1437 kB]
+2026-09-05T06:39:58.8559717Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [334 kB]
+2026-09-05T06:39:58.8960464Z Get:27 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1401 B]
+2026-09-05T06:39:58.9315875Z Get:28 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [441 kB]
+2026-09-05T06:39:58.9406142Z Get:29 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [394 kB]
+2026-09-05T06:40:02.8882976Z Fetched 11.8 MB in 1s (9112 kB/s)
+2026-09-05T06:40:03.6618513Z Reading package lists...
+2026-09-05T06:40:03.6854774Z Reading package lists...
+2026-09-05T06:40:03.8423711Z Building dependency tree...
+2026-09-05T06:40:03.8430955Z Reading state information...
+2026-09-05T06:40:03.9773356Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-09-05T06:40:03.9774097Z libasound2t64 set to manually installed.
+2026-09-05T06:40:03.9774713Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-09-05T06:40:03.9775342Z libatk-bridge2.0-0t64 set to manually installed.
+2026-09-05T06:40:03.9775924Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-09-05T06:40:03.9776455Z libatk1.0-0t64 set to manually installed.
+2026-09-05T06:40:03.9777022Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-09-05T06:40:03.9777800Z libatspi2.0-0t64 set to manually installed.
+2026-09-05T06:40:03.9778324Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-09-05T06:40:03.9778806Z libcairo2 set to manually installed.
+2026-09-05T06:40:03.9779346Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-09-05T06:40:03.9779889Z libcups2t64 set to manually installed.
+2026-09-05T06:40:03.9780337Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-09-05T06:40:03.9780757Z libdbus-1-3 set to manually installed.
+2026-09-05T06:40:03.9781480Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-09-05T06:40:03.9781908Z libdrm2 set to manually installed.
+2026-09-05T06:40:03.9782333Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.2).
+2026-09-05T06:40:03.9782741Z libgbm1 set to manually installed.
+2026-09-05T06:40:03.9783173Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.8).
+2026-09-05T06:40:03.9783618Z libglib2.0-0t64 set to manually installed.
+2026-09-05T06:40:03.9784056Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-09-05T06:40:03.9784455Z libnspr4 set to manually installed.
+2026-09-05T06:40:03.9784862Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-09-05T06:40:03.9785537Z libnss3 set to manually installed.
+2026-09-05T06:40:03.9785973Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-09-05T06:40:03.9786424Z libpango-1.0-0 set to manually installed.
+2026-09-05T06:40:03.9786842Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-09-05T06:40:03.9787225Z libx11-6 set to manually installed.
+2026-09-05T06:40:03.9787602Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-09-05T06:40:03.9787985Z libxcb1 set to manually installed.
+2026-09-05T06:40:03.9788415Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-09-05T06:40:03.9788850Z libxcomposite1 set to manually installed.
+2026-09-05T06:40:03.9789290Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-09-05T06:40:03.9789702Z libxdamage1 set to manually installed.
+2026-09-05T06:40:03.9790119Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-09-05T06:40:03.9790515Z libxext6 set to manually installed.
+2026-09-05T06:40:03.9790926Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-09-05T06:40:03.9791476Z libxfixes3 set to manually installed.
+2026-09-05T06:40:03.9791898Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-09-05T06:40:03.9792305Z libxkbcommon0 set to manually installed.
+2026-09-05T06:40:03.9792715Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-09-05T06:40:03.9793107Z libxrandr2 set to manually installed.
+2026-09-05T06:40:03.9793505Z xvfb is already the newest version (2:21.1.12-1ubuntu1.6).
+2026-09-05T06:40:03.9794052Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-09-05T06:40:03.9794626Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-09-05T06:40:03.9795057Z libfontconfig1 set to manually installed.
+2026-09-05T06:40:03.9795505Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.1).
+2026-09-05T06:40:03.9795933Z libfreetype6 set to manually installed.
+2026-09-05T06:40:03.9796360Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-09-05T06:40:03.9796778Z fonts-liberation set to manually installed.
+2026-09-05T06:40:03.9797497Z The following additional packages will be installed:
+2026-09-05T06:40:03.9797897Z   xfonts-encodings xfonts-utils
+2026-09-05T06:40:03.9798188Z Recommended packages:
+2026-09-05T06:40:03.9798471Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-09-05T06:40:03.9978038Z The following NEW packages will be installed:
+2026-09-05T06:40:03.9978648Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-09-05T06:40:03.9983994Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-09-05T06:40:03.9984494Z   xfonts-utils
+2026-09-05T06:40:04.0152240Z 0 upgraded, 9 newly installed, 0 to remove and 38 not upgraded.
+2026-09-05T06:40:04.0152966Z Need to get 21.1 MB of archives.
+2026-09-05T06:40:04.0153446Z After this operation, 79.5 MB of additional disk space will be used.
+2026-09-05T06:40:04.0154005Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-09-05T06:40:04.1164818Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-09-05T06:40:04.1864520Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-09-05T06:40:04.2787666Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-09-05T06:40:04.2876994Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-09-05T06:40:04.3479356Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-09-05T06:40:04.4835406Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-09-05T06:40:04.4986180Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-09-05T06:40:04.5071463Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-09-05T06:40:04.5211933Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-09-05T06:40:04.7658782Z Fetched 21.1 MB in 1s (40.6 MB/s)
+2026-09-05T06:40:04.7897932Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-09-05T06:40:04.8207222Z (Reading database ... 
+2026-09-05T06:40:04.8207708Z (Reading database ... 5%
+2026-09-05T06:40:04.8208182Z (Reading database ... 10%
+2026-09-05T06:40:04.8208484Z (Reading database ... 15%
+2026-09-05T06:40:04.8208745Z (Reading database ... 20%
+2026-09-05T06:40:04.8209014Z (Reading database ... 25%
+2026-09-05T06:40:04.8209586Z (Reading database ... 30%
+2026-09-05T06:40:04.8210283Z (Reading database ... 35%
+2026-09-05T06:40:04.8210996Z (Reading database ... 40%
+2026-09-05T06:40:04.8211918Z (Reading database ... 45%
+2026-09-05T06:40:04.8212920Z (Reading database ... 50%
+2026-09-05T06:40:04.8254361Z (Reading database ... 55%
+2026-09-05T06:40:04.9290637Z (Reading database ... 60%
+2026-09-05T06:40:05.0350308Z (Reading database ... 65%
+2026-09-05T06:40:05.2289161Z (Reading database ... 70%
+2026-09-05T06:40:05.3054068Z (Reading database ... 75%
+2026-09-05T06:40:05.4263954Z (Reading database ... 80%
+2026-09-05T06:40:05.5860445Z (Reading database ... 85%
+2026-09-05T06:40:05.7507918Z (Reading database ... 90%
+2026-09-05T06:40:05.8501987Z (Reading database ... 95%
+2026-09-05T06:40:05.8502531Z (Reading database ... 100%
+2026-09-05T06:40:05.8503263Z (Reading database ... 201676 files and directories currently installed.)
+2026-09-05T06:40:05.8543607Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-09-05T06:40:05.8636705Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-09-05T06:40:06.0911907Z Selecting previously unselected package fonts-freefont-ttf.
+2026-09-05T06:40:06.1032565Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-09-05T06:40:06.1043374Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-09-05T06:40:06.1820378Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-09-05T06:40:06.1942467Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-09-05T06:40:06.1953326Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-09-05T06:40:06.2169304Z Selecting previously unselected package fonts-unifont.
+2026-09-05T06:40:06.2288461Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-09-05T06:40:06.2299658Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-09-05T06:40:06.3346720Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-09-05T06:40:06.3467658Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-09-05T06:40:06.3566493Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-09-05T06:40:06.8243264Z Selecting previously unselected package xfonts-encodings.
+2026-09-05T06:40:06.8365296Z Preparing to unpack .../5-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-09-05T06:40:06.8383496Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-09-05T06:40:06.8724800Z Selecting previously unselected package xfonts-utils.
+2026-09-05T06:40:06.8846593Z Preparing to unpack .../6-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-09-05T06:40:06.8857302Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-09-05T06:40:06.9267509Z Selecting previously unselected package xfonts-cyrillic.
+2026-09-05T06:40:06.9389403Z Preparing to unpack .../7-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-09-05T06:40:06.9401262Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-09-05T06:40:06.9754747Z Selecting previously unselected package xfonts-scalable.
+2026-09-05T06:40:06.9875242Z Preparing to unpack .../8-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-09-05T06:40:06.9887224Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-09-05T06:40:07.0292766Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-09-05T06:40:07.0433734Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-09-05T06:40:07.0461589Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-09-05T06:40:07.0488912Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-09-05T06:40:07.0518230Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-09-05T06:40:07.0593079Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-09-05T06:40:07.0614275Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-09-05T06:40:07.0639787Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-09-05T06:40:07.0682910Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-09-05T06:40:07.0981309Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-09-05T06:40:07.1250403Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-09-05T06:40:07.1273477Z Not building database; man-db/auto-update is not 'true'.
+2026-09-05T06:40:07.1288179Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-09-05T06:40:07.8463816Z 
+2026-09-05T06:40:07.8464486Z Running kernel seems to be up-to-date.
+2026-09-05T06:40:07.8464778Z 
+2026-09-05T06:40:07.8464940Z No services need to be restarted.
+2026-09-05T06:40:07.8465162Z 
+2026-09-05T06:40:07.8465320Z No containers need to be restarted.
+2026-09-05T06:40:07.8465514Z 
+2026-09-05T06:40:07.8465717Z No user sessions are running outdated binaries.
+2026-09-05T06:40:07.8465954Z 
+2026-09-05T06:40:07.8466272Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-09-05T06:40:08.6157025Z Downloading Chromium 140.0.7339.186 (playwright build v1193) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1193/chromium-linux.zip
+2026-09-05T06:40:08.7412571Z |                                                                                |   0% of 173.8 MiB
+2026-09-05T06:40:08.8726075Z |■■■■■■■■                                                                        |  10% of 173.8 MiB
+2026-09-05T06:40:08.9495722Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.8 MiB
+2026-09-05T06:40:09.0301435Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.8 MiB
+2026-09-05T06:40:09.0994035Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.8 MiB
+2026-09-05T06:40:09.1669824Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.8 MiB
+2026-09-05T06:40:09.2300275Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.8 MiB
+2026-09-05T06:40:09.2901521Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.8 MiB
+2026-09-05T06:40:09.3468091Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.8 MiB
+2026-09-05T06:40:09.4001884Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.8 MiB
+2026-09-05T06:40:09.4547835Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.8 MiB
+2026-09-05T06:40:12.7774539Z Chromium 140.0.7339.186 (playwright build v1193) downloaded to /home/runner/.cache/ms-playwright/chromium-1193
+2026-09-05T06:40:12.7776341Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-09-05T06:40:12.9077586Z |                                                                                |   0% of 2.3 MiB
+2026-09-05T06:40:12.9127352Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-09-05T06:40:12.9164047Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-09-05T06:40:12.9190212Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-09-05T06:40:12.9209395Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-09-05T06:40:12.9231922Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-09-05T06:40:12.9250267Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-09-05T06:40:12.9271609Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-09-05T06:40:12.9292777Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-09-05T06:40:12.9308204Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-09-05T06:40:12.9319504Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-09-05T06:40:12.9845437Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-09-05T06:40:12.9847933Z Downloading Chromium Headless Shell 140.0.7339.186 (playwright build v1193) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1193/chromium-headless-shell-linux.zip
+2026-09-05T06:40:13.1067920Z |                                                                                |   0% of 104.3 MiB
+2026-09-05T06:40:13.1958726Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+2026-09-05T06:40:13.2497893Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+2026-09-05T06:40:13.2933426Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+2026-09-05T06:40:13.3380287Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+2026-09-05T06:40:13.3759892Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+2026-09-05T06:40:13.4120155Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+2026-09-05T06:40:13.4505995Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+2026-09-05T06:40:13.4874178Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+2026-09-05T06:40:13.5247337Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+2026-09-05T06:40:13.5568902Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+2026-09-05T06:40:15.3075237Z Chromium Headless Shell 140.0.7339.186 (playwright build v1193) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1193
+2026-09-05T06:40:15.3988115Z ##[group]Run npx playwright test
+2026-09-05T06:40:15.3988481Z [36;1mnpx playwright test[0m
+2026-09-05T06:40:15.4023964Z shell: /usr/bin/bash -e {0}
+2026-09-05T06:40:15.4024236Z ##[endgroup]
+2026-09-05T06:40:17.2966575Z 
+2026-09-05T06:40:17.2967016Z Running 2 tests using 1 worker
+2026-09-05T06:40:17.2967339Z 
+2026-09-05T06:42:56.6747296Z   ✘  1 [chromium-software-functionality] › tests/e2e/game.spec.ts:51:1 › real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap race, results and reset (2.6m)
+2026-09-05T06:45:05.1923496Z   ✘  2 [chromium-software-functionality] › tests/e2e/game.spec.ts:156:1 › real chunk network failure displays retry and reload recovers (2.1m)
+2026-09-05T06:45:05.2119562Z 
+2026-09-05T06:45:05.2124548Z 
+2026-09-05T06:45:05.2136480Z   1) [chromium-software-functionality] › tests/e2e/game.spec.ts:51:1 › real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap race, results and reset 
+2026-09-05T06:45:05.2137777Z 
+2026-09-05T06:45:05.2138561Z     Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+2026-09-05T06:45:05.2139191Z 
+2026-09-05T06:45:05.2139684Z     Locator:  getByRole('button', { name: 'レースを始める' })
+2026-09-05T06:45:05.2140308Z     Expected: visible
+2026-09-05T06:45:05.2140811Z     Received: <element(s) not found>
+2026-09-05T06:45:05.2141868Z     Timeout:  150000ms
+2026-09-05T06:45:05.2142152Z 
+2026-09-05T06:45:05.2142309Z     Call log:
+2026-09-05T06:45:05.2143034Z     [2m  - Expect "toBeVisible" with timeout 150000ms[22m
+2026-09-05T06:45:05.2144044Z     [2m  - waiting for getByRole('button', { name: 'レースを始める' })[22m
+2026-09-05T06:45:05.2144558Z 
+2026-09-05T06:45:05.2144569Z 
+2026-09-05T06:45:05.2144734Z       46 |   });
+2026-09-05T06:45:05.2145213Z       47 |   await page.goto('/?qa=1');
+2026-09-05T06:45:05.2146557Z     > 48 |   await expect(page.getByRole('button', { name: 'レースを始める', exact: false })).toBeVisible({ timeout: 150_000 });
+2026-09-05T06:45:05.2147753Z          |                                                                             ^
+2026-09-05T06:45:05.2148388Z       49 | }
+2026-09-05T06:45:05.2148761Z       50 |
+2026-09-05T06:45:05.2149923Z       51 | test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap race, results and reset', async ({ page }, testInfo) => {
+2026-09-05T06:45:05.2151833Z         at openStage (/home/runner/work/MachiShift/MachiShift/tests/e2e/game.spec.ts:48:77)
+2026-09-05T06:45:05.2153039Z         at /home/runner/work/MachiShift/MachiShift/tests/e2e/game.spec.ts:55:3
+2026-09-05T06:45:05.2153644Z 
+2026-09-05T06:45:05.2154517Z     attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2156520Z     reports/playwright-artifacts/game-real-stage-controls-k-21aff--lap-race-results-and-reset-chromium-software-functionality/test-failed-1.png
+2026-09-05T06:45:05.2158557Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2159127Z 
+2026-09-05T06:45:05.2159851Z     attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2161881Z     reports/playwright-artifacts/game-real-stage-controls-k-21aff--lap-race-results-and-reset-chromium-software-functionality/video.webm
+2026-09-05T06:45:05.2164185Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2164728Z 
+2026-09-05T06:45:05.2166070Z     Error Context: reports/playwright-artifacts/game-real-stage-controls-k-21aff--lap-race-results-and-reset-chromium-software-functionality/error-context.md
+2026-09-05T06:45:05.2167396Z 
+2026-09-05T06:45:05.2168137Z     attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2169916Z     reports/playwright-artifacts/game-real-stage-controls-k-21aff--lap-race-results-and-reset-chromium-software-functionality/trace.zip
+2026-09-05T06:45:05.2171920Z     Usage:
+2026-09-05T06:45:05.2172132Z 
+2026-09-05T06:45:05.2173513Z         npx playwright show-trace reports/playwright-artifacts/game-real-stage-controls-k-21aff--lap-race-results-and-reset-chromium-software-functionality/trace.zip
+2026-09-05T06:45:05.2174936Z 
+2026-09-05T06:45:05.2175619Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2176172Z 
+2026-09-05T06:45:05.2177269Z   2) [chromium-software-functionality] › tests/e2e/game.spec.ts:156:1 › real chunk network failure displays retry and reload recovers 
+2026-09-05T06:45:05.2178194Z 
+2026-09-05T06:45:05.2178806Z     Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+2026-09-05T06:45:05.2179422Z 
+2026-09-05T06:45:05.2179865Z     Locator:  getByRole('button', { name: 'レースを始める' })
+2026-09-05T06:45:05.2180480Z     Expected: visible
+2026-09-05T06:45:05.2180958Z     Received: <element(s) not found>
+2026-09-05T06:45:05.2181725Z     Timeout:  120000ms
+2026-09-05T06:45:05.2181985Z 
+2026-09-05T06:45:05.2182121Z     Call log:
+2026-09-05T06:45:05.2182739Z     [2m  - Expect "toBeVisible" with timeout 120000ms[22m
+2026-09-05T06:45:05.2183592Z     [2m  - waiting for getByRole('button', { name: 'レースを始める' })[22m
+2026-09-05T06:45:05.2184043Z 
+2026-09-05T06:45:05.2184052Z 
+2026-09-05T06:45:05.2184589Z       165 |   await page.screenshot({ path: testInfo.outputPath('chunk-failure.png') });
+2026-09-05T06:45:05.2185775Z       166 |   await page.getByRole('button', { name: '再試行', exact: false }).click();
+2026-09-05T06:45:05.2187146Z     > 167 |   await expect(page.getByRole('button', { name: 'レースを始める', exact: false })).toBeVisible({ timeout: 120_000 });
+2026-09-05T06:45:05.2188146Z           |                                                                             ^
+2026-09-05T06:45:05.2189228Z       168 |   await page.screenshot({ path: testInfo.outputPath('chunk-retry-success.png') });
+2026-09-05T06:45:05.2190327Z       169 |   await attachJSON(testInfo, 'network-recovery', {
+2026-09-05T06:45:05.2191406Z       170 |     executedAt: new Date().toISOString(),
+2026-09-05T06:45:05.2191970Z         at /home/runner/work/MachiShift/MachiShift/tests/e2e/game.spec.ts:167:77
+2026-09-05T06:45:05.2192583Z 
+2026-09-05T06:45:05.2193444Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2195702Z     reports/playwright-artifacts/game-real-chunk-network-fa-9689a-s-retry-and-reload-recovers-chromium-software-functionality/test-failed-1.png
+2026-09-05T06:45:05.2197755Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2198336Z 
+2026-09-05T06:45:05.2199148Z     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2200971Z     reports/playwright-artifacts/game-real-chunk-network-fa-9689a-s-retry-and-reload-recovers-chromium-software-functionality/video.webm
+2026-09-05T06:45:05.2203498Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2204086Z 
+2026-09-05T06:45:05.2205498Z     Error Context: reports/playwright-artifacts/game-real-chunk-network-fa-9689a-s-retry-and-reload-recovers-chromium-software-functionality/error-context.md
+2026-09-05T06:45:05.2206957Z 
+2026-09-05T06:45:05.2207805Z     attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2209728Z     reports/playwright-artifacts/game-real-chunk-network-fa-9689a-s-retry-and-reload-recovers-chromium-software-functionality/trace.zip
+2026-09-05T06:45:05.2211497Z     Usage:
+2026-09-05T06:45:05.2211725Z 
+2026-09-05T06:45:05.2213232Z         npx playwright show-trace reports/playwright-artifacts/game-real-chunk-network-fa-9689a-s-retry-and-reload-recovers-chromium-software-functionality/trace.zip
+2026-09-05T06:45:05.2214669Z 
+2026-09-05T06:45:05.2215453Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-09-05T06:45:05.2216043Z 
+2026-09-05T06:45:05.2216204Z   2 failed
+2026-09-05T06:45:05.2217829Z     [chromium-software-functionality] › tests/e2e/game.spec.ts:51:1 › real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap race, results and reset 
+2026-09-05T06:45:05.2220179Z     [chromium-software-functionality] › tests/e2e/game.spec.ts:156:1 › real chunk network failure displays retry and reload recovers 
+2026-09-05T06:45:05.2659560Z ##[error]Process completed with exit code 1.
+2026-09-05T06:45:05.2728319Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-05T06:45:05.2729648Z ##[group]Run actions/upload-artifact@v4.6.2
+2026-09-05T06:45:05.2729939Z with:
+2026-09-05T06:45:05.2730271Z   name: machishift-verification-98204c635eb180af1181da975d65eba0ce6ec8be
+2026-09-05T06:45:05.2730694Z   path: reports/
+2026-09-05T06:45:05.2730910Z   if-no-files-found: warn
+2026-09-05T06:45:05.2731444Z   retention-days: 14
+2026-09-05T06:45:05.2731671Z   compression-level: 6
+2026-09-05T06:45:05.2731888Z   overwrite: false
+2026-09-05T06:45:05.2732310Z   include-hidden-files: false
+2026-09-05T06:45:05.2732551Z ##[endgroup]
+2026-09-05T06:45:05.4367119Z (node:3741) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-05T06:45:05.4367974Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-05T06:45:05.4516673Z With the provided path, there will be 35 files uploaded
+2026-09-05T06:45:05.4524594Z Artifact name is valid!
+2026-09-05T06:45:05.4525358Z Root directory input is valid!
+2026-09-05T06:45:05.6700989Z Beginning upload of artifact content to blob storage
+2026-09-05T06:45:05.9673734Z (node:3741) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-05T06:45:06.2446016Z Uploaded bytes 5368505
+2026-09-05T06:45:06.2622430Z Finished uploading artifact content to blob storage!
+2026-09-05T06:45:06.2624053Z SHA256 digest of uploaded artifact zip is e49e73a9ccb7612eae798ef4944f6372da4821e65df347b99f5117c8a2902947
+2026-09-05T06:45:06.2626194Z Finalizing artifact upload
+2026-09-05T06:45:06.4619867Z Artifact machishift-verification-98204c635eb180af1181da975d65eba0ce6ec8be.zip successfully finalized. Artifact ID 9964704385
+2026-09-05T06:45:06.4623174Z Artifact machishift-verification-98204c635eb180af1181da975d65eba0ce6ec8be has been successfully uploaded! Final size is 5368505 bytes. Artifact ID is 9964704385
+2026-09-05T06:45:06.4627757Z Artifact download URL: https://github.com/tsuji-tomonori/MachiShift/actions/runs/33950385672/artifacts/9964704385
+2026-09-05T06:45:06.4832712Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-05T06:45:06.4833990Z Post job cleanup.
+2026-09-05T06:45:06.5682164Z [command]/usr/bin/git version
+2026-09-05T06:45:06.5725520Z git version 2.55.0
+2026-09-05T06:45:06.5769036Z Temporarily overriding HOME='/home/runner/work/_temp/02150809-55b0-4605-9895-fdf7167f8744' before making global git config changes
+2026-09-05T06:45:06.5770497Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-05T06:45:06.5775942Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MachiShift/MachiShift
+2026-09-05T06:45:06.5813279Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-05T06:45:06.5848257Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-05T06:45:06.6089388Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-05T06:45:06.6123184Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-05T06:45:06.6547805Z Cleaning up orphan processes
+2026-09-05T06:45:06.6990553Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4.2.2, actions/setup-node@v4.4.0, actions/upload-artifact@v4.6.2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

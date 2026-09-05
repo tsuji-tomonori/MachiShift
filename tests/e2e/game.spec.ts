@@ -2,6 +2,7 @@ import { expect, test, type Page, type TestInfo } from '@playwright/test';
 
 interface Diagnostics {
   phase: string;
+  sampledAtMilliseconds: number;
   elapsed: number;
   courseMeters: number;
   inventory: string[];
@@ -14,7 +15,7 @@ interface Diagnostics {
   gripZones: number;
   recoveries: number;
   autoDrive: boolean;
-  vehicles: Array<{ id: number; lap: number; rank: number; checkpoint: number; finished: boolean; speed: number; position: { x: number; y: number; z: number } }>;
+  vehicles: Array<{ id: number; lap: number; rank: number; checkpoint: number; finished: boolean; speed: number; heading: number; driftCharge: number; boost: number; position: { x: number; y: number; z: number } }>;
 }
 
 async function readDiagnostics(page: Page): Promise<Diagnostics> {
@@ -28,6 +29,13 @@ async function readDiagnostics(page: Page): Promise<Diagnostics> {
 async function attachJSON(testInfo: TestInfo, name: string, value: unknown): Promise<void> {
   await testInfo.attach(name, { body: JSON.stringify(value, null, 2), contentType: 'application/json' });
 }
+
+test.afterEach(async ({ page }, testInfo) => {
+  if (testInfo.status !== testInfo.expectedStatus && await page.locator('#diagnostics').count()) {
+    const raw = await page.locator('#diagnostics').textContent();
+    await testInfo.attach('actual-state-on-failure', { body: raw ?? 'Diagnostics not populated', contentType: 'text/plain' });
+  }
+});
 
 async function openStage(page: Page, testInfo: TestInfo): Promise<void> {
   const stageResponse = await page.request.get('/data/stage.json');
@@ -74,9 +82,15 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
     await expect.poll(async () => (await readDiagnostics(page)).inventory.length, { timeout: 40_000 }).toBeGreaterThan(0);
     await page.keyboard.down('Shift');
     await page.keyboard.down('KeyA');
-    await page.waitForTimeout(1200); // Recorded held-input duration; not a simulated physics time jump.
+    const headingBeforeDrift = (await readDiagnostics(page)).vehicles[0].heading;
+    await expect.poll(async () => (await readDiagnostics(page)).vehicles[0].driftCharge, { timeout: 20_000, intervals: [100, 200, 250] }).toBeGreaterThanOrEqual(0.26);
+    const charged = await readDiagnostics(page);
+    const turn = charged.vehicles[0].heading - headingBeforeDrift;
+    expect(Math.abs(Math.atan2(Math.sin(turn), Math.cos(turn)))).toBeGreaterThan(0.1);
     await page.keyboard.up('KeyA');
     await page.keyboard.up('Shift');
+    await expect.poll(async () => (await readDiagnostics(page)).vehicles[0].boost, { timeout: 10_000, intervals: [100, 200, 250] }).toBeGreaterThan(0);
+    await attachJSON(testInfo, 'keyboard-drift-boost', { charged, released: await readDiagnostics(page) });
   } finally {
     await page.keyboard.up('KeyW');
     await page.keyboard.up('KeyA');
@@ -109,9 +123,14 @@ test('real stage: controls, keyboard driving, real throw, tutorial, 6-car 3-lap 
 
   await page.keyboard.press('Escape');
   await expect(page.getByRole('heading', { name: 'ひと休み' })).toBeVisible();
-  const pausedTime = (await readDiagnostics(page)).elapsed;
-  await page.waitForTimeout(400);
-  expect((await readDiagnostics(page)).elapsed).toBe(pausedTime);
+  await expect.poll(async () => (await readDiagnostics(page)).phase).toBe('paused');
+  const paused = await readDiagnostics(page);
+  // Require a fresh observation; a frozen HUD must not prove frozen physics.
+  await expect.poll(async () => (await readDiagnostics(page)).sampledAtMilliseconds).toBeGreaterThan(paused.sampledAtMilliseconds + 400);
+  const stillPaused = await readDiagnostics(page);
+  expect(stillPaused.elapsed).toBe(paused.elapsed);
+  expect(stillPaused.vehicles).toEqual(paused.vehicles);
+  await attachJSON(testInfo, 'paused-physical-state', { paused, stillPaused });
   await page.getByRole('button', { name: 'タイトルへ', exact: true }).click();
   await page.getByRole('button', { name: '操作を練習する', exact: true }).click();
   await expect(page.getByRole('heading', { name: '1. 走り出そう' })).toBeVisible();

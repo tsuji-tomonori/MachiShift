@@ -1,0 +1,69 @@
+{
+  "runId": 33950385672,
+  "headCommit": "c3a7a53c791be37a9b537bc6bdbc86357833a300",
+  "conclusion": "failure",
+  "unitTests": {
+    "passed": 31,
+    "failed": 0
+  },
+  "typecheck": "success",
+  "build": "success",
+  "browserTests": {
+    "startTime": "2026-09-05T06:40:16.517Z",
+    "duration": 288694.49000000005,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "firstFailingChunk": {
+    "url": "http://127.0.0.1:4173/data/chunk--1_-1.json.gz",
+    "status": 200,
+    "headers": [
+      {
+        "name": "Cache-Control",
+        "value": "no-cache"
+      },
+      {
+        "name": "Connection",
+        "value": "keep-alive"
+      },
+      {
+        "name": "Content-Encoding",
+        "value": "gzip"
+      },
+      {
+        "name": "Content-Length",
+        "value": "368786"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "name": "Date",
+        "value": "Sat, 05 Sep 2026 06:40:18 GMT"
+      },
+      {
+        "name": "ETag",
+        "value": "W/\"368786-1788590396068\""
+      },
+      {
+        "name": "Keep-Alive",
+        "value": "timeout=5"
+      },
+      {
+        "name": "Last-Modified",
+        "value": "Sat, 05 Sep 2026 06:39:56 GMT"
+      },
+      {
+        "name": "Vary",
+        "value": "Origin"
+      }
+    ]
+  },
+  "cause": "Vite preview serves .json.gz with Content-Encoding:gzip, decoded by fetch before application code. The former URL-suffix-based loader decompressed the JSON body a second time.",
+  "fix": "Inspect actual delivered gzip magic and stream-decode only when compressed. Real HTTP regression tests cover encoded gzip, opaque gzip, plain JSON, HTTP404 and truncated gzip.",
+  "reference": "https://github.com/whatwg/fetch/issues/589",
+  "scope": "First remote CI failure, retained as history. Does not assert success of corrected browser flow."
+}

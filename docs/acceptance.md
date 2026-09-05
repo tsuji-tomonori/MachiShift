@@ -5,9 +5,9 @@
 | 対象 | PASS | FAIL | IN_PROGRESS | BLOCKED | NEEDS_DECISION |
 |---|---:|---:|---:|---:|---:|
 | 原文の53行 | 27 | 0 | 5 | 21 | 0 |
-| 追加管理を含む101行 | 47 | 0 | 6 | 43 | 5 |
+| 追加管理を含む101行 | 48 | 0 | 6 | 42 | 5 |
 
-完全な原文、出典行、実装、試験ID、証跡、未達理由、次の作業は [要件台帳](requirements-ledger.json) を正とする。[判定記録](evidence/final-adjudication-20260905.json) には実行した試験と各判定の範囲を残した。機能試験の成功を、独立測量・画面品質・人の操作理解・GPU性能へ一般化しない。
+完全な原文、出典行、実装、試験ID、証跡、未達理由、次の作業は [要件台帳](requirements-ledger.json) を正とする。GitHub反映前の [判定記録](evidence/final-adjudication-20260905.json) には実行した試験と各判定の範囲を残した。機能試験の成功を、独立測量・画面品質・人の操作理解・GPU性能へ一般化しない。
 
 ## 実行できた結果
 
@@ -18,7 +18,7 @@
 | 原典文書 | 索引図8頁すべて、752頁の拡張製品仕様書の関連10頁を画像確認、追加3頁を文字確認。高さ0の定義・座標/高さ基準・公称精度の説明を照合 | [原典文書の確認範囲](../data/document-review.json)。全文適合や独立精度の合格ではない |
 | 物理と状態 | 環境15件、車両12件、実ステージ3件、入力1件。実Three.jsジオメトリとRapier WASMを実行 | [31件の要件対応と期待・条件](evidence/test-traceability-20260905.json) |
 | ブラウザー起動 | Work cloud ChromeのGL_VENDOR/GL_RENDERERがDisabled。WebGL生成が失敗し、エラーと再試行画面を確認 | [ブラウザー記録](evidence/browser-environment-20260905.json)。3DプレイはBLOCKED |
-| GitHub | 空リポジトリの初期main作成を自動承認レビューが拒否。featureのGit送信はUsername認証情報がなく失敗。リモートブランチ・PR・CI未作成/未実行 | [外部実行の制約](evidence/external-execution-blockers-20260905.json) |
+| GitHub | 明示承認とAppアクセス追加後、原資料mainと実装ブランチを反映しPR #1を作成。170ファイルのGit tree一致を確認 | [反映証跡](evidence/github-delivery-20260905.json)、[PR #1](https://github.com/tsuji-tomonori/MachiShift/pull/1) |
 
 ローカル環境はLinux 6.18.35 / x86_64 / glibc 2.39、Node.js 24.19.0、Python 3.12.13。実メモリ・空き容量と利用可能な環境情報は [環境記録](evidence/execution-environment-20260905.json)、固定依存の版・ライセンス属性・公式API参照先は [依存確認](evidence/dependency-review-20260905.json) に残した。ホストのメモリ量はアプリの実使用量ではない。
 
@@ -91,9 +91,9 @@
 | 配信形式と最適化 | 圧縮50区画はJSON gzip・未テクスチャ。初期取得・境界の実計測なし | 原文の「GLB等」を可逆な形式判断として扱い、IDを維持した形式比較と通信/メモリ/時間計測で必要な最適化を行う |
 | 実機性能 | GPUを指定した1080p/6台/3爆発/100片/200塗装/通常〜境界〜3周反復の計測なし | 事前の `performance-budget.md` を維持して対象機で計測。ソフトウェアGPUやNode物理時間は参考条件として分ける |
 | 初見評価 | 操作説明を先読みしない人による検証がない | 進行方向・投擲・復帰について人の実際の理解と迷いを記録 |
-| GitHub | 自動承認レビューの初期main拒否とGitのUsername認証不足 | 初期main作成への明示的な承認を得て、利用可能なGitHub APIで原資料初期化→作業ブランチ→PR→CIへ進む |
+| CI | PR #1への実装反映は完了。CI実行結果を確認中 | 実行ログ・E2E画像を確認し、必要な修正と証跡を反映 |
 
-原プロンプト11章の「作業ブランチ→PR」を理由とする自動承認レビューの拒否を、別経路で同じ初期main書込みを行って回避していない。原資料の保存、コード、試験、ビルド、PR説明案まで具体化している。自動マージ、本番公開、保護解除、有料インフラ作成は実行していない。
+最初のmain初期化拒否とGitHub Appのアクセス不足は、その後のユーザー明示承認とリポジトリ追加で解消した。原資料のみのmainを基点に、実装は作業ブランチからPR #1へ反映済みである。過去の外部制約記録は発生時点の履歴として保持する。自動マージ、本番公開、保護解除、有料インフラ作成は実行していない。
 
 ## 完了ゲート
 
@@ -110,7 +110,7 @@
 
 全必須行の合格を要求する `node scripts/check-requirements.mjs --require-acceptance --report docs/evidence/acceptance-gate-20260905.json` は、この状態では終了コード1になる。これが正しい未完了ゲートであり、通常の構造検査や31試験の成功で全受入を合格へ変換しない。
 
-CIは変更しない実ステージをHTTP取得し、実キーボード操作、補給取得と投擲、一時停止、体験スキップ、見える自動走行パネルによる実物理3周、全車結果、再レース、区画通信失敗→再試行を試験する。位置・周回・物理状態を直接編集しない。JSON/HTML、失敗時の画像・動画・trace、終了画面をArtifactsへ保存する設定である。SwiftShader・1280×720での機能検証を対象GPU1080p性能や人の理解の証明にしない。現時点のE2Eは2件の検出のみで未実行、CIも未実行である。
+CIは変更しない実ステージをHTTP取得し、実キーボード操作、補給取得と投擲、一時停止、体験スキップ、見える自動走行パネルによる実物理3周、全車結果、再レース、区画通信失敗→再試行を試験する。位置・周回・物理状態を直接編集しない。JSON/HTML、失敗時の画像・動画・trace、終了画面をArtifactsへ保存する設定である。SwiftShader・1280×720での機能検証を対象GPU1080p性能や人の理解の証明にしない。[初回CI](https://github.com/tsuji-tomonori/MachiShift/actions/runs/33950385672) が実行中であり、初回は型検査・31物理試験・ビルドに成功し、E2Eは圧縮データの二重展開で2件失敗した。[診断記録](evidence/ci-first-diagnosis-20260905.json) にHTTP応答と原因を保存し、読込修正と5件のHTTP回帰試験を追加して再検証している。
 
 Workで利用できるブラウザーがWebGLを無効にしていたため、この作業では別のローカルブラウザー制御に切り替えていない。公式参照先は [Playwright設定](https://playwright.dev/docs/test-configuration)、[Webサーバー](https://playwright.dev/docs/test-webserver)、[GitHub checkout](https://github.com/actions/checkout)、[setup-node](https://github.com/actions/setup-node)、[upload-artifact](https://github.com/actions/upload-artifact)。
 
