@@ -1,0 +1,218 @@
+{
+  "project": "リアルカート",
+  "version": "0.1",
+  "date": "2026-09-05",
+  "status": "research_and_proposal_only",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "PLATEAU 岐阜市 2024年度 データセット",
+      "url": "https://www.geospatial.jp/ckan/dataset/plateau-21201-gifu-shi-2024",
+      "checked_on": "2026-09-05",
+      "status": "catalog_metadata_reviewed_model_not_imported",
+      "note": "公式配布メタデータを横断検索上の転載で確認。原本ページは取得エラーが発生。建物・道路・徒歩道・広場・都市設備・橋梁を記載。ルート全体のLOD3、原典測量年、実物の描画品質は未確認。",
+      "metadata_mirror_url": "https://search.ckan.jp/datasets/www.geospatial.jp__ckan__dataset:plateau-21201-gifu-shi-2024",
+      "edition": "2024年度",
+      "survey_date": null,
+      "license_statement": "配布メタデータはPLATEAUサイトポリシーを参照。取得時に原本の条件と第三者コンテンツを再確認。",
+      "downloads": [
+        {
+          "format": "CityGML v4",
+          "approx_compressed_size": "4.3 GB",
+          "url": "https://assets.cms.plateau.reearth.io/assets/1a/f59166-6796-482d-b59d-cb9bfed3ddeb/21201_gifu-shi_city_2024_citygml_1_op.zip",
+          "downloaded": false
+        },
+        {
+          "format": "3D Tiles / MVT v4",
+          "approx_compressed_size": "3.6 GB",
+          "url": "https://assets.cms.plateau.reearth.io/assets/4d/dc23fd-0dad-4715-928c-f3afc35eeb16/21201_gifu-shi_city_2024_3dtiles_mvt_1_op.zip",
+          "downloaded": false
+        },
+        {
+          "format": "PDF index map",
+          "url": "https://assets.cms.plateau.reearth.io/assets/26/b874e8-e582-4c3d-b185-8477e0feddd8/21201_indexmap_op.pdf",
+          "review_status": "selected_pages_visually_reviewed",
+          "note": "索引図だけで駅前ルートのLOD3整備範囲を確定しない。"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "PLATEAU 岐阜市 2022年度 駅前デッキ等の説明",
+      "url": "https://www.geospatial.jp/ckan/dataset/plateau-21201-gifu-shi-2022",
+      "checked_on": "2026-09-05",
+      "status": "catalog_description_reviewed",
+      "note": "点群から作成した駅前ペデストリアンデッキの記載を確認。2024版の全地物品質を保証するものではない。",
+      "metadata_mirror_url": "https://search.ckan.jp/datasets/www.geospatial.jp__ckan__dataset:plateau-21201-gifu-shi-2022"
+    },
+    {
+      "id": "S03",
+      "title": "岐阜市 駅前広場の施設案内図",
+      "url": "https://www.city.gifu.lg.jp/info/machizukuri/1007778/1007826/1007827/1007828.html",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "公式施設図を画像で確認。ページ更新2021年。現況を測量した記録として扱わない。",
+      "image_url": "https://www.city.gifu.lg.jp/_res/projects/default_project/_page_/001/007/828/sisetu2019.jpg"
+    },
+    {
+      "id": "S04",
+      "title": "PLATEAU 横浜市 2020年度",
+      "url": "https://www.geospatial.jp/ckan/dataset/plateau-14100-yokohama-city-2020",
+      "checked_on": "2026-09-05",
+      "status": "catalog_metadata_reviewed_model_not_imported",
+      "note": "みなとみらい21のLOD2整備範囲を目録で確認。2026年の現況と一致するとは扱わない。",
+      "metadata_mirror_url": "https://search.ckan.jp/datasets/www.geospatial.jp__ckan__dataset:plateau-14100-yokohama-city-2020"
+    },
+    {
+      "id": "S05",
+      "title": "PLATEAU 沼津市 2021年度",
+      "url": "https://www.geospatial.jp/ckan/dataset/plateau-22203-numazu-shi-2021",
+      "checked_on": "2026-09-05",
+      "status": "catalog_metadata_reviewed_model_not_imported",
+      "note": "高詳細データの目録を確認。LOD・地物ごとの範囲は実データで確かめる。",
+      "metadata_mirror_url": "https://search.ckan.jp/datasets/www.geospatial.jp__ckan__dataset:plateau-22203-numazu-shi-2021"
+    },
+    {
+      "id": "S06",
+      "title": "PLATEAU 沼津市の街路空間を利用した自己位置推定ユースケース",
+      "url": "https://www.mlit.go.jp/plateau/use-case/uc21-002/",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "駅から港方面の街路を扱う事例。現ステージの全地物精度を証明する資料ではない。"
+    },
+    {
+      "id": "S07",
+      "title": "静岡県 VIRTUAL SHIZUOKA",
+      "url": "https://www.pref.shizuoka.jp/machizukuri/1049255/1052183.html",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "県公式ページにCC BY 4.0の案内。採用する点群の範囲・計測方式・年月・密度は未確認。"
+    },
+    {
+      "id": "S08",
+      "title": "沼津市 中央公園再整備事業",
+      "url": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/park/chuou/index.htm",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "再整備事業の公表を確認。工事工程の具体日付や現在の完成状態をこの文書では確定しない。"
+    },
+    {
+      "id": "S09",
+      "title": "PLATEAU 名古屋市 2022年度",
+      "url": "https://www.geospatial.jp/ckan/dataset/plateau-23100-nagoya-shi-2022",
+      "checked_on": "2026-09-05",
+      "status": "catalog_metadata_reviewed_model_not_imported",
+      "note": "建築物LOD1/2等の目録を確認。形式更新年を原典測量年と扱わない。",
+      "metadata_mirror_url": "https://search.ckan.jp/datasets/www.geospatial.jp__ckan__dataset:plateau-23100-nagoya-shi-2022"
+    },
+    {
+      "id": "S10",
+      "title": "国土地理院 基盤地図情報ダウンロードサービス",
+      "url": "https://service.gsi.go.jp/kiban/app/map/",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "道路縁・建築物外周線等と数値標高モデルの収集先。対象地区ごとの取得は未実施。",
+      "help_url": "https://service.gsi.go.jp/kiban/app/help/"
+    },
+    {
+      "id": "S11",
+      "title": "国土地理院 地理院タイル一覧",
+      "url": "https://maps.gsi.go.jp/development/ichiran.html",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "タイル種類と利用条件。リアルタイム利用とオフライン加工・配布の手続を区別して確認する。"
+    },
+    {
+      "id": "S12",
+      "title": "国土地理院 コンテンツ利用規約",
+      "url": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "出典・加工の表示、第三者の権利などの確認先。",
+      "survey_procedures_url": "https://www.gsi.go.jp/LAW/2930-index.html"
+    },
+    {
+      "id": "S13",
+      "title": "OpenStreetMap copyright and license",
+      "url": "https://www.openstreetmap.org/copyright",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "ODbLと帰属表示を確認。派生データベースの扱いは実装形態に応じて点検する。"
+    },
+    {
+      "id": "S14",
+      "title": "PLATEAU Start Guide / Site Policy",
+      "url": "https://www.mlit.go.jp/plateau/start-guide/",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "公開データ利用の入口。各データセットの個別条件を優先して確認する。",
+      "policy_url": "https://www.mlit.go.jp/plateau/site-policy/"
+    },
+    {
+      "id": "S15",
+      "title": "Google Maps Platform Terms of Service",
+      "url": "https://cloud.google.com/maps-platform/terms",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "3.2.3に外部利用のための抽出・スクレイピングおよびMapsコンテンツからの新規コンテンツ作成に関する制限。個別契約・サービス条件は別途確認。"
+    },
+    {
+      "id": "S16",
+      "title": "PLATEAU LODと3D都市モデルの位置正確度",
+      "url": "https://www.mlit.go.jp/plateau/learning/tpc03-3/",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "2022年公開の公式説明。地図情報レベル2500の水平1.75m/高さ0.66mは標準偏差であり全地点の最大誤差ではない。"
+    },
+    {
+      "id": "S17",
+      "title": "PLATEAU SDK for Unity export manual",
+      "url": "https://project-plateau.github.io/PLATEAU-SDK-for-Unity/manual/ExportCityModels.html",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "都市モデル書き出しの公式手順。変換後のゲーム用補修は別工程。",
+      "tutorial_url": "https://www.mlit.go.jp/plateau/learning/tpc17-1/"
+    },
+    {
+      "id": "S18",
+      "title": "Three.js DecalGeometry",
+      "url": "https://threejs.org/docs/pages/DecalGeometry.html",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "デカール用の公式API資料。大量の永続塗装と破壊片への引継ぎは別設計。",
+      "webgpu_url": "https://threejs.org/docs/pages/WebGPURenderer.html"
+    },
+    {
+      "id": "S19",
+      "title": "Rapier JavaScript colliders",
+      "url": "https://rapier.rs/docs/user_guides/javascript/colliders/",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "衝突形状の公式資料。道路の静的形状と破片の動的形状を分ける設計に利用。"
+    },
+    {
+      "id": "S20",
+      "title": "国土交通省 無人航空機の飛行許可・承認",
+      "url": "https://www.mlit.go.jp/koku/permitapproval/",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "ドローン採用時の確認先。機体・空域・飛行方法ごとに手続を判断する。"
+    },
+    {
+      "id": "S21",
+      "title": "岐阜市 信長ゆめ広場",
+      "url": "https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005072/1005082/1005084.html",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "広場の施設概要。コースは広場だけでなく周辺街区を含む案。"
+    },
+    {
+      "id": "S22",
+      "title": "PLATEAU Unityで都市を爆走するミニゲーム",
+      "url": "https://www.mlit.go.jp/plateau/learning/tpc18-1/",
+      "checked_on": "2026-09-05",
+      "status": "public_document_reviewed",
+      "note": "公開都市モデルをゲーム利用する公式教材。高品質の物理破壊が自動的に得られることを示す資料ではない。"
+    }
+  ]
+}
