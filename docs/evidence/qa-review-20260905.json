@@ -1,0 +1,123 @@
+{
+  "id": "QA-REVIEW-20260905",
+  "executedAt": "2026-09-05T05:42:07.052739+00:00",
+  "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872",
+  "environment": "Linux-6.18.35-x86_64-with-glibc2.39 / Python 3.12.13",
+  "reviewer": "qa_ledger agent (independent implementation reviewer; not human initial play)",
+  "method": "Read canonical requirements and implementation; inspect current source contracts, source/delivery registry and acquisition pipeline; verify all compressed files and label/ID coverage; inspect live test evidence.",
+  "checks": [
+    {
+      "id": "GEO-LABELS",
+      "requirementIds": [
+        "GEO-06",
+        "GEO-08",
+        "DATA-09",
+        "DATA-10"
+      ],
+      "result": "PASS",
+      "observation": "All 4845 source objects are source_only/gameAdded=false with distinct cityLod/renderLod, unique IDs, valid compressed and raw hashes. 292 source-height-zero records are excluded from runtime.",
+      "errors": []
+    },
+    {
+      "id": "SOURCE-LEDGER",
+      "requirementIds": [
+        "DATA-02",
+        "DATA-07"
+      ],
+      "result": "PASS",
+      "observation": "4845 asset rows cover all 4845 compressed source object IDs; raw source hashes/CRC are separately validated in data/validation.json."
+    },
+    {
+      "id": "SURVEY-PLAN",
+      "requirementIds": [
+        "DATA-04"
+      ],
+      "result": "PASS",
+      "observation": "10 identified road sections and 20 identified building sites include source positions/views; all independent references, dates, uncertainties and measured values remain explicitly unverified."
+    },
+    {
+      "id": "SOURCE-CHOICES",
+      "requirementIds": [
+        "DATA-06",
+        "RIGHTS-02",
+        "RIGHTS-03"
+      ],
+      "result": "PASS",
+      "observation": "Inspected acquisition scripts, source registry and delivery. Only the documented Gifu PLATEAU source archive is adopted; no separately sourced BIM, OSM or GSI product and no Google mesh/Street View extraction are used. Conditional supplemental-source terms remain applicable on future adoption."
+    },
+    {
+      "id": "SCOPE-AND-TUNING",
+      "requirementIds": [
+        "GAME-13",
+        "DEST-10"
+      ],
+      "result": "PASS",
+      "observation": "Inspected main, race, environment, audio and package dependencies. Initial version has no online multiplayer, whole-Japan continuity, interiors, whole-building destruction, excavation, traffic or pedestrian simulation. Density/force/fragment/grip parameters are explicitly arcade tuning; source structural safety attributes are not substituted."
+    },
+    {
+      "id": "DESIGN-SEPARATION",
+      "requirementIds": [
+        "DESIGN-01",
+        "PERF-05"
+      ],
+      "result": "PASS",
+      "observation": "Source static/destructible meshes retain source IDs/vertices; authored game additions are explicit. Per-piece paint and broken state survive resource reconstruction, while reset restores the original world. Source data file bytes are not changed by gameplay."
+    },
+    {
+      "id": "REVIEW-AND-DECISIONS",
+      "requirementIds": [
+        "MGMT-10",
+        "MGMT-11",
+        "MGMT-12"
+      ],
+      "result": "PASS",
+      "observation": "Geodata, physical environment, race and QA agents worked concurrently and reviewed integrated boundaries. Concrete findings fixed include stale Rapier handles, source bench and wall fragmentation pinning, explicit pause vs focus-loss toggle, duplicate build assets, pickup color-only distinction, and incomplete stress metrics. Gate/decision docs retain unapproved scope decisions and full-acceptance check refuses incomplete rows."
+    }
+  ],
+  "counts": {
+    "objects": 4845,
+    "kinds": {
+      "road": 349,
+      "building": 1347,
+      "furniture": 3121,
+      "bridge": 2,
+      "plaza": 1,
+      "terrain": 25
+    },
+    "chunks": 50,
+    "roadSections": 10,
+    "buildingSites": 20,
+    "excludedHeightZero": 292
+  },
+  "sourceArchive": "https://assets.cms.plateau.reearth.io/assets/1a/f59166-6796-482d-b59d-cb9bfed3ddeb/21201_gifu-shi_city_2024_citygml_1_op.zip",
+  "fileHashes": {
+    "src/main.ts": "84babeae949351bf3bc18c600dff7be07aff1359a5bf99e190f9697a0b9b64b3",
+    "src/race.ts": "91ef72a14752acaa10a765de5a1b2f3e6f0553bc2f5a353b400829ab0d9b8cd7",
+    "src/environment.ts": "13c1b808d8c4ef1091a4376eda2a449d1ee1c4e2efbf97be4a55681fedd0c2c0",
+    "src/input.ts": "a4eda2486b7fbcbccd40443151cdfb9e1c9b5073f641820d936ef55a49960729",
+    "src/audio.ts": "78b9193221ad8fb5a29a2fc7d03b8430a7b01288820b4cfc123cdf7f3df12f0b",
+    "src/style.css": "ab7402d2afce99217151b06f4d75ed0ba924d9cbb5007277d0f2bee572482567",
+    "docs/data-contract.md": "fcb5d49dd2698dc4f4b898bd503db7c0711fb6962079634b11328e3fa94d1c6b",
+    "docs/physics.md": "bb061ca51072dd67bd6910fe94231ba79c5b3d0eb812c41da541006a7688cbd0",
+    "docs/racing.md": "96be41fbf8fa040b876566297a41a8fbdaf6eeef71527ef335434eecbb4ecbaf",
+    "docs/roadmap.md": "4358eb8258e149d821f61c156626ac218325dacf6cdedce0ed1c67a47e94693c",
+    "docs/performance-budget.md": "8419da7613f8525fc2c164cc0d1ec2cc74cbb2d6d9242c70ce320115f642516a",
+    "data/asset-manifest.csv": "f7d6f1f1396730e04815ee288b8ce4ee9f16f6c92085bdcc0e03a9f2870ac3bf",
+    "data/rights.json": "11ffd7359ea3235d9a3980b1a1c52638f965928d653f49415d4019baa93a11f7",
+    "data/survey-plan.json": "e9d48a339a29d7a5d11f6cdde862384cc862035fd4eea920df8a7300c82044b6",
+    "public/data/stage.json": "f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76",
+    "public/data/destructibles.json": "f951bbf945e84ef3fee5b525d02fabf8a2aec610cb9570ffe44296ac7daaac06",
+    "scripts/check-requirements.mjs": "151159385b8ddd48aa59d49cb9e2683fcb923c64d3737c17f6cff19026717aed",
+    ".github/workflows/ci.yml": "17ab19bbe6028ada623a1b3a6eb02d2f45caab8650b5c5dc1d696a4fad00fc18",
+    "playwright.config.ts": "fcb9687b6a59650261b679f3f5fe3c2206ce76242cd8e6bcc8147a5e690465ea",
+    "tests/e2e/game.spec.ts": "26750399d9147fe015463a44de103f57ccf2d5b2547cebd1d565406916cddded",
+    "package.json": "3e74995bc50b1bc0b43d38f74b7976bf3c5233c97370474661f0a4722bafbacc",
+    "package-lock.json": "53cc6d8a94f3921c597c2ca494004c59272632b6738033098cdcb35c0f8bbde3"
+  },
+  "limits": [
+    "No surveyed precision was inferred from this audit.",
+    "No 3D browser play, gamepad handling or target GPU performance was claimed.",
+    "Third-party sculpture/monument rights and near-view textures remain unresolved.",
+    "Physical runtime test results are recorded separately; a code review does not replace missing execution."
+  ]
+}

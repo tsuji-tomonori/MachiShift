@@ -1,0 +1,147 @@
+{
+  "firstSideFenceDistance": 32,
+  "contactSamples": [
+    {
+      "vehicleId": 0,
+      "seconds": 3.3333333333333264,
+      "checkpoint": 11,
+      "position": {
+        "x": -238.11367797851562,
+        "y": 11.199737548828125,
+        "z": -13.654352188110352
+      },
+      "other": {
+        "id": "game:fence:32:part-0",
+        "objectId": "game:fence:32",
+        "kind": "fence",
+        "verification": "game_added"
+      },
+      "normal": {
+        "x": -0.9015035033226013,
+        "y": 0,
+        "z": -0.43277204036712646
+      },
+      "contactCount": 3
+    },
+    {
+      "vehicleId": 0,
+      "seconds": 3.3333333333333264,
+      "checkpoint": 11,
+      "position": {
+        "x": -238.11367797851562,
+        "y": 11.199737548828125,
+        "z": -13.654352188110352
+      },
+      "other": {
+        "vehicleId": 1
+      },
+      "normal": {
+        "x": -0.43277204036712646,
+        "y": 0,
+        "z": 0.9015035033226013
+      },
+      "contactCount": 3
+    },
+    {
+      "vehicleId": 1,
+      "seconds": 3.4166666666666594,
+      "checkpoint": 11,
+      "position": {
+        "x": -239.22119140625,
+        "y": 11.270730018615723,
+        "z": -12.132462501525879
+      },
+      "other": {
+        "id": "game:fence:32:part-1",
+        "objectId": "game:fence:32",
+        "kind": "fence",
+        "verification": "game_added"
+      },
+      "normal": {
+        "x": -0.6986411809921265,
+        "y": -3.740315150935203e-7,
+        "z": -0.715472400188446
+      },
+      "contactCount": 3
+    },
+    {
+      "vehicleId": 1,
+      "seconds": 3.4999999999999925,
+      "checkpoint": 11,
+      "position": {
+        "x": -239.26036071777344,
+        "y": 11.22434139251709,
+        "z": -12.08994197845459
+      },
+      "other": {
+        "id": "game:fence:32:part-2",
+        "objectId": "game:fence:32",
+        "kind": "fence",
+        "verification": "game_added"
+      },
+      "normal": {
+        "x": -0.8297070264816284,
+        "y": 0,
+        "z": -0.5581994652748108
+      },
+      "contactCount": 4
+    },
+    {
+      "vehicleId": 0,
+      "seconds": 3.516666666666659,
+      "checkpoint": 11,
+      "position": {
+        "x": -238.06907653808594,
+        "y": 11.128670692443848,
+        "z": -13.920230865478516
+      },
+      "other": {
+        "vehicleId": 3
+      },
+      "normal": {
+        "x": 0.9670394659042358,
+        "y": 2.149927382788519e-7,
+        "z": 0.25462639331817627
+      },
+      "contactCount": 3
+    },
+    {
+      "vehicleId": 3,
+      "seconds": 3.516666666666659,
+      "checkpoint": 10,
+      "position": {
+        "x": -235.9535675048828,
+        "y": 11.258005142211914,
+        "z": -13.115621566772461
+      },
+      "other": {
+        "vehicleId": 0
+      },
+      "normal": {
+        "x": 0.9670394659042358,
+        "y": 2.149927382788519e-7,
+        "z": 0.25462639331817627
+      },
+      "contactCount": 3
+    },
+    {
+      "vehicleId": 3,
+      "seconds": 3.5333333333333257,
+      "checkpoint": 10,
+      "position": {
+        "x": -235.93731689453125,
+        "y": 11.240094184875488,
+        "z": -13.128125190734863
+      },
+      "other": {
+        "vehicleId": 2
+      },
+      "normal": {
+        "x": -0.6827170848846436,
+        "y": 0,
+        "z": 0.7306830286979675
+      },
+      "contactCount": 3
+    }
+  ]
+}

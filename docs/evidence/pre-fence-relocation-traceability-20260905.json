@@ -1,0 +1,818 @@
+{
+  "reviewedAt": "2026-09-05T05:54:31.584175+00:00",
+  "reviewer": "QA agent / independent read of executed tests and source; root executed consolidated clean verification",
+  "run": "docs/evidence/pre-fence-relocation-execution-20260905.json",
+  "tests": [
+    {
+      "id": "TRACE-ENVIRONMENT-01",
+      "requirements": [
+        "DEST-01",
+        "DEST-04",
+        "DEST-05",
+        "PAINT-01",
+        "PAINT-02",
+        "PAINT-05",
+        "AT-04"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "AT-04: blue paint follows moving physical fragments and the former fence permits a driven body through",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "元固定衝突が別ハンドルへ交換され、青塗装の局所位置を保持して1m超動き、動的試験車体が柵の向こうへ通る。拾う・構える・投げるUIは含まない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 226.61875099999997,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-02",
+      "requirements": [
+        "PAINT-03",
+        "AT-05"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "AT-05: thin wall rear faces and a separate upper floor receive no paint",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "20mm薄壁のデカール頂点が表面に留まり、別階の塗装件数は0。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 24.220930999999837,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-03",
+      "requirements": [
+        "PAINT-04",
+        "PAINT-07"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "PAINT-04/07: slope patches follow the plane, colors layer, temporary grip expires before visual paint",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "傾斜面のデカール頂点が同じ平面上、青と桃の2色を保持し、9秒時点で見た目2件を残したままグリップが1へ戻る。縁と隣接飛沫の特定ケースは未実行。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 16.560825000000023,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-04",
+      "requirements": [
+        "GEO-06",
+        "DATA-07",
+        "PAINT-01"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "PAINT-01 provenance: a hit on a combined source mesh resolves the original polygon ID",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "統合された原典形式メッシュの実着弾が右側の元表面IDへ逆引きされる。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 14.235327000000325,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-05",
+      "requirements": [
+        "DEST-06"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "DEST-06: an intact wall occludes a blast, and only exposed targets break",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "遮蔽壁前の対象だけが壊れ、壁奥の3部品は未破壊。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 24.357731000000058,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-06",
+      "requirements": [
+        "DEST-04",
+        "DEST-09",
+        "PAINT-06",
+        "AT-08"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "AT-08/DEST-04: culling preserves mutation; retired fragments retain paint without permanently blocking routes",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "表示カリング前後の状態一致、6秒超で破片の剛体・衝突を除去し塗装と破壊表示を残す。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 113.66381700000011,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-07",
+      "requirements": [
+        "DEST-09",
+        "PAINT-06",
+        "AT-11"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "AT-11: repeated resets restore original colliders, remove paint/grip and leave unrelated vehicle bodies valid",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "4反復のEnvironment.resetで元位置・固定衝突4個・塗装0・グリップ0を復元し、外部車体を保持。UI再レースは未実行。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 107.23271999999997,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-08",
+      "requirements": [
+        "DEST-04",
+        "PERF-03"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "DEST-04 budget: at most 100 dynamic pieces; excess pieces lose collision while broken state remains",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "破片120個のうち100個だけが動的、20個は非衝突で破壊状態を保持。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 75.79726200000005,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-09",
+      "requirements": [
+        "AT-11"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "AT-11 stale handles: external body removal and slot reuse cannot remove a new unrelated vehicle",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "古いRapierハンドルを再使用した外部車体をresetが誤削除しない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 8.210513999999876,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-10",
+      "requirements": [
+        "DEST-03",
+        "PAINT-05"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "DEST-03: selected original sloping facade detaches with paint; the original vertices and retained building wall stay intact",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "斜め外壁fixtureの元頂点を維持して塗装部品を分離し、残す壁は固定のまま。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 15.332924999999705,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-11",
+      "requirements": [
+        "DEST-09",
+        "PAINT-06",
+        "AT-08",
+        "PERF-05"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "AT-08: actual unload disposes geometry/materials and physics; reload rebuilds a painted moving fragment from saved local records",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "実資源3個のdisposeと衝突3個除去、新資源再構築、塗装ワールド位置差1µm未満、解放中寿命切れとresetを検査。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 16.375428000000284,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-12",
+      "requirements": [
+        "DEST-09",
+        "AT-08",
+        "AT-11",
+        "PERF-05"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "AT-08/11: intact source triangle colliders really unload and reconstruct, then permanent test-chunk deletion survives reset",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "固定三角形衝突も実際に全解放・再構築され、恒久削除した検証区画がresetで再出現しない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 7.045484000000215,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-13",
+      "requirements": [
+        "PAINT-03",
+        "PAINT-07"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "PAINT-07: a close stacked deck does not inherit ground paint grip",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "0.65m上の別床はグリップ1を保ち、下の塗装床だけ0.52になる。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 3.3227459999998246,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-14",
+      "requirements": [
+        "DEST-02",
+        "PAINT-05",
+        "AT-08"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "DEST-02/PAINT-05/AT-08 actual PLATEAU bench: original source triangles remain, a painted source polygon moves and truly unloads/reloads",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "実PLATEAUベンチの468元インデックスを保持。青塗装元面が0.25秒で1.855773m移動し、2衝突の解放・復元と塗装位置差1µm未満を確認。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 499.074028,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-ENVIRONMENT-15",
+      "requirements": [
+        "DEST-03",
+        "PAINT-05"
+      ],
+      "testFile": "tests/environment.test.ts",
+      "testName": "DEST-03 actual chosen PLATEAU WallSurface: original source facade and paint detach while the unselected building structure stays fixed",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "採用した実PLATEAU WallSurfaceを元頂点1µm以内で分離。塗装が0.5秒で0.724646m移動し、78残存インデックスと固定姿勢・衝突を維持。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 26.763096000000132,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-INPUT-01",
+      "requirements": [
+        "GAME-05",
+        "DESIGN-04"
+      ],
+      "testFile": "tests/input.test.ts",
+      "testName": "focus loss is idempotent and cannot toggle pause back to running or release a held projectile",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "フォーカス喪失を重ねても再開せず、保持中の投擲が発射されない。DOMイベントfixtureで実入力モジュールを実行。実パッド未検証。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 4.434799999999996,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-01",
+      "requirements": [
+        "GAME-03",
+        "GAME-08"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "measures metre-scale closed path and accepts only three complete ordered laps",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "メートル経路と3周の順序ゲートを検査。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 21.64465099999984,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-02",
+      "requirements": [
+        "GAME-03",
+        "GAME-10"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "rejects skipped gates, backward crossing, distant crossing and teleports",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "飛ばしたゲート、逆方向、遠方横切り、不連続な移動で進行を加算しない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 10.883745999999974,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-03",
+      "requirements": [
+        "GAME-10"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "recovery anchoring preserves passed gates and does not add lap progress",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "復帰アンカー設定で通過済みゲート・周回を増やさない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 1.4583000000000084,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-04",
+      "requirements": [
+        "GAME-04",
+        "GAME-12"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "creates six dynamic colliding vehicles; countdown and free mode preserve state",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "6動的衝突車両と開始前・自由走行状態を検査。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 200.8769420000001,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-05",
+      "requirements": [
+        "GAME-06",
+        "AT-06",
+        "DESIGN-03"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "vehicle cannot drive through a fixed barrier under throttle",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "加速を続けても固定障壁をすり抜けない。走行中の破片接触時間は含まない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 39.10512599999993,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-06",
+      "requirements": [
+        "GAME-06",
+        "PAINT-07",
+        "DESIGN-03"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "drift release yields a real boost, and paint grip uses the same controller",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "ドリフト終了の実加速と共通コントローラーのグリップ入力を検査。音・画面・人の感覚は未確認。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 51.308490999999776,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-07",
+      "requirements": [
+        "GAME-10"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "safe recovery detects ground, avoids another kart, and retains checkpoint",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "地面と他カートを検出した安全復帰でチェックポイントを保持。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 24.511323999999604,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-08",
+      "requirements": [
+        "GAME-10"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "a missed-gate fault returns to the last legal position within three seconds without awarding progress",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "意図した未通過ゲート障害から3秒以内に合法位置へ復帰、進行加算なし。この1条件を全復帰ケースへ一般化しない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 84.68317699999989,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-09",
+      "requirements": [
+        "DEST-05",
+        "DEST-07",
+        "DESIGN-03"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "a real centerline barrier causes a physical detour; destruction opens a measurably shorter AI line",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "人工経路の中央柵を物理迂回し、破壊後は実走行距離・時間が短くなる。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 173.76603700000032,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-10",
+      "requirements": [
+        "GAME-04",
+        "DEST-07"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "six colliding karts can physically pass an intact centerline gate as a group",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "6台が中央柵の残る人工区間を共通物理で通過する。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 367.46000700000013,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-RACE-11",
+      "requirements": [
+        "GAME-03",
+        "GAME-04",
+        "AT-09"
+      ],
+      "testFile": "tests/race.test.ts",
+      "testName": "all six physical vehicles complete three laps on a synthetic oval without progress edits",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "人工楕円を6台とも座標・進行の書換えなしに3周。実コース証跡は別試験。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 1758.058829,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-REAL-STAGE-01",
+      "requirements": [
+        "GAME-03",
+        "GAME-04",
+        "DEST-05",
+        "DEST-07",
+        "DEST-08",
+        "AT-09",
+        "DESIGN-03"
+      ],
+      "testFile": "tests/real-stage.test.ts",
+      "testName": "AT-09 integration: all six physical vehicles complete the actual PLATEAU course before and after destruction",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "原典50区画の実行可能4553地物とゲーム用柵4件を使い、未破壊/柵破壊の双方で6台各1134順序ゲート・3周を完走。18回復帰という品質課題を残す。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 70838.94635,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-REAL-STAGE-02",
+      "requirements": [
+        "DEST-05",
+        "DEST-07",
+        "AT-09",
+        "DESIGN-03"
+      ],
+      "testFile": "tests/real-stage.test.ts",
+      "testName": "DEST-07 integration: opening the actual source-road center gate shortens the physical driven segment",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "同じ実道路70〜155m区間を、柵あり87.431m/4.217秒、破壊後84.910m/3.683秒、双方復帰0で通過。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 5133.587406999999,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    },
+    {
+      "id": "TRACE-REAL-STAGE-03",
+      "requirements": [
+        "GAME-04",
+        "GAME-06",
+        "AT-09"
+      ],
+      "testFile": "tests/real-stage.test.ts",
+      "testName": "actual source first 200 metres remain traversable for all six cars with intact barriers",
+      "condition": "Actual Node / Rapier WASM / Three geometry; no browser rendering. Exact test arrangements and deterministic 1/60s physical input in versioned source. Input test uses DOM event fixture.",
+      "procedure": "Execute the named test with npm test; input file SHA-256 is recorded by final-execution-20260905.json.",
+      "expected": "同じ実道路先頭200mの6台通過を確認。3周中の反復復帰を解消したとは扱わない。",
+      "actual": "All named assertions passed; physical numeric records in pre-fence-relocation-run-20260905.log and docs/evidence/pre-fence-relocation-race-20260905.json / real-shortcut-physics.json when relevant.",
+      "result": "PASS",
+      "durationMs": 5044.514735000004,
+      "failureMessages": [],
+      "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+      "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872 + stable worktree SHA-256",
+      "environment": {
+        "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+        "python": "3.12.13",
+        "node": "v24.19.0"
+      },
+      "rawResult": "docs/evidence/pre-fence-relocation-unit-20260905.json",
+      "log": "docs/evidence/pre-fence-relocation-run-20260905.log",
+      "browserAcceptance": false
+    }
+  ],
+  "sourcePipelineRun": "data/validation.json",
+  "browserBootRun": "docs/evidence/browser-environment-20260905.json",
+  "notEstablished": [
+    "browser E2E (2 tests discovered, zero executed)",
+    "human experience",
+    "target GPU",
+    "independent geographic accuracy",
+    "all requirement acceptance"
+  ],
+  "scope": "Historical pre-fence-relocation 30-test interpretation; superseded for current-source acceptance."
+}

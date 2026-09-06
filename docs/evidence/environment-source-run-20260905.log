@@ -1,0 +1,19 @@
+
+ RUN  v3.2.4 /workspace/scratch/356b13d53f40/MachiShift
+
+stdout | tests/environment.test.ts > Environment: actual Three surfaces and Rapier bodies > DEST-02/PAINT-05/AT-08 actual PLATEAU bench: original source triangles remain, a painted source polygon moves and truly unloads/reloads
+SOURCE_BENCH_PHYSICS {"sourceObject":"plateau:frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f","surfaceId":"frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f:poly-e1d1ed44-6c96-45bb-8154-e855498245ee","retainedSourceIndices":468,"movedMetres":1.855773449806554,"simulationSeconds":0.25,"colliderCountBeforeUnload":3,"colliderCountAfterReload":3,"paintWorldPoint":[-191.91137069541904,12.666297978543728,38.090494015218766],"restoredPaintWorldPoint":[-191.9113706954191,12.666297978543705,38.09049401521879],"collisionApproximation":"initial_exact_triangles; detached_convex_hull_with_0.04m_outward_gameplay_skin","rendered":false,"scripted":true}
+
+ ✓ tests/environment.test.ts (14 tests) 1004ms
+   ✓ Environment: actual Three surfaces and Rapier bodies > DEST-02/PAINT-05/AT-08 actual PLATEAU bench: original source triangles remain, a painted source polygon moves and truly unloads/reloads  522ms
+
+ Test Files  1 passed (1)
+      Tests  14 passed (14)
+   Start at  14:23:01
+   Duration  2.77s (transform 259ms, setup 0ms, collect 465ms, tests 1.00s, environment 0ms, prepare 172ms)
+
+JSON report written to /workspace/scratch/356b13d53f40/MachiShift/docs/evidence/environment-source-results-20260905.json
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+stderr | tests/environment.test.ts
+using deprecated parameters for the initialization function; pass a single object instead
+

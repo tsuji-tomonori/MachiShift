@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-09-05T07:21:01.434923+00:00",
+  "basis": "Independent QA reproduced physical sphere-edge contact with zero center-ray hits. The moving throw failure in run33951317574 did not publish contacts and cannot be conclusively attributed to this defect.",
+  "changes": [
+    "Actual Rapier contact point/normal/target collider drives paint and bomb impact before center-ray/fuse fallback.",
+    "Primary paint projects only onto current loaded contacted Piece, preserving source surface IDs and local state.",
+    "Only player-owned projectiles count toward player hit totals; city-wide damage remains labeled separately.",
+    "E2E brakes and uses normal keyboard recovery before throwing to establish a repeatable road aim."
+  ],
+  "executedBeforeRemoteCI": {
+    "typecheck": "PASS",
+    "newContactTests": {
+      "passed": 6,
+      "failed": 0
+    },
+    "existingEnvironmentTests": {
+      "passed": 15,
+      "failed": 0
+    }
+  },
+  "regressions": [
+    "Grazing contact missed by former center ray at 0 and0.7rad target rotations",
+    "Speculative and stale projectile contacts rejected",
+    "2cm wall and deck source faces remain isolated",
+    "Unloaded/reset handles rejected; local paint follows moving piece and survives actual reload"
+  ],
+  "latestIntegratedCI": "https://github.com/tsuji-tomonori/MachiShift/pull/1/checks",
+  "scope": "Physical-state regression and code fix. Latest integrated 6-car browser run is reported by PR Checks; not independent geography, human play or target GPU performance."
+}

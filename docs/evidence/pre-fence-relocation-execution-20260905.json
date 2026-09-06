@@ -1,0 +1,176 @@
+{
+  "startedAt": "2026-09-05T05:47:06.000187+00:00",
+  "finishedAt": "2026-09-05T05:48:54.821166+00:00",
+  "baseCommit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872",
+  "scope": "Actual local clean-install/type/Three+Rapier tests/build. Working-tree inputs identified by SHA-256. Browser listing is discovery only.",
+  "environment": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "node": "v24.19.0"
+  },
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "ci",
+        "--no-fund",
+        "--no-audit"
+      ],
+      "startedAt": "2026-09-05T05:47:06.014149+00:00",
+      "exitCode": 0,
+      "wallSeconds": 4.655
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "startedAt": "2026-09-05T05:47:10.670471+00:00",
+      "exitCode": 0,
+      "wallSeconds": 4.941
+    },
+    {
+      "command": [
+        "npm",
+        "test",
+        "--",
+        "--reporter=default",
+        "--reporter=json",
+        "--outputFile=docs/evidence/final-unit-results-20260905.json"
+      ],
+      "startedAt": "2026-09-05T05:47:15.612018+00:00",
+      "exitCode": 0,
+      "wallSeconds": 85.16
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "startedAt": "2026-09-05T05:48:40.772860+00:00",
+      "exitCode": 0,
+      "wallSeconds": 10.364
+    },
+    {
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--list"
+      ],
+      "startedAt": "2026-09-05T05:48:51.137256+00:00",
+      "exitCode": 0,
+      "wallSeconds": 3.283
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "startedAt": "2026-09-05T05:48:54.420199+00:00",
+      "exitCode": 0,
+      "wallSeconds": 0.281
+    }
+  ],
+  "inputSha256": {
+    "index.html": "9692a8fd9f84b1d249269549c9d4f3fde57b1de510bfc47bd757435bf69245c2",
+    "package-lock.json": "53cc6d8a94f3921c597c2ca494004c59272632b6738033098cdcb35c0f8bbde3",
+    "package.json": "3e74995bc50b1bc0b43d38f74b7976bf3c5233c97370474661f0a4722bafbacc",
+    "playwright.config.ts": "fcb9687b6a59650261b679f3f5fe3c2206ce76242cd8e6bcc8147a5e690465ea",
+    "public/data/chunk--1_-1.json.gz": "4ae9007792ac3d96ca757496fae09ccb04cefea3ce59bfaf4069d343878cc259",
+    "public/data/chunk--1_-2.json.gz": "0dc8b5a547681bbc19d74fca51a5811db9a935095069b2b02a22841520e68863",
+    "public/data/chunk--1_-3.json.gz": "13d4a4f92cf698fd10e21d78c36cde5ea2266d458bbc359fdcf998e3ab9ebb4c",
+    "public/data/chunk--1_-4.json.gz": "ac8f25713f1e7c644c952f8091af7bfeb14f488f7f42b8e48a842fecfb96d224",
+    "public/data/chunk--1_0.json.gz": "50cef9e1c653c1e75701c5959f98192a6ab16da44364a8cfa41fc88866304685",
+    "public/data/chunk--2_-1.json.gz": "cef2ce9e36ca467a16675d97920998cfcfc1605b94be0e8003de495be7c087f7",
+    "public/data/chunk--2_-2.json.gz": "89755931e37302ef3c1fe1947e1ecb22923623e369311f52cd67869eb4f45c5d",
+    "public/data/chunk--2_-3.json.gz": "f158faff42865fda4b56d44cac6124e3bc031e2ae0032466902085343e4a38a8",
+    "public/data/chunk--2_-4.json.gz": "a2f6236affe5e5c2a2e17c6c2c14e6d4b614389dfc9050cd045332ce266be201",
+    "public/data/chunk--2_0.json.gz": "1b68db52148fdb8dfbb8d20a908e9b969e64d3c7789ceddc37aeefe334b7a118",
+    "public/data/chunk--3_-1.json.gz": "1f748425d04d9c93d1ada667487752e97650e215940240ee63fcd857cc12f877",
+    "public/data/chunk--3_-2.json.gz": "8efad534d7a4f638d43c5a5c8029fff06e3b256cca8dddff8e411488038db69a",
+    "public/data/chunk--3_-3.json.gz": "71c4f1dd7b7e2e2974add3797bfa5bcadc4ec7216f2fc410d28c61d046003bca",
+    "public/data/chunk--3_-4.json.gz": "870406a5c5099a9cc051f922bbe7d2d9d7b8375255cc8c5a3f57e13b1ba01652",
+    "public/data/chunk--3_0.json.gz": "959684b3afa141206de2be7e99a20a990c1a9ae322d4fb8ad495f1c23f28c47f",
+    "public/data/chunk-0_-1.json.gz": "2637e303bffb1d13a99701691e8527744c248079332dfb2ad4f4aac7e923c95c",
+    "public/data/chunk-0_-2.json.gz": "9f4897adb9f7aa534aeaca83351d291c71e490a82e523d26fbe914336cf0a6fc",
+    "public/data/chunk-0_-3.json.gz": "409b43397c17541f801211490d1d388fe9d1073055785f75e30996ad959c2a0c",
+    "public/data/chunk-0_-4.json.gz": "44f64502da710017101bf4b59fe4c19ef7296918020640bdabdcc7ebbfdf8d0a",
+    "public/data/chunk-0_0.json.gz": "89b237b92305516d6f10898dddabe18ba0e3c718ec70eca3d4d980b7b58e8822",
+    "public/data/chunk-1_-1.json.gz": "ea2d22f43bba505835ad23e5d2347ece5e7427580d169ec1d280aaec5df470e9",
+    "public/data/chunk-1_-2.json.gz": "7bfe9d3c23f3eccfcbd0150755c4f0e587986029c6d8a0b701e81eaff3bbc03b",
+    "public/data/chunk-1_-3.json.gz": "dc4d4e05fe27324e204aebfc4b28735750fba577d8287cdd731c7a89553aec25",
+    "public/data/chunk-1_-4.json.gz": "82a123edcef2e7e0082520c40be005bcda50a45e85ef2cd3e0cf5c57f5b2c8d7",
+    "public/data/chunk-1_0.json.gz": "f79c456b588c09a4782807fd743c3565142b9f4e93685941a68503a2088e9027",
+    "public/data/chunk-terrain--1_-1.json.gz": "095689e0a6d553de5c2b44584f351450f45cd5522e958235de6f2626f485f599",
+    "public/data/chunk-terrain--1_-2.json.gz": "9f13644b612a90de9351d45d8492b05ca7386f6580b47d1cceb91ceb54390662",
+    "public/data/chunk-terrain--1_-3.json.gz": "ebf9959f354fd4576400575ea5fde77b6ae57df7bdcd4afaff6f71794031962a",
+    "public/data/chunk-terrain--1_-4.json.gz": "e146cb39df9d0ab30eac22cd6edaeaed2b5657599a8c8ffad84522fb9d00cf35",
+    "public/data/chunk-terrain--1_0.json.gz": "55401c5fae02a269a33744f3bf9663165c7d8a6c3dd4b7a4bc7b990833462eb9",
+    "public/data/chunk-terrain--2_-1.json.gz": "84d2b86169b2068e3ad4ade04c367fb32e0265735f4e3be07c564cc6ce037270",
+    "public/data/chunk-terrain--2_-2.json.gz": "84c8bd2a5f90e75e583db37f66b3af18e75c6692a448788b95a6f836c8ea85dc",
+    "public/data/chunk-terrain--2_-3.json.gz": "9c5d6446b9595fb9b075da180fedf26706d82385ede29022eeec40f2494c3bbe",
+    "public/data/chunk-terrain--2_-4.json.gz": "7dc2cfc4b1662999427340d1a9117b54648a8d6f018936763fb21a6b662edd7e",
+    "public/data/chunk-terrain--2_0.json.gz": "f99f54e2ae60fcb8cc928bc36f10c444c01699cfc7fb05fe79849c970d626873",
+    "public/data/chunk-terrain--3_-1.json.gz": "5e9689352c4bfb967b150a596d752ea2c50c76f1ac7468e95d7a97dab28d8be4",
+    "public/data/chunk-terrain--3_-2.json.gz": "5eca4647cb53776eccc2faf06c17d4a2859f57c3dc61c89e299a8784eaea1b7c",
+    "public/data/chunk-terrain--3_-3.json.gz": "e18fc6bd350314e854fcfd9dfa36af2514ee33a56e88884190ceee8c5e5a60df",
+    "public/data/chunk-terrain--3_-4.json.gz": "bb6cb90729402367b069b1a94d2430bb1cdd61540381aa1aff2d1aabc2cecf66",
+    "public/data/chunk-terrain--3_0.json.gz": "28fdb8633e6fe2d11dd9508058ae4d5248f1762f2d2c80ae6bcfe1cb29a0b629",
+    "public/data/chunk-terrain-0_-1.json.gz": "10f56dcb87ce9fec926814db4a727897441c1a1b2aacdc89bbd4b2eb012eee02",
+    "public/data/chunk-terrain-0_-2.json.gz": "a6c287aee13518be4eabea4c257c1488af97398aaa3190810a30ff0acec41a8d",
+    "public/data/chunk-terrain-0_-3.json.gz": "f59f31d3df1b8084021a94c3ef91ac0949f6c97cf2ff8de148061feac3e5f9d9",
+    "public/data/chunk-terrain-0_-4.json.gz": "62129007a93cbe00d7023ad50c9d7da65232ba68071744e0e6b71358c3274f1c",
+    "public/data/chunk-terrain-0_0.json.gz": "0a87c1cf6ed9d44c803267fd26d5bdf026cc329937f77218977c596f3872b426",
+    "public/data/chunk-terrain-1_-1.json.gz": "7f5aacb7aa2f286c55aac7f59f62f276aad8afd240c70494771a39d9b41f97d5",
+    "public/data/chunk-terrain-1_-2.json.gz": "0a199b6d87c40a0d733fe210d2844240de55aa08c296d86accd9bed9e51d2c78",
+    "public/data/chunk-terrain-1_-3.json.gz": "44c74f8c7b0740cfeb241d24166c777a072f9768e8221a2f0651289576f820ac",
+    "public/data/chunk-terrain-1_-4.json.gz": "ce5eb5fa2339233f24bbe9a951705fa87a423aa5b2a1b9eecf55c611c5e5f0e7",
+    "public/data/chunk-terrain-1_0.json.gz": "a76a263773f909d248d764361d24caa25f3b7716ee56509735247995b01bcada",
+    "public/data/destructibles.json": "f951bbf945e84ef3fee5b525d02fabf8a2aec610cb9570ffe44296ac7daaac06",
+    "public/data/road-network.json": "99d09f76a93d74c9754f34b7c1f8ca005a7d4d9ffb4b2a9831e3403f07990626",
+    "public/data/route-evidence.json": "34d12582f5ad17d95b11b286a14a45f451f0c9e9b65ad0993916dd5f37f7e12f",
+    "public/data/stage.json": "f7245ce7260f5d98f49373877080fbb3b221ff898247c9868ea4a9b4abde1c76",
+    "scripts/check-requirements.mjs": "151159385b8ddd48aa59d49cb9e2683fcb923c64d3737c17f6cff19026717aed",
+    "scripts/copy-runtime-assets.mjs": "c41985e9cc0f2545b427f3098abe82ce48c33d3a0f66cc53dc1efbf46a5aeafd",
+    "scripts/geodata/audit.py": "4991bd1e87b897c6d99bc1cbb894a5bca005c4404a49b698f1028499c3638c6e",
+    "scripts/geodata/convert.py": "b22cf95c39cd595c4b5751b222b70f06a50bcac352c11c406d272bcd3fe143aa",
+    "scripts/geodata/download.py": "f90fbc6a4aba3e740cb0856ba16c8bb463e988d1fb87244769e129b5311dd77a",
+    "scripts/geodata/inventory.py": "7b00f19b8911fc328f69f5fd88eb33fa1717dc18ca676047af7ddca52f4f0de2",
+    "scripts/geodata/pack.py": "0f689177ca3b70e050f7f0cd9fa9991bc1d84d3eb27f0337f5ae46b89b895595",
+    "scripts/geodata/requirements.txt": "57bbdfa1a8c682bb11318f6cb2606263e52f24d21ef3c25442bb8d3b7addfa3c",
+    "scripts/geodata/route.py": "380b66afc7cc4a5d18861ed70bba16eb5228ee3f00da61e2246e9c61706f0cea",
+    "scripts/geodata/terrain.py": "baf3a9bce395dac76062b92750b6281a10dbd4aacd740c66aeda0838e91c8666",
+    "scripts/geodata/test_pipeline.py": "23278672bb2da0977218729623ebde73024ee56b7dc54008029ef597ed86dd23",
+    "scripts/verify-release.py": "d20dcf558db629ea5f03dd503fab228127563b888681c30d797c13d97a0bc8f7",
+    "src/audio.ts": "78b9193221ad8fb5a29a2fc7d03b8430a7b01288820b4cfc123cdf7f3df12f0b",
+    "src/environment.ts": "f052581b7b3a12683499ac8eee3dc84183e335d9628dbb3e71035f0b377b1358",
+    "src/input.ts": "a4eda2486b7fbcbccd40443151cdfb9e1c9b5073f641820d936ef55a49960729",
+    "src/main.ts": "c9feec9815a3ec211d8febde7afa2da4b11c976f075627d3685db073f3241dec",
+    "src/race.ts": "b9acac4823e907cfab8d6a34a694ba88365a2f9ef536c418a3ad5d917d965547",
+    "src/style.css": "71990c7c59d029d8295e58d4028bc06d679a83bcdccbf81747a056aad1bd9f3e",
+    "tests/e2e/game.spec.ts": "26750399d9147fe015463a44de103f57ccf2d5b2547cebd1d565406916cddded",
+    "tests/environment.test.ts": "e2ace22e65d983473e902484226567dff07be5acfb5c7f80d424b0624c3357dd",
+    "tests/input.test.ts": "a011eafdacc3e686e0f8ef40f31d08a3f5ff89d47de8ac18c6d2e1431e2b8b4b",
+    "tests/race.test.ts": "70246781c3a7973a8e4724aea940653a8e035ab005e8b8388eeb618af3eb1c78",
+    "tests/real-stage.test.ts": "efefd9676d6ba2a4042112590a33fea0732dfe10ee79b68f90929a9c9a0d1f92",
+    "tsconfig.json": "e254c5fc07821cb6ab42cfef66aef0255eccdb46c5074f94a7b2166b9fb5f1a5",
+    "vite.config.ts": "322922af5a90c1a43af62a49279628426529ecac510981160e1a9f5b3deb9edc",
+    "vitest.config.ts": "60d61dc30a811ec1c12aa22df149c4bba3f410ecd01c803cdc0d73f8d98b4322"
+  },
+  "inputFilesChangedDuringRun": [],
+  "log": "docs/evidence/final-run-20260905.log",
+  "localVerification": "PASS",
+  "notEstablished": [
+    "browser 3D play",
+    "GitHub CI",
+    "human usability",
+    "target GPU performance",
+    "actual gamepad",
+    "independent survey",
+    "complete acceptance"
+  ]
+}

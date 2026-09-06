@@ -1,0 +1,22 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> machishift@0.1.0 build
+> tsc --noEmit && vite build && node scripts/copy-runtime-assets.mjs
+
+vite v7.1.7 building for production...
+transforming...
+✓ 12 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                      0.79 kB │ gzip:   0.47 kB
+dist/assets/index-CuZ_3Fit.css      10.89 kB │ gzip:   3.19 kB
+dist/assets/index-Drk9gWNP.js       74.27 kB │ gzip:  27.88 kB │ map:   225.55 kB
+dist/assets/three-Bc5Z_Hu6.js      487.04 kB │ gzip: 122.77 kB │ map: 2,695.78 kB
+dist/assets/physics-CKC5f6tm.js  2,235.50 kB │ gzip: 829.91 kB │ map: 2,392.25 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 4.25s
+Copied 54 verified-path runtime assets; conversion intermediates excluded.

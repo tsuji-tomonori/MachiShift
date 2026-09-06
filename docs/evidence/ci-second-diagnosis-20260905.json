@@ -1,0 +1,1365 @@
+{
+  "runId": 33950905209,
+  "headCommit": "c5ca73eb22c3d8596b3154defc85afb67e475266",
+  "conclusion": "failure",
+  "unitTests": {
+    "passed": 36,
+    "failed": 0
+  },
+  "typecheck": "success",
+  "build": "success",
+  "browserStats": {
+    "startTime": "2026-09-05T06:51:50.145Z",
+    "duration": 139547.95500000002,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "confirmed": "Actual 3D title, keyboard drive/turn/drift/boost, pickup/paint hit, brake/recovery, fresh pause time and poses, and real network retry succeeded. Tutorial skip click failed because updateHUD repeatedly detached and recreated its button.",
+  "fix": "Render lesson DOM only when its step changes; preserve focus and pointer target across HUD ticks.",
+  "softwareRenderingObservation": "At 1280x720 with shadows, free-driving p50 was 633.4ms/frame on SwiftShader. This is not target hardware performance. A public low graphics option (half scene dimensions, shadows off) is added for lower powered devices and the CI functional race; original geometry, six cars and physics remain unchanged.",
+  "scope": "Partial functional evidence. Full browser race and rerace have not run successfully in this record.",
+  "attachments": {
+    "keyboard-drift-boost": {
+      "charged": {
+        "phase": "free",
+        "sampledAtMilliseconds": 49659.29999999999,
+        "elapsed": 2.8,
+        "courseMeters": 1388.2023040929002,
+        "vehicles": [
+          {
+            "id": 0,
+            "lap": 1,
+            "rank": 1,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -232.84243774414062,
+              "y": 10.96342658996582,
+              "z": -9.186415672302246
+            },
+            "speed": 18.80331222543178,
+            "heading": -1.1383380800566174,
+            "driftCharge": 0.3120000000000002,
+            "boost": 0
+          },
+          {
+            "id": 1,
+            "lap": 1,
+            "rank": 2,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.26670837402344,
+              "y": 11.04800033569336,
+              "z": -3.0283727645874023
+            },
+            "speed": 0,
+            "heading": -1.731005389651693,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 2,
+            "lap": 1,
+            "rank": 3,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -198.89974975585938,
+              "y": 11.04800033569336,
+              "z": -4.8953399658203125
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 3,
+            "lap": 1,
+            "rank": 4,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -199.33128356933594,
+              "y": 11.04800033569336,
+              "z": -2.230048418045044
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 4,
+            "lap": 1,
+            "rank": 5,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -193.96868896484375,
+              "y": 11.04699993133545,
+              "z": -4.102695465087891
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 5,
+            "lap": 1,
+            "rank": 6,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -194.38909912109375,
+              "y": 11.04699993133545,
+              "z": -1.4356266260147095
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          }
+        ],
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 0,
+        "paintDecals": 0,
+        "gripZones": 0,
+        "staticColliders": 4498,
+        "colliderCount": 4498,
+        "loadedPieces": 4498,
+        "loadedChunks": 38,
+        "unloadedChunks": 13,
+        "inventory": [
+          "paint"
+        ],
+        "thrownCount": 0,
+        "paintHits": 0,
+        "bombHits": 0,
+        "recoveries": 0,
+        "autoDrive": false,
+        "loadMilliseconds": 8931,
+        "frameMilliseconds": {
+          "count": 35,
+          "p50": 633.4000000000015,
+          "p95": 1183.2000000000044,
+          "p99": 1266.5999999999985,
+          "over100": 34
+        },
+        "measurement": null,
+        "memory": {
+          "wallMilliseconds": 48828.5,
+          "raceCycle": 1,
+          "phase": "free",
+          "simulationSeconds": 2.716666666666662,
+          "stress": false,
+          "heapBytes": {
+            "used": 269000000,
+            "total": 304000000,
+            "limit": 3760000000
+          },
+          "geometries": 4180,
+          "textures": 1,
+          "objects": 4557,
+          "breakables": 13,
+          "destroyed": 0,
+          "pieces": 4677,
+          "dynamicDebris": 0,
+          "retainedFragments": 0,
+          "paintEvents": 0,
+          "paintDecals": 0,
+          "gripZones": 0,
+          "staticColliders": 4498,
+          "colliderCount": 4498,
+          "loadedPieces": 4498,
+          "loadedChunks": 38,
+          "unloadedChunks": 13
+        },
+        "drawCalls": 809,
+        "triangles": 94126,
+        "geometries": 4180,
+        "textures": 1
+      },
+      "released": {
+        "phase": "free",
+        "sampledAtMilliseconds": 50892.100000000006,
+        "elapsed": 2.95,
+        "courseMeters": 1388.2023040929002,
+        "vehicles": [
+          {
+            "id": 0,
+            "lap": 1,
+            "rank": 1,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -235.7669219970703,
+              "y": 10.965059280395508,
+              "z": -8.28494644165039
+            },
+            "speed": 21.21084719234704,
+            "heading": -1.113998246592809,
+            "driftCharge": 0,
+            "boost": 0.8055999999999999
+          },
+          {
+            "id": 1,
+            "lap": 1,
+            "rank": 2,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.26670837402344,
+              "y": 11.04800033569336,
+              "z": -3.0283727645874023
+            },
+            "speed": 0,
+            "heading": -1.731005389651693,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 2,
+            "lap": 1,
+            "rank": 3,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -198.89974975585938,
+              "y": 11.04800033569336,
+              "z": -4.8953399658203125
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 3,
+            "lap": 1,
+            "rank": 4,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -199.33128356933594,
+              "y": 11.04800033569336,
+              "z": -2.230048418045044
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 4,
+            "lap": 1,
+            "rank": 5,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -193.96868896484375,
+              "y": 11.04699993133545,
+              "z": -4.102695465087891
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 5,
+            "lap": 1,
+            "rank": 6,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -194.38909912109375,
+              "y": 11.04699993133545,
+              "z": -1.4356266260147095
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          }
+        ],
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 0,
+        "paintDecals": 0,
+        "gripZones": 0,
+        "staticColliders": 4498,
+        "colliderCount": 4498,
+        "loadedPieces": 4498,
+        "loadedChunks": 38,
+        "unloadedChunks": 13,
+        "inventory": [
+          "paint"
+        ],
+        "thrownCount": 0,
+        "paintHits": 0,
+        "bombHits": 0,
+        "recoveries": 0,
+        "autoDrive": false,
+        "loadMilliseconds": 8931,
+        "frameMilliseconds": {
+          "count": 37,
+          "p50": 633.4000000000015,
+          "p95": 1183.2000000000044,
+          "p99": 1266.5999999999985,
+          "over100": 36
+        },
+        "measurement": null,
+        "memory": {
+          "wallMilliseconds": 50045.2,
+          "raceCycle": 1,
+          "phase": "free",
+          "simulationSeconds": 2.8666666666666614,
+          "stress": false,
+          "heapBytes": {
+            "used": 269000000,
+            "total": 304000000,
+            "limit": 3760000000
+          },
+          "geometries": 4181,
+          "textures": 1,
+          "objects": 4557,
+          "breakables": 13,
+          "destroyed": 0,
+          "pieces": 4677,
+          "dynamicDebris": 0,
+          "retainedFragments": 0,
+          "paintEvents": 0,
+          "paintDecals": 0,
+          "gripZones": 0,
+          "staticColliders": 4498,
+          "colliderCount": 4498,
+          "loadedPieces": 4498,
+          "loadedChunks": 38,
+          "unloadedChunks": 13
+        },
+        "drawCalls": 1017,
+        "triangles": 105558,
+        "geometries": 4181,
+        "textures": 1
+      }
+    },
+    "keyboard-drive-and-throw": {
+      "phase": "free",
+      "sampledAtMilliseconds": 59568.899999999994,
+      "elapsed": 3.92,
+      "courseMeters": 1388.2023040929002,
+      "vehicles": [
+        {
+          "id": 0,
+          "lap": 1,
+          "rank": 1,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -255.5084686279297,
+            "y": 10.982701301574707,
+            "z": 0.9469891786575317
+          },
+          "speed": 22.32875743883569,
+          "heading": -1.137454369454664,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 1,
+          "lap": 1,
+          "rank": 2,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -204.26670837402344,
+            "y": 11.04800033569336,
+            "z": -3.0283727645874023
+          },
+          "speed": 0,
+          "heading": -1.731005389651693,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 2,
+          "lap": 1,
+          "rank": 3,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -198.89974975585938,
+            "y": 11.04800033569336,
+            "z": -4.8953399658203125
+          },
+          "speed": 0,
+          "heading": -1.7313111642733074,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 3,
+          "lap": 1,
+          "rank": 4,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -199.33128356933594,
+            "y": 11.04800033569336,
+            "z": -2.230048418045044
+          },
+          "speed": 0,
+          "heading": -1.7313111642733074,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 4,
+          "lap": 1,
+          "rank": 5,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -193.96868896484375,
+            "y": 11.04699993133545,
+            "z": -4.102695465087891
+          },
+          "speed": 0,
+          "heading": -1.727139534559754,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 5,
+          "lap": 1,
+          "rank": 6,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -194.38909912109375,
+            "y": 11.04699993133545,
+            "z": -1.4356266260147095
+          },
+          "speed": 0,
+          "heading": -1.727139534559754,
+          "driftCharge": 0,
+          "boost": 0
+        }
+      ],
+      "objects": 4557,
+      "breakables": 13,
+      "destroyed": 0,
+      "pieces": 4677,
+      "dynamicDebris": 0,
+      "retainedFragments": 0,
+      "paintEvents": 1,
+      "paintDecals": 3,
+      "gripZones": 0,
+      "staticColliders": 4492,
+      "colliderCount": 4492,
+      "loadedPieces": 4492,
+      "loadedChunks": 36,
+      "unloadedChunks": 15,
+      "inventory": [],
+      "thrownCount": 1,
+      "paintHits": 1,
+      "bombHits": 0,
+      "recoveries": 0,
+      "autoDrive": false,
+      "loadMilliseconds": 8931,
+      "frameMilliseconds": {
+        "count": 49,
+        "p50": 649.9000000000015,
+        "p95": 1116.699999999997,
+        "p99": 1266.5999999999985,
+        "over100": 48
+      },
+      "measurement": null,
+      "memory": {
+        "wallMilliseconds": 58861.5,
+        "raceCycle": 1,
+        "phase": "free",
+        "simulationSeconds": 3.9166666666666576,
+        "stress": false,
+        "heapBytes": {
+          "used": 269000000,
+          "total": 304000000,
+          "limit": 3760000000
+        },
+        "geometries": 4185,
+        "textures": 2,
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 1,
+        "paintDecals": 3,
+        "gripZones": 0,
+        "staticColliders": 4492,
+        "colliderCount": 4492,
+        "loadedPieces": 4492,
+        "loadedChunks": 36,
+        "unloadedChunks": 15
+      },
+      "drawCalls": 1006,
+      "triangles": 98833,
+      "geometries": 4185,
+      "textures": 2
+    },
+    "manual-recovery": {
+      "before": {
+        "phase": "free",
+        "sampledAtMilliseconds": 61421.20000000001,
+        "elapsed": 4.23,
+        "courseMeters": 1388.2023040929002,
+        "vehicles": [
+          {
+            "id": 0,
+            "lap": 1,
+            "rank": 1,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -260.30279541015625,
+              "y": 10.987275123596191,
+              "z": 2.829875946044922
+            },
+            "speed": 0.18380278181128284,
+            "heading": -0.9133718889955216,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 1,
+            "lap": 1,
+            "rank": 2,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.26670837402344,
+              "y": 11.04800033569336,
+              "z": -3.0283727645874023
+            },
+            "speed": 0,
+            "heading": -1.731005389651693,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 2,
+            "lap": 1,
+            "rank": 3,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -198.89974975585938,
+              "y": 11.04800033569336,
+              "z": -4.8953399658203125
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 3,
+            "lap": 1,
+            "rank": 4,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -199.33128356933594,
+              "y": 11.04800033569336,
+              "z": -2.230048418045044
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 4,
+            "lap": 1,
+            "rank": 5,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -193.96868896484375,
+              "y": 11.04699993133545,
+              "z": -4.102695465087891
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 5,
+            "lap": 1,
+            "rank": 6,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -194.38909912109375,
+              "y": 11.04699993133545,
+              "z": -1.4356266260147095
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          }
+        ],
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 1,
+        "paintDecals": 3,
+        "gripZones": 0,
+        "staticColliders": 4358,
+        "colliderCount": 4358,
+        "loadedPieces": 4358,
+        "loadedChunks": 35,
+        "unloadedChunks": 16,
+        "inventory": [],
+        "thrownCount": 1,
+        "paintHits": 1,
+        "bombHits": 0,
+        "recoveries": 0,
+        "autoDrive": false,
+        "loadMilliseconds": 8931,
+        "frameMilliseconds": {
+          "count": 53,
+          "p50": 649.8999999999942,
+          "p95": 1116.699999999997,
+          "p99": 1266.5999999999985,
+          "over100": 52
+        },
+        "measurement": null,
+        "memory": {
+          "wallMilliseconds": 61344.7,
+          "raceCycle": 1,
+          "phase": "free",
+          "simulationSeconds": 4.233333333333324,
+          "stress": false,
+          "heapBytes": {
+            "used": 269000000,
+            "total": 304000000,
+            "limit": 3760000000
+          },
+          "geometries": 4175,
+          "textures": 2,
+          "objects": 4557,
+          "breakables": 13,
+          "destroyed": 0,
+          "pieces": 4677,
+          "dynamicDebris": 0,
+          "retainedFragments": 0,
+          "paintEvents": 1,
+          "paintDecals": 3,
+          "gripZones": 0,
+          "staticColliders": 4358,
+          "colliderCount": 4358,
+          "loadedPieces": 4358,
+          "loadedChunks": 35,
+          "unloadedChunks": 16
+        },
+        "drawCalls": 1055,
+        "triangles": 100612,
+        "geometries": 4175,
+        "textures": 2
+      },
+      "after": {
+        "phase": "free",
+        "sampledAtMilliseconds": 62740.70000000001,
+        "elapsed": 4.4,
+        "courseMeters": 1388.2023040929002,
+        "vehicles": [
+          {
+            "id": 0,
+            "lap": 1,
+            "rank": 1,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.78289794921875,
+              "y": 11.001922607421875,
+              "z": -6.100111961364746
+            },
+            "speed": 0,
+            "heading": -1.7312616571159405,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 1,
+            "lap": 1,
+            "rank": 2,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.26670837402344,
+              "y": 11.04800033569336,
+              "z": -3.0283727645874023
+            },
+            "speed": 0,
+            "heading": -1.731005389651693,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 2,
+            "lap": 1,
+            "rank": 3,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -198.89974975585938,
+              "y": 11.04800033569336,
+              "z": -4.8953399658203125
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 3,
+            "lap": 1,
+            "rank": 4,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -199.33128356933594,
+              "y": 11.04800033569336,
+              "z": -2.230048418045044
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 4,
+            "lap": 1,
+            "rank": 5,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -193.96868896484375,
+              "y": 11.04699993133545,
+              "z": -4.102695465087891
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 5,
+            "lap": 1,
+            "rank": 6,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -194.38909912109375,
+              "y": 11.04699993133545,
+              "z": -1.4356266260147095
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          }
+        ],
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 1,
+        "paintDecals": 3,
+        "gripZones": 0,
+        "staticColliders": 4358,
+        "colliderCount": 4358,
+        "loadedPieces": 4358,
+        "loadedChunks": 35,
+        "unloadedChunks": 16,
+        "inventory": [],
+        "thrownCount": 1,
+        "paintHits": 1,
+        "bombHits": 0,
+        "recoveries": 1,
+        "autoDrive": false,
+        "loadMilliseconds": 8931,
+        "frameMilliseconds": {
+          "count": 55,
+          "p50": 649.8999999999942,
+          "p95": 1116.699999999997,
+          "p99": 1266.5999999999985,
+          "over100": 53
+        },
+        "measurement": null,
+        "memory": {
+          "wallMilliseconds": 62528.1,
+          "raceCycle": 1,
+          "phase": "free",
+          "simulationSeconds": 4.39999999999999,
+          "stress": false,
+          "heapBytes": {
+            "used": 269000000,
+            "total": 304000000,
+            "limit": 3760000000
+          },
+          "geometries": 4546,
+          "textures": 2,
+          "objects": 4557,
+          "breakables": 13,
+          "destroyed": 0,
+          "pieces": 4677,
+          "dynamicDebris": 0,
+          "retainedFragments": 0,
+          "paintEvents": 1,
+          "paintDecals": 3,
+          "gripZones": 0,
+          "staticColliders": 4358,
+          "colliderCount": 4358,
+          "loadedPieces": 4358,
+          "loadedChunks": 35,
+          "unloadedChunks": 16
+        },
+        "drawCalls": 571,
+        "triangles": 116121,
+        "geometries": 4546,
+        "textures": 2
+      }
+    },
+    "paused-physical-state": {
+      "paused": {
+        "phase": "paused",
+        "sampledAtMilliseconds": 63814.600000000006,
+        "elapsed": 4.47,
+        "courseMeters": 1388.2023040929002,
+        "vehicles": [
+          {
+            "id": 0,
+            "lap": 1,
+            "rank": 1,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.78289794921875,
+              "y": 10.96762752532959,
+              "z": -6.100111961364746
+            },
+            "speed": -4.502769452324142e-09,
+            "heading": -1.7312616571159405,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 1,
+            "lap": 1,
+            "rank": 2,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.26670837402344,
+              "y": 11.04800033569336,
+              "z": -3.0283727645874023
+            },
+            "speed": 0,
+            "heading": -1.731005389651693,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 2,
+            "lap": 1,
+            "rank": 3,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -198.89974975585938,
+              "y": 11.04800033569336,
+              "z": -4.8953399658203125
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 3,
+            "lap": 1,
+            "rank": 4,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -199.33128356933594,
+              "y": 11.04800033569336,
+              "z": -2.230048418045044
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 4,
+            "lap": 1,
+            "rank": 5,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -193.96868896484375,
+              "y": 11.04699993133545,
+              "z": -4.102695465087891
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 5,
+            "lap": 1,
+            "rank": 6,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -194.38909912109375,
+              "y": 11.04699993133545,
+              "z": -1.4356266260147095
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          }
+        ],
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 1,
+        "paintDecals": 3,
+        "gripZones": 0,
+        "staticColliders": 4358,
+        "colliderCount": 4358,
+        "loadedPieces": 4358,
+        "loadedChunks": 35,
+        "unloadedChunks": 16,
+        "inventory": [],
+        "thrownCount": 1,
+        "paintHits": 1,
+        "bombHits": 0,
+        "recoveries": 1,
+        "autoDrive": false,
+        "loadMilliseconds": 8931,
+        "frameMilliseconds": {
+          "count": 56,
+          "p50": 633.4000000000015,
+          "p95": 1116.699999999997,
+          "p99": 1266.5999999999985,
+          "over100": 54
+        },
+        "measurement": null,
+        "memory": {
+          "wallMilliseconds": 63744.7,
+          "raceCycle": 1,
+          "phase": "paused",
+          "simulationSeconds": 4.466666666666656,
+          "stress": false,
+          "heapBytes": {
+            "used": 269000000,
+            "total": 304000000,
+            "limit": 3760000000
+          },
+          "geometries": 4546,
+          "textures": 2,
+          "objects": 4557,
+          "breakables": 13,
+          "destroyed": 0,
+          "pieces": 4677,
+          "dynamicDebris": 0,
+          "retainedFragments": 0,
+          "paintEvents": 1,
+          "paintDecals": 3,
+          "gripZones": 0,
+          "staticColliders": 4358,
+          "colliderCount": 4358,
+          "loadedPieces": 4358,
+          "loadedChunks": 35,
+          "unloadedChunks": 16
+        },
+        "drawCalls": 845,
+        "triangles": 86911,
+        "geometries": 4546,
+        "textures": 2
+      },
+      "stillPaused": {
+        "phase": "paused",
+        "sampledAtMilliseconds": 65647.70000000001,
+        "elapsed": 4.47,
+        "courseMeters": 1388.2023040929002,
+        "vehicles": [
+          {
+            "id": 0,
+            "lap": 1,
+            "rank": 1,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.78289794921875,
+              "y": 10.96762752532959,
+              "z": -6.100111961364746
+            },
+            "speed": -4.502769452324142e-09,
+            "heading": -1.7312616571159405,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 1,
+            "lap": 1,
+            "rank": 2,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -204.26670837402344,
+              "y": 11.04800033569336,
+              "z": -3.0283727645874023
+            },
+            "speed": 0,
+            "heading": -1.731005389651693,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 2,
+            "lap": 1,
+            "rank": 3,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -198.89974975585938,
+              "y": 11.04800033569336,
+              "z": -4.8953399658203125
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 3,
+            "lap": 1,
+            "rank": 4,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -199.33128356933594,
+              "y": 11.04800033569336,
+              "z": -2.230048418045044
+            },
+            "speed": 0,
+            "heading": -1.7313111642733074,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 4,
+            "lap": 1,
+            "rank": 5,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -193.96868896484375,
+              "y": 11.04699993133545,
+              "z": -4.102695465087891
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          },
+          {
+            "id": 5,
+            "lap": 1,
+            "rank": 6,
+            "checkpoint": 1,
+            "finished": false,
+            "position": {
+              "x": -194.38909912109375,
+              "y": 11.04699993133545,
+              "z": -1.4356266260147095
+            },
+            "speed": 0,
+            "heading": -1.727139534559754,
+            "driftCharge": 0,
+            "boost": 0
+          }
+        ],
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 1,
+        "paintDecals": 3,
+        "gripZones": 0,
+        "staticColliders": 4358,
+        "colliderCount": 4358,
+        "loadedPieces": 4358,
+        "loadedChunks": 35,
+        "unloadedChunks": 16,
+        "inventory": [],
+        "thrownCount": 1,
+        "paintHits": 1,
+        "bombHits": 0,
+        "recoveries": 1,
+        "autoDrive": false,
+        "loadMilliseconds": 8931,
+        "frameMilliseconds": {
+          "count": 56,
+          "p50": 633.4000000000015,
+          "p95": 1116.699999999997,
+          "p99": 1266.5999999999985,
+          "over100": 54
+        },
+        "measurement": null,
+        "memory": {
+          "wallMilliseconds": 65161.2,
+          "raceCycle": 1,
+          "phase": "paused",
+          "simulationSeconds": 4.466666666666656,
+          "stress": false,
+          "heapBytes": {
+            "used": 269000000,
+            "total": 304000000,
+            "limit": 3760000000
+          },
+          "geometries": 4546,
+          "textures": 2,
+          "objects": 4557,
+          "breakables": 13,
+          "destroyed": 0,
+          "pieces": 4677,
+          "dynamicDebris": 0,
+          "retainedFragments": 0,
+          "paintEvents": 1,
+          "paintDecals": 3,
+          "gripZones": 0,
+          "staticColliders": 4358,
+          "colliderCount": 4358,
+          "loadedPieces": 4358,
+          "loadedChunks": 35,
+          "unloadedChunks": 16
+        },
+        "drawCalls": 775,
+        "triangles": 93221,
+        "geometries": 4546,
+        "textures": 2
+      }
+    },
+    "actual-state-on-failure": {
+      "phase": "tutorial",
+      "sampledAtMilliseconds": 103751.59999999998,
+      "elapsed": 4.32,
+      "courseMeters": 1388.2023040929002,
+      "vehicles": [
+        {
+          "id": 0,
+          "lap": 1,
+          "rank": 1,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -203.83599853515625,
+            "y": 10.966543197631836,
+            "z": -5.693796634674072
+          },
+          "speed": -7.241886692384159e-11,
+          "heading": -1.7310054674836937,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 1,
+          "lap": 1,
+          "rank": 2,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -204.26670837402344,
+            "y": 11.04800033569336,
+            "z": -3.0283727645874023
+          },
+          "speed": 0,
+          "heading": -1.731005389651693,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 2,
+          "lap": 1,
+          "rank": 3,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -198.89974975585938,
+            "y": 11.04800033569336,
+            "z": -4.8953399658203125
+          },
+          "speed": 0,
+          "heading": -1.7313111642733074,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 3,
+          "lap": 1,
+          "rank": 4,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -199.33128356933594,
+            "y": 11.04800033569336,
+            "z": -2.230048418045044
+          },
+          "speed": 0,
+          "heading": -1.7313111642733074,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 4,
+          "lap": 1,
+          "rank": 5,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -193.96868896484375,
+            "y": 11.04699993133545,
+            "z": -4.102695465087891
+          },
+          "speed": 0,
+          "heading": -1.727139534559754,
+          "driftCharge": 0,
+          "boost": 0
+        },
+        {
+          "id": 5,
+          "lap": 1,
+          "rank": 6,
+          "checkpoint": 1,
+          "finished": false,
+          "position": {
+            "x": -194.38909912109375,
+            "y": 11.04699993133545,
+            "z": -1.4356266260147095
+          },
+          "speed": 0,
+          "heading": -1.727139534559754,
+          "driftCharge": 0,
+          "boost": 0
+        }
+      ],
+      "objects": 4557,
+      "breakables": 13,
+      "destroyed": 0,
+      "pieces": 4677,
+      "dynamicDebris": 0,
+      "retainedFragments": 0,
+      "paintEvents": 0,
+      "paintDecals": 0,
+      "gripZones": 0,
+      "staticColliders": 4499,
+      "colliderCount": 4499,
+      "loadedPieces": 4499,
+      "loadedChunks": 39,
+      "unloadedChunks": 12,
+      "inventory": [
+        "paint",
+        "bomb"
+      ],
+      "thrownCount": 0,
+      "paintHits": 0,
+      "bombHits": 0,
+      "recoveries": 0,
+      "autoDrive": false,
+      "loadMilliseconds": 8931,
+      "frameMilliseconds": {
+        "count": 56,
+        "p50": 633.4000000000015,
+        "p95": 1116.699999999997,
+        "p99": 1266.5999999999985,
+        "over100": 54
+      },
+      "measurement": null,
+      "memory": {
+        "wallMilliseconds": 103659.7,
+        "raceCycle": 2,
+        "phase": "tutorial",
+        "simulationSeconds": 4.316666666666657,
+        "stress": false,
+        "heapBytes": {
+          "used": 269000000,
+          "total": 304000000,
+          "limit": 3760000000
+        },
+        "geometries": 4543,
+        "textures": 2,
+        "objects": 4557,
+        "breakables": 13,
+        "destroyed": 0,
+        "pieces": 4677,
+        "dynamicDebris": 0,
+        "retainedFragments": 0,
+        "paintEvents": 0,
+        "paintDecals": 0,
+        "gripZones": 0,
+        "staticColliders": 4499,
+        "colliderCount": 4499,
+        "loadedPieces": 4499,
+        "loadedChunks": 39,
+        "unloadedChunks": 12
+      },
+      "drawCalls": 752,
+      "triangles": 93127,
+      "geometries": 4543,
+      "textures": 2
+    },
+    "network-recovery": {
+      "executedAt": "2026-09-05T06:54:00.966Z",
+      "commit": "f8d602f86a488810d2d099f7e45b75bd0032e82c",
+      "result": "PASS",
+      "method": "Abort exactly one original compressed chunk request, then serve the unchanged real stage on retry.",
+      "scope": "Network error/retry UI only, not geographic accuracy or performance acceptance."
+    }
+  }
+}

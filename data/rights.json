@@ -1,0 +1,12 @@
+{
+  "selectedLicense": "CC BY4.0",
+  "datasetLicenseEvidence": "Original archive README.md explicitly offers CC BY4.0",
+  "attribution": "岐阜市 3D都市モデル（Project PLATEAU）を加工して作成。地物の切り出し・座標変換・三角形分割：MachiShift。自治体の公式ゲームではありません。",
+  "policyCheckedOn": "2026-09-05",
+  "policyUrl": "https://www.mlit.go.jp/plateau/site-policy/",
+  "codeLicenseSeparate": true,
+  "texturesIncluded": false,
+  "thirdPartyVisualAssetsReview": "not completed; no texture imagery redistributed",
+  "geometryFeatureLevelReview": "Dataset redistribution license confirmed; individual sculpture/monument rights review not completed",
+  "sourceSurveyDates": "mixed bysource andattribute; metadata resource CSV retained"
+}

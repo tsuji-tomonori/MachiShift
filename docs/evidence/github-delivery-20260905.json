@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-09-05T06:41:17.713525+00:00",
+  "repository": "tsuji-tomonori/MachiShift",
+  "authorization": "User explicitly approved source-only main initialization and implementation branch / PR, then added this repository to GitHub App installation 71245884.",
+  "initialMainCommit": "61904db2723e37ca825c79b5051834a17a04e11e",
+  "sourceMainCommit": "0f1eafc245cd03c85a1a439b8f406bd24abdf6cd",
+  "sourceMainTree": "b220cafc1409de9ef19b9a3a45eb6c5cb5960ae9",
+  "initialFeatureCommit": "c3a7a53c791be37a9b537bc6bdbc86357833a300",
+  "verifiedLocalCommit": "a59076f129c589fa894ed463a3f4e49aed27d8b5",
+  "matchingFeatureTree": "d451a943a4048e3f93ea4bd714b4d206d6a0e307",
+  "fileCount": 170,
+  "totalFileBytes": 24471139,
+  "verification": "Every binary/large blob SHA matched local Git. Complete remote tree SHA matched local HEAD tree; source-only main tree also matched. Public git fetch succeeded.",
+  "branch": "feat/gifu-playable-build",
+  "pr": "https://github.com/tsuji-tomonori/MachiShift/pull/1",
+  "draft": true,
+  "merged": false,
+  "productionPublished": false,
+  "ciRun": "https://github.com/tsuji-tomonori/MachiShift/actions/runs/33950385672",
+  "ciStatusAtRecording": "in_progress",
+  "supersedes": "Previous GitHub authorization/installation blocks in external-execution-blockers-20260905.json are historical and resolved. Work browser WebGL restriction remains separate.",
+  "historicalBeforeApproval": {
+    "date": "2026-09-05",
+    "repository": "https://github.com/tsuji-tomonori/MachiShift",
+    "localBranch": "feat/gifu-playable-build",
+    "remoteDelivery": "BLOCKED",
+    "attempts": [
+      {
+        "action": "git push -u origin main",
+        "content": "Initial authoritative source documents and repository instructions",
+        "result": "AUTOMATIC_APPROVAL_REVIEW_REJECTED",
+        "reasonSummary": "The empty repository default branch would be initialized by a remote mutation. Explicit authorization for direct main initialization was not established, and the requested workflow uses a branch and pull request.",
+        "remoteMutationCompleted": false
+      },
+      {
+        "action": "git push -u origin feat/gifu-playable-build",
+        "result": "AUTHENTICATION_UNAVAILABLE",
+        "stderr": "fatal: could not read Username for 'https://github.com': No such device or address",
+        "remoteMutationCompleted": false
+      }
+    ],
+    "pullRequestCreated": false,
+    "remoteCIExecuted": false,
+    "productionPublished": false,
+    "reviewableDelivery": "The full local Git history, static build and actual verification records are packaged for review. No approval denial is bypassed through another API.",
+    "requestedNextAuthorization": "Initialize main with the preserved authoritative source documents, then submit the implementation on feat/gifu-playable-build through a pull request using the connected GitHub tools. No automatic merge or production publication."
+  }
+}

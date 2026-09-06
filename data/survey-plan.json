@@ -1,0 +1,878 @@
+{
+  "status": "BLOCKED",
+  "reason": "No independent survey reference supplied; source values are not measurements",
+  "roadCrossSections": [
+    {
+      "id": "GEO-ROAD-01",
+      "routeSample": 0,
+      "sourceRoadId": "tran_9bf283de-c4ec-42b5-9403-47cf548fc294",
+      "sourcePointMetres": [
+        -208.0,
+        10.568,
+        -5.0
+      ],
+      "photoForwardAzimuthDegrees": 279.5,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-02",
+      "routeSample": 37,
+      "sourceRoadId": "tran_0b8bafbe-9c6c-4dc5-8753-b7597473ea9f",
+      "sourcePointMetres": [
+        -247.602,
+        10.771,
+        -111.875
+      ],
+      "photoForwardAzimuthDegrees": 1.0,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-03",
+      "routeSample": 75,
+      "sourceRoadId": "tran_72a36f31-ac94-4af6-85cb-8372c396837e",
+      "sourcePointMetres": [
+        -244.375,
+        11.297,
+        -258.125
+      ],
+      "photoForwardAzimuthDegrees": 1.5,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-04",
+      "routeSample": 113,
+      "sourceRoadId": "tran_aaa3411b-3ff3-4ec6-9f52-e131e12ebea8",
+      "sourcePointMetres": [
+        -240.197,
+        12.134,
+        -404.966
+      ],
+      "photoForwardAzimuthDegrees": 1.9,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-05",
+      "routeSample": 151,
+      "sourceRoadId": "tran_3a998ec9-6ca8-458b-b4a8-eba6ce79759b",
+      "sourcePointMetres": [
+        -174.469,
+        12.53,
+        -482.719
+      ],
+      "photoForwardAzimuthDegrees": 89.3,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-06",
+      "routeSample": 189,
+      "sourceRoadId": "tran_006648b2-1611-4566-a63d-b0dee3d934b7",
+      "sourcePointMetres": [
+        -27.625,
+        12.278,
+        -484.438
+      ],
+      "photoForwardAzimuthDegrees": 92.2,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-07",
+      "routeSample": 226,
+      "sourceRoadId": "tran_456201ee-9d9a-457f-ab59-1a9dbb4d7278",
+      "sourcePointMetres": [
+        25.181,
+        11.809,
+        -402.465
+      ],
+      "photoForwardAzimuthDegrees": 184.5,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-08",
+      "routeSample": 264,
+      "sourceRoadId": "tran_d8b03cf3-1db0-40e7-a6d5-30b8bb8166e0",
+      "sourcePointMetres": [
+        14.635,
+        11.39,
+        -256.769
+      ],
+      "photoForwardAzimuthDegrees": 184.1,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-09",
+      "routeSample": 302,
+      "sourceRoadId": "tran_595e9b3a-b804-491f-9dc9-e4a6920b94dc",
+      "sourcePointMetres": [
+        -14.542,
+        11.072,
+        -127.708
+      ],
+      "photoForwardAzimuthDegrees": 206.3,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-ROAD-10",
+      "routeSample": 340,
+      "sourceRoadId": "tran_85393781-c4f0-4c38-ab69-41e199cdff68",
+      "sourcePointMetres": [
+        -80.891,
+        10.784,
+        -4.734
+      ],
+      "photoForwardAzimuthDegrees": 218.0,
+      "requiredViews": [
+        "forward",
+        "backward",
+        "left_cross_section",
+        "right_cross_section",
+        "curb_with_scale"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "referenceUncertaintyMetres": null,
+      "measuredRoadEdges": null,
+      "measuredRelativeHeights": null,
+      "horizontalErrorMetres": null,
+      "relativeHeightErrorMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    }
+  ],
+  "buildingPoints": [
+    {
+      "id": "GEO-BLDG-01",
+      "objectId": "plateau:bldg_a7a3bf88-d47b-4430-82f0-e0e137653948",
+      "sourceId": "bldg_a7a3bf88-d47b-4430-82f0-e0e137653948",
+      "sourceBoundsMetres": [
+        -207.547,
+        10.3,
+        -34.664,
+        -196.532,
+        30.543,
+        -23.695
+      ],
+      "photoFromRoutePointMetres": [
+        -208.0,
+        10.568,
+        -5.0
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-02",
+      "objectId": "plateau:bldg_ac771e1c-93b2-468c-b73b-c53710c84bda",
+      "sourceId": "bldg_ac771e1c-93b2-468c-b73b-c53710c84bda",
+      "sourceBoundsMetres": [
+        -230.184,
+        10.338,
+        -36.965,
+        -217.856,
+        49.835,
+        -26.692
+      ],
+      "photoFromRoutePointMetres": [
+        -246.75,
+        10.607,
+        -40.625
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-03",
+      "objectId": "plateau:bldg_4e74fb66-9ca9-4466-ad02-9e2f365b1f3c",
+      "sourceId": "bldg_4e74fb66-9ca9-4466-ad02-9e2f365b1f3c",
+      "sourceBoundsMetres": [
+        -273.665,
+        10.397,
+        -111.625,
+        -265.106,
+        17.797,
+        -106.043
+      ],
+      "photoFromRoutePointMetres": [
+        -247.602,
+        10.771,
+        -111.875
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-04",
+      "objectId": "plateau:bldg_bf4ab59f-923c-483e-8315-b307f814d50b",
+      "sourceId": "bldg_bf4ab59f-923c-483e-8315-b307f814d50b",
+      "sourceBoundsMetres": [
+        -280.145,
+        10.564,
+        -192.863,
+        -263.379,
+        54.762,
+        -162.941
+      ],
+      "photoFromRoutePointMetres": [
+        -246.125,
+        10.941,
+        -185.312
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-05",
+      "objectId": "plateau:bldg_23ab99e7-c471-4687-bec4-e23f12e08b09",
+      "sourceId": "bldg_23ab99e7-c471-4687-bec4-e23f12e08b09",
+      "sourceBoundsMetres": [
+        -228.817,
+        11.096,
+        -279.242,
+        -227.204,
+        14.021,
+        -275.688
+      ],
+      "photoFromRoutePointMetres": [
+        -244.375,
+        11.297,
+        -258.125
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-06",
+      "objectId": "plateau:bldg_49d41070-aaae-4e0b-a81d-b3dddf0b523a",
+      "sourceId": "bldg_49d41070-aaae-4e0b-a81d-b3dddf0b523a",
+      "sourceBoundsMetres": [
+        -271.95,
+        11.45,
+        -327.004,
+        -269.4,
+        13.136,
+        -324.964
+      ],
+      "photoFromRoutePointMetres": [
+        -242.449,
+        11.697,
+        -331.912
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-07",
+      "objectId": "plateau:bldg_cf1bca2c-e808-4f6a-99d5-ed9cf6734344",
+      "sourceId": "bldg_cf1bca2c-e808-4f6a-99d5-ed9cf6734344",
+      "sourceBoundsMetres": [
+        -284.56,
+        11.46,
+        -402.234,
+        -258.38,
+        50.129,
+        -382.504
+      ],
+      "photoFromRoutePointMetres": [
+        -240.197,
+        12.134,
+        -404.966
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-08",
+      "objectId": "plateau:bldg_a57d7ebd-f5c6-4125-8fc5-d19d5648a61b",
+      "sourceId": "bldg_a57d7ebd-f5c6-4125-8fc5-d19d5648a61b",
+      "sourceBoundsMetres": [
+        -220.622,
+        12.245,
+        -453.145,
+        -210.918,
+        20.008,
+        -445.164
+      ],
+      "photoFromRoutePointMetres": [
+        -235.25,
+        12.609,
+        -474.375
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-09",
+      "objectId": "plateau:bldg_2916a27a-265c-4625-be5e-f9dfb768a4e3",
+      "sourceId": "bldg_2916a27a-265c-4625-be5e-f9dfb768a4e3",
+      "sourceBoundsMetres": [
+        -169.149,
+        11.279,
+        -468.402,
+        -157.973,
+        22.138,
+        -455.024
+      ],
+      "photoFromRoutePointMetres": [
+        -174.469,
+        12.53,
+        -482.719
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-10",
+      "objectId": "plateau:bldg_96fe0cd5-d67e-4396-be0e-dc6e3e358bf1",
+      "sourceId": "bldg_96fe0cd5-d67e-4396-be0e-dc6e3e358bf1",
+      "sourceBoundsMetres": [
+        -110.274,
+        12.355,
+        -502.742,
+        -98.129,
+        33.625,
+        -495.469
+      ],
+      "photoFromRoutePointMetres": [
+        -100.893,
+        12.398,
+        -483.929
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-11",
+      "objectId": "plateau:bldg_80ffc623-fd1c-47ba-bb35-49e33e2bfdb8",
+      "sourceId": "bldg_80ffc623-fd1c-47ba-bb35-49e33e2bfdb8",
+      "sourceBoundsMetres": [
+        -27.321,
+        12.2,
+        -510.293,
+        -16.02,
+        25.61,
+        -497.145
+      ],
+      "photoFromRoutePointMetres": [
+        -27.625,
+        12.278,
+        -484.438
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-12",
+      "objectId": "plateau:bldg_b0b2ab5c-a489-41b4-af73-4679313dca0a",
+      "sourceId": "bldg_b0b2ab5c-a489-41b4-af73-4679313dca0a",
+      "sourceBoundsMetres": [
+        -5.192,
+        11.78,
+        -471.621,
+        19.71,
+        30.634,
+        -447.012
+      ],
+      "photoFromRoutePointMetres": [
+        29.0,
+        12.08,
+        -471.0
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-13",
+      "objectId": "plateau:bldg_6b31e675-419f-4c72-b565-dab3fd1628a6",
+      "sourceId": "bldg_6b31e675-419f-4c72-b565-dab3fd1628a6",
+      "sourceBoundsMetres": [
+        39.031,
+        11.501,
+        -400.883,
+        57.226,
+        23.323,
+        -391.051
+      ],
+      "photoFromRoutePointMetres": [
+        25.181,
+        11.809,
+        -402.465
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-14",
+      "objectId": "plateau:bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce",
+      "sourceId": "bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce",
+      "sourceBoundsMetres": [
+        -4.676,
+        11.387,
+        -327.512,
+        9.429,
+        28.247,
+        -318.582
+      ],
+      "photoFromRoutePointMetres": [
+        19.844,
+        11.522,
+        -329.812
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-15",
+      "objectId": "plateau:bldg_d9746736-73c5-4e5b-aabf-c2dd4683209a",
+      "sourceId": "bldg_d9746736-73c5-4e5b-aabf-c2dd4683209a",
+      "sourceBoundsMetres": [
+        -4.958,
+        11.336,
+        -271.133,
+        5.187,
+        17.862,
+        -264.574
+      ],
+      "photoFromRoutePointMetres": [
+        14.635,
+        11.39,
+        -256.769
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-16",
+      "objectId": "plateau:bldg_a803b1bc-85de-40f9-b3d8-1167086f1f2b",
+      "sourceId": "bldg_a803b1bc-85de-40f9-b3d8-1167086f1f2b",
+      "sourceBoundsMetres": [
+        23.601,
+        11.13,
+        -201.274,
+        44.703,
+        49.079,
+        -176.746
+      ],
+      "photoFromRoutePointMetres": [
+        9.625,
+        11.272,
+        -185.625
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-17",
+      "objectId": "plateau:bldg_ec1e855b-9f2a-4615-ad28-3597ea64ac00",
+      "sourceId": "bldg_ec1e855b-9f2a-4615-ad28-3597ea64ac00",
+      "sourceBoundsMetres": [
+        -42.891,
+        10.843,
+        -151.137,
+        -21.618,
+        43.91,
+        -133.942
+      ],
+      "photoFromRoutePointMetres": [
+        -14.542,
+        11.072,
+        -127.708
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-18",
+      "objectId": "plateau:bldg_2227c464-129c-4f62-812d-dec499924c72",
+      "sourceId": "bldg_2227c464-129c-4f62-812d-dec499924c72",
+      "sourceBoundsMetres": [
+        -90.907,
+        10.643,
+        -79.43,
+        -58.934,
+        47.904,
+        -58.176
+      ],
+      "photoFromRoutePointMetres": [
+        -46.306,
+        10.852,
+        -63.25
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-19",
+      "objectId": "plateau:bldg_85c03067-0bed-4c4b-9b55-cdcc3e098ec5",
+      "sourceId": "bldg_85c03067-0bed-4c4b-9b55-cdcc3e098ec5",
+      "sourceBoundsMetres": [
+        -105.211,
+        10.562,
+        -50.016,
+        -70.747,
+        47.937,
+        -21.863
+      ],
+      "photoFromRoutePointMetres": [
+        -80.891,
+        10.784,
+        -4.734
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    },
+    {
+      "id": "GEO-BLDG-20",
+      "objectId": "plateau:bldg_e39d50fb-02de-45ef-bf8b-05d9ffd556ad",
+      "sourceId": "bldg_e39d50fb-02de-45ef-bf8b-05d9ffd556ad",
+      "sourceBoundsMetres": [
+        -149.04,
+        10.14,
+        -40.332,
+        -85.61,
+        63.577,
+        -9.274
+      ],
+      "photoFromRoutePointMetres": [
+        -142.656,
+        10.573,
+        5.031
+      ],
+      "requiredViews": [
+        "ground_facade_two_directions",
+        "entrance",
+        "corner_with_dimension_reference"
+      ],
+      "independentReference": null,
+      "measurementDate": null,
+      "measuredPoint": null,
+      "errorMetres": null,
+      "referenceUncertaintyMetres": null,
+      "status": "BLOCKED",
+      "verification": "source_only"
+    }
+  ]
+}

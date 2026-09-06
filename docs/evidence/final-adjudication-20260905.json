@@ -1,0 +1,376 @@
+{
+  "reviewedAt": "2026-09-05T06:06:57.933062+00:00",
+  "reviewer": "QA agent",
+  "method": "Read immutable original rows, final 31 executed assertion groups/raw results, source provenance and exact current-stage numeric records. Reproduced 18-recovery diagnosis is preserved and distinguished from successful current regression. No browser/GPU execution by QA.",
+  "cleanVerification": "docs/evidence/final-execution-20260905.json",
+  "testTraceability": "docs/evidence/test-traceability-20260905.json",
+  "newFunctionalPasses": [
+    {
+      "requirement": "GAME-01",
+      "status": "PASS",
+      "rationale": "クリーン依存導入後にPC WebGL2用の配信ビルドを生成。提供形態の暫定第一案を実装した。3D操作確認はGAME-05等で未完了を保持。",
+      "tests": [],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "GAME-03",
+      "status": "PASS",
+      "rationale": "原典地上路面に支持される周長1388.202mの同一コースを3周。未破壊205.083〜220.600秒、柵破壊後193.983〜202.450秒で3〜5分の調整目標範囲。",
+      "tests": [
+        "TRACE-RACE-01",
+        "TRACE-RACE-02",
+        "TRACE-RACE-12",
+        "TRACE-REAL-STAGE-01"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "GAME-04",
+      "status": "PASS",
+      "rationale": "プレイヤー用1台を通常コントローラーへスクリプト入力し、AI5台と同じ原典幅員・衝突面で競走。全6台が両シナリオ3周、各1134ゲートを完了。",
+      "tests": [
+        "TRACE-RACE-04",
+        "TRACE-RACE-11",
+        "TRACE-RACE-12",
+        "TRACE-REAL-STAGE-01",
+        "TRACE-REAL-STAGE-03"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-01",
+      "status": "PASS",
+      "rationale": "爆発で実メッシュ部品を動かし元の固定衝突を除去、動的衝突へ交換することを実行して確認。",
+      "tests": [
+        "TRACE-ENVIRONMENT-01"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-02",
+      "status": "PASS",
+      "rationale": "採用マニフェストの元CityFurniture機能属性に対応する設備を使い、原典ベンチで実塗装破壊を検証。ゲーム専用柵はgame_addedで区別。",
+      "tests": [
+        "TRACE-ENVIRONMENT-14"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-03",
+      "status": "PASS",
+      "rationale": "採用した実在建物のWallSurface元6インデックスを分離し、残る78インデックスの構造は固定。窓・庇の全分類や全棟破壊の合格とはしない。",
+      "tests": [
+        "TRACE-ENVIRONMENT-10",
+        "TRACE-ENVIRONMENT-15"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-04",
+      "status": "PASS",
+      "rationale": "実動的破片の衝突を短時間保持し、6秒後・上限超過は表示状態を残して物理除去。120片生成時に動的100片/非衝突20片を実測。",
+      "tests": [
+        "TRACE-ENVIRONMENT-01",
+        "TRACE-ENVIRONMENT-06",
+        "TRACE-ENVIRONMENT-08"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-05",
+      "status": "PASS",
+      "rationale": "未破壊柵が通行を防ぎ、爆破後に元固定衝突が消えて物理車体が通る。実道路の中央柵でも実カートが直接通過。",
+      "tests": [
+        "TRACE-ENVIRONMENT-01",
+        "TRACE-RACE-10",
+        "TRACE-REAL-STAGE-01",
+        "TRACE-REAL-STAGE-02"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-06",
+      "status": "PASS",
+      "rationale": "同一爆発の遮蔽前判定により前方対象だけを破壊し、壁奥3部品は元の状態を保持。",
+      "tests": [
+        "TRACE-ENVIRONMENT-05"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-07",
+      "status": "PASS",
+      "rationale": "実道路のゲーム専用中央柵開通で走行区間が88.586m/4.283秒から85.315m/3.717秒へ短縮。双方復帰0、全6台の主経路も有効。",
+      "tests": [
+        "TRACE-RACE-10",
+        "TRACE-RACE-11",
+        "TRACE-REAL-STAGE-01",
+        "TRACE-REAL-STAGE-02"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-08",
+      "status": "PASS",
+      "rationale": "主要路面・橋は不変の原典静的衝突として残り、想定柵破壊後も全6台が同じ合法ゲートを3周完了。",
+      "tests": [
+        "TRACE-REAL-STAGE-01"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "DEST-09",
+      "status": "PASS",
+      "rationale": "実破壊状態を描画・物理資源から分けて保持し、実ベンチを含むunload/reloadで復元。reset時だけ元の固定衝突へ戻す。UI再レースの統合確認はAT-11で別管理。",
+      "tests": [
+        "TRACE-ENVIRONMENT-06",
+        "TRACE-ENVIRONMENT-07",
+        "TRACE-ENVIRONMENT-11",
+        "TRACE-ENVIRONMENT-12"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PAINT-01",
+      "status": "PASS",
+      "rationale": "着弾表面の局所デカールと元表面IDを生成し、実床・壁・原典ベンチ/外壁上に保持する。",
+      "tests": [
+        "TRACE-ENVIRONMENT-01",
+        "TRACE-ENVIRONMENT-04"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PAINT-02",
+      "status": "PASS",
+      "rationale": "対象メッシュの元マテリアル色を保持したまま局所頂点の塗装を子メッシュとして追加。表面全体の単色置換を行わない。",
+      "tests": [
+        "TRACE-ENVIRONMENT-01"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PAINT-03",
+      "status": "PASS",
+      "rationale": "着弾面のクリップと個別レイ判定により20mm薄壁裏面と別階へ無条件に漏れない。近接する上下床も面IDで区別。",
+      "tests": [
+        "TRACE-ENVIRONMENT-02",
+        "TRACE-ENVIRONMENT-13"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PAINT-05",
+      "status": "PASS",
+      "rationale": "原典ベンチと採用WallSurfaceの塗装局所位置/面IDを保持したまま、実Rapier移動に追従。0.25秒1.855773m、0.5秒0.724646mを実測。",
+      "tests": [
+        "TRACE-ENVIRONMENT-01",
+        "TRACE-ENVIRONMENT-10",
+        "TRACE-ENVIRONMENT-14",
+        "TRACE-ENVIRONMENT-15"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PAINT-06",
+      "status": "PASS",
+      "rationale": "可視性切替・実資源解放/再構築を通して色・面ID・局所位置・破片塗装を保持。reset4反復で塗装を0へ初期化。",
+      "tests": [
+        "TRACE-ENVIRONMENT-06",
+        "TRACE-ENVIRONMENT-07",
+        "TRACE-ENVIRONMENT-11"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PAINT-07",
+      "status": "PASS",
+      "rationale": "同じ支持面に対してグリップ0.52を8秒保持し、失効後も塗装を残す。0.65m上の別床は1のまま。全車が共通コントローラーを使用。",
+      "tests": [
+        "TRACE-ENVIRONMENT-03",
+        "TRACE-ENVIRONMENT-13",
+        "TRACE-RACE-06"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "AT-05",
+      "status": "PASS",
+      "rationale": "壁裏面と別階の非漏洩を実Three.jsデカール頂点・物体別塗装件数で確認。GPU画像の品質評価は含めない。",
+      "tests": [
+        "TRACE-ENVIRONMENT-02"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "AT-08",
+      "status": "PASS",
+      "rationale": "実原典ベンチを含む区画で描画資源と実衝突を解放し、新資源の再構築後にも破壊・塗装を復元。塗装位置差1µm未満。境界走行のフレーム性能はAT-12で別管理。",
+      "tests": [
+        "TRACE-ENVIRONMENT-06",
+        "TRACE-ENVIRONMENT-11",
+        "TRACE-ENVIRONMENT-12",
+        "TRACE-ENVIRONMENT-14"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "AT-09",
+      "status": "PASS",
+      "rationale": "原典の同一コースで未破壊と想定柵破壊の双方を全6車が3周完走。各1134順序ゲート、通常コントローラーで進行編集なし。初回カーブの反復復帰回帰も成功。残存復帰は未破壊最大7回、破壊後最大2回として開示する。",
+      "tests": [
+        "TRACE-RACE-12",
+        "TRACE-REAL-STAGE-01",
+        "TRACE-REAL-STAGE-02",
+        "TRACE-REAL-STAGE-03"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PERF-03",
+      "status": "PASS",
+      "rationale": "上限超過小片を非衝突にしても破壊状態を保持。元の柵衝突は復活しないことを120片と通路開通の実物理試験で確認。",
+      "tests": [
+        "TRACE-ENVIRONMENT-08"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "PERF-05",
+      "status": "PASS",
+      "rationale": "実資源のdispose/剛体除去と不変ジオメトリアーカイブ/塗装局所記録を分離し、新資源へ復元する実行試験に成功。",
+      "tests": [
+        "TRACE-ENVIRONMENT-11",
+        "TRACE-ENVIRONMENT-12"
+      ],
+      "evidence": "docs/evidence/final-execution-20260905.json"
+    },
+    {
+      "requirement": "MGMT-05",
+      "status": "PASS",
+      "rationale": "全31実行試験を原要件ID、実条件、手順/期待・実測、合否、日時、固定入力、コミット+SHA、ログへ対応付けた。Python5試験/17原本とブラウザー失敗記録も別証跡。未実行を合格としない。",
+      "tests": [],
+      "evidence": "docs/evidence/test-traceability-20260905.json"
+    },
+    {
+      "requirement": "DATA-02",
+      "status": "PASS",
+      "rationale": "取得した原本17件のSHA-256/CRC32/bytesを原典ZIPエントリと照合し全件成功。原本を加工せず、加工物の元ID対応を5実行試験で確認。取得日・出典・選択CC BY 4.0条件をprovenanceに保存。",
+      "evidence": "data/validation.json",
+      "tests": []
+    },
+    {
+      "requirement": "DATA-08",
+      "status": "PASS",
+      "rationale": "取得・切出し/メートル変換・原典表面分割・走行線・原典地形・圧縮・地物台帳・監査を再実行可能なコマンドで生成。採用破壊面は版管理された入力とし、未実施の現地補修を捏造しない。生成物の座標・元ID・支持面は5実行試験で検証。",
+      "evidence": "data/validation.json",
+      "tests": []
+    }
+  ],
+  "remainingSpecificGaps": [
+    {
+      "requirement": "GAME-06",
+      "status": "BLOCKED",
+      "reason": "初回カーブで18回復帰した不具合は、原典を変えずゲーム用側柵を32mから72mへ移す修正と回帰試験で解消。前方向ベクトルの変更による惰性走行の誤復帰も修正した。現実測の復帰は未破壊最大7回/破壊後最大2回。画面・音・操作感・長い拘束の実プレイ確認はWebGL無効で未実施。",
+      "nextAction": "WebGL2有効環境でドリフトの視覚・音・加速と壁接触・横転・残存復帰を確認し、実際の操作感を調整する。"
+    },
+    {
+      "requirement": "GAME-10",
+      "status": "IN_PROGRESS",
+      "reason": "特定の未通過ゲート障害と継続逆向きAI走行では3秒以内の復帰を実測し、通常の惰性順走で誤復帰しないことも確認。落下・スタックを含む全検証ケースの安全復帰時間は未計測。",
+      "nextAction": "原典コース上で落下・逆走・スタックを個別再現し、操作可能状態への時間と進行不正加算0を記録する。"
+    },
+    {
+      "requirement": "PAINT-04",
+      "status": "IN_PROGRESS",
+      "reason": "斜面上の局所形状と異色の重ね塗りは実行成功。縁でのクリップと隣接物へ分かれる飛沫の指定ケースは未実行。",
+      "nextAction": "実際の角・縁・隣接原典物体に対して各飛沫の命中先と形状を実行検証する。"
+    },
+    {
+      "requirement": "AT-06",
+      "status": "IN_PROGRESS",
+      "reason": "実破片の衝突と車両の固定壁反応は確認。最初のカーブの反復復帰不具合は修正・回帰済みだが、走行中の破片衝突からの操作不能時間を測る一連ケースは未実施。",
+      "nextAction": "走行中に実破片へ接触し、入力に対する車両応答と復帰までの時間を計測して長い拘束を修正する。"
+    },
+    {
+      "requirement": "AT-07",
+      "status": "IN_PROGRESS",
+      "reason": "区画の破壊・塗装保持と実コース3周は個別に実行成功。ただし実コースで塗装と破壊を共に行い、1周後に同じ対象へ戻る一連証跡は未登録。",
+      "nextAction": "同じ実コース実行内で対象を塗装・破壊し、1周後の面ID・塗装・破片状態と2周目の攻略を記録する。"
+    },
+    {
+      "requirement": "AT-11",
+      "status": "IN_PROGRESS",
+      "reason": "Environmentの4反復reset、古い衝突ハンドル、Race進行の部分試験は成功。mainの再レース遷移を通した全街状態と投擲・在庫・順位UIの一括リセットはE2E未実行。",
+      "nextAction": "WebGL2環境で再レース操作を反復し、前レースの当たり判定・塗装とホスト所有状態が混ざらないことを確認する。"
+    },
+    {
+      "requirement": "DATA-01",
+      "status": "BLOCKED",
+      "reason": "CityGML、README、原典資料リスト、索引図、拡張製品仕様書は原本取得済み。索引図8頁、仕様書752頁中の該当箇所を確認した。テクスチャは未取得・未採用で、近景の資料照合が不足。",
+      "nextAction": "必要区域の利用可能な原典テクスチャと近景参照を取得し、固定視点で照合する。"
+    },
+    {
+      "requirement": "PERF-02",
+      "status": "BLOCKED",
+      "reason": "6未完走車・3爆発・動的100片・累積200実塗装の負荷操作と達成数記録を実装。60秒の描画計測はWebGL無効により未実施。",
+      "nextAction": "WebGL2有効な対象機で6車のレース中に負荷を起動し、達成数・60秒完了・早期終了を区別して記録する。"
+    },
+    {
+      "requirement": "PERF-04",
+      "status": "BLOCKED",
+      "reason": "全市ZIPを配信せずgzip区画50件を使用。現配信はJSON gzipでテクスチャ未採用。初期取得・キャッシュ・境界の実ブラウザー計測はWebGL無効で未実施。原文のGLB等との形式比較は可逆な実装判断として継続する。",
+      "nextAction": "WebGL2環境で初期取得・キャッシュ・境界の通信/メモリ/時間を測り、表面IDを保つJSON gzipとGLB等を比較して必要な最適化・テクスチャ対応を行う。"
+    },
+    {
+      "requirement": "PERF-06",
+      "status": "BLOCKED",
+      "reason": "フレーム時間・ヒープ・読込の予算は計測前に文書化。p50/p95/p99と実達成負荷・任意ヒープ・資源数の計測実装はあるがWebGL無効で実描画測定がない。",
+      "nextAction": "事前予算を維持した対象機計測で分位・停止・メモリ推移・実時間を保存する。"
+    },
+    {
+      "requirement": "PERF-07",
+      "status": "BLOCKED",
+      "reason": "実ステージの通常・集団・集中爆発・塗装・境界・3周反復の描画性能を未計測。Nodeの物理実行時間はGPU性能へ代用しない。",
+      "nextAction": "対象GPU/1080pの同一条件で全負荷区間と再レース5反復を計測する。"
+    },
+    {
+      "requirement": "MGMT-07",
+      "status": "BLOCKED",
+      "reason": "npm ciから型検査・全31試験・配信ビルドのクリーン依存再現は成功。空の別環境からの3D起動はWebGL無効で未検証。全同梱地物の第三者作品権利確認も未完了。",
+      "nextAction": "WebGL2有効環境で再現手順を実行し、対象区域の個別作品等の条件を確定する。"
+    },
+    {
+      "requirement": "DESIGN-03",
+      "status": "IN_PROGRESS",
+      "reason": "全6台は同じ物理・障害物・近道ルールで実コースを完走し、グリップは共通コントローラーを使用。ペイント・投擲を交えた実コース一連試験は未実施。初回カーブ不具合は修正済みで、現行の最大復帰数7回を記録する。",
+      "nextAction": "同じ実コースでAIの追越し、塗装、投擲、破片回避を同時に検証し、残存する走行品質を確認する。"
+    }
+  ],
+  "counts": {
+    "PASS": 47,
+    "BLOCKED": 43,
+    "IN_PROGRESS": 6,
+    "NEEDS_DECISION": 5
+  },
+  "originalCounts": {
+    "PASS": 27,
+    "BLOCKED": 21,
+    "IN_PROGRESS": 5
+  },
+  "allAcceptancePassed": false,
+  "fixedDefects": [
+    {
+      "before": "18 recoveries around first bend",
+      "diagnosis": "artifacts/first-bend-contact-diagnosis-before-relocation.json",
+      "change": "Only game_added side training fence route-distance32→72m; original roads unchanged",
+      "regression": "artifacts/real-stage-physics.json: per-car/per-lap first-bend recovery count ≤1, all six cars three laps",
+      "remaining": "Current baseline maximum 7 total recoveries; human handling acceptance still incomplete"
+    },
+    {
+      "before": "Scaled shared forward vector changed coasting wrong-way detection",
+      "change": "Clone before scaling so heading remains a unit vector",
+      "regression": "tests/race.test.ts coasting test: forward neutral travel no false recovery; sustained wrong-way recovers under3s; no gate gain"
+    }
+  ]
+}

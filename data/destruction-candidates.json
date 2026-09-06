@@ -1,0 +1,826 @@
+{
+  "facades": [
+    {
+      "id": "plateau:bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce",
+      "sourceId": "bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce",
+      "surfaceIds": [
+        "bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce:poly-118b0ca6-80e5-43c5-889f-35bef87fdb6a"
+      ],
+      "sourceSurfaceIds": [
+        "poly-118b0ca6-80e5-43c5-889f-35bef87fdb6a"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        8.851,
+        11.387,
+        -326.68,
+        9.429,
+        18.001,
+        -318.582
+      ],
+      "distanceToRacingLineMetres": 10.165,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce",
+      "sourceId": "bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce",
+      "surfaceIds": [
+        "bldg_a5d365f3-2b5b-4395-b75e-056f3e72c6ce:poly-9a4f6338-bf2d-4657-a63b-e86dbb480094"
+      ],
+      "sourceSurfaceIds": [
+        "poly-9a4f6338-bf2d-4657-a63b-e86dbb480094"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        8.851,
+        18.001,
+        -326.68,
+        9.429,
+        25.217,
+        -318.582
+      ],
+      "distanceToRacingLineMetres": 10.165,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_a673da08-7982-4852-931e-a8dd18c07585",
+      "sourceId": "bldg_a673da08-7982-4852-931e-a8dd18c07585",
+      "surfaceIds": [
+        "bldg_a673da08-7982-4852-931e-a8dd18c07585:poly-318c0ded-1a39-44d6-8af9-3fa68b59ab11"
+      ],
+      "sourceSurfaceIds": [
+        "poly-318c0ded-1a39-44d6-8af9-3fa68b59ab11"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        11.824,
+        25.534,
+        -365.926,
+        12.316,
+        26.696,
+        -359.356
+      ],
+      "distanceToRacingLineMetres": 10.181,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_a673da08-7982-4852-931e-a8dd18c07585",
+      "sourceId": "bldg_a673da08-7982-4852-931e-a8dd18c07585",
+      "surfaceIds": [
+        "bldg_a673da08-7982-4852-931e-a8dd18c07585:poly-62040f1e-8e95-4d94-bfc8-b9e528d11fed"
+      ],
+      "sourceSurfaceIds": [
+        "poly-62040f1e-8e95-4d94-bfc8-b9e528d11fed"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        11.824,
+        18.001,
+        -365.926,
+        12.316,
+        25.534,
+        -359.356
+      ],
+      "distanceToRacingLineMetres": 10.181,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_a673da08-7982-4852-931e-a8dd18c07585",
+      "sourceId": "bldg_a673da08-7982-4852-931e-a8dd18c07585",
+      "surfaceIds": [
+        "bldg_a673da08-7982-4852-931e-a8dd18c07585:poly-678268c8-a141-465c-b321-b503164f34ae"
+      ],
+      "sourceSurfaceIds": [
+        "poly-678268c8-a141-465c-b321-b503164f34ae"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        11.824,
+        11.525,
+        -365.926,
+        12.316,
+        18.001,
+        -359.356
+      ],
+      "distanceToRacingLineMetres": 10.181,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_b0862e59-ad7a-4281-968d-5ae0f5226025",
+      "sourceId": "bldg_b0862e59-ad7a-4281-968d-5ae0f5226025",
+      "surfaceIds": [
+        "bldg_b0862e59-ad7a-4281-968d-5ae0f5226025:poly-dc113603-84f2-4ebf-baa1-42af00c7c9f6"
+      ],
+      "sourceSurfaceIds": [
+        "poly-dc113603-84f2-4ebf-baa1-42af00c7c9f6"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        9.382,
+        11.387,
+        -335.996,
+        10.078,
+        18.001,
+        -326.766
+      ],
+      "distanceToRacingLineMetres": 10.235,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_b0862e59-ad7a-4281-968d-5ae0f5226025",
+      "sourceId": "bldg_b0862e59-ad7a-4281-968d-5ae0f5226025",
+      "surfaceIds": [
+        "bldg_b0862e59-ad7a-4281-968d-5ae0f5226025:poly-ff79f55b-ff8d-453b-b4a9-d01f8747f692"
+      ],
+      "sourceSurfaceIds": [
+        "poly-ff79f55b-ff8d-453b-b4a9-d01f8747f692"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        9.382,
+        18.001,
+        -335.996,
+        10.078,
+        25.844,
+        -326.766
+      ],
+      "distanceToRacingLineMetres": 10.235,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 3,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_3e8518d3-d7b8-41dd-8b55-180b64075e4d",
+      "sourceId": "bldg_3e8518d3-d7b8-41dd-8b55-180b64075e4d",
+      "surfaceIds": [
+        "bldg_3e8518d3-d7b8-41dd-8b55-180b64075e4d:poly-c40ba77e-a68f-4200-a4a2-a389ff53eff8"
+      ],
+      "sourceSurfaceIds": [
+        "poly-c40ba77e-a68f-4200-a4a2-a389ff53eff8"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        12.324,
+        11.525,
+        -375.387,
+        13.015,
+        18.001,
+        -366.024
+      ],
+      "distanceToRacingLineMetres": 10.244,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_0876cb20-4e5a-4b6c-826b-420d0036f974",
+      "sourceId": "bldg_0876cb20-4e5a-4b6c-826b-420d0036f974",
+      "surfaceIds": [
+        "bldg_0876cb20-4e5a-4b6c-826b-420d0036f974:poly-c367f8d3-f862-4ffc-a03c-82d7995efa6a"
+      ],
+      "sourceSurfaceIds": [
+        "poly-c367f8d3-f862-4ffc-a03c-82d7995efa6a"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        7.695,
+        11.355,
+        -318.488,
+        8.765,
+        18.001,
+        -304.043
+      ],
+      "distanceToRacingLineMetres": 10.272,
+      "chunk": "chunk--1_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_0876cb20-4e5a-4b6c-826b-420d0036f974",
+      "sourceId": "bldg_0876cb20-4e5a-4b6c-826b-420d0036f974",
+      "surfaceIds": [
+        "bldg_0876cb20-4e5a-4b6c-826b-420d0036f974:poly-d1bf14a4-4c67-4c38-ab03-b33a061c198d"
+      ],
+      "sourceSurfaceIds": [
+        "poly-d1bf14a4-4c67-4c38-ab03-b33a061c198d"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        7.695,
+        18.001,
+        -318.488,
+        8.765,
+        25.643,
+        -304.043
+      ],
+      "distanceToRacingLineMetres": 10.272,
+      "chunk": "chunk--1_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_ea5965c4-7ed1-4b73-ae8d-5e875789b170",
+      "sourceId": "bldg_ea5965c4-7ed1-4b73-ae8d-5e875789b170",
+      "surfaceIds": [
+        "bldg_ea5965c4-7ed1-4b73-ae8d-5e875789b170:poly-68368d78-8968-4758-9e23-e279ae96d748"
+      ],
+      "sourceSurfaceIds": [
+        "poly-68368d78-8968-4758-9e23-e279ae96d748"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        10.085,
+        11.473,
+        -345.586,
+        10.777,
+        18.001,
+        -336.098
+      ],
+      "distanceToRacingLineMetres": 10.287,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_ea5965c4-7ed1-4b73-ae8d-5e875789b170",
+      "sourceId": "bldg_ea5965c4-7ed1-4b73-ae8d-5e875789b170",
+      "surfaceIds": [
+        "bldg_ea5965c4-7ed1-4b73-ae8d-5e875789b170:poly-65dbb399-2aed-43c8-901a-12383f3bb5ba"
+      ],
+      "sourceSurfaceIds": [
+        "poly-65dbb399-2aed-43c8-901a-12383f3bb5ba"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        10.085,
+        18.001,
+        -345.586,
+        10.777,
+        19.23,
+        -336.098
+      ],
+      "distanceToRacingLineMetres": 10.287,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_2ce946e3-e758-4f86-92bb-b8cdc6ac6237",
+      "sourceId": "bldg_2ce946e3-e758-4f86-92bb-b8cdc6ac6237",
+      "surfaceIds": [
+        "bldg_2ce946e3-e758-4f86-92bb-b8cdc6ac6237:poly-f322d843-4111-408b-aa52-dc1bd2b76514"
+      ],
+      "sourceSurfaceIds": [
+        "poly-f322d843-4111-408b-aa52-dc1bd2b76514"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        6.375,
+        11.33,
+        -296.887,
+        7.156,
+        18.001,
+        -286.426
+      ],
+      "distanceToRacingLineMetres": 10.338,
+      "chunk": "chunk--1_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_6351ae21-6292-45a2-ace6-46b18702657c",
+      "sourceId": "bldg_6351ae21-6292-45a2-ace6-46b18702657c",
+      "surfaceIds": [
+        "bldg_6351ae21-6292-45a2-ace6-46b18702657c:poly-fc93d021-7a5c-4c5b-9e11-979dd2fbbb9f"
+      ],
+      "sourceSurfaceIds": [
+        "poly-fc93d021-7a5c-4c5b-9e11-979dd2fbbb9f"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        17.5,
+        11.723,
+        -445.793,
+        18.363,
+        18.001,
+        -434.258
+      ],
+      "distanceToRacingLineMetres": 10.344,
+      "chunk": "chunk-0_-3.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_8655d912-17a8-4c72-8181-3acff983d571",
+      "sourceId": "bldg_8655d912-17a8-4c72-8181-3acff983d571",
+      "surfaceIds": [
+        "bldg_8655d912-17a8-4c72-8181-3acff983d571:poly-d45c2b42-7468-4070-94de-42cfbfaae714"
+      ],
+      "sourceSurfaceIds": [
+        "poly-d45c2b42-7468-4070-94de-42cfbfaae714"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        5.785,
+        18.001,
+        -286.328,
+        6.367,
+        26.182,
+        -278.559
+      ],
+      "distanceToRacingLineMetres": 10.416,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_8655d912-17a8-4c72-8181-3acff983d571",
+      "sourceId": "bldg_8655d912-17a8-4c72-8181-3acff983d571",
+      "surfaceIds": [
+        "bldg_8655d912-17a8-4c72-8181-3acff983d571:poly-d0725b4b-ea1f-4dac-8cdd-dc9b43f43102"
+      ],
+      "sourceSurfaceIds": [
+        "poly-d0725b4b-ea1f-4dac-8cdd-dc9b43f43102"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        5.785,
+        11.343,
+        -286.328,
+        6.367,
+        18.001,
+        -278.559
+      ],
+      "distanceToRacingLineMetres": 10.416,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_1c4e3165-3a7a-415b-bb57-11cca7eda8f1",
+      "sourceId": "bldg_1c4e3165-3a7a-415b-bb57-11cca7eda8f1",
+      "surfaceIds": [
+        "bldg_1c4e3165-3a7a-415b-bb57-11cca7eda8f1:poly-288706eb-e32c-49e1-be00-2fa7d9dfa6c8"
+      ],
+      "sourceSurfaceIds": [
+        "poly-288706eb-e32c-49e1-be00-2fa7d9dfa6c8"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        4.144,
+        11.321,
+        -264.473,
+        4.738,
+        18.001,
+        -256.508
+      ],
+      "distanceToRacingLineMetres": 10.458,
+      "chunk": "chunk--1_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_d9746736-73c5-4e5b-aabf-c2dd4683209a",
+      "sourceId": "bldg_d9746736-73c5-4e5b-aabf-c2dd4683209a",
+      "surfaceIds": [
+        "bldg_d9746736-73c5-4e5b-aabf-c2dd4683209a:poly-d2706a70-35d7-4ec6-91fe-3353cff6de21"
+      ],
+      "sourceSurfaceIds": [
+        "poly-d2706a70-35d7-4ec6-91fe-3353cff6de21"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        4.746,
+        11.336,
+        -270.496,
+        5.187,
+        15.919,
+        -264.574
+      ],
+      "distanceToRacingLineMetres": 10.469,
+      "chunk": "chunk-0_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_a2666eb7-1fca-4068-a2db-763237c14505",
+      "sourceId": "bldg_a2666eb7-1fca-4068-a2db-763237c14505",
+      "surfaceIds": [
+        "bldg_a2666eb7-1fca-4068-a2db-763237c14505:poly-caf0f626-6537-4d3f-965b-ea8d22db23fe"
+      ],
+      "sourceSurfaceIds": [
+        "poly-caf0f626-6537-4d3f-965b-ea8d22db23fe"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        3.66,
+        18.001,
+        -255.922,
+        4.14,
+        26.104,
+        -249.379
+      ],
+      "distanceToRacingLineMetres": 10.478,
+      "chunk": "chunk--1_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    },
+    {
+      "id": "plateau:bldg_a2666eb7-1fca-4068-a2db-763237c14505",
+      "sourceId": "bldg_a2666eb7-1fca-4068-a2db-763237c14505",
+      "surfaceIds": [
+        "bldg_a2666eb7-1fca-4068-a2db-763237c14505:poly-8b80ffd1-669a-44a6-91de-a1f1859f77d0"
+      ],
+      "sourceSurfaceIds": [
+        "poly-8b80ffd1-669a-44a6-91de-a1f1859f77d0"
+      ],
+      "kind": "building",
+      "sourceSemantic": "WallSurface",
+      "bounds": [
+        3.66,
+        11.303,
+        -255.922,
+        4.14,
+        18.001,
+        -249.379
+      ],
+      "distanceToRacingLineMetres": 10.478,
+      "chunk": "chunk--1_-2.json",
+      "triangles": 2,
+      "reason": "Original bldg:WallSurface polygon; separation and material strength are gameplay approximations, not real structural segmentation"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "plateau:frn_8d8351f1-8f34-46b0-b709-f6ca3aa1ea01",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 14.928,
+      "bounds": [
+        -120.426,
+        10.723,
+        22.893,
+        -118.774,
+        10.773,
+        23.164
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_c266552c-92fd-4ea0-b426-f75cd13c25a4",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 14.928,
+      "bounds": [
+        -120.426,
+        11.323,
+        22.893,
+        -118.774,
+        11.373,
+        23.164
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_491d7262-cd51-4984-a017-d236a2e45c35",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 14.928,
+      "bounds": [
+        -120.426,
+        11.023,
+        22.893,
+        -118.774,
+        11.073,
+        23.164
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_d9e61787-1455-4ad4-81ba-e784a5a0810a",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.153,
+      "bounds": [
+        -116.48,
+        10.723,
+        23.449,
+        -114.844,
+        10.773,
+        23.828
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_377aab3a-eb25-4f03-8378-ad3f8be30284",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.153,
+      "bounds": [
+        -116.48,
+        11.023,
+        23.449,
+        -114.844,
+        11.073,
+        23.828
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_f1996f2b-5874-460f-b7dc-6af97bd212a2",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.153,
+      "bounds": [
+        -116.48,
+        11.323,
+        23.449,
+        -114.844,
+        11.373,
+        23.828
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_29e11661-f1f1-4f2b-aa41-25282eebd103",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.987,
+      "bounds": [
+        -218.843,
+        10.673,
+        9.343,
+        -217.176,
+        10.721,
+        9.61
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_488d23d2-617d-4075-b8c0-18e4ee850c7f",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.987,
+      "bounds": [
+        -220.641,
+        10.673,
+        9.105,
+        -218.974,
+        10.721,
+        9.372
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_21f6ac1a-5fba-44ba-b805-0302a46d11c3",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.987,
+      "bounds": [
+        -220.641,
+        11.273,
+        9.105,
+        -218.974,
+        11.321,
+        9.372
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_dfa85844-ba23-4ee0-a6a6-9fdeabe66d1c",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.987,
+      "bounds": [
+        -218.843,
+        10.973,
+        9.343,
+        -217.176,
+        11.021,
+        9.61
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_a11e48b0-b118-44b1-b779-8f5131dc7afe",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.987,
+      "bounds": [
+        -218.843,
+        11.273,
+        9.343,
+        -217.176,
+        11.321,
+        9.61
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_8a8985df-ad48-4246-8dfc-5d3734229471",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 15.987,
+      "bounds": [
+        -220.641,
+        10.973,
+        9.105,
+        -218.974,
+        11.021,
+        9.372
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_985abbd7-b77e-44e3-82cc-27a197c28bfa",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 16.089,
+      "bounds": [
+        -221.963,
+        11.273,
+        8.929,
+        -220.772,
+        11.321,
+        9.133
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_45f2f008-f943-498c-a056-b1ab9952de54",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 16.089,
+      "bounds": [
+        -221.963,
+        10.973,
+        8.929,
+        -220.772,
+        11.021,
+        9.133
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_1c80c03f-6c7e-44ff-b0c7-31f0b7b867a5",
+      "kind": "furniture",
+      "sourceSemantic": "柵・壁",
+      "sourceFunction": "2000",
+      "distanceToRacingLineMetres": 16.089,
+      "bounds": [
+        -221.963,
+        10.673,
+        8.929,
+        -220.772,
+        10.721,
+        9.133
+      ],
+      "triangles": 28,
+      "reason": "Official CityFurniture_function=2000; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_ac302944-ed54-4fbd-9030-c7d958ae243b",
+      "kind": "furniture",
+      "sourceSemantic": "ベンチ",
+      "sourceFunction": "8160",
+      "distanceToRacingLineMetres": 17.725,
+      "bounds": [
+        -124.814,
+        10.762,
+        24.963,
+        -124.472,
+        11.303,
+        25.552
+      ],
+      "triangles": 12,
+      "reason": "Official CityFurniture_function=8160; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_f698a05c-4c09-459d-a0a0-423d30e8a618",
+      "kind": "furniture",
+      "sourceSemantic": "ベンチ",
+      "sourceFunction": "8160",
+      "distanceToRacingLineMetres": 17.946,
+      "bounds": [
+        -126.166,
+        11.153,
+        25.02,
+        -124.681,
+        11.443,
+        25.663
+      ],
+      "triangles": 424,
+      "reason": "Official CityFurniture_function=8160; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_92f7c372-03b8-4710-8ef8-cb32841d45ab",
+      "kind": "furniture",
+      "sourceSemantic": "ベンチ",
+      "sourceFunction": "8160",
+      "distanceToRacingLineMetres": 18.147,
+      "bounds": [
+        -126.357,
+        10.762,
+        25.194,
+        -126.158,
+        11.303,
+        25.763
+      ],
+      "triangles": 12,
+      "reason": "Official CityFurniture_function=8160; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_73d1cc85-a40a-4e17-917b-1b504a3e59bc",
+      "kind": "furniture",
+      "sourceSemantic": "ベンチ",
+      "sourceFunction": "8160",
+      "distanceToRacingLineMetres": 18.45,
+      "bounds": [
+        -130.158,
+        11.185,
+        25.14,
+        -128.663,
+        11.461,
+        25.67
+      ],
+      "triangles": 244,
+      "reason": "Official CityFurniture_function=8160; original source mesh detached with game fracture strength"
+    },
+    {
+      "id": "plateau:frn_5ea75690-b0e8-44c5-b3d9-58dcfea554d1",
+      "kind": "furniture",
+      "sourceSemantic": "ベンチ",
+      "sourceFunction": "8160",
+      "distanceToRacingLineMetres": 18.49,
+      "bounds": [
+        -128.695,
+        10.779,
+        25.246,
+        -128.465,
+        11.32,
+        25.784
+      ],
+      "triangles": 12,
+      "reason": "Official CityFurniture_function=8160; original source mesh detached with game fracture strength"
+    }
+  ]
+}

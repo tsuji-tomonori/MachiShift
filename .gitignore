@@ -5,5 +5,10 @@ data/cache/
 test-results/
 playwright-report/
 *.log
+!docs/evidence/*.log
+public/data/chunk-*.json
+__pycache__/
+*.pyc
+reports/
 .env*
 !.env.example

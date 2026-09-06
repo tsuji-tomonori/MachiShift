@@ -1,0 +1,61 @@
+{
+  "id": "ENVIRONMENT-SOURCE-20260905",
+  "executedAt": "2026-09-05T05:23:00.031674+00:00",
+  "finishedAt": "2026-09-05T05:23:05.136062+00:00",
+  "command": [
+    "npx",
+    "vitest",
+    "run",
+    "tests/environment.test.ts",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=docs/evidence/environment-source-results-20260905.json"
+  ],
+  "result": "PASS",
+  "totalTests": 14,
+  "passedTests": 14,
+  "commit": "e2cb07956f86cfc74189ff3a9659fb34e5f2a872",
+  "environment": "Linux-6.18.35-x86_64-with-glibc2.39 / Node v24.19.0",
+  "sourceHashesBefore": {
+    "src/environment.ts": "5bd2d822d76fc2b127deb1ee6b2c49963226c1cd0cf18269570829c8de8d3313",
+    "tests/environment.test.ts": "14625e8031b3cd8c0d803a53aae00eee292f7b4a581a5e77e8d23d38e06acc71",
+    "public/data/chunk--1_0.json.gz": "50cef9e1c653c1e75701c5959f98192a6ab16da44364a8cfa41fc88866304685",
+    "package.json": "97f2b2ec7fdec19306c2ea957d37d85b45bc025488c7906039ed4e476769e500",
+    "package-lock.json": "53cc6d8a94f3921c597c2ca494004c59272632b6738033098cdcb35c0f8bbde3"
+  },
+  "sourceHashesAfter": {
+    "src/environment.ts": "5bd2d822d76fc2b127deb1ee6b2c49963226c1cd0cf18269570829c8de8d3313",
+    "tests/environment.test.ts": "14625e8031b3cd8c0d803a53aae00eee292f7b4a581a5e77e8d23d38e06acc71",
+    "public/data/chunk--1_0.json.gz": "50cef9e1c653c1e75701c5959f98192a6ab16da44364a8cfa41fc88866304685",
+    "package.json": "97f2b2ec7fdec19306c2ea957d37d85b45bc025488c7906039ed4e476769e500",
+    "package-lock.json": "53cc6d8a94f3921c597c2ca494004c59272632b6738033098cdcb35c0f8bbde3"
+  },
+  "sourceStableDuringExecution": true,
+  "sourceBenchMetrics": [
+    {
+      "sourceObject": "plateau:frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f",
+      "surfaceId": "frn_66fe84a0-eabc-4da0-8fe6-3d9cab18e19f:poly-e1d1ed44-6c96-45bb-8154-e855498245ee",
+      "retainedSourceIndices": 468,
+      "movedMetres": 1.855773449806554,
+      "simulationSeconds": 0.25,
+      "colliderCountBeforeUnload": 3,
+      "colliderCountAfterReload": 3,
+      "paintWorldPoint": [
+        -191.91137069541904,
+        12.666297978543728,
+        38.090494015218766
+      ],
+      "restoredPaintWorldPoint": [
+        -191.9113706954191,
+        12.666297978543705,
+        38.09049401521879
+      ],
+      "collisionApproximation": "initial_exact_triangles; detached_convex_hull_with_0.04m_outward_gameplay_skin",
+      "rendered": false,
+      "scripted": true
+    }
+  ],
+  "report": "docs/evidence/environment-source-results-20260905.json",
+  "log": "docs/evidence/environment-source-run-20260905.log",
+  "scope": "Actual Three/Rapier physical state tests; includes actual acquired PLATEAU bench from bundled compressed chunk, in a fixture physics scene. Full-stage browser driving and all target object categories remain separate."
+}

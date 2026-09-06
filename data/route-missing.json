@@ -1,0 +1,338 @@
+[
+  {
+    "sample": 299,
+    "xz": [
+      -22.175,
+      -140.775
+    ],
+    "distanceToSourceRoad": 0.11662692138675998
+  },
+  {
+    "sample": 300,
+    "xz": [
+      -24.025,
+      -137.7
+    ],
+    "distanceToSourceRoad": 0.37062449242204787
+  },
+  {
+    "sample": 301,
+    "xz": [
+      -25.875,
+      -134.625
+    ],
+    "distanceToSourceRoad": 0.6246220634573518
+  },
+  {
+    "sample": 302,
+    "xz": [
+      -27.625,
+      -131.66071428571428
+    ],
+    "distanceToSourceRoad": 0.839715570956053
+  },
+  {
+    "sample": 303,
+    "xz": [
+      -29.375,
+      -128.69642857142858
+    ],
+    "distanceToSourceRoad": 1.0548090784547663
+  },
+  {
+    "sample": 304,
+    "xz": [
+      -31.125,
+      -125.73214285714286
+    ],
+    "distanceToSourceRoad": 1.269902585953465
+  },
+  {
+    "sample": 305,
+    "xz": [
+      -32.875,
+      -122.76785714285714
+    ],
+    "distanceToSourceRoad": 1.484996093452166
+  },
+  {
+    "sample": 306,
+    "xz": [
+      -34.625,
+      -119.80357142857143
+    ],
+    "distanceToSourceRoad": 1.700089600950872
+  },
+  {
+    "sample": 307,
+    "xz": [
+      -36.375,
+      -116.83928571428572
+    ],
+    "distanceToSourceRoad": 1.9151831084495805
+  },
+  {
+    "sample": 308,
+    "xz": [
+      -38.125,
+      -113.875
+    ],
+    "distanceToSourceRoad": 2.061255227760854
+  },
+  {
+    "sample": 309,
+    "xz": [
+      -40.03125,
+      -110.609375
+    ],
+    "distanceToSourceRoad": 0.897651476013704
+  },
+  {
+    "sample": 311,
+    "xz": [
+      -43.84375,
+      -104.078125
+    ],
+    "distanceToSourceRoad": 2.357768656105632
+  },
+  {
+    "sample": 312,
+    "xz": [
+      -45.75,
+      -100.8125
+    ],
+    "distanceToSourceRoad": 2.9999220058559795
+  },
+  {
+    "sample": 313,
+    "xz": [
+      -47.65625,
+      -97.546875
+    ],
+    "distanceToSourceRoad": 3.217697449003024
+  },
+  {
+    "sample": 314,
+    "xz": [
+      -49.5625,
+      -94.28125
+    ],
+    "distanceToSourceRoad": 3.4354728921500675
+  },
+  {
+    "sample": 315,
+    "xz": [
+      -51.46875,
+      -91.015625
+    ],
+    "distanceToSourceRoad": 3.653248335297112
+  },
+  {
+    "sample": 316,
+    "xz": [
+      -53.375,
+      -87.75
+    ],
+    "distanceToSourceRoad": 3.871023778444157
+  },
+  {
+    "sample": 317,
+    "xz": [
+      -55.2,
+      -84.6
+    ],
+    "distanceToSourceRoad": 4.065838830145503
+  },
+  {
+    "sample": 318,
+    "xz": [
+      -57.025,
+      -81.45
+    ],
+    "distanceToSourceRoad": 4.263337610112221
+  },
+  {
+    "sample": 319,
+    "xz": [
+      -58.85,
+      -78.3
+    ],
+    "distanceToSourceRoad": 4.4608363900789385
+  },
+  {
+    "sample": 320,
+    "xz": [
+      -60.675,
+      -75.15
+    ],
+    "distanceToSourceRoad": 4.658335170045658
+  },
+  {
+    "sample": 321,
+    "xz": [
+      -62.5,
+      -72.0
+    ],
+    "distanceToSourceRoad": 4.855833950012376
+  },
+  {
+    "sample": 322,
+    "xz": [
+      -64.325,
+      -68.85
+    ],
+    "distanceToSourceRoad": 5.053332729979094
+  },
+  {
+    "sample": 323,
+    "xz": [
+      -66.15,
+      -65.7
+    ],
+    "distanceToSourceRoad": 5.250787902860039
+  },
+  {
+    "sample": 324,
+    "xz": [
+      -67.975,
+      -62.55
+    ],
+    "distanceToSourceRoad": 5.448165939662077
+  },
+  {
+    "sample": 325,
+    "xz": [
+      -69.8,
+      -59.4
+    ],
+    "distanceToSourceRoad": 5.645543976464132
+  },
+  {
+    "sample": 326,
+    "xz": [
+      -71.625,
+      -56.25
+    ],
+    "distanceToSourceRoad": 5.842922013266185
+  },
+  {
+    "sample": 327,
+    "xz": [
+      -73.453125,
+      -53.171875
+    ],
+    "distanceToSourceRoad": 6.076934369837638
+  },
+  {
+    "sample": 328,
+    "xz": [
+      -75.28125,
+      -50.09375
+    ],
+    "distanceToSourceRoad": 6.314560268038609
+  },
+  {
+    "sample": 329,
+    "xz": [
+      -77.109375,
+      -47.015625
+    ],
+    "distanceToSourceRoad": 6.550326791831541
+  },
+  {
+    "sample": 330,
+    "xz": [
+      -78.9375,
+      -43.9375
+    ],
+    "distanceToSourceRoad": 6.782361490817111
+  },
+  {
+    "sample": 331,
+    "xz": [
+      -80.765625,
+      -40.859375
+    ],
+    "distanceToSourceRoad": 7.014396189802682
+  },
+  {
+    "sample": 332,
+    "xz": [
+      -82.59375,
+      -37.78125
+    ],
+    "distanceToSourceRoad": 7.246430888788252
+  },
+  {
+    "sample": 333,
+    "xz": [
+      -84.421875,
+      -34.703125
+    ],
+    "distanceToSourceRoad": 7.478465587773822
+  },
+  {
+    "sample": 334,
+    "xz": [
+      -86.25,
+      -31.625
+    ],
+    "distanceToSourceRoad": 7.710500286759393
+  },
+  {
+    "sample": 335,
+    "xz": [
+      -88.08333333333333,
+      -28.666666666666668
+    ],
+    "distanceToSourceRoad": 8.001542308956255
+  },
+  {
+    "sample": 336,
+    "xz": [
+      -89.91666666666667,
+      -25.708333333333336
+    ],
+    "distanceToSourceRoad": 8.149037503687335
+  },
+  {
+    "sample": 337,
+    "xz": [
+      -91.75,
+      -22.75
+    ],
+    "distanceToSourceRoad": 8.047849514648798
+  },
+  {
+    "sample": 338,
+    "xz": [
+      -93.58333333333333,
+      -19.791666666666668
+    ],
+    "distanceToSourceRoad": 7.3839850609391515
+  },
+  {
+    "sample": 339,
+    "xz": [
+      -95.41666666666667,
+      -16.833333333333332
+    ],
+    "distanceToSourceRoad": 6.434040311702598
+  },
+  {
+    "sample": 340,
+    "xz": [
+      -97.25,
+      -13.875
+    ],
+    "distanceToSourceRoad": 4.6390373840560635
+  },
+  {
+    "sample": 341,
+    "xz": [
+      -99.09375,
+      -11.15625
+    ],
+    "distanceToSourceRoad": 1.688826786075539
+  }
+]

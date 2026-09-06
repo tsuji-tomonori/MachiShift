@@ -1,0 +1,15 @@
+
+ RUN  v3.2.4 /workspace/scratch/356b13d53f40/MachiShift
+
+ ✓ tests/environment.test.ts (13 tests) 478ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  14:16:40
+   Duration  2.24s (transform 323ms, setup 0ms, collect 505ms, tests 478ms, environment 0ms, prepare 238ms)
+
+JSON report written to /workspace/scratch/356b13d53f40/MachiShift/docs/evidence/environment-results-20260905.json
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+stderr | tests/environment.test.ts
+using deprecated parameters for the initialization function; pass a single object instead
+
