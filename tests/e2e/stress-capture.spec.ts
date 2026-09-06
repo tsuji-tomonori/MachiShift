@@ -19,6 +19,8 @@ test('PERF capture mechanism: real stage six cars, three blasts, 100 fragments a
   expect(start.measurement.initialBlasts.reduce((sum:number,blast:{fragments:number})=>sum+blast.fragments,0)).toBe(100);
   expect(start.measurement.startStats.dynamicDebris).toBe(100);
   expect(start.measurement.acceptance).toBe('REFERENCE_ONLY_UNTIL_TARGET_HARDWARE_CONFIRMED');
+  expect(start.gripEffects.length).toBeGreaterThan(0);
+  const initialGripExpiry = Math.max(...start.gripEffects.map((effect:{expiresAt:number})=>effect.expiresAt));
   await expect(page.locator('#hazards')).toContainText('半径');
   await expect(page.locator('#hazards')).toContainText('秒');
   await page.screenshot({path:info.outputPath('paint-hazard-patterns.png')});
@@ -30,8 +32,10 @@ test('PERF capture mechanism: real stage six cars, three blasts, 100 fragments a
   expect(end.frameMilliseconds.p99).toBeGreaterThanOrEqual(end.frameMilliseconds.p50);
   expect(end.memory).not.toBeNull();
   expect(end.paintEvents).toBeGreaterThanOrEqual(200);
-  // Road effect expires independently of the persistent marks.
-  expect(end.gripEffects).toHaveLength(0);
+  // Initial road effects expire independently of persistent marks. AI racers may add newer effects.
+  expect(end.elapsed).toBeGreaterThan(initialGripExpiry);
+  expect(end.gripEffects.every((effect:{expiresAt:number})=>effect.expiresAt>initialGripExpiry)).toBe(true);
+  expect(end.paintDecals).toBeGreaterThanOrEqual(start.measurement.startStats.paintDecals);
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: '計測を保存', exact: true }).click();
   await (await download).saveAs(info.outputPath('runtime-reference.json'));
