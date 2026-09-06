@@ -14,6 +14,9 @@ test('PERF capture mechanism: real stage six cars, three blasts, 100 fragments a
   await expect.poll(async()=> (await read()).measurement?.addedPaintEvents).toBeGreaterThanOrEqual(200);
   const start = await read();
   expect(start.measurement.activeVehicleCount).toBe(6);
+  expect(start.measurement.initialBlasts).toHaveLength(3);
+  expect(start.measurement.initialBlasts.every((blast:{fragments:number})=>blast.fragments>0)).toBe(true);
+  expect(start.measurement.initialBlasts.reduce((sum:number,blast:{fragments:number})=>sum+blast.fragments,0)).toBe(100);
   expect(start.measurement.startStats.dynamicDebris).toBe(100);
   expect(start.measurement.acceptance).toBe('REFERENCE_ONLY_UNTIL_TARGET_HARDWARE_CONFIRMED');
   await expect(page.locator('#hazards')).toContainText('半径');
@@ -28,7 +31,7 @@ test('PERF capture mechanism: real stage six cars, three blasts, 100 fragments a
   expect(end.memory).not.toBeNull();
   expect(end.paintEvents).toBeGreaterThanOrEqual(200);
   // Road effect expires independently of the persistent marks.
-  expect(end.gripEffects.every((zone:{expiresAt:number})=>zone.expiresAt>start.elapsed+8)).toBe(true);
+  expect(end.gripEffects).toHaveLength(0);
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: '計測を保存', exact: true }).click();
   await (await download).saveAs(info.outputPath('runtime-reference.json'));

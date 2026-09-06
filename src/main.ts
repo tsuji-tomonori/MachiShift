@@ -319,6 +319,7 @@ function detonate(point:THREE.Vector3) {
   for(const v of race.vehicles){if(race.mode==='free'&&v.id!==0)continue;const pos=new THREE.Vector3().copy(v.body.translation());const delta=pos.clone().sub(point),distance=delta.length();if(distance<12&&environment.hasLineOfSight(point,pos)){delta.y=.25;delta.normalize();v.body.applyImpulse(delta.multiplyScalar((1-distance/12)*v.body.mass()*9),true);}}
   const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1,2),new THREE.MeshBasicMaterial({color:0xffd177,transparent:true,opacity:.7,wireframe:true}));mesh.position.copy(point);scene.add(mesh);fx.push({mesh,age:0,duration:.65,scale:12});sound.cue('blast');
   if(result.destroyed.length)toast(`柵が壊れた · ${result.fragments}個の破片に変化`,2.5);
+  return result;
 }
 function recover(){if(!['race','free','tutorial'].includes(phase))return;if(race.recover()){recoveries++;if(phase==='tutorial')tutorialState.record('recover');toast('直前の安全な位置へ復帰しました',2);}else toast('復帰先に車両があります。少し待ってお試しください。',2);}
 function tutorial(dt:number,control:ReturnType<Input['sample']>){
@@ -384,17 +385,19 @@ function startStress(){
   const pos=new THREE.Vector3().copy(race.player.body.translation());
   const paintsBefore=environment.stats.paintEvents;let paintAttempts=0;
   while(environment.stats.paintEvents-paintsBefore<200&&paintAttempts<400){const i=paintAttempts++;const origin=pos.clone().add(new THREE.Vector3((i%10-5)*.5,6,(Math.floor(i/10)%20)*.4+1));environment.paintRay(origin,new THREE.Vector3(0,-1,0),i%2?0x168aff:0xf1469e,30);}
-  stressBurstCount=0;stressBurst();
+  stressBurstCount=0;const initialBlasts=stressBurst();
   const gl=renderer.getContext();const ext=gl.getExtension('WEBGL_debug_renderer_info');
-  measurement={started:new Date().toISOString(),startedElapsed:elapsed,durationTargetSeconds:60,resolution:[canvas.width,canvas.height],userAgent:navigator.userAgent,gpu:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):'not exposed',activeVehicleCount:race.vehicles.length,paintAttempts,addedPaintEvents:environment.stats.paintEvents-paintsBefore,conditions:'real stage + explicitly game-added 100-part fixtures; 3 blasts every5s; actual counts sampled',startStats:environment.stats,acceptance:'REFERENCE_ONLY_UNTIL_TARGET_HARDWARE_CONFIRMED'};
+  measurement={started:new Date().toISOString(),startedElapsed:elapsed,durationTargetSeconds:60,resolution:[canvas.width,canvas.height],userAgent:navigator.userAgent,gpu:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):'not exposed',activeVehicleCount:race.vehicles.length,paintAttempts,addedPaintEvents:environment.stats.paintEvents-paintsBefore,initialBlasts,conditions:'real stage + explicitly game-added 100-part fixture; 3 blasts every 5s; actual counts sampled',startStats:environment.stats,acceptance:'REFERENCE_ONLY_UNTIL_TARGET_HARDWARE_CONFIRMED'};
   toast('負荷試験を開始 · 60秒のフレーム時間を記録',5);
 }
 function stressBurst(){
   environment.removeChunk('stress');stressBurstCount++;stressNextBurst=elapsed+5;
   const pos=new THREE.Vector3().copy(race.player.body.translation());
-  for(let i=0;i<10;i++)environment.addBreakable({id:`game:stress:${stressBurstCount}:${i}`,position:[pos.x+(i-5)*1.5,pos.y+2,pos.z+12],size:[1.5,1.5,.3],chunkId:'stress',verification:'game_added',parts:Array.from({length:10},(_,j)=>({offset:[((j%5)-2)*.3,Math.floor(j/5)*.6,0] as RoutePoint,size:[.28,.55,.25] as RoutePoint}))});
+  // A single authored object keeps its own 100 parts from falsely occluding one another.
+  // The three real explosions still use normal line-of-sight against the source stage and vehicles.
+  environment.addBreakable({id:`game:stress:${stressBurstCount}`,position:[pos.x,pos.y+2,pos.z+12],size:[30,1.5,.3],chunkId:'stress',verification:'game_added',parts:Array.from({length:100},(_,k)=>{const i=Math.floor(k/10),j=k%10;return {offset:[(i-5)*3+((j%5)-2)*.3,Math.floor(j/5)*.6,0] as RoutePoint,size:[.28,.55,.25] as RoutePoint};})});
   scene.updateMatrixWorld(true);
-  for(const dx of [-5,0,5])detonate(pos.clone().add(new THREE.Vector3(dx,1,12)));
+  return [-10,0,10].map(dx=>detonate(pos.clone().add(new THREE.Vector3(dx,1,12))));
 }
 function finishStress(reason:string){
   stressStarted=false;measurement={...measurement,finished:new Date().toISOString(),completion:reason,actualSimulationSeconds:elapsed-Number(measurement?.startedElapsed??elapsed),burstCount:stressBurstCount,endStats:environment.stats};
