@@ -36,6 +36,34 @@ async function brake(page: Page): Promise<void> {
   try { await expect.poll(async () => Math.abs((await state(page)).vehicles[0].speed), { timeout: 30_000, intervals: [100, 200] }).toBeLessThan(0.4); }
   finally { await page.keyboard.up('KeyS'); }
 }
+async function driveToward(page: Page, center: Vec3): Promise<void> {
+  const held = new Set<string>();
+  const hold = async (key: string, active: boolean) => {
+    if (active === held.has(key)) return;
+    active ? held.add(key) : held.delete(key);
+    active ? await page.keyboard.down(key) : await page.keyboard.up(key);
+  };
+  let current = await state(page);
+  const deadline = Date.now() + 60_000;
+  try {
+    while (gateRange(current, center) > 26 && Date.now() < deadline) {
+      const vehicle = current.vehicles[0];
+      const desired = Math.atan2(center[0] - vehicle.position.x, center[2] - vehicle.position.z);
+      const error = Math.atan2(Math.sin(desired - vehicle.heading), Math.cos(desired - vehicle.heading));
+      // Rapier's positive Y angular velocity is observed as a decreasing Three.js yaw.
+      await hold('KeyA', error < -0.08);
+      await hold('KeyD', error > 0.08);
+      // Limit approach speed so braking cannot carry the kart through the launch window.
+      await hold('KeyW', Math.abs(vehicle.speed) < 8);
+      await hold('KeyS', Math.abs(vehicle.speed) > 10);
+      await page.waitForTimeout(100);
+      current = await state(page);
+    }
+    expect(gateRange(current, center), 'Keyboard steering must reach the ordinary projectile launch window').toBeLessThanOrEqual(26);
+  } finally {
+    for (const key of ['KeyW', 'KeyS', 'KeyA', 'KeyD']) await page.keyboard.up(key).catch(() => {});
+  }
+}
 async function aimAndThrow(page: Page, center: Vec3, item: string): Promise<void> {
   if ((await state(page)).selectedItem !== item) await page.keyboard.press('KeyE');
   await expect.poll(async () => (await state(page)).selectedItem).toBe(item);
@@ -85,12 +113,10 @@ test('AT-04/07/11 real stage: collect, paint fence, bomb, moving painted debris,
     await expect.poll(async () => (await state(page)).inventory, { timeout: 120_000, intervals: [100, 200] }).toEqual(['paint', 'bomb']);
     await page.getByRole('button', { name: '自動走行を停止', exact: true }).click();
     await brake(page);
-    // Approach at normal acceleration if braking after the pickup left the
-    // fence beyond the stationary projectile arc. No teleport or recovery.
+    // Approach with public keyboard throttle and steering. Acceleration alone would
+    // preserve the pickup path's residual heading and can drive away from the gate.
     if (gateRange(await state(page), center) > 27) {
-      await page.keyboard.down('KeyW');
-      try { await expect.poll(async () => gateRange(await state(page), center), { timeout: 30_000, intervals: [100, 200] }).toBeLessThanOrEqual(27); }
-      finally { await page.keyboard.up('KeyW'); }
+      await driveToward(page, center);
       await brake(page);
     }
     const ready = await record(page, info, 'core-picked-up-and-stopped');
@@ -209,7 +235,7 @@ test('AT-04/07/11 real stage: collect, paint fence, bomb, moving painted debris,
     expect(reset.shortcut.map(p => p.position)).toEqual(initial.shortcut.map(p => p.position));
     expect(uncaught).toEqual([]);
   } finally {
-    for (const key of ['KeyW', 'KeyS', 'Space']) await page.keyboard.up(key).catch(() => {});
+    for (const key of ['KeyW', 'KeyS', 'KeyA', 'KeyD', 'Space']) await page.keyboard.up(key).catch(() => {});
     if (await page.locator('#diagnostics').count()) await record(page, info, 'core-final-or-failure-state');
   }
 });
